@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		187392091AA4B1060031D6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187392081AA4B1060031D6C9 /* main.m */; };
+		1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920B1AA4B1070031D6C9 /* AppDelegate.m */; };
+		1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920E1AA4B1070031D6C9 /* ViewController.m */; };
+		187392121AA4B1070031D6C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187392101AA4B1070031D6C9 /* Main.storyboard */; };
+		187392141AA4B1070031D6C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187392131AA4B1070031D6C9 /* Images.xcassets */; };
+		187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187392151AA4B1070031D6C9 /* LaunchScreen.xib */; };
+		189A57F01AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */; };
+		189A57F11AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */; };
+		189A57F21AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */; };
+		189A57F31AA4E1E000BBE0B7 /* PPPivotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */; };
+		189A57F41AA4E1E000BBE0B7 /* PPScanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */; };
+		189A57F51AA4E1E000BBE0B7 /* PPScanResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */; };
+		189A57F61AA4E1E000BBE0B7 /* PPScanResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */; };
+		189A580E1AA4EE6400BBE0B7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A580D1AA4EE6400BBE0B7 /* libc++.dylib */; };
+		189A581D1AA4F5D200BBE0B7 /* BlinkOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A58111AA4F5D200BBE0B7 /* BlinkOCR.framework */; };
+		189A581E1AA4F5D200BBE0B7 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 189A58131AA4F5D200BBE0B7 /* ocr_model.zzip */; };
+		189A581F1AA4F5D200BBE0B7 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 189A58141AA4F5D200BBE0B7 /* PPbeep.wav */; };
+		189A58201AA4F5D200BBE0B7 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A58151AA4F5D200BBE0B7 /* torchoff.png */; };
+		189A58211AA4F5D200BBE0B7 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A58161AA4F5D200BBE0B7 /* torchoff@2x.png */; };
+		189A58221AA4F5D200BBE0B7 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A58171AA4F5D200BBE0B7 /* torchoff_pressed.png */; };
+		189A58231AA4F5D200BBE0B7 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A58181AA4F5D200BBE0B7 /* torchoff_pressed@2x.png */; };
+		189A58241AA4F5D200BBE0B7 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A58191AA4F5D200BBE0B7 /* torchon.png */; };
+		189A58251AA4F5D200BBE0B7 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A581A1AA4F5D200BBE0B7 /* torchon@2x.png */; };
+		189A58261AA4F5D200BBE0B7 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A581B1AA4F5D200BBE0B7 /* torchon_pressed.png */; };
+		189A58271AA4F5D200BBE0B7 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189A581C1AA4F5D200BBE0B7 /* torchon_pressed@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		187392071AA4B1060031D6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		187392081AA4B1060031D6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1873920A1AA4B1060031D6C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1873920B1AA4B1070031D6C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1873920D1AA4B1070031D6C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1873920E1AA4B1070031D6C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		187392111AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		187392131AA4B1070031D6C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		187392161AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPFormOcrOverlay.xcassets; sourceTree = "<group>"; };
+		189A57E61AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFormOcrOverlayViewController.h; sourceTree = "<group>"; };
+		189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFormOcrOverlayViewController.m; sourceTree = "<group>"; };
+		189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPFormOcrOverlayViewController.xib; sourceTree = "<group>"; };
+		189A57E91AA4E1E000BBE0B7 /* PPPivotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPivotView.h; sourceTree = "<group>"; };
+		189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPivotView.m; sourceTree = "<group>"; };
+		189A57EB1AA4E1E000BBE0B7 /* PPScanElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanElement.h; sourceTree = "<group>"; };
+		189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanElement.m; sourceTree = "<group>"; };
+		189A57ED1AA4E1E000BBE0B7 /* PPScanResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanResultView.h; sourceTree = "<group>"; };
+		189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanResultView.m; sourceTree = "<group>"; };
+		189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPScanResultView.xib; sourceTree = "<group>"; };
+		189A580D1AA4EE6400BBE0B7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		189A58111AA4F5D200BBE0B7 /* BlinkOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BlinkOCR.framework; sourceTree = "<group>"; };
+		189A58131AA4F5D200BBE0B7 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
+		189A58141AA4F5D200BBE0B7 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
+		189A58151AA4F5D200BBE0B7 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
+		189A58161AA4F5D200BBE0B7 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
+		189A58171AA4F5D200BBE0B7 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
+		189A58181AA4F5D200BBE0B7 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
+		189A58191AA4F5D200BBE0B7 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
+		189A581A1AA4F5D200BBE0B7 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
+		189A581B1AA4F5D200BBE0B7 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
+		189A581C1AA4F5D200BBE0B7 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		187392001AA4B1060031D6C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189A581D1AA4F5D200BBE0B7 /* BlinkOCR.framework in Frameworks */,
+				189A580E1AA4EE6400BBE0B7 /* libc++.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		187391FA1AA4B1060031D6C9 = {
+			isa = PBXGroup;
+			children = (
+				189A580D1AA4EE6400BBE0B7 /* libc++.dylib */,
+				187392051AA4B1060031D6C9 /* BlinkOCR-sample */,
+				189A58101AA4F5D200BBE0B7 /* BlinkOCR.embeddedframework */,
+				187392041AA4B1060031D6C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		187392041AA4B1060031D6C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		187392051AA4B1060031D6C9 /* BlinkOCR-sample */ = {
+			isa = PBXGroup;
+			children = (
+				1873920A1AA4B1060031D6C9 /* AppDelegate.h */,
+				1873920B1AA4B1070031D6C9 /* AppDelegate.m */,
+				1873920D1AA4B1070031D6C9 /* ViewController.h */,
+				1873920E1AA4B1070031D6C9 /* ViewController.m */,
+				187392101AA4B1070031D6C9 /* Main.storyboard */,
+				187392131AA4B1070031D6C9 /* Images.xcassets */,
+				187392151AA4B1070031D6C9 /* LaunchScreen.xib */,
+				189A57E41AA4E1E000BBE0B7 /* FormOcrOverlay */,
+				187392061AA4B1060031D6C9 /* Supporting Files */,
+			);
+			path = "BlinkOCR-sample";
+			sourceTree = "<group>";
+		};
+		187392061AA4B1060031D6C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				187392071AA4B1060031D6C9 /* Info.plist */,
+				187392081AA4B1060031D6C9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		189A57E41AA4E1E000BBE0B7 /* FormOcrOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */,
+				189A57E61AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.h */,
+				189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */,
+				189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */,
+				189A57E91AA4E1E000BBE0B7 /* PPPivotView.h */,
+				189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */,
+				189A57EB1AA4E1E000BBE0B7 /* PPScanElement.h */,
+				189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */,
+				189A57ED1AA4E1E000BBE0B7 /* PPScanResultView.h */,
+				189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */,
+				189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */,
+			);
+			name = FormOcrOverlay;
+			path = ../../FormOcrOverlay;
+			sourceTree = "<group>";
+		};
+		189A58101AA4F5D200BBE0B7 /* BlinkOCR.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				189A58111AA4F5D200BBE0B7 /* BlinkOCR.framework */,
+				189A58121AA4F5D200BBE0B7 /* Resources */,
+			);
+			name = BlinkOCR.embeddedframework;
+			path = ../BlinkOCR.embeddedframework;
+			sourceTree = "<group>";
+		};
+		189A58121AA4F5D200BBE0B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				189A58131AA4F5D200BBE0B7 /* ocr_model.zzip */,
+				189A58141AA4F5D200BBE0B7 /* PPbeep.wav */,
+				189A58151AA4F5D200BBE0B7 /* torchoff.png */,
+				189A58161AA4F5D200BBE0B7 /* torchoff@2x.png */,
+				189A58171AA4F5D200BBE0B7 /* torchoff_pressed.png */,
+				189A58181AA4F5D200BBE0B7 /* torchoff_pressed@2x.png */,
+				189A58191AA4F5D200BBE0B7 /* torchon.png */,
+				189A581A1AA4F5D200BBE0B7 /* torchon@2x.png */,
+				189A581B1AA4F5D200BBE0B7 /* torchon_pressed.png */,
+				189A581C1AA4F5D200BBE0B7 /* torchon_pressed@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		187392021AA4B1060031D6C9 /* BlinkOCR-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkOCR-sample" */;
+			buildPhases = (
+				187391FF1AA4B1060031D6C9 /* Sources */,
+				187392001AA4B1060031D6C9 /* Frameworks */,
+				187392011AA4B1060031D6C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BlinkOCR-sample";
+			productName = "BlinkOCR-sample";
+			productReference = 187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		187391FB1AA4B1060031D6C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = MicroBlink;
+				TargetAttributes = {
+					187392021AA4B1060031D6C9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkOCR-sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 187391FA1AA4B1060031D6C9;
+			productRefGroup = 187392041AA4B1060031D6C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				187392021AA4B1060031D6C9 /* BlinkOCR-sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		187392011AA4B1060031D6C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189A58261AA4F5D200BBE0B7 /* torchon_pressed.png in Resources */,
+				187392121AA4B1070031D6C9 /* Main.storyboard in Resources */,
+				187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */,
+				189A58241AA4F5D200BBE0B7 /* torchon.png in Resources */,
+				189A58201AA4F5D200BBE0B7 /* torchoff.png in Resources */,
+				189A58271AA4F5D200BBE0B7 /* torchon_pressed@2x.png in Resources */,
+				189A581F1AA4F5D200BBE0B7 /* PPbeep.wav in Resources */,
+				187392141AA4B1070031D6C9 /* Images.xcassets in Resources */,
+				189A57F21AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib in Resources */,
+				189A57F61AA4E1E000BBE0B7 /* PPScanResultView.xib in Resources */,
+				189A581E1AA4F5D200BBE0B7 /* ocr_model.zzip in Resources */,
+				189A58231AA4F5D200BBE0B7 /* torchoff_pressed@2x.png in Resources */,
+				189A58251AA4F5D200BBE0B7 /* torchon@2x.png in Resources */,
+				189A57F01AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets in Resources */,
+				189A58221AA4F5D200BBE0B7 /* torchoff_pressed.png in Resources */,
+				189A58211AA4F5D200BBE0B7 /* torchoff@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		187391FF1AA4B1060031D6C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189A57F11AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m in Sources */,
+				189A57F41AA4E1E000BBE0B7 /* PPScanElement.m in Sources */,
+				1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */,
+				189A57F51AA4E1E000BBE0B7 /* PPScanResultView.m in Sources */,
+				1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */,
+				189A57F31AA4E1E000BBE0B7 /* PPPivotView.m in Sources */,
+				187392091AA4B1060031D6C9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		187392101AA4B1070031D6C9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187392111AA4B1070031D6C9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		187392151AA4B1070031D6C9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187392161AA4B1070031D6C9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		187392241AA4B1070031D6C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		187392251AA4B1070031D6C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		187392271AA4B1070031D6C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cerovec/Documents/PhotoPay/PhotoPay/blinkocr/blinkocr-ios/BlinkOCR.embeddedframework",
+				);
+				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		187392281AA4B1070031D6C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cerovec/Documents/PhotoPay/PhotoPay/blinkocr/blinkocr-ios/BlinkOCR.embeddedframework",
+				);
+				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkOCR-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187392241AA4B1070031D6C9 /* Debug */,
+				187392251AA4B1070031D6C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkOCR-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187392271AA4B1070031D6C9 /* Debug */,
+				187392281AA4B1070031D6C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 187391FB1AA4B1060031D6C9 /* Project object */;
+}
