@@ -273,9 +273,6 @@ CGRect CGRectBounds(CGRect rect) {
 - (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
             didOutputResults:(NSArray *)results {
 
-    [cameraViewController pauseScanning];
-    [cameraViewController resumeScanningWithoutStateReset];
-
     for (PPBaseResult* result in results) {
         if ([result resultType] == PPBaseResultTypeOCR && [result isKindOfClass:[PPOcrScanResult class]]) {
             PPOcrScanResult *ocrScanResult = (PPOcrScanResult*)result;
