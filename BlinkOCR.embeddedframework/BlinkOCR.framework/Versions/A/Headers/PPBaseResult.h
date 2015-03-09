@@ -10,18 +10,6 @@
 
 @class PPResultDataSourceAdapter;
 
-/**
- Enumeration of all result types
- */
-typedef NS_ENUM(NSInteger, PPBaseResultType) {
-    PPBaseResultTypeBarcode,
-    PPBaseResultTypeUSDL,
-    PPBaseResultTypePhotoPay,
-    PPBaseResultTypeOCR,
-    PPBaseResultTypePhotoMath,
-    PPBaseResultTypeIDCard
-};
-
 struct RecognitionResultImpl;
 typedef struct RecognitionResultImpl RecognitionResultImpl;
 
@@ -31,30 +19,19 @@ typedef struct RecognitionResultImpl RecognitionResultImpl;
 @interface PPBaseResult : NSObject <NSCopying>
 
 /**
- Type of the result
-
- For easier type checking when casting
- */
-@property (nonatomic, assign, readonly) PPBaseResultType resultType;
-
-/**
  * Private implementation
  */
 @property (nonatomic, assign) RecognitionResultImpl *recognitionResult;
-
-// TODO: add location on image
 
 /**
  Designated initializer
  
  Requires the type property
  */
-- (id)initWithRecognitionResult:(struct RecognitionResultImpl *)recognitionResult
-                     resultType:(PPBaseResultType)resultType;
+- (instancetype)initWithRecognitionResult:(struct RecognitionResultImpl *)recognitionResult;
 
 /**
  Returns the xml representation of this result
- TODO: remove this nonsense
  */
 - (NSString*)xml;
 
@@ -65,7 +42,6 @@ typedef struct RecognitionResultImpl RecognitionResultImpl;
 
 /**
  Convenience method for simple display of result inside UITableView
- TODO: remove this nonsense
  */
 - (PPResultDataSourceAdapter*)getAdapter;
 

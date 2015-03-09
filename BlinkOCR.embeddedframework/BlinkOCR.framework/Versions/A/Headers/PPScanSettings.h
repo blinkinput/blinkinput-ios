@@ -24,6 +24,14 @@
 @property (nonatomic, assign) BOOL allowMultipleResults;
 
 /**
+ * Timeout interval in which the partial scanning results in PhotoPay will be returned to the user.
+ * If <= 0.0, no timeout event will be reported.
+ *
+ * Default: 7.0 seconds
+ */
+@property (nonatomic, assign) NSTimeInterval partialRecognitionTimeout;
+
+/**
  * Designated initializer. Initializes the object with default settings (see above for defaults)
  *
  *  @return object initialized with default values.

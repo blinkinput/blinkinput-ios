@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 PhotoPay. All rights reserved.
 //
 
-#import <BlinkOCR/PPScanner.h>
+#import <BlinkOCR/BlinkOCR.h>
 #import <BlinkOCR/PPBaseOverlayViewController.h>
 
 #import "PPScanElement.h"

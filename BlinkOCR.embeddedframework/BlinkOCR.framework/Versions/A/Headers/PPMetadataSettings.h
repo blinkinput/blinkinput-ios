@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "PPMetadata.h"
+#import "PPImageMetadata.h"
+#import "PPTextMetadata.h"
+
 /**
  * Settings class containing information which metadata is captured in the scanning process
  */

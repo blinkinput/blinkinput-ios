@@ -9,16 +9,32 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * Different options for displaying help
+ */
+typedef NS_ENUM(NSUInteger, PPHelpDisplayMode) {
+
+    /** Defines that help should never be displayed */
+    PPHelpDisplayModeNever,
+
+    /** Defines help should only be displayed on first PhotoPay run */
+    PPHelpDisplayModeFirstRun,
+
+    /** Defines help should be displayed on every PhotoPay run */
+    PPHelpDisplayModeAlways
+};
+
+/**
  * Settings class containing UI information
  */
 @interface PPUiSettings : NSObject <NSCopying>
 
 /**
- * If YES, fullscreen approach will be used, with default camera overlay displaying Cancel button.
+ * If YES, default camera overlay will display Cancel button.
+ * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to NO.
  *
  * Default: YES.
  */
-@property (nonatomic, assign) BOOL useFullscreen;
+@property (nonatomic, assign) BOOL showCloseButton;
 
 /**
  * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
@@ -56,6 +72,13 @@
  * Default: NO
  */
 @property (nonatomic, assign) BOOL displayDebugInfo;
+
+/**
+ * If Scanning UI has Help UI available, this enum defines the mode in which the help is displayed.
+ *
+ * Default: PPHelpDisplayModeFirstRun
+ */
+@property (nonatomic, assign) PPHelpDisplayMode helpDisplayMode;
 
 /**
  * Designated initializer. Initializes the object with default settings (see above for defaults)

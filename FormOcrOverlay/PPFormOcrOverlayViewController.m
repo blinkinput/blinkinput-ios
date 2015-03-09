@@ -274,7 +274,7 @@ CGRect CGRectBounds(CGRect rect) {
             didOutputResults:(NSArray *)results {
 
     for (PPBaseResult* result in results) {
-        if ([result resultType] == PPBaseResultTypeOCR && [result isKindOfClass:[PPOcrScanResult class]]) {
+        if ([result isKindOfClass:[PPOcrScanResult class]]) {
             PPOcrScanResult *ocrScanResult = (PPOcrScanResult*)result;
             [self processOcrScanResult:ocrScanResult];
         }

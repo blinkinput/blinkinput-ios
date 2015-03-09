@@ -19,6 +19,22 @@
 @class PPAccelerometerManager;
 
 /**
+ * Denotes the mode in which Recognizers performs recognition
+ */
+typedef NS_ENUM(NSUInteger, PPRecognitionMode) {
+
+    /** Classic, production mode. Results are returned after first valid scanning */
+    PPRecognitionModeDefault,
+
+    /** Recognition Test. Results are never returned, recognition is performed repeatedly */
+    PPRecognitionModeTest,
+
+    /** Recognition Test. Results are never returned, only detection is performed repeatedly */
+    PPRecognitionModeDetectionTest
+};
+
+
+/**
  * This object is the mastermind of the recognition process.
  * It coordinates hardware control with the recognition algorithms.
  * Also, while it provides default implementation of UIViewController which is used,
@@ -44,6 +60,13 @@
 
 /** Current orientation of overlay */
 @property (nonatomic, assign) UIInterfaceOrientation overlayOrientation;
+
+/**
+ * Recognition mode.
+ *
+ * Default: PPRecognitionModeDefault
+ */
+@property (nonatomic, assign) PPRecognitionMode recognitionMode;
 
 /**
  * Initializes the object in proper state
@@ -83,7 +106,6 @@
 
 /**
  * Pauses the frame saving process and stops the camera session.
- * If called before stop, it's a noop.
  */
 - (BOOL)stop;
 
