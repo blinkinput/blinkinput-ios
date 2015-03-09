@@ -86,9 +86,8 @@
 		187391FA1AA4B1060031D6C9 = {
 			isa = PBXGroup;
 			children = (
-				189A580D1AA4EE6400BBE0B7 /* libc++.dylib */,
 				187392051AA4B1060031D6C9 /* BlinkOCR-sample */,
-				189A58101AA4F5D200BBE0B7 /* BlinkOCR.embeddedframework */,
+				189EA8DE1AADE7FE005732C3 /* Frameworks */,
 				187392041AA4B1060031D6C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +169,15 @@
 				189A581C1AA4F5D200BBE0B7 /* torchon_pressed@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		189EA8DE1AADE7FE005732C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				189A58101AA4F5D200BBE0B7 /* BlinkOCR.embeddedframework */,
+				189A580D1AA4EE6400BBE0B7 /* libc++.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/cerovec/Documents/PhotoPay/PhotoPay/blinkocr/blinkocr-ios/BlinkOCR.embeddedframework",
+					../BlinkOCR.embeddedframework,
 				);
 				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -385,7 +393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/cerovec/Documents/PhotoPay/PhotoPay/blinkocr/blinkocr-ios/BlinkOCR.embeddedframework",
+					../BlinkOCR.embeddedframework,
 				);
 				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
