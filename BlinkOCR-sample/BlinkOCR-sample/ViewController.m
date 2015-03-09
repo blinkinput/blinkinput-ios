@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "PPFormOcrOverlayViewController.h"
-#import <BlinkOCR/PPScanner.h>
+#import <BlinkOCR/BlinkOCR.h>
 
 @interface ViewController () <PPFormOcrOverlayViewControllerDelegate>
 
