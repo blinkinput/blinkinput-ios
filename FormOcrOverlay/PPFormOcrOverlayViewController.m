@@ -11,10 +11,10 @@
 #import <BlinkOCR/PPModernOcrResultOverlaySubview.h>
 
 #import "PPPivotView.h"
-
 #import "PPScanResultView.h"
-
 #import "PPScanElement.h"
+
+#import "PPBlinkOcrHelpViewController.h"
 
 CGPoint CGRectCenter(CGRect rect) {
     return CGPointMake(rect.origin.x + rect.size.width / 2, rect.origin.y + rect.size.height / 2);
@@ -24,7 +24,7 @@ CGRect CGRectBounds(CGRect rect) {
     return CGRectMake(0, 0, rect.size.width, rect.size.height);
 }
 
-@interface PPFormOcrOverlayViewController () <PPPivotViewDelegate>
+@interface PPFormOcrOverlayViewController () <PPPivotViewDelegate, PPBlinkOcrHelpViewControllerDelegate>
 
 @property (nonatomic, strong) PPModernOcrResultOverlaySubview *ocrResultOverlaySubview;
 
@@ -196,6 +196,16 @@ CGRect CGRectBounds(CGRect rect) {
     [self.containerViewController updateScanningRegion];
 }
 
+#pragma mark - Status bar
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark - instantiation
 
 + (instancetype)allocFromNibName:(NSString*)nibName {
@@ -216,7 +226,9 @@ CGRect CGRectBounds(CGRect rect) {
 }
 
 - (IBAction)didPressHelp:(id)sender {
-#warning implement help!
+    PPBlinkOcrHelpViewController* helpVC = [PPBlinkOcrHelpViewController allocFromStoryboardWithName:@"PPBlinkOcrHelp"];
+    helpVC.delegate = self;
+    [self presentViewController:helpVC animated:YES completion:nil];
 }
 
 - (IBAction)didTapNext:(id)sender {
@@ -231,6 +243,12 @@ CGRect CGRectBounds(CGRect rect) {
         [self.delegate formOcrOverlayViewController:self
                       didFinishScanningWithElements:self.scanElements];
     }
+}
+
+#pragma mark - PPBlinkOcrHelpViewControllerDelegate
+
+- (void)blinkOcrHelpViewControllerDelegateWillClose:(PPBlinkOcrHelpViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - PPPivotViewDelegate
