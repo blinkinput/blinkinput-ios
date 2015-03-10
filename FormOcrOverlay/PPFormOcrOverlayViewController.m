@@ -228,6 +228,7 @@ CGRect CGRectBounds(CGRect rect) {
 - (IBAction)didPressHelp:(id)sender {
     PPBlinkOcrHelpViewController* helpVC = [PPBlinkOcrHelpViewController allocFromStoryboardWithName:@"PPBlinkOcrHelp"];
     helpVC.delegate = self;
+    helpVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:helpVC animated:YES completion:nil];
 }
 
