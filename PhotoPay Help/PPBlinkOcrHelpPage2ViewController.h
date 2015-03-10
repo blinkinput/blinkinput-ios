@@ -10,6 +10,8 @@
 
 @interface PPBlinkOcrHelpPage2ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *helpMessageLabel;
 
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *tapToEditLabel;

@@ -18,7 +18,7 @@
     [super viewDidLoad];
 
     self.helpMessageLabel.text = @"Press OK button to proceed to the next field.";
-    self.tapToEditLabel.text = @"TAP to edit data";
+    self.tapToEditLabel.text = @"TAP to edit";
 }
 
 @end
