@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186225C81AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */; };
+		186225C91AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */; };
+		186225CA1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */; };
+		186225CB1AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */; };
+		186225CC1AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */; };
+		186225CD1AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */; };
+		186225CE1AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */; };
 		187392091AA4B1060031D6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187392081AA4B1060031D6C9 /* main.m */; };
 		1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920B1AA4B1070031D6C9 /* AppDelegate.m */; };
 		1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920E1AA4B1070031D6C9 /* ViewController.m */; };
@@ -35,6 +42,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PPBlinkOcrHelp.storyboard; sourceTree = "<group>"; };
+		186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPBlinkOcrHelp.xcassets; sourceTree = "<group>"; };
+		186225BE1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage1ViewController.h; sourceTree = "<group>"; };
+		186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage1ViewController.m; sourceTree = "<group>"; };
+		186225C01AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage2ViewController.h; sourceTree = "<group>"; };
+		186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage2ViewController.m; sourceTree = "<group>"; };
+		186225C21AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage3ViewController.h; sourceTree = "<group>"; };
+		186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage3ViewController.m; sourceTree = "<group>"; };
+		186225C41AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPageViewController.h; sourceTree = "<group>"; };
+		186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPageViewController.m; sourceTree = "<group>"; };
+		186225C61AAF9058002D71E5 /* PPBlinkOcrHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpViewController.h; sourceTree = "<group>"; };
+		186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpViewController.m; sourceTree = "<group>"; };
 		187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187392071AA4B1060031D6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187392081AA4B1060031D6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +102,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186225BB1AAF9058002D71E5 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */,
+				186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */,
+				186225BE1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.h */,
+				186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */,
+				186225C01AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.h */,
+				186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */,
+				186225C21AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.h */,
+				186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */,
+				186225C41AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.h */,
+				186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */,
+				186225C61AAF9058002D71E5 /* PPBlinkOcrHelpViewController.h */,
+				186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */,
+			);
+			name = Help;
+			path = ../../Help;
+			sourceTree = "<group>";
+		};
 		187391FA1AA4B1060031D6C9 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +149,7 @@
 				187392101AA4B1070031D6C9 /* Main.storyboard */,
 				187392131AA4B1070031D6C9 /* Images.xcassets */,
 				187392151AA4B1070031D6C9 /* LaunchScreen.xib */,
+				186225BB1AAF9058002D71E5 /* Help */,
 				189A57E41AA4E1E000BBE0B7 /* FormOcrOverlay */,
 				187392061AA4B1060031D6C9 /* Supporting Files */,
 			);
@@ -247,9 +287,11 @@
 				187392141AA4B1070031D6C9 /* Images.xcassets in Resources */,
 				189A57F21AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib in Resources */,
 				189A57F61AA4E1E000BBE0B7 /* PPScanResultView.xib in Resources */,
+				186225C81AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */,
 				189A581E1AA4F5D200BBE0B7 /* ocr_model.zzip in Resources */,
 				189A58231AA4F5D200BBE0B7 /* torchoff_pressed@2x.png in Resources */,
 				189A58251AA4F5D200BBE0B7 /* torchon@2x.png in Resources */,
+				186225C91AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */,
 				189A57F01AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets in Resources */,
 				189A58221AA4F5D200BBE0B7 /* torchoff_pressed.png in Resources */,
 				189A58211AA4F5D200BBE0B7 /* torchoff@2x.png in Resources */,
@@ -263,12 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186225CB1AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m in Sources */,
+				186225CE1AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */,
+				186225CA1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */,
+				186225CD1AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */,
 				189A57F11AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m in Sources */,
 				189A57F41AA4E1E000BBE0B7 /* PPScanElement.m in Sources */,
 				1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */,
 				189A57F51AA4E1E000BBE0B7 /* PPScanResultView.m in Sources */,
 				1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */,
 				189A57F31AA4E1E000BBE0B7 /* PPPivotView.m in Sources */,
+				186225CC1AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */,
 				187392091AA4B1060031D6C9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
