@@ -7,26 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		186225C81AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */; };
-		186225C91AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */; };
-		186225CA1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */; };
-		186225CB1AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */; };
-		186225CC1AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */; };
-		186225CD1AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */; };
-		186225CE1AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */; };
+		186226B71AB1B0A6002D71E5 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186226B51AB1B0A6002D71E5 /* en.strings */; };
 		187392091AA4B1060031D6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187392081AA4B1060031D6C9 /* main.m */; };
 		1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920B1AA4B1070031D6C9 /* AppDelegate.m */; };
 		1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920E1AA4B1070031D6C9 /* ViewController.m */; };
 		187392121AA4B1070031D6C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187392101AA4B1070031D6C9 /* Main.storyboard */; };
 		187392141AA4B1070031D6C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187392131AA4B1070031D6C9 /* Images.xcassets */; };
 		187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187392151AA4B1070031D6C9 /* LaunchScreen.xib */; };
-		189A57F01AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */; };
-		189A57F11AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */; };
-		189A57F21AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */; };
-		189A57F31AA4E1E000BBE0B7 /* PPPivotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */; };
-		189A57F41AA4E1E000BBE0B7 /* PPScanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */; };
-		189A57F51AA4E1E000BBE0B7 /* PPScanResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */; };
-		189A57F61AA4E1E000BBE0B7 /* PPScanResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */; };
 		189A580E1AA4EE6400BBE0B7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A580D1AA4EE6400BBE0B7 /* libc++.dylib */; };
 		189A581D1AA4F5D200BBE0B7 /* BlinkOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A58111AA4F5D200BBE0B7 /* BlinkOCR.framework */; };
 		189A581E1AA4F5D200BBE0B7 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 189A58131AA4F5D200BBE0B7 /* ocr_model.zzip */; };
@@ -42,18 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PPBlinkOcrHelp.storyboard; sourceTree = "<group>"; };
-		186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPBlinkOcrHelp.xcassets; sourceTree = "<group>"; };
-		186225BE1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage1ViewController.h; sourceTree = "<group>"; };
-		186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage1ViewController.m; sourceTree = "<group>"; };
-		186225C01AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage2ViewController.h; sourceTree = "<group>"; };
-		186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage2ViewController.m; sourceTree = "<group>"; };
-		186225C21AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage3ViewController.h; sourceTree = "<group>"; };
-		186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPage3ViewController.m; sourceTree = "<group>"; };
-		186225C41AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPageViewController.h; sourceTree = "<group>"; };
-		186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPageViewController.m; sourceTree = "<group>"; };
-		186225C61AAF9058002D71E5 /* PPBlinkOcrHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpViewController.h; sourceTree = "<group>"; };
-		186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpViewController.m; sourceTree = "<group>"; };
+		186226B61AB1B0A6002D71E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/en.strings; sourceTree = "<group>"; };
 		187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187392071AA4B1060031D6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187392081AA4B1060031D6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,17 +40,6 @@
 		187392111AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		187392131AA4B1070031D6C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		187392161AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPFormOcrOverlay.xcassets; sourceTree = "<group>"; };
-		189A57E61AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFormOcrOverlayViewController.h; sourceTree = "<group>"; };
-		189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFormOcrOverlayViewController.m; sourceTree = "<group>"; };
-		189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPFormOcrOverlayViewController.xib; sourceTree = "<group>"; };
-		189A57E91AA4E1E000BBE0B7 /* PPPivotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPivotView.h; sourceTree = "<group>"; };
-		189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPivotView.m; sourceTree = "<group>"; };
-		189A57EB1AA4E1E000BBE0B7 /* PPScanElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanElement.h; sourceTree = "<group>"; };
-		189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanElement.m; sourceTree = "<group>"; };
-		189A57ED1AA4E1E000BBE0B7 /* PPScanResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanResultView.h; sourceTree = "<group>"; };
-		189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanResultView.m; sourceTree = "<group>"; };
-		189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPScanResultView.xib; sourceTree = "<group>"; };
 		189A580D1AA4EE6400BBE0B7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		189A58111AA4F5D200BBE0B7 /* BlinkOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BlinkOCR.framework; sourceTree = "<group>"; };
 		189A58131AA4F5D200BBE0B7 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
@@ -102,26 +67,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		186225BB1AAF9058002D71E5 /* Help */ = {
-			isa = PBXGroup;
-			children = (
-				186225BC1AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard */,
-				186225BD1AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets */,
-				186225BE1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.h */,
-				186225BF1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */,
-				186225C01AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.h */,
-				186225C11AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m */,
-				186225C21AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.h */,
-				186225C31AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */,
-				186225C41AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.h */,
-				186225C51AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m */,
-				186225C61AAF9058002D71E5 /* PPBlinkOcrHelpViewController.h */,
-				186225C71AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m */,
-			);
-			name = Help;
-			path = ../../Help;
-			sourceTree = "<group>";
-		};
 		187391FA1AA4B1060031D6C9 = {
 			isa = PBXGroup;
 			children = (
@@ -149,8 +94,6 @@
 				187392101AA4B1070031D6C9 /* Main.storyboard */,
 				187392131AA4B1070031D6C9 /* Images.xcassets */,
 				187392151AA4B1070031D6C9 /* LaunchScreen.xib */,
-				186225BB1AAF9058002D71E5 /* Help */,
-				189A57E41AA4E1E000BBE0B7 /* FormOcrOverlay */,
 				187392061AA4B1060031D6C9 /* Supporting Files */,
 			);
 			path = "BlinkOCR-sample";
@@ -161,27 +104,9 @@
 			children = (
 				187392071AA4B1060031D6C9 /* Info.plist */,
 				187392081AA4B1060031D6C9 /* main.m */,
+				186226B51AB1B0A6002D71E5 /* en.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		189A57E41AA4E1E000BBE0B7 /* FormOcrOverlay */ = {
-			isa = PBXGroup;
-			children = (
-				189A57E51AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets */,
-				189A57E61AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.h */,
-				189A57E71AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m */,
-				189A57E81AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib */,
-				189A57E91AA4E1E000BBE0B7 /* PPPivotView.h */,
-				189A57EA1AA4E1E000BBE0B7 /* PPPivotView.m */,
-				189A57EB1AA4E1E000BBE0B7 /* PPScanElement.h */,
-				189A57EC1AA4E1E000BBE0B7 /* PPScanElement.m */,
-				189A57ED1AA4E1E000BBE0B7 /* PPScanResultView.h */,
-				189A57EE1AA4E1E000BBE0B7 /* PPScanResultView.m */,
-				189A57EF1AA4E1E000BBE0B7 /* PPScanResultView.xib */,
-			);
-			name = FormOcrOverlay;
-			path = ../../FormOcrOverlay;
 			sourceTree = "<group>";
 		};
 		189A58101AA4F5D200BBE0B7 /* BlinkOCR.embeddedframework */ = {
@@ -280,19 +205,15 @@
 				189A58261AA4F5D200BBE0B7 /* torchon_pressed.png in Resources */,
 				187392121AA4B1070031D6C9 /* Main.storyboard in Resources */,
 				187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */,
+				186226B71AB1B0A6002D71E5 /* en.strings in Resources */,
 				189A58241AA4F5D200BBE0B7 /* torchon.png in Resources */,
 				189A58201AA4F5D200BBE0B7 /* torchoff.png in Resources */,
 				189A58271AA4F5D200BBE0B7 /* torchon_pressed@2x.png in Resources */,
 				189A581F1AA4F5D200BBE0B7 /* PPbeep.wav in Resources */,
 				187392141AA4B1070031D6C9 /* Images.xcassets in Resources */,
-				189A57F21AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.xib in Resources */,
-				189A57F61AA4E1E000BBE0B7 /* PPScanResultView.xib in Resources */,
-				186225C81AAF9058002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */,
 				189A581E1AA4F5D200BBE0B7 /* ocr_model.zzip in Resources */,
 				189A58231AA4F5D200BBE0B7 /* torchoff_pressed@2x.png in Resources */,
 				189A58251AA4F5D200BBE0B7 /* torchon@2x.png in Resources */,
-				186225C91AAF9058002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */,
-				189A57F01AA4E1E000BBE0B7 /* PPFormOcrOverlay.xcassets in Resources */,
 				189A58221AA4F5D200BBE0B7 /* torchoff_pressed.png in Resources */,
 				189A58211AA4F5D200BBE0B7 /* torchoff@2x.png in Resources */,
 			);
@@ -305,17 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186225CB1AAF9058002D71E5 /* PPBlinkOcrHelpPage2ViewController.m in Sources */,
-				186225CE1AAF9058002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */,
-				186225CA1AAF9058002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */,
-				186225CD1AAF9058002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */,
-				189A57F11AA4E1E000BBE0B7 /* PPFormOcrOverlayViewController.m in Sources */,
-				189A57F41AA4E1E000BBE0B7 /* PPScanElement.m in Sources */,
 				1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */,
-				189A57F51AA4E1E000BBE0B7 /* PPScanResultView.m in Sources */,
 				1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */,
-				189A57F31AA4E1E000BBE0B7 /* PPPivotView.m in Sources */,
-				186225CC1AAF9058002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */,
 				187392091AA4B1060031D6C9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +235,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		186226B51AB1B0A6002D71E5 /* en.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186226B61AB1B0A6002D71E5 /* Base */,
+			);
+			name = en.strings;
+			sourceTree = "<group>";
+		};
 		187392101AA4B1070031D6C9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

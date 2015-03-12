@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 
-#import "PPFormOcrOverlayViewController.h"
 #import <BlinkOCR/BlinkOCR.h>
 
-@interface ViewController () <PPFormOcrOverlayViewControllerDelegate>
+@interface ViewController () <PPScanDelegate>
+
+@property (nonatomic, strong) NSString* rawOcrParserId;
+
+@property (nonatomic, strong) NSString* priceParserId;
 
 @end
 
@@ -19,10 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.rawOcrParserId = @"Raw ocr";
+    self.priceParserId = @"Price";
 }
 
 - (IBAction)didTapScan:(id)sender {
+
     // Check if blink ocr is supported
     NSError *error;
     if ([PPCoordinator isPhotoPayUnsupported:&error]) {
@@ -31,62 +37,90 @@
         return;
     }
 
-    PPScanElement *priceElement = [[PPScanElement alloc] initWithIdentifier:@"Amount" parserFactory:[[PPPriceOcrParserFactory alloc] init]];
-    priceElement.localizedTitle = @"Iznos";
-    priceElement.localizedTooltip = @"Skenirajte iznos za plaćanje";
 
-    PPScanElement *ibanElement = [[PPScanElement alloc] initWithIdentifier:@"IBAN" parserFactory:[[PPIbanOcrParserFactory alloc] init]];
-    ibanElement.localizedTitle = @"IBAN";
-    ibanElement.localizedTooltip = @"Skenirajte IBAN";
+    // Initialize the scanner settings object. This initialize settings with all default values.
+    PPSettings *settings = [[PPSettings alloc] init];
 
-    PPScanElement *referenceElement = [[PPScanElement alloc] initWithIdentifier:@"Reference" parserFactory:[[PPCroReferenceOcrParserFactory alloc] init]];
-    referenceElement.localizedTitle = @"Poziv na broj";
-    referenceElement.localizedTooltip = @"Skenirajte poziv na broj";
-
-    PPSettings* settings = [[PPSettings alloc] init];
+    // Set the license key
     settings.licenseSettings.licenseKey = @"NHF2-TG3T-OS5T-FVRY-CN6R-OTIA-FMRP-TOZL";
+
+    // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
+    PPOcrRecognizerSettings *ocrRecognizerSettings = [[PPOcrRecognizerSettings alloc] init];
+
+    // We want raw OCR parsing
+    [ocrRecognizerSettings addOcrParser:[[PPRawOcrParserFactory alloc] init] name:self.rawOcrParserId];
+
+    // We want to parse prices from raw OCR result as well
+    [ocrRecognizerSettings addOcrParser:[[PPPriceOcrParserFactory alloc] init] name:self.priceParserId];
+
+    // Add the recognizer setting to a list of used recognizer
+    [settings.scanSettings addRecognizerSettings:ocrRecognizerSettings];
 
     // Allocate the recognition coordinator object
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
 
-    PPFormOcrOverlayViewController *overlayViewController = [PPFormOcrOverlayViewController allocFromNibName:@"PPFormOcrOverlayViewController"];
-    overlayViewController.scanElements = @[priceElement, ibanElement, referenceElement];
-    overlayViewController.coordinator = coordinator;
-    overlayViewController.delegate = self;
+    // Initialize the scanning view controller
+    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
 
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:nil
-                                                                                                 overlayViewController:overlayViewController];
-
+    // Present it full screen. The way VC is presented defines the way it's being dismissed in scanningViewControllerDidClose:
     [self presentViewController:scanningViewController animated:YES completion:nil];
 }
 
-#pragma mark - PPFormOcrOverlayViewControllerDelegate
+#pragma mark - PPScanDelegate methods
 
-- (void)formOcrOverlayViewControllerWillClose:(PPFormOcrOverlayViewController *)vc {
+- (void)scanningViewControllerUnauthorizedCamera:(UIViewController<PPScanningViewController> *)scanningViewController {
+
+    CGFloat W = scanningViewController.view.frame.size.width;
+    CGFloat H = scanningViewController.view.frame.size.height;
+    CGFloat w = 300;
+    CGFloat h = 70;
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(scanningViewController.view.frame.origin.x + W/2 - w/2, scanningViewController.view.frame.origin.y + H/2 - h/2, w, h)];
+    label.text = @"Camera not authorized.\nPlease authorize it in:\nSettings->Privacy->Camera.";
+    label.textColor = [UIColor lightGrayColor];
+    label.font = [UIFont systemFontOfSize:15.f];
+    label.numberOfLines = 3;
+    label.textAlignment = NSTextAlignmentCenter;
+
+    label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+
+    [[scanningViewController view] addSubview:label];
+}
+
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
+                  didFindError:(NSError *)error {
+    // Can ignore. See description of the method
+}
+
+- (void)scanningViewControllerDidClose:(UIViewController<PPScanningViewController> *)scanningViewController {
+
+    // As scanning view controller is presented full screen and modally, dismiss it
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)formOcrOverlayViewController:(PPFormOcrOverlayViewController *)vc
-       didFinishScanningWithElements:(NSArray *)scanElements {
+- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
+              didOutputResults:(NSArray *)results {
 
-    // HERE you perform business logic with scanned elements.
-    // for example, this code displays the results in UILabel
+    // find the first recognition result and present it.
+    // you can have more complex logic here, which can, for example compare fields in multiple results
 
-    NSString* res = @"";
-
-    for (PPScanElement* element in scanElements) {
-        if (element.scanned) {
-            res = [res stringByAppendingFormat:@"Scanned %@: %@\n", element.identifier, element.value];
-        } else if (element.edited) {
-            res = [res stringByAppendingFormat:@"Edited %@: %@\n", element.identifier, element.value];
-        } else {
-            res = [res stringByAppendingFormat:@"Empty %@\n", element.identifier];
+    for (PPBaseResult* result in results) {
+        if ([result isKindOfClass:[PPOcrScanResult class]]) {
+            PPOcrScanResult* ocrResult = (PPOcrScanResult*)result;
+            [self processResult:ocrResult];
+            break;
         }
-    }
+    };
+}
 
-    self.labelResult.text = res;
+- (void)processResult:(PPOcrScanResult*)ocrResult {
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"OCR results are:");
+    NSLog(@"Raw ocr: %@", [ocrResult parsedResultForName:self.rawOcrParserId]);
+    NSLog(@"Price: %@", [ocrResult parsedResultForName:self.priceParserId]);
+
+    PPOcrResult* rawOcrObject = [ocrResult ocrResult];
+    NSLog(@"Dimensions of rawOcrObject are %@", NSStringFromCGRect([rawOcrObject box]));
 }
 
 @end
