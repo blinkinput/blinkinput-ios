@@ -18,8 +18,12 @@ DerivedData
 *.xcuserstate
 
 PhotoPay
-PhotoPay.embeddedframework
 
-.html
+buildCommit.txt
+
+package.sh
+
+*.html
+*.zip
 
 
