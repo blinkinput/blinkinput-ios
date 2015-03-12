@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import <BlinkOCR/BlinkOCR.h>
+#import <MicroBlink/MicroBlink.h>
 
 @interface ViewController () <PPScanDelegate>
 
@@ -29,20 +29,29 @@
 
 - (IBAction)didTapScan:(id)sender {
 
-    // Check if blink ocr is supported
+    /** 0. Check if scanning is supported */
+
     NSError *error;
-    if ([PPCoordinator isPhotoPayUnsupported:&error]) {
+    if ([PPCoordinator isScanningUnsupported:&error]) {
         NSString *messageString = [error localizedDescription];
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
         return;
     }
 
 
+    /** 1. Initialize the Scanning settings */
+
     // Initialize the scanner settings object. This initialize settings with all default values.
     PPSettings *settings = [[PPSettings alloc] init];
 
-    // Set the license key
+
+    /** 2. Setup the license key */
+
+    // To obtain the license key, contact us at help.microblink.com with the bundle-id of your app
     settings.licenseSettings.licenseKey = @"NHF2-TG3T-OS5T-FVRY-CN6R-OTIA-FMRP-TOZL";
+
+
+    /** 3. Set up what is being scanned. See detailed guides for specific use cases. Here's an example for initializing raw OCR scanning. */
 
     // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
     PPOcrRecognizerSettings *ocrRecognizerSettings = [[PPOcrRecognizerSettings alloc] init];
@@ -56,40 +65,31 @@
     // Add the recognizer setting to a list of used recognizer
     [settings.scanSettings addRecognizerSettings:ocrRecognizerSettings];
 
-    // Allocate the recognition coordinator object
+
+    /** 4. Initialize the Scanning Coordinator object */
+
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
 
-    // Initialize the scanning view controller
+
+    /** 5. Initialize the scanning view controller */
     UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
 
-    // Present it full screen. The way VC is presented defines the way it's being dismissed in scanningViewControllerDidClose:
+
+    /** 6 Present it full screen. The way VC is presented defines the way it's being dismissed in scanningViewControllerDidClose: */
+
+    // You can use other presentation methods as well
     [self presentViewController:scanningViewController animated:YES completion:nil];
 }
 
 #pragma mark - PPScanDelegate methods
 
 - (void)scanningViewControllerUnauthorizedCamera:(UIViewController<PPScanningViewController> *)scanningViewController {
-
-    CGFloat W = scanningViewController.view.frame.size.width;
-    CGFloat H = scanningViewController.view.frame.size.height;
-    CGFloat w = 300;
-    CGFloat h = 70;
-
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(scanningViewController.view.frame.origin.x + W/2 - w/2, scanningViewController.view.frame.origin.y + H/2 - h/2, w, h)];
-    label.text = @"Camera not authorized.\nPlease authorize it in:\nSettings->Privacy->Camera.";
-    label.textColor = [UIColor lightGrayColor];
-    label.font = [UIFont systemFontOfSize:15.f];
-    label.numberOfLines = 3;
-    label.textAlignment = NSTextAlignmentCenter;
-
-    label.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
-
-    [[scanningViewController view] addSubview:label];
+    // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
 }
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
                   didFindError:(NSError *)error {
-    // Can ignore. See description of the method
+    // Can be ignored. See description of the method
 }
 
 - (void)scanningViewControllerDidClose:(UIViewController<PPScanningViewController> *)scanningViewController {
@@ -101,8 +101,8 @@
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
               didOutputResults:(NSArray *)results {
 
-    // find the first recognition result and present it.
-    // you can have more complex logic here, which can, for example compare fields in multiple results
+    // Here you process scanning results. Scanning results are given in the array of PPBaseResult objects.
+    // Perform your logic here
 
     for (PPBaseResult* result in results) {
         if ([result isKindOfClass:[PPOcrScanResult class]]) {

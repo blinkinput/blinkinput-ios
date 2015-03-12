@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import <BlinkOCR/PPOcrRecognizerSettings.h>
+#import <MicroBlink/PPOcrRecognizerSettings.h>
 
 /**
  * The easiest way to UI for Ocr scanning is by specifying the PPScanElements.

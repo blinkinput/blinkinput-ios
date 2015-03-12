@@ -8,7 +8,7 @@
 
 #import "PPFormOcrOverlayViewController.h"
 
-#import <BlinkOCR/PPModernOcrResultOverlaySubview.h>
+#import <MicroBlink/PPModernOcrResultOverlaySubview.h>
 
 #import "PPPivotView.h"
 #import "PPScanResultView.h"
