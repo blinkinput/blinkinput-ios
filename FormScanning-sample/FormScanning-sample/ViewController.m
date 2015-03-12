@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "PPFormOcrOverlayViewController.h"
-#import <BlinkOCR/BlinkOCR.h>
+#import <MicroBlink/MicroBlink.h>
 
 @interface ViewController () <PPFormOcrOverlayViewControllerDelegate>
 
@@ -25,7 +25,7 @@
 - (IBAction)didTapScan:(id)sender {
     // Check if blink ocr is supported
     NSError *error;
-    if ([PPCoordinator isPhotoPayUnsupported:&error]) {
+    if ([PPCoordinator isScanningUnsupported:&error]) {
         NSString *messageString = [error localizedDescription];
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
         return;
