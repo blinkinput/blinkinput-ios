@@ -95,9 +95,15 @@ MicroBlink's scanning library allows many different Recognizers to be used in th
 |:------------------------------------------|:-----------------------------:|:------------------------------:|
 | **01a - BlinkOCR results**                                                                                || 
 |                                           | PPOcrRecognizerSettings       | PPOcrRecognizerResult          |
+| **01b - PhotoPay Germany results**                                                                        ||                                
+|                                           | PPDeSlipRecognizerSettings    | PPDeSlipRecognizerResult       |
+|                                           | PPDeQrRecognizerSettings      | PPDeQrRecognizerResult         |
 | **01c - PhotoPay Croatia results**                                                                        ||                                
 |                                           | PPCroSlipRecognizerSettings   | PPCroSlipRecognizerResult      |
 |                                           | PPCroPdf417RecognizerSettings | PPCroPdf417RecognizerResult    |
 |                                           | PPCroQrRecognizerSettings     | PPCroQrRecognizerResult        |
+| **01b - PhotoPay Austria results**                                                                        ||                                
+|                                           | PPAusSlipRecognizerSettings   | PPAusSlipRecognizerResult      |
+|                                           | PPAusQrRecognizerSettings     | PPAusQrRecognizerResult        |
 | **01e - PhotoPay Slovenia results**                                                                       ||                                       
 |                                           | PPSloSlipRecognizerSettings   | PPSloSlipRecognizerResult      |
