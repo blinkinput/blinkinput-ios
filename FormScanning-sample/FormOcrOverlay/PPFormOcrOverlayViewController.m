@@ -183,17 +183,19 @@ CGRect CGRectBounds(CGRect rect) {
 
     CGFloat regionMargin = 10.f;
 
-    CGFloat left = self.viewfinder.frame.origin.x + regionMargin;
-    CGFloat top = self.viewfinder.frame.origin.y + regionMargin;
-    CGFloat width = self.viewfinder.frame.size.width - 2 * regionMargin;
-    CGFloat height = self.viewfinder.frame.size.height - 2 * regionMargin;
+    CGFloat viewfinderWidth = self.viewfinder.bounds.size.width;
+    CGFloat viewfinderHeight = self.viewfinder.bounds.size.height;
 
-    self.scanningRegion = CGRectMake(left / self.view.frame.size.width,
-                                     top / self.view.frame.size.height,
-                                     width / self.view.frame.size.width,
-                                     height / self.view.frame.size.height);
+    CGFloat left = self.viewfinder.center.x - viewfinderWidth / 2 + regionMargin;
+    CGFloat top = self.viewfinder.center.y - viewfinderHeight / 2 + regionMargin;
+    CGFloat width = viewfinderWidth - 2 * regionMargin;
+    CGFloat height = viewfinderHeight - 2 * regionMargin;
 
-    [self.containerViewController updateScanningRegion];
+    // We use bounds, since frame might have a transform property on.
+    self.scanningRegion = CGRectMake(left / self.view.bounds.size.width,
+                                     top / self.view.bounds.size.height,
+                                     width / self.view.bounds.size.width,
+                                     height / self.view.bounds.size.height);
 }
 
 #pragma mark - Status bar
@@ -292,15 +294,15 @@ CGRect CGRectBounds(CGRect rect) {
 - (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
             didOutputResults:(NSArray *)results {
 
-    for (PPBaseResult* result in results) {
-        if ([result isKindOfClass:[PPOcrScanResult class]]) {
-            PPOcrScanResult *ocrScanResult = (PPOcrScanResult*)result;
-            [self processOcrScanResult:ocrScanResult];
+    for (PPRecognizerResult* result in results) {
+        if ([result isKindOfClass:[PPOcrRecognizerResult class]]) {
+            PPOcrRecognizerResult *ocrRecognizerResult = (PPOcrRecognizerResult*)result;
+            [self processOcrRecognizerResult:ocrRecognizerResult];
         }
     }
 }
 
-- (void)processOcrScanResult:(PPOcrScanResult*)result {
+- (void)processOcrRecognizerResult:(PPOcrRecognizerResult*)ocrRecognizerResult {
 
     PPScanElement *element = ((PPScanElement*)[self.scanElements objectAtIndex:self.currentElementIndex]);
 
@@ -308,7 +310,7 @@ CGRect CGRectBounds(CGRect rect) {
         return;
     }
 
-    NSString *val = [result parsedResultForName:element.identifier];
+    NSString *val = [ocrRecognizerResult parsedResultForName:element.identifier];
 
     if (val == nil || [val length] == 0) {
         return;
@@ -391,6 +393,13 @@ CGRect CGRectBounds(CGRect rect) {
     }
 
     AudioServicesPlaySystemSound(self.sound);
+}
+
+#pragma mark - Autorotation
+
+// If settings.uiSettings.autorotateOverlay is set to YES, this method defines supported orientations.
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 @end

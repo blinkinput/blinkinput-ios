@@ -101,26 +101,26 @@
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
               didOutputResults:(NSArray *)results {
 
-    // Here you process scanning results. Scanning results are given in the array of PPBaseResult objects.
+    // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
     // Perform your logic here
 
-    for (PPBaseResult* result in results) {
-        if ([result isKindOfClass:[PPOcrScanResult class]]) {
-            PPOcrScanResult* ocrResult = (PPOcrScanResult*)result;
-            [self processResult:ocrResult];
+    for (PPRecognizerResult *result in results) {
+        if ([result isKindOfClass:[PPOcrRecognizerResult class]]) {
+            PPOcrRecognizerResult* ocrRecognizerResult = (PPOcrRecognizerResult*)result;
+            [self processOcrRecognizerResult:ocrRecognizerResult];
             break;
         }
     };
 }
 
-- (void)processResult:(PPOcrScanResult*)ocrResult {
+- (void)processOcrRecognizerResult:(PPOcrRecognizerResult*)ocrRecognizerResult {
 
     NSLog(@"OCR results are:");
-    NSLog(@"Raw ocr: %@", [ocrResult parsedResultForName:self.rawOcrParserId]);
-    NSLog(@"Price: %@", [ocrResult parsedResultForName:self.priceParserId]);
+    NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:self.rawOcrParserId]);
+    NSLog(@"Price: %@", [ocrRecognizerResult parsedResultForName:self.priceParserId]);
 
-    PPOcrResult* rawOcrObject = [ocrResult ocrResult];
-    NSLog(@"Dimensions of rawOcrObject are %@", NSStringFromCGRect([rawOcrObject box]));
+    PPOcrLayout* ocrLayout = [ocrRecognizerResult ocrLayout];
+    NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect([ocrLayout box]));
 }
 
 @end
