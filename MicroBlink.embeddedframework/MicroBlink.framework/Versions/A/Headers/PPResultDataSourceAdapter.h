@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPBaseResult.h"
+#import "PPRecognizerResult.h"
 
 @interface PPResultDataSourceAdapter : NSObject
 
-@property (nonatomic, strong) PPBaseResult* result;
+@property (nonatomic, strong) PPRecognizerResult* result;
 
 @property (nonatomic, strong) NSString* title;
 
@@ -23,6 +23,6 @@
 
 @property (nonatomic, strong) NSMutableArray* values;
 
-- (instancetype)initWithResult:(PPBaseResult*)result;
+- (instancetype)initWithResult:(PPRecognizerResult*)result;
 
 @end

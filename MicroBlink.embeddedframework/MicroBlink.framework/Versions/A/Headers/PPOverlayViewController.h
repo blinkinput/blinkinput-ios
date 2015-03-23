@@ -12,7 +12,7 @@
 #import "PPDetectionStatus.h"
 
 @protocol PPOverlayContainerViewController;
-@class PPOcrResult;
+@class PPOcrLayout;
 
 
 /**
@@ -190,7 +190,7 @@
  distinguish consecutive results of the same area on the image
  */
 - (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-          didObtainOcrResult:(PPOcrResult*)ocrResult
+          didObtainOcrResult:(PPOcrLayout*)ocrResult
               withResultName:(NSString*)resultName;
 
 /**
@@ -295,10 +295,5 @@ didFinishRecognitionWithResult:(id)result;
  Overlay View Controller can get Video Capture Preview Layer object from it's delegete.
  */
 - (AVCaptureVideoPreviewLayer*)getPreviewLayer;
-
-/**
- Use from an overlay view controller implementation to notify the container view controller that the scanning region has changed
- */
-- (void)updateScanningRegion;
 
 @end

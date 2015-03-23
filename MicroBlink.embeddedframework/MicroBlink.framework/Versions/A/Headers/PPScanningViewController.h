@@ -13,6 +13,9 @@
  */
 @protocol PPScanningViewController <NSObject>
 
+/** Scanning region */
+@property (nonatomic, assign) CGRect scanningRegion;
+
 /** Pause scanning instantaneously without dismissing the camera view */
 - (void)pauseScanning;
 
@@ -27,8 +30,5 @@
 
 /** Retrieve the current state of scanning */
 - (BOOL)isScanningPaused;
-
-/** Sets the scanning region */
-- (void)setScanningRegion:(CGRect)region;
 
 @end

@@ -55,7 +55,7 @@
 - (void)scanningViewControllerDidClose:(UIViewController<PPScanningViewController>*)scanningViewController;
 
 /**
- * Scanning library did output scanning results (array of PPBaseResult objects). Do your next steps here.
+ * Scanning library did output scanning results (array of PPRecognizerResult objects). Do your next steps here.
  *
  * Depending on how you want to treat the result, you might want to
  * dismiss the scanningViewController here.
@@ -64,11 +64,10 @@
  *
  * Note:
  * - there may be 0, 1, or more than one scanning results.
- * - each scanning result belongs to a common PPBaseResult type. Check it's property resultType to get the actual type
+ * - each scanning result belongs to a common PPRecognizerResult type
  * - handle different types differently
  *
- * @see PPBaseResult
- * @see PPRecognitionResult
+ * @see PPRecognizerResult
  */
 - (void)scanningViewController:(UIViewController<PPScanningViewController>*)scanningViewController
               didOutputResults:(NSArray*)results;

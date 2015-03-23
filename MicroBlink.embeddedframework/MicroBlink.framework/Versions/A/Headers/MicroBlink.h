@@ -1,13 +1,13 @@
 //
-//  PhotoPay.h
-//  PhotoPayFramework
+//  MicroBlink.h
+//  MicroBlinkFramework
 //
 //  Created by Jurica Cerovec on 3/29/12.
-//  Copyright (c) 2012 MicroBlink Ltd. All rights reserved.
+//  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
 //
 
-#ifndef PhotoPayFramework_PhotoPay_h
-#define PhotoPayFramework_PhotoPay_h
+#ifndef PhotoPayFramework_MicroBlink_h
+#define PhotoPayFramework_MicroBlink_h
 
 #import "PPScanDelegate.h"
 
@@ -18,9 +18,9 @@
 
 // BlinkOCR
 #import "PPOcrRecognizerSettings.h"
-#import "PPOcrScanResult.h"
+#import "PPOcrRecognizerResult.h"
 
-// HELPERS
+// Helpers
 #import "PPApp.h"
 
 #endif

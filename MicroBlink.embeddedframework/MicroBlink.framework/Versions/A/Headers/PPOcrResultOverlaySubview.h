@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PPOverlaySubview.h"
 
-@class PPOcrResult;
+@class PPOcrLayout;
 
 @interface PPOcrResultOverlaySubview : PPOverlaySubview
 

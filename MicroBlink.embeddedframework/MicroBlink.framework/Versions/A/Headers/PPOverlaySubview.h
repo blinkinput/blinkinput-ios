@@ -19,7 +19,7 @@
 
 @end
 
-@class PPOcrResult;
+@class PPOcrLayout;
 @class PPOverlayViewController;
 
 /**
@@ -81,13 +81,13 @@
                     withStatus:(PPDetectionStatus)status;
 
 /**
- Overlay reports obtained ocr result
+ Overlay reports obtained ocr layout
 
- Besides the ocr result itself, we get the ID of the result so we can
- distinguish consecutive results of the same area on the image
+ Besides the ocr layout itself, we get the ID of the layout so we can
+ distinguish consecutive layouts of the same area on the image
  */
-- (void)overlayDidObtainOcrResult:(PPOcrResult*)ocrResult
-                   withResultName:(NSString*)resultName;
+- (void)overlayDidObtainOcrLayout:(PPOcrLayout*)ocrLayout
+                   withIdentifier:(NSString*)identifier;
 
 /**
  Overlay ended the recognition cycle with a certain Scanning result.
