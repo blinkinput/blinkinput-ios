@@ -84,10 +84,26 @@
     ((UILabel*)[[self labels] objectAtIndex:self.selectedLabelIndex]).alpha = 1.0f;
 }
 
+- (CGFloat)leftBorderMargin {
+    if (self.centered) {
+        return (self.frame.size.width - ((UILabel*)[self.labels firstObject]).frame.size.width) / 2;
+    } else {
+        return self.borderMargin;
+    }
+}
+
+- (CGFloat)rightBorderMargin {
+    if (self.centered) {
+        return (self.frame.size.width - ((UILabel*)[self.labels lastObject]).frame.size.width) / 2;
+    } else {
+        return self.borderMargin;
+    }
+}
+
 - (void)layoutLabels {
 
     self.elementOffsets = [[NSMutableArray alloc] initWithCapacity:self.labels.count];
-    CGFloat offset = self.borderMargin;
+    CGFloat offset = [self leftBorderMargin];
 
     for (UILabel *label in self.labels) {
         label.center = CGPointMake(offset + label.frame.size.width / 2, self.frame.size.height / 2);
@@ -101,7 +117,7 @@
         offset -= self.marginBetweenElements;
     }
 
-    self.width = offset + self.borderMargin;
+    self.width = offset + [self rightBorderMargin];
 }
 
 - (void)layoutSubviews {
@@ -175,9 +191,9 @@
 
     self.userInteractionEnabled = NO;
 
-    if ([self moveOffset] > 0) {
-        [self animateMoveForOffset:[self moveOffset] completion:nil];
-    }
+    [self animateMoveForOffset:[self moveOffsetFromStart:self.selectedLabelIndex
+                                                   toEnd:self.selectedLabelIndex + 1]
+                    completion:nil];
 
     [self.delegate pivotView:self willSelectIndex:self.selectedLabelIndex + 1];
 
@@ -198,9 +214,9 @@
 
     self.userInteractionEnabled = NO;
 
-    if ([self moveOffset] > 0) {
-        [self animateMoveForOffset:-[self moveOffset] completion:nil];
-    }
+    [self animateMoveForOffset:[self moveOffsetFromStart:self.selectedLabelIndex
+                                                   toEnd:self.selectedLabelIndex - 1]
+                    completion:nil];
 
     [self.delegate pivotView:self willSelectIndex:self.selectedLabelIndex - 1];
 
@@ -241,8 +257,15 @@
     return (UILabel*)[self.labels objectAtIndex:index];
 }
 
-- (CGFloat)moveOffset {
-    return (self.container.bounds.size.width - self.bounds.size.width) / (self.titles.count - 1);
+- (CGFloat)moveOffsetFromStart:(NSUInteger)start toEnd:(NSUInteger)end {
+    if (self.centered) {
+        CGFloat x1 = ((UILabel*)[self.labels objectAtIndex:end]).center.x;
+        CGFloat x2 = ((UILabel*)[self.labels objectAtIndex:start]).center.x;
+        return x1 - x2;
+    } else {
+        CGFloat unit = (self.container.bounds.size.width - self.bounds.size.width) / (self.titles.count - 1);
+        return (unit < 0.0f) ? 0.0f : ((int)end - (int)start) * unit;
+    }
 }
 
 @end

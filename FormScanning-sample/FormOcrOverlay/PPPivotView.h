@@ -46,6 +46,11 @@
 @property (nonatomic, weak) id<PPPivotViewDelegate> delegate;
 
 /**
+ * If yes, Pivot view will be centered.
+ */
+@property (nonatomic, assign) BOOL centered;
+
+/**
  * After initializing the Pivot View and setting the titles property, the caller needs to call
  * update method to set up the View hierarchy.
  */
