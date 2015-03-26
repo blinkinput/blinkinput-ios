@@ -10,10 +10,13 @@
 
 #import "PPOcrParserFactory.h"
 
+// Parser for raw text
+#import "PPRawOcrParserFactory.h"
+
 // Generic Parsers
 #import "PPIbanOcrParserFactory.h"
 #import "PPPriceOcrParserFactory.h"
-#import "PPRawOcrParserFactory.h"
+#import "PPEmailOcrParserFactory.h"
 
 // Swedish Parsers
 #import "PPSwedenAmountOcrParserFactory.h"
