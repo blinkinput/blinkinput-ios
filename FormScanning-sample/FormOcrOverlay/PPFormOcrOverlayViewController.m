@@ -94,6 +94,9 @@ CGRect CGRectBounds(CGRect rect) {
     scanElement.scanned = NO;
     scanElement.edited = NO;
 
+    // set the keyboard type on scan result view
+    self.scanResultView.textField.keyboardType = scanElement.keyboardType;
+
     // setup scannig of first element
     self.ocrRecognizerSettings = [[PPOcrRecognizerSettings alloc] init];
     [self.ocrRecognizerSettings addOcrParser:scanElement.factory
@@ -285,6 +288,8 @@ CGRect CGRectBounds(CGRect rect) {
 
     scanElement.scanned = NO;
     scanElement.edited = NO;
+
+    self.scanResultView.textField.keyboardType = scanElement.keyboardType;
 
     [self.coordinator applySettings];
 }

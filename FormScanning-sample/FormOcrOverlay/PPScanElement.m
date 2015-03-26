@@ -16,6 +16,7 @@
     if (self) {
         _identifier = identifier;
         _factory = factory;
+        _keyboardType = UIKeyboardTypeDefault;
     }
     return self;
 }

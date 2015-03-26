@@ -43,6 +43,11 @@
 @property (nonatomic, strong) NSString *localizedTooltip;
 
 /**
+ * Keyboard type used when editing
+ */
+@property (nonatomic, assign) UIKeyboardType keyboardType;
+
+/**
  * YES if the value was scanned, NO otherwise.
  * Note: Both scanned and edited cannot be set to YES.
  */
