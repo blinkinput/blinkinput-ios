@@ -179,7 +179,7 @@ CGRect CGRectBounds(CGRect rect) {
     scanElement.scanned = NO;
     scanElement.value = self.scanResultView.textField.text;
 
-    [[self containerViewController] resumeScanningWithoutStateReset];
+    [[self containerViewController] resumeScanningAndResetState:NO];
 }
 
 - (void)updateScanningRegion {
