@@ -48,7 +48,7 @@
     /** 2. Setup the license key */
 
     // To obtain the license key, contact us at help.microblink.com with the bundle-id of your app
-    settings.licenseSettings.licenseKey = @"NHF2-TG3T-OS5T-FVRY-CN6R-OTIA-FMRP-TOZL";
+    settings.licenseSettings.licenseKey = @"ZEC22SNK-JUZP4LEP-SLTIXJMJ-OJDOHP3V-E6L2B4ZX-TS2AMI5Z-LVLMZS5N-W7ZDVAAM";
 
 
     /** 3. Set up what is being scanned. See detailed guides for specific use cases. Here's an example for initializing raw OCR scanning. */
