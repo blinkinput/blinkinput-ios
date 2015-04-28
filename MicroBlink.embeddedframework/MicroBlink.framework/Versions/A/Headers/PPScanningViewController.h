@@ -9,26 +9,42 @@
 #import <Foundation/Foundation.h>
 
 /**
- Protocol for View controllers which present camera and provide scanning features
+ * Protocol for View controllers which present camera and provide scanning features
  */
 @protocol PPScanningViewController <NSObject>
 
-/** Scanning region */
+/**
+ * Scanning region
+ * Defines a portion of the screen in which the scanning will be performed.
+ * Given as a CGRect with unit coordinating system:
+ *
+ * @example CGRectMake(0.2f, 0.5f, 0.4f, 0.3f) defines a portion of the screen which starts at 
+ *   20% from the left border
+ *   50% from the top
+ *   covers 40% of screen width
+ *   and 30% of screen heeight
+ */
 @property (nonatomic, assign) CGRect scanningRegion;
 
-/** Pause scanning instantaneously without dismissing the camera view */
+/**
+ * Pause scanning without dismissing the camera view
+ */
 - (void)pauseScanning;
 
-/** Resumes scanning instantaneously */
-- (void)resumeScanning;
-
-/** 
- * Resumes scanning instantaneously, but doesn't reset internal scate.
- * Use it if you continue to scan the same object. E.g IBAN, or price, and want to achieve more accurate result
+/**
+ * Retrieve the current state of scanning
+ *
+ *  @return YES if scanning is paused. NO if it's in progress
  */
-- (void)resumeScanningWithoutStateReset;
-
-/** Retrieve the current state of scanning */
 - (BOOL)isScanningPaused;
+
+/**
+ * Resumes scanning. Optionally, internal state of recognizers can be reset in the process.
+ * Internal state should NOT be reset if you continue to scan the same object to obtain the result with higher confidence.
+ * If you start scanning some new object, state reset should be performed.
+ *
+ *  @param resetState YES if state should be reset.
+ */
+- (void)resumeScanningAndResetState:(BOOL)resetState;
 
 @end

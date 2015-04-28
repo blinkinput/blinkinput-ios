@@ -1,3 +1,13 @@
+### Transition to 0.9.3
+
+- This version uses a new license key format. If you had a license key generated prior to v0.9.3, contact us so we can regenerate the license key for you.
+
+- `PPCoordinator` class now exposes fewer public methods and properties.
+
+- `PPScanningViewController`'s methods `resumeScanning` and `resumeScanningWithoutStateReset` merged into one `resumeScanningAndResetState:`. 
+        - All calls to `resumeScanning` replace with `resumeScanningAndResetState:YES`.
+        - All calls to `resumeScanningWithoutStateReset` replace with `resumeScanningAndResetState:NO`
+
 ### Transition to 0.9.2
 
 - Classes representing scanning results were renamed. Renaming was performed to match naming convention of `PPRecognizerSettings` hierarcy: now each `PPRecognizerSettings` class has it's matching `PPRecognizerResult`. Replace all existing references to old class names with the new ones:
