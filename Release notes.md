@@ -1,3 +1,24 @@
+## 0.9.4
+
+- Added direct processing API which you can use to perform OCR on UIIMage objects.
+
+- Added NoCamera-sample project which shows how to use direct processing API
+
+- You can now specify OcrEngine options to RawOcrEngineParser object.
+        - in the options, you can customize OCR engine parameteres, like char whitelist used, minimal and maximal line sizes, etc.
+        
+- Updated OCR models with support for more special characters like currency symbols
+
+## 0.9.3
+
+- This version uses a new license key format. If you had a license key generated prior to v0.9.3, contact us so we can regenerate the license key for you.
+
+- `PPCoordinator` class now exposes fewer public methods and properties.
+
+- `PPScanningViewController`'s methods `resumeScanning` and `resumeScanningWithoutStateReset` merged into one `resumeScanningAndResetState:`. 
+        - All calls to `resumeScanning` replace with `resumeScanningAndResetState:YES`.
+        - All calls to `resumeScanningWithoutStateReset` replace with `resumeScanningAndResetState:NO`
+
 ## 0.9.2
 
 - Naming changes in API (see Transition guide)

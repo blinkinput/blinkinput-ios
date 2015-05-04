@@ -1,3 +1,7 @@
+### Transition to 0.9.4
+
+- You don't have to perform any changes to version 0.9.3
+
 ### Transition to 0.9.3
 
 - This version uses a new license key format. If you had a license key generated prior to v0.9.3, contact us so we can regenerate the license key for you.
