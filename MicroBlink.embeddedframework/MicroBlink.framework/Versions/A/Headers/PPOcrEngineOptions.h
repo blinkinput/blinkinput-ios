@@ -22,10 +22,13 @@ typedef NS_ENUM(NSUInteger, PPOcrFont) {
     PP_OCR_FONT_BEMBO,
     PP_OCR_FONT_BODONI,
     PP_OCR_FONT_CALIBRI,
+    PP_OCR_FONT_CALIBRI_BOLD,
     PP_OCR_FONT_COMIC_SANS,
     PP_OCR_FONT_CONCERTO_ROUNDED_SG,
     PP_OCR_FONT_COURIER,
     PP_OCR_FONT_COURIER_BOLD,
+    PP_OCR_FONT_COURIER_NEW_CE,
+    PP_OCR_FONT_COURIER_CONDENSED,
     PP_OCR_FONT_DEJAVU_SANS_MONO,
     PP_OCR_FONT_DIN,
     PP_OCR_FONT_EUROPA_GROTESK_NO_2_SB_BOLD,
@@ -76,13 +79,10 @@ typedef NS_ENUM(NSUInteger, PPOcrFont) {
 
     // from now on "special" fonts
     PP_OCR_FONT_MICR,
-    PP_OCR_FONT_MATH_SYMBOLS,
     PP_OCR_FONT_HANDWRITING,
-    PP_OCR_FONT_UNKNOWN_GERMAN,
-    PP_OCR_FONT_UNKNOWN_UCROATIAN,
     PP_OCR_FONT_UNKNOWN,
     PP_OCR_FONT_ANY,
-    PP_OCR_FONT_UNKNOWN_MATH1,
+    PP_OCR_FONT_UNKNOWN_MATH,
     PP_OCR_FONT_UKDL_LIGHT,
 };
 
@@ -176,6 +176,14 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * If you have color text, don't use it at all because color dropout will remove the text.
  */
 @property (nonatomic, assign) BOOL colorDropoutEnabled;
+
+/**
+ * Specifies if the image processing is performed on image 
+ *
+ * By default it's set to true.
+ * Disable it only if you perform your own image processing.
+ */
+@property (nonatomic, assign) BOOL imageProcessingEnabled;
 
 /**
  * Whitelist of characters used in the OCR process. The set must contain PPOcrCharKey objects.
