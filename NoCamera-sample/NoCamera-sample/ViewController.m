@@ -113,7 +113,7 @@
 
 
     /** 2. Setup the license key */
-    settings.licenseSettings.licenseKey = @"MMB3TFHU-U6T3TKVP-KP7HRSND-2N2C6YNU-MIZQCY25-HVGAV7TY-ZGR5G5BP-UEAPHX7F";
+    settings.licenseSettings.licenseKey = @"ASU26BCE-6SSE44DL-LAAOVEIR-Q6GWUWQT-3YIYPDLK-LIJ54EMH-RVVFUE66-2FKOST3H";
 
 
     /** 3. Set up what is being scanned. See detailed guides for specific use cases. Here's an example for initializing raw and price OCR scanning. */
