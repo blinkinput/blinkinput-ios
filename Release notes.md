@@ -1,3 +1,9 @@
+## 0.9.5
+
+- Updates in OCR engine performance
+
+- Added method in PPOcrEngineOptions to completely disable image processing inside BlinkOCR
+
 ## 0.9.4
 
 - Added direct processing API which you can use to perform OCR on UIIMage objects.
