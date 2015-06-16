@@ -1,3 +1,13 @@
+## 0.9.6
+
+- Added didOutputMetadata callback method to PPOverlayViewControllers
+
+- Fixed bug which caused Overlay events to be called when direct (static) OCR processing is used. Direct OCR processing now only reports events to PPScanDelegate instance.
+
+- Fixed bug which caused image property of PPImageMetadata not take the image orientation into account
+
+- Added Metadata for obtaining images that are processed for OCR
+
 ## 0.9.5
 
 - Updates in OCR engine performance

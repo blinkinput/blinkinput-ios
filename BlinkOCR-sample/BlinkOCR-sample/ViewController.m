@@ -38,6 +38,8 @@
         return;
     }
 
+    NSLog(@"BlinkOCR SDK version: %@", [PPCoordinator getBuildVersionString]);
+
 
     /** 1. Initialize the Scanning settings */
 
