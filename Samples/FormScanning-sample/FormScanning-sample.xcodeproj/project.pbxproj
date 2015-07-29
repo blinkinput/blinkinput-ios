@@ -39,6 +39,10 @@
 		1862273D1AB1C3D9002D71E5 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227321AB1C3D9002D71E5 /* torchon@2x.png */; };
 		1862273E1AB1C3D9002D71E5 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227331AB1C3D9002D71E5 /* torchon_pressed.png */; };
 		1862273F1AB1C3D9002D71E5 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227341AB1C3D9002D71E5 /* torchon_pressed@2x.png */; };
+		18CC82071B697EBE000F6DA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC82061B697EBE000F6DA5 /* AVFoundation.framework */; };
+		18CC82091B697EC4000F6DA5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC82081B697EC4000F6DA5 /* CoreMedia.framework */; };
+		18CC820B1B697ECE000F6DA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */; };
+		18CC820D1B697ED5000F6DA5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC820C1B697ED5000F6DA5 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +91,10 @@
 		186227321AB1C3D9002D71E5 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
 		186227331AB1C3D9002D71E5 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
 		186227341AB1C3D9002D71E5 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
+		18CC82061B697EBE000F6DA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18CC82081B697EC4000F6DA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		18CC820C1B697ED5000F6DA5 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CC820B1B697ECE000F6DA5 /* AudioToolbox.framework in Frameworks */,
+				18CC82091B697EC4000F6DA5 /* CoreMedia.framework in Frameworks */,
+				18CC82071B697EBE000F6DA5 /* AVFoundation.framework in Frameworks */,
 				186227351AB1C3D9002D71E5 /* MicroBlink.framework in Frameworks */,
+				18CC820D1B697ED5000F6DA5 /* libiconv.dylib in Frameworks */,
 				186226B41AB1A9B5002D71E5 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +119,7 @@
 			children = (
 				1862264C1AB1A948002D71E5 /* FormScanning-sample */,
 				1862269A1AB1A99A002D71E5 /* Frameworks */,
+				18CC820C1B697ED5000F6DA5 /* libiconv.dylib */,
 				186226B31AB1A9B5002D71E5 /* libc++.dylib */,
 				1862264B1AB1A948002D71E5 /* Products */,
 			);
@@ -187,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				186227281AB1C3D9002D71E5 /* MicroBlink.embeddedframework */,
+				18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */,
+				18CC82081B697EC4000F6DA5 /* CoreMedia.framework */,
+				18CC82061B697EBE000F6DA5 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
