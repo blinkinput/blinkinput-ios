@@ -155,9 +155,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)processOcrRecognizerResult:(PPOcrRecognizerResult*)ocrRecognizerResult {
-
-    ;
-}
-
 @end

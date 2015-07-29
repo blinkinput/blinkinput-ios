@@ -8,7 +8,7 @@
 
 # BlinkOCR SDK for real time text recognition
 
-BlinkOCR SDK is a state-of-the-art OCR product for mobile devices. It's OCR technology is optimized specifically for mobile devices and architectures. This allows faster results and lower error rate than regular desktop-based OCR software. BlinkOCR features: 
+BlinkOCR SDK is a state-of-the-art OCR module for mobile devices. It's OCR technology is optimized specifically for mobile devices and architectures. This allows faster results and lower error rate than regular desktop-based OCR software. BlinkOCR features: 
 
 - integrated camera management
 - integrated **text parsing** feature for fields like IBANs, prices, email addresses, urls, and many more!
