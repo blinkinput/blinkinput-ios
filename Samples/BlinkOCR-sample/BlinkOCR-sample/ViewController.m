@@ -27,18 +27,21 @@
     self.priceParserId = @"Price";
 }
 
-- (IBAction)didTapScan:(id)sender {
+/**
+ * Method allocates and initializes the Scanning coordinator object.
+ * Coordinator is initialized with settings for scanning
+ *
+ *  @param error Error object, if scanning isn't supported
+ *
+ *  @return initialized coordinator
+ */
+- (PPCoordinator *)coordinatorWithError:(NSError**)error {
 
     /** 0. Check if scanning is supported */
 
-    NSError *error;
-    if ([PPCoordinator isScanningUnsupported:&error]) {
-        NSString *messageString = [error localizedDescription];
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
-        return;
+    if ([PPCoordinator isScanningUnsupported:error]) {
+        return nil;
     }
-
-    NSLog(@"BlinkOCR SDK version: %@", [PPCoordinator getBuildVersionString]);
 
 
     /** 1. Initialize the Scanning settings */
@@ -49,11 +52,14 @@
 
     /** 2. Setup the license key */
 
-    // To obtain the license key, contact us at help.microblink.com with the bundle-id of your app
+    // Visit www.microblink.com to get the license key for your app
     settings.licenseSettings.licenseKey = @"GUS3IR6Y-3SVQVQVD-6DFO4LEP-SLRGVXPG-ROSYS4SG-4O7XKJ4X-UDZTPHFU-7BZF6EZJ";
 
 
-    /** 3. Set up what is being scanned. See detailed guides for specific use cases. Here's an example for initializing raw OCR scanning. */
+    /** 
+     * 3. Set up what is being scanned. See detailed guides for specific use cases.
+     * Here's an example for initializing raw OCR scanning. 
+     */
 
     // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
     PPOcrRecognizerSettings *ocrRecognizerSettings = [[PPOcrRecognizerSettings alloc] init];
@@ -72,18 +78,35 @@
 
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
 
+    return coordinator;
+}
 
-    /** 5. Initialize the scanning view controller */
+- (IBAction)didTapScan:(id)sender {
+
+    /** Instantiate the scanning coordinator */
+    NSError *error;
+    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+
+    /** If scanning isn't supported, present an error */
+    if (coordinator == nil) {
+        NSString *messageString = [error localizedDescription];
+        [[[UIAlertView alloc] initWithTitle:@"Warning"
+                                    message:messageString
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil, nil] show];
+
+        return;
+    }
+
+    /** Allocate and present the scanning view controller */
     UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
 
-
-    /** 6 Present it full screen. The way VC is presented defines the way it's being dismissed in scanningViewControllerDidClose: */
-
-    // You can use other presentation methods as well
+    /** You can use other presentation methods as well */
     [self presentViewController:scanningViewController animated:YES completion:nil];
 }
 
-#pragma mark - PPScanDelegate methods
+#pragma mark - PPScanDelegate
 
 - (void)scanningViewControllerUnauthorizedCamera:(UIViewController<PPScanningViewController> *)scanningViewController {
     // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
@@ -104,25 +127,37 @@
               didOutputResults:(NSArray *)results {
 
     // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-    // Perform your logic here
 
-    for (PPRecognizerResult *result in results) {
+    // first, pause scanning until we process all the results
+    [scanningViewController pauseScanning];
+
+    // Collect data from the result
+    for (PPRecognizerResult* result in results) {
+
         if ([result isKindOfClass:[PPOcrRecognizerResult class]]) {
             PPOcrRecognizerResult* ocrRecognizerResult = (PPOcrRecognizerResult*)result;
-            [self processOcrRecognizerResult:ocrRecognizerResult];
-            break;
+
+            NSLog(@"OCR results are:");
+            NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:self.rawOcrParserId]);
+            NSLog(@"Price: %@", [ocrRecognizerResult parsedResultForName:self.priceParserId]);
+
+            PPOcrLayout* ocrLayout = [ocrRecognizerResult ocrLayout];
+            NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect([ocrLayout box]));
         }
     };
+
+    // resume scanning while preserving internal recognizer state
+    [scanningViewController resumeScanningAndResetState:NO];
+}
+
+// dismiss the scanning view controller when user presses OK.
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)processOcrRecognizerResult:(PPOcrRecognizerResult*)ocrRecognizerResult {
 
-    NSLog(@"OCR results are:");
-    NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:self.rawOcrParserId]);
-    NSLog(@"Price: %@", [ocrRecognizerResult parsedResultForName:self.priceParserId]);
-
-    PPOcrLayout* ocrLayout = [ocrRecognizerResult ocrLayout];
-    NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect([ocrLayout box]));
+    ;
 }
 
 @end

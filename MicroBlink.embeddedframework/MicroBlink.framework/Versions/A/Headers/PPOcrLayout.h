@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "PPOcrFont.h"
+
 @class PPOcrBlock;
 @class PPOcrLine;
 @class PPOcrChar;
@@ -44,6 +46,11 @@
  * (i.e. coordinate system of the image) to the coordinate system of the device screen.
  */
 @property (nonatomic, assign) CGAffineTransform transform;
+
+/**
+ * OCR layout was recognized from flipped image
+ */
+@property (nonatomic, assign) BOOL flipped;
 
 /**
  * Initializer from blocks and transformation
@@ -174,9 +181,26 @@
 @property (nonatomic, assign) NSInteger quality;
 
 /**
+ * Font of the character
+ */
+@property (nonatomic, assign) PPOcrFont font;
+
+/**
+ * Alternative characters which are possible instead of this character.
+ *
+ * In the list of characters, each char (unicode value), can appear multiple times, each time with different font.
+ * This means variant is uniquely defined with a combination of value and font properties.
+ *
+ * Each variant has quality property set, so you can use it to verify other options.
+ *
+ * @Warning If you use variants, please note you need to take font into account.
+ */
+@property (nonatomic, strong) NSSet *variants;
+
+/**
  * Initializer for a char
  *
- *  @param value    unicide value
+ *  @param value    unicode value
  *  @param position position on the image
  *  @param height   height of the char
  *
@@ -232,7 +256,8 @@
 /**
  * Creates a position with offset to a current position. Offset is added.
  *
- *  @param offset
+ *  @param offset Offset by which new position is displaced from the current one. 
+ *      It's specified with CGPoint, where x value defines x offset, and y value defines y offset
  *
  *  @return position with offset
  */
@@ -241,21 +266,21 @@
 /**
  * Helper method converting Position to CGRect
  *
- *  @return CGRect
+ *  @return Position converted to CGRect
  */
 - (CGRect)rect;
 
 /**
  * Helper method calculating the center of the Position
  *
- *  @return center
+ *  @return center of the position.
  */
 - (CGPoint)center;
 
 /**
- * Helper method calcualting the height of the position
+ * Helper method calculating the height of the position
  *
- *  @return height
+ *  @return height of the position
  */
 - (CGFloat)height;
 

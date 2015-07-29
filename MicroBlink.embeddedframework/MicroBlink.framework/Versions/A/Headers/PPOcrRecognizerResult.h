@@ -9,6 +9,11 @@
 #import "PPRecognizerResult.h"
 #import "PPOcrLayout.h"
 
+/**
+ * Result of scanning with OCR Recognizer
+ *
+ * For each parser group, the result contains one Ocr Layout, and one or more parsed results.
+ */
 @interface PPOcrRecognizerResult : PPRecognizerResult
 
 /**

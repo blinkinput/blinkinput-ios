@@ -8,39 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		186226B71AB1B0A6002D71E5 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 186226B51AB1B0A6002D71E5 /* en.strings */; };
-		1862271D1AB1BCF9002D71E5 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186227111AB1BCF9002D71E5 /* MicroBlink.framework */; };
-		1862271E1AB1BCF9002D71E5 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 186227131AB1BCF9002D71E5 /* ocr_model.zzip */; };
-		1862271F1AB1BCF9002D71E5 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 186227141AB1BCF9002D71E5 /* PPbeep.wav */; };
-		186227201AB1BCF9002D71E5 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227151AB1BCF9002D71E5 /* torchoff.png */; };
-		186227211AB1BCF9002D71E5 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227161AB1BCF9002D71E5 /* torchoff@2x.png */; };
-		186227221AB1BCF9002D71E5 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227171AB1BCF9002D71E5 /* torchoff_pressed.png */; };
-		186227231AB1BCF9002D71E5 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227181AB1BCF9002D71E5 /* torchoff_pressed@2x.png */; };
-		186227241AB1BCF9002D71E5 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227191AB1BCF9002D71E5 /* torchon.png */; };
-		186227251AB1BCF9002D71E5 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862271A1AB1BCF9002D71E5 /* torchon@2x.png */; };
-		186227261AB1BCF9002D71E5 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862271B1AB1BCF9002D71E5 /* torchon_pressed.png */; };
-		186227271AB1BCF9002D71E5 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862271C1AB1BCF9002D71E5 /* torchon_pressed@2x.png */; };
 		187392091AA4B1060031D6C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187392081AA4B1060031D6C9 /* main.m */; };
 		1873920C1AA4B1070031D6C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920B1AA4B1070031D6C9 /* AppDelegate.m */; };
 		1873920F1AA4B1070031D6C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873920E1AA4B1070031D6C9 /* ViewController.m */; };
 		187392121AA4B1070031D6C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187392101AA4B1070031D6C9 /* Main.storyboard */; };
 		187392141AA4B1070031D6C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187392131AA4B1070031D6C9 /* Images.xcassets */; };
 		187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187392151AA4B1070031D6C9 /* LaunchScreen.xib */; };
-		189A580E1AA4EE6400BBE0B7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 189A580D1AA4EE6400BBE0B7 /* libc++.dylib */; };
+		18CC81E81B6970CF000F6DA5 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81DB1B6970CF000F6DA5 /* MicroBlink.framework */; };
+		18CC81E91B6970CF000F6DA5 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81DD1B6970CF000F6DA5 /* en.strings */; };
+		18CC81EA1B6970CF000F6DA5 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81DE1B6970CF000F6DA5 /* ocr_model.zzip */; };
+		18CC81EB1B6970CF000F6DA5 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81DF1B6970CF000F6DA5 /* PPbeep.wav */; };
+		18CC81EC1B6970CF000F6DA5 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E01B6970CF000F6DA5 /* torchoff.png */; };
+		18CC81ED1B6970CF000F6DA5 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E11B6970CF000F6DA5 /* torchoff@2x.png */; };
+		18CC81EE1B6970CF000F6DA5 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E21B6970CF000F6DA5 /* torchoff_pressed.png */; };
+		18CC81EF1B6970CF000F6DA5 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E31B6970CF000F6DA5 /* torchoff_pressed@2x.png */; };
+		18CC81F01B6970CF000F6DA5 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E41B6970CF000F6DA5 /* torchon.png */; };
+		18CC81F11B6970CF000F6DA5 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E51B6970CF000F6DA5 /* torchon@2x.png */; };
+		18CC81F21B6970CF000F6DA5 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E61B6970CF000F6DA5 /* torchon_pressed.png */; };
+		18CC81F31B6970CF000F6DA5 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CC81E71B6970CF000F6DA5 /* torchon_pressed@2x.png */; };
+		18CC81F51B6970F8000F6DA5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81F41B6970F8000F6DA5 /* libc++.dylib */; };
+		18CC81F71B697101000F6DA5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81F61B697101000F6DA5 /* CoreMedia.framework */; };
+		18CC81F91B697106000F6DA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81F81B697106000F6DA5 /* AVFoundation.framework */; };
+		18CC81FB1B69710E000F6DA5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81FA1B69710E000F6DA5 /* libiconv.dylib */; };
+		18CC81FD1B697133000F6DA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC81FC1B697133000F6DA5 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		186226B61AB1B0A6002D71E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/en.strings; sourceTree = "<group>"; };
-		186227111AB1BCF9002D71E5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
-		186227131AB1BCF9002D71E5 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
-		186227141AB1BCF9002D71E5 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
-		186227151AB1BCF9002D71E5 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
-		186227161AB1BCF9002D71E5 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
-		186227171AB1BCF9002D71E5 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
-		186227181AB1BCF9002D71E5 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
-		186227191AB1BCF9002D71E5 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
-		1862271A1AB1BCF9002D71E5 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
-		1862271B1AB1BCF9002D71E5 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
-		1862271C1AB1BCF9002D71E5 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
 		187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187392071AA4B1060031D6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187392081AA4B1060031D6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,7 +45,23 @@
 		187392111AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		187392131AA4B1070031D6C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		187392161AA4B1070031D6C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		189A580D1AA4EE6400BBE0B7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		18CC81DB1B6970CF000F6DA5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
+		18CC81DD1B6970CF000F6DA5 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		18CC81DE1B6970CF000F6DA5 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
+		18CC81DF1B6970CF000F6DA5 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
+		18CC81E01B6970CF000F6DA5 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
+		18CC81E11B6970CF000F6DA5 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
+		18CC81E21B6970CF000F6DA5 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
+		18CC81E31B6970CF000F6DA5 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
+		18CC81E41B6970CF000F6DA5 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
+		18CC81E51B6970CF000F6DA5 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
+		18CC81E61B6970CF000F6DA5 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
+		18CC81E71B6970CF000F6DA5 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
+		18CC81F41B6970F8000F6DA5 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		18CC81F61B697101000F6DA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		18CC81F81B697106000F6DA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18CC81FA1B69710E000F6DA5 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		18CC81FC1B697133000F6DA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,41 +69,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1862271D1AB1BCF9002D71E5 /* MicroBlink.framework in Frameworks */,
-				189A580E1AA4EE6400BBE0B7 /* libc++.dylib in Frameworks */,
+				18CC81FD1B697133000F6DA5 /* AudioToolbox.framework in Frameworks */,
+				18CC81FB1B69710E000F6DA5 /* libiconv.dylib in Frameworks */,
+				18CC81F91B697106000F6DA5 /* AVFoundation.framework in Frameworks */,
+				18CC81F71B697101000F6DA5 /* CoreMedia.framework in Frameworks */,
+				18CC81F51B6970F8000F6DA5 /* libc++.dylib in Frameworks */,
+				18CC81E81B6970CF000F6DA5 /* MicroBlink.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		186227101AB1BCF9002D71E5 /* MicroBlink.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				186227111AB1BCF9002D71E5 /* MicroBlink.framework */,
-				186227121AB1BCF9002D71E5 /* Resources */,
-			);
-			name = MicroBlink.embeddedframework;
-			path = ../../MicroBlink.embeddedframework;
-			sourceTree = "<group>";
-		};
-		186227121AB1BCF9002D71E5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				186227131AB1BCF9002D71E5 /* ocr_model.zzip */,
-				186227141AB1BCF9002D71E5 /* PPbeep.wav */,
-				186227151AB1BCF9002D71E5 /* torchoff.png */,
-				186227161AB1BCF9002D71E5 /* torchoff@2x.png */,
-				186227171AB1BCF9002D71E5 /* torchoff_pressed.png */,
-				186227181AB1BCF9002D71E5 /* torchoff_pressed@2x.png */,
-				186227191AB1BCF9002D71E5 /* torchon.png */,
-				1862271A1AB1BCF9002D71E5 /* torchon@2x.png */,
-				1862271B1AB1BCF9002D71E5 /* torchon_pressed.png */,
-				1862271C1AB1BCF9002D71E5 /* torchon_pressed@2x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		187391FA1AA4B1060031D6C9 = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +126,42 @@
 		189EA8DE1AADE7FE005732C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				186227101AB1BCF9002D71E5 /* MicroBlink.embeddedframework */,
-				189A580D1AA4EE6400BBE0B7 /* libc++.dylib */,
+				18CC81DA1B6970CF000F6DA5 /* MicroBlink.embeddedframework */,
+				18CC81FC1B697133000F6DA5 /* AudioToolbox.framework */,
+				18CC81F81B697106000F6DA5 /* AVFoundation.framework */,
+				18CC81F61B697101000F6DA5 /* CoreMedia.framework */,
+				18CC81FA1B69710E000F6DA5 /* libiconv.dylib */,
+				18CC81F41B6970F8000F6DA5 /* libc++.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18CC81DA1B6970CF000F6DA5 /* MicroBlink.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				18CC81DB1B6970CF000F6DA5 /* MicroBlink.framework */,
+				18CC81DC1B6970CF000F6DA5 /* Resources */,
+			);
+			name = MicroBlink.embeddedframework;
+			path = ../../MicroBlink.embeddedframework;
+			sourceTree = "<group>";
+		};
+		18CC81DC1B6970CF000F6DA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18CC81DD1B6970CF000F6DA5 /* en.strings */,
+				18CC81DE1B6970CF000F6DA5 /* ocr_model.zzip */,
+				18CC81DF1B6970CF000F6DA5 /* PPbeep.wav */,
+				18CC81E01B6970CF000F6DA5 /* torchoff.png */,
+				18CC81E11B6970CF000F6DA5 /* torchoff@2x.png */,
+				18CC81E21B6970CF000F6DA5 /* torchoff_pressed.png */,
+				18CC81E31B6970CF000F6DA5 /* torchoff_pressed@2x.png */,
+				18CC81E41B6970CF000F6DA5 /* torchon.png */,
+				18CC81E51B6970CF000F6DA5 /* torchon@2x.png */,
+				18CC81E61B6970CF000F6DA5 /* torchon_pressed.png */,
+				18CC81E71B6970CF000F6DA5 /* torchon_pressed@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,20 +221,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186227261AB1BCF9002D71E5 /* torchon_pressed.png in Resources */,
-				186227251AB1BCF9002D71E5 /* torchon@2x.png in Resources */,
+				18CC81F31B6970CF000F6DA5 /* torchon_pressed@2x.png in Resources */,
+				18CC81EF1B6970CF000F6DA5 /* torchoff_pressed@2x.png in Resources */,
+				18CC81ED1B6970CF000F6DA5 /* torchoff@2x.png in Resources */,
 				187392121AA4B1070031D6C9 /* Main.storyboard in Resources */,
-				1862271E1AB1BCF9002D71E5 /* ocr_model.zzip in Resources */,
-				186227201AB1BCF9002D71E5 /* torchoff.png in Resources */,
+				18CC81F01B6970CF000F6DA5 /* torchon.png in Resources */,
 				187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */,
+				18CC81EC1B6970CF000F6DA5 /* torchoff.png in Resources */,
+				18CC81F21B6970CF000F6DA5 /* torchon_pressed.png in Resources */,
 				186226B71AB1B0A6002D71E5 /* en.strings in Resources */,
-				1862271F1AB1BCF9002D71E5 /* PPbeep.wav in Resources */,
-				186227231AB1BCF9002D71E5 /* torchoff_pressed@2x.png in Resources */,
-				186227271AB1BCF9002D71E5 /* torchon_pressed@2x.png in Resources */,
+				18CC81EB1B6970CF000F6DA5 /* PPbeep.wav in Resources */,
+				18CC81F11B6970CF000F6DA5 /* torchon@2x.png in Resources */,
+				18CC81EA1B6970CF000F6DA5 /* ocr_model.zzip in Resources */,
 				187392141AA4B1070031D6C9 /* Images.xcassets in Resources */,
-				186227211AB1BCF9002D71E5 /* torchoff@2x.png in Resources */,
-				186227241AB1BCF9002D71E5 /* torchon.png in Resources */,
-				186227221AB1BCF9002D71E5 /* torchoff_pressed.png in Resources */,
+				18CC81E91B6970CF000F6DA5 /* en.strings in Resources */,
+				18CC81EE1B6970CF000F6DA5 /* torchoff_pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

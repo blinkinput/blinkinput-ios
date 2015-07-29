@@ -20,7 +20,4 @@
 #import "PPOcrRecognizerSettings.h"
 #import "PPOcrRecognizerResult.h"
 
-// Helpers
-#import "PPApp.h"
-
 #endif

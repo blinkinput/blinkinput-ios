@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PPDetectionStatus.h"
 
+/**
+ * Protocol which all objects interested in receiving information about overlay subviews need to implement
+ */
 @protocol PPOverlaySubviewDelegate <NSObject>
 
 /** Delegate method called when animation starts */
@@ -23,7 +26,7 @@
 @class PPOverlayViewController;
 
 /**
- Common interface for all OverlaySubviews
+ * Common interface for all OverlaySubviews
  */
 @protocol PPOverlaySubview <NSObject>
 

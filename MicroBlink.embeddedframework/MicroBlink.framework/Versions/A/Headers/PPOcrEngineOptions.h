@@ -8,93 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- * A list of fonts supported by BlinkOCR
- */
-typedef NS_ENUM(NSUInteger, PPOcrFont) {
-
-    PP_OCR_FONT_AKZIDENZ_GROTESK,
-    PP_OCR_FONT_ARIAL,
-    PP_OCR_FONT_ARIAL_BLACK,
-    PP_OCR_FONT_ARNHEM,
-    PP_OCR_FONT_ARQUITECTA_HEAVY,
-    PP_OCR_FONT_AVANT_GARDE,
-    PP_OCR_FONT_BEMBO,
-    PP_OCR_FONT_BODONI,
-    PP_OCR_FONT_CALIBRI,
-    PP_OCR_FONT_CALIBRI_BOLD,
-    PP_OCR_FONT_COMIC_SANS,
-    PP_OCR_FONT_CONCERTO_ROUNDED_SG,
-    PP_OCR_FONT_COURIER,
-    PP_OCR_FONT_COURIER_BOLD,
-    PP_OCR_FONT_COURIER_NEW_CE,
-    PP_OCR_FONT_COURIER_CONDENSED,
-    PP_OCR_FONT_DEJAVU_SANS_MONO,
-    PP_OCR_FONT_DIN,
-    PP_OCR_FONT_EUROPA_GROTESK_NO_2_SB_BOLD,
-    PP_OCR_FONT_EUROSTILE,
-    PP_OCR_FONT_F25_BANK_PRINTER_BOLD,
-    PP_OCR_FONT_FRANKLIN_GOTHIC,
-    PP_OCR_FONT_FRUTIGER,
-    PP_OCR_FONT_FUTURA,
-    PP_OCR_FONT_FUTURA_BOLD,
-    PP_OCR_FONT_GARAMOND,
-    PP_OCR_FONT_GEORGIA,
-    PP_OCR_FONT_GILL_SANS,
-    PP_OCR_FONT_HELVETICA,
-    PP_OCR_FONT_HELVETICA_BOLD,
-    PP_OCR_FONT_INTERSTATE,
-    PP_OCR_FONT_LATIN_MODERN,
-    PP_OCR_FONT_LATIN_MODERN_ITALIC,
-    PP_OCR_FONT_LETTER_GOTHIC,
-    PP_OCR_FONT_LUCIDA,
-    PP_OCR_FONT_LUCIDA_SANS,
-    PP_OCR_FONT_MATRIX,
-    PP_OCR_FONT_META,
-    PP_OCR_FONT_MINION,
-    PP_OCR_FONT_OCRA,
-    PP_OCR_FONT_OCRB,
-    PP_OCR_FONT_OFFICINA,
-    PP_OCR_FONT_OPTIMA,
-    PP_OCR_FONT_ROCKWELL,
-    PP_OCR_FONT_ROTIS_SANS_SERIF,
-    PP_OCR_FONT_ROTIS_SERIF,
-    PP_OCR_FONT_SABON,
-    PP_OCR_FONT_STONE,
-    PP_OCR_FONT_SV_BASIC_MANUAL,
-    PP_OCR_FONT_TAHOMA,
-    PP_OCR_FONT_TEX_GYRE_TERMES,
-    PP_OCR_FONT_TEX_GYRE_TERMES_ITALIC,
-    PP_OCR_FONT_THE_SANS_MONO_CONDENSED_BLACK,
-    PP_OCR_FONT_THESIS,
-    PP_OCR_FONT_TIMES_NEW_ROMAN,
-    PP_OCR_FONT_TRAJAN,
-    PP_OCR_FONT_TRINITE,
-    PP_OCR_FONT_UNIVERS,
-    PP_OCR_FONT_VERDANA,
-    PP_OCR_FONT_VOLTAIRE,
-    PP_OCR_FONT_WALBAUM,
-    PP_OCR_FONT_EUROPA_GRO_SB,
-    PP_OCR_FONT_EUROPA_GRO_SB_LIGHT,
-
-    // from now on "special" fonts
-    PP_OCR_FONT_MICR,
-    PP_OCR_FONT_HANDWRITING,
-    PP_OCR_FONT_UNKNOWN,
-    PP_OCR_FONT_ANY,
-    PP_OCR_FONT_UNKNOWN_MATH,
-    PP_OCR_FONT_UKDL_LIGHT,
-};
-
+#import "PPOcrFont.h"
 
 /**
  * Class representing a char in specific font.
  *
  * @example char 'k' in font Arial
- *  PPOcrCharKey* key = [[PPOcrCharKey alloc] initWithCode:'k' font:PP_OCR_FONT_ARIAL];
+ *  
+ *     PPOcrCharKey* key = [[PPOcrCharKey alloc] initWithCode:'k' font:PP_OCR_FONT_ARIAL];
  *
  * @example char 'ü' in any font
- *  PPOcrCharKey* key = [[PPOcrCharKey alloc] initWithCode:'ü' font:PP_OCR_FONT_ANY];
+ *  
+ *     PPOcrCharKey* key = [[PPOcrCharKey alloc] initWithCode:'ü' font:PP_OCR_FONT_ANY];
  *
  */
 @interface PPOcrCharKey : NSObject
@@ -184,6 +109,17 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * Disable it only if you perform your own image processing.
  */
 @property (nonatomic, assign) BOOL imageProcessingEnabled;
+
+/**
+ * Specifies if line grouping (collecting adjacent chars into lines) is enabled.
+ *
+ * YES by default.
+ *
+ * Since grouping works perfectly well when the lines are parallel to the image edges, 
+ * the only reason why you would like to set this to NO is to develop your own grouping method, when lines
+ * are slanted on the image.
+ */
+@property (nonatomic, assign) BOOL lineGroupingEnabled;
 
 /**
  * Whitelist of characters used in the OCR process. The set must contain PPOcrCharKey objects.
