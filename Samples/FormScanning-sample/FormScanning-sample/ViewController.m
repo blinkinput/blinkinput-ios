@@ -44,7 +44,7 @@
     referenceElement.localizedTooltip = @"Scan reference number";
 
     PPSettings* settings = [[PPSettings alloc] init];
-    settings.licenseSettings.licenseKey = @"GYNFIQNI-5L3L6PVC-X45LTQC4-PL2MST4Y-EU654AJI-KMDRFZ43-KYDOCGAQ-LN6VW7QG";
+    settings.licenseSettings.licenseKey = @"54ED2PZC-E7J7HGDF-7SDHX34V-IWABJ7LQ-5QLC7H7Z-SOQATW6J-J6MCKPO6-76G6ZVHR";
 
     // Allocate the recognition coordinator object
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];

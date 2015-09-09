@@ -75,6 +75,8 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * Minimal height of the line of text given in pixels. All chars smaller than this value will be ignored.
  *
  * Setting the minimal line height can reduce the noise in OCR results.
+ *
+ * Default: 15
  */
 @property (nonatomic, assign) NSUInteger minimalLineHeight;
 
@@ -82,6 +84,8 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * Maximal height of the line of text given in pixels.
  *
  * Setting the maximal line height can reduce the noise in OCR results.
+ *
+ * Default: 200
  */
 @property (nonatomic, assign) NSUInteger maximalLineHeight;
 
@@ -90,6 +94,8 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * 
  * Setting this value can speed up the OCR processing because all images with more chars than specified will be ignored 
  * (becuase in most cases they are noise)
+ *
+ * Default: 3000
  */
 @property (nonatomic, assign) NSUInteger maxCharsExpected;
 
@@ -99,6 +105,8 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  * Use this if you have black text on color backgrounds.
  * If you have black text on white background, using this is not needed as it slows down processing.
  * If you have color text, don't use it at all because color dropout will remove the text.
+ *
+ * Default: YES
  */
 @property (nonatomic, assign) BOOL colorDropoutEnabled;
 
@@ -107,22 +115,26 @@ typedef struct OcrEngineOptionsImpl OcrEngineOptionsImpl;
  *
  * By default it's set to true.
  * Disable it only if you perform your own image processing.
+ *
+ * Default: YES
  */
 @property (nonatomic, assign) BOOL imageProcessingEnabled;
 
 /**
  * Specifies if line grouping (collecting adjacent chars into lines) is enabled.
  *
- * YES by default.
- *
  * Since grouping works perfectly well when the lines are parallel to the image edges, 
  * the only reason why you would like to set this to NO is to develop your own grouping method, when lines
  * are slanted on the image.
+ *
+ * Default: YES
  */
 @property (nonatomic, assign) BOOL lineGroupingEnabled;
 
 /**
  * Whitelist of characters used in the OCR process. The set must contain PPOcrCharKey objects.
+ *
+ * Default: all chars with all fonts.
  */
 @property (nonatomic, strong) NSSet* charWhitelist;
 

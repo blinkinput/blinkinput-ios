@@ -16,8 +16,22 @@
 #import "PPCoordinator.h"
 #import "PPDetectionStatus.h"
 
-// BlinkOCR
+/** OCR */
 #import "PPOcrRecognizerSettings.h"
 #import "PPOcrRecognizerResult.h"
+
+/* Barcodes */
+
+// PDF417
+#import "PPPdf417RecognizerSettings.h"
+#import "PPPdf417RecognizerResult.h"
+
+// BARDECODER
+#import "PPBarDecoderRecognizerSettings.h"
+#import "PPBarDecoderRecognizerResult.h"
+
+// ZXING
+#import "PPZXingRecognizerSettings.h"
+#import "PPZXingRecognizerResult.h"
 
 #endif

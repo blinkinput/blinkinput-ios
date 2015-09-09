@@ -228,6 +228,9 @@ typedef NS_ENUM(NSUInteger, PPOcrFont) {
 
     /** Font found on UKDL licenses */
     PP_OCR_FONT_UKDL_LIGHT,
+
+    /** Must be last as it holds the number of available fonts */
+    PP_OCR_FONT_COUNT,
 };
 
 #endif
