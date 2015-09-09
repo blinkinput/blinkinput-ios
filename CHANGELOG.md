@@ -1,3 +1,13 @@
+## 1.1.1
+
+- Added support for using BlinkOCR as a camera capture API. To do that, implement the following
+
+    - When initializing the `PPCoordinator` object, don't add any `PPRecognizerSettings` to `scanSettings`.
+    - Use `settings.metadataSettings.currentVideoFrame = YES` to capture current camera frame
+    - Implement `scanningViewController:didOutputMetadata:` callback to obtain `PPImageMetadata` objects with camera frames.
+    
+- As a reminder - you can process video frames obtained in that way using direct API method `processImage:scanningRegion:delegate:`
+
 ## 1.1.0
 
 - Added support for Barcode recognition using the following recognizers: 

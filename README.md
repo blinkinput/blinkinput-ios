@@ -43,7 +43,7 @@ pod try PPBlinkOCR
 
 ```ruby
 platform :ios, '6.0'
-pod 'PPBlinkOCR', '~> 1.1.0'
+pod 'PPBlinkOCR', '~> 1.1.1'
 ```
 
 ## Requirements

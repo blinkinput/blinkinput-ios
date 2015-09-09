@@ -1,3 +1,7 @@
+### Transition to 1.1.1
+
+- No backwards incompatible changes.
+
 ### Transition to 1.1.0
 
 - No backwards incompatible changes. See Release notes for a complete list of changes.
