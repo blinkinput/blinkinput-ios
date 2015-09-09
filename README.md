@@ -1,10 +1,11 @@
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/logo-microblink.png" alt="MicroBlink" title="MicroBlink">
+  <a href="http://www.microblink.com">
+    <img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/logo-microblink.png" alt="MicroBlink" title="MicroBlink" />
+  </a>
 </p>
 
 [![Build Status](https://travis-ci.org/BlinkOCR/blinkocr-ios.png)](https://travis-ci.org/BlinkOCR/blinkocr-ios.png)
 [![Pod Version](http://img.shields.io/cocoapods/v/PPBlinkOCR.svg?style=flat)](http://cocoadocs.org/docsets/PPBlinkOCR/)
-
 
 # BlinkOCR SDK for real time text recognition
 
@@ -15,6 +16,7 @@ BlinkOCR SDK is a state-of-the-art OCR module for mobile devices. It's OCR techn
 - layered API, allowing everything from simple integration to complex UX customizations.
 - lightweight and no internet connection required
 - enteprise-level security standards
+- support for barcode scanning
 
 BlinkOCR is a part of family of SDKs developed by [MicroBlink](http://www.microblink.com) for optical text recognition, barcode scanning, ID document scanning and many others. 
 
@@ -41,7 +43,7 @@ pod try PPBlinkOCR
 
 ```ruby
 platform :ios, '6.0'
-pod 'PPBlinkOCR', '~> 1.0.0'
+pod 'PPBlinkOCR', '~> 1.1.0'
 ```
 
 ## Requirements

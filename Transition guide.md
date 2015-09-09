@@ -1,3 +1,7 @@
+### Transition to 1.1.0
+
+- No backwards incompatible changes. See Release notes for a complete list of changes.
+
 ### Transition to 1.0.0
 
 - If you're using direct API, just delete all calls to `PPCoordinator initializeRecognizers` and `PPCoordinator terminateRecognizers`. These calls are now performed internally
