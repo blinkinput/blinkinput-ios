@@ -56,3 +56,17 @@ xctool -project Samples/pdf417-sample/pdf417-sample.xcodeproj \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
+
+xctool -project Samples/Receipt-sample/Receipt-sample.xcodeproj \
+	-scheme Receipt-sample \
+	-configuration Debug \
+	-sdk iphonesimulator \
+	ONLY_ACTIVE_ARCH=NO \
+ 	clean build
+
+xctool -project Samples/Receipt-sample/Receipt-sample.xcodeproj \
+	-scheme Receipt-sample \
+	-configuration Release \
+	-sdk iphonesimulator \
+	ONLY_ACTIVE_ARCH=NO \
+ 	clean build
