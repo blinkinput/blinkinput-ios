@@ -18,11 +18,11 @@
  * Defines a portion of the screen in which the scanning will be performed.
  * Given as a CGRect with unit coordinating system:
  *
- * @example CGRectMake(0.2f, 0.5f, 0.4f, 0.3f) defines a portion of the screen which starts at 
+ * @example CGRectMake(0.2f, 0.5f, 0.4f, 0.3f) defines a portion of the screen which starts at
  *   20% from the left border
  *   50% from the top
  *   covers 40% of screen width
- *   and 30% of screen heeight
+ *   and 30% of screen height
  */
 @property (nonatomic, assign) CGRect scanningRegion;
 
@@ -45,7 +45,7 @@
 /**
  * Pause scanning without dismissing the camera view.
  *
- * If there is camera frame being processed at a time, the processing will finish, but the results of processing 
+ * If there is camera frame being processed at a time, the processing will finish, but the results of processing
  * will not be returned.
  *
  * @warning must be called from Main thread to ensure thread synchronization
