@@ -13,13 +13,6 @@
 		186226591AB1A948002D71E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186226571AB1A948002D71E5 /* Main.storyboard */; };
 		1862265B1AB1A948002D71E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1862265A1AB1A948002D71E5 /* Images.xcassets */; };
 		1862265E1AB1A948002D71E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1862265C1AB1A948002D71E5 /* LaunchScreen.xib */; };
-		1862267F1AB1A986002D71E5 /* PPFormOcrOverlay.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186226741AB1A986002D71E5 /* PPFormOcrOverlay.xcassets */; };
-		186226801AB1A986002D71E5 /* PPFormOcrOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186226761AB1A986002D71E5 /* PPFormOcrOverlayViewController.m */; };
-		186226811AB1A986002D71E5 /* PPFormOcrOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186226771AB1A986002D71E5 /* PPFormOcrOverlayViewController.xib */; };
-		186226821AB1A986002D71E5 /* PPPivotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186226791AB1A986002D71E5 /* PPPivotView.m */; };
-		186226831AB1A986002D71E5 /* PPScanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862267B1AB1A986002D71E5 /* PPScanElement.m */; };
-		186226841AB1A986002D71E5 /* PPScanResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862267D1AB1A986002D71E5 /* PPScanResultView.m */; };
-		186226851AB1A986002D71E5 /* PPScanResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1862267E1AB1A986002D71E5 /* PPScanResultView.xib */; };
 		186226931AB1A98C002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186226871AB1A98C002D71E5 /* PPBlinkOcrHelp.storyboard */; };
 		186226941AB1A98C002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186226881AB1A98C002D71E5 /* PPBlinkOcrHelp.xcassets */; };
 		186226951AB1A98C002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862268A1AB1A98C002D71E5 /* PPBlinkOcrHelpPage1ViewController.m */; };
@@ -27,22 +20,21 @@
 		186226971AB1A98C002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1862268E1AB1A98C002D71E5 /* PPBlinkOcrHelpPage3ViewController.m */; };
 		186226981AB1A98C002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186226901AB1A98C002D71E5 /* PPBlinkOcrHelpPageViewController.m */; };
 		186226991AB1A98C002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186226921AB1A98C002D71E5 /* PPBlinkOcrHelpViewController.m */; };
-		186226B41AB1A9B5002D71E5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 186226B31AB1A9B5002D71E5 /* libc++.dylib */; };
-		186227351AB1C3D9002D71E5 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186227291AB1C3D9002D71E5 /* MicroBlink.framework */; };
-		186227361AB1C3D9002D71E5 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 1862272B1AB1C3D9002D71E5 /* ocr_model.zzip */; };
-		186227371AB1C3D9002D71E5 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1862272C1AB1C3D9002D71E5 /* PPbeep.wav */; };
-		186227381AB1C3D9002D71E5 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862272D1AB1C3D9002D71E5 /* torchoff.png */; };
-		186227391AB1C3D9002D71E5 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862272E1AB1C3D9002D71E5 /* torchoff@2x.png */; };
-		1862273A1AB1C3D9002D71E5 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1862272F1AB1C3D9002D71E5 /* torchoff_pressed.png */; };
-		1862273B1AB1C3D9002D71E5 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227301AB1C3D9002D71E5 /* torchoff_pressed@2x.png */; };
-		1862273C1AB1C3D9002D71E5 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227311AB1C3D9002D71E5 /* torchon.png */; };
-		1862273D1AB1C3D9002D71E5 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227321AB1C3D9002D71E5 /* torchon@2x.png */; };
-		1862273E1AB1C3D9002D71E5 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227331AB1C3D9002D71E5 /* torchon_pressed.png */; };
-		1862273F1AB1C3D9002D71E5 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186227341AB1C3D9002D71E5 /* torchon_pressed@2x.png */; };
 		18CC82071B697EBE000F6DA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC82061B697EBE000F6DA5 /* AVFoundation.framework */; };
 		18CC82091B697EC4000F6DA5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC82081B697EC4000F6DA5 /* CoreMedia.framework */; };
 		18CC820B1B697ECE000F6DA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */; };
-		18CC820D1B697ED5000F6DA5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CC820C1B697ED5000F6DA5 /* libiconv.dylib */; };
+		31D04D701CF4AE38000055B9 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D6E1CF4AE38000055B9 /* MicroBlink.bundle */; };
+		31D04D711CF4AE38000055B9 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D6F1CF4AE38000055B9 /* MicroBlink.framework */; };
+		31D04D731CF4AE42000055B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D721CF4AE42000055B9 /* Accelerate.framework */; };
+		31D04D751CF4AE4A000055B9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D741CF4AE4A000055B9 /* libiconv.tbd */; };
+		31D04D771CF4AE53000055B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D761CF4AE53000055B9 /* libc++.tbd */; };
+		31D04D841CF4B2B9000055B9 /* PPFormOcrOverlay.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D791CF4B2B9000055B9 /* PPFormOcrOverlay.xcassets */; };
+		31D04D851CF4B2B9000055B9 /* PPFormOcrOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D04D7B1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.m */; };
+		31D04D861CF4B2B9000055B9 /* PPFormOcrOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D7C1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.xib */; };
+		31D04D871CF4B2B9000055B9 /* PPPivotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D04D7E1CF4B2B9000055B9 /* PPPivotView.m */; };
+		31D04D881CF4B2B9000055B9 /* PPScanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D04D801CF4B2B9000055B9 /* PPScanElement.m */; };
+		31D04D891CF4B2B9000055B9 /* PPScanResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D04D821CF4B2B9000055B9 /* PPScanResultView.m */; };
+		31D04D8A1CF4B2B9000055B9 /* PPScanResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D831CF4B2B9000055B9 /* PPScanResultView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,17 +48,6 @@
 		186226581AB1A948002D71E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1862265A1AB1A948002D71E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1862265D1AB1A948002D71E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		186226741AB1A986002D71E5 /* PPFormOcrOverlay.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPFormOcrOverlay.xcassets; sourceTree = "<group>"; };
-		186226751AB1A986002D71E5 /* PPFormOcrOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFormOcrOverlayViewController.h; sourceTree = "<group>"; };
-		186226761AB1A986002D71E5 /* PPFormOcrOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFormOcrOverlayViewController.m; sourceTree = "<group>"; };
-		186226771AB1A986002D71E5 /* PPFormOcrOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPFormOcrOverlayViewController.xib; sourceTree = "<group>"; };
-		186226781AB1A986002D71E5 /* PPPivotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPivotView.h; sourceTree = "<group>"; };
-		186226791AB1A986002D71E5 /* PPPivotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPivotView.m; sourceTree = "<group>"; };
-		1862267A1AB1A986002D71E5 /* PPScanElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanElement.h; sourceTree = "<group>"; };
-		1862267B1AB1A986002D71E5 /* PPScanElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanElement.m; sourceTree = "<group>"; };
-		1862267C1AB1A986002D71E5 /* PPScanResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanResultView.h; sourceTree = "<group>"; };
-		1862267D1AB1A986002D71E5 /* PPScanResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanResultView.m; sourceTree = "<group>"; };
-		1862267E1AB1A986002D71E5 /* PPScanResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPScanResultView.xib; sourceTree = "<group>"; };
 		186226871AB1A98C002D71E5 /* PPBlinkOcrHelp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PPBlinkOcrHelp.storyboard; sourceTree = "<group>"; };
 		186226881AB1A98C002D71E5 /* PPBlinkOcrHelp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPBlinkOcrHelp.xcassets; sourceTree = "<group>"; };
 		186226891AB1A98C002D71E5 /* PPBlinkOcrHelpPage1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpPage1ViewController.h; sourceTree = "<group>"; };
@@ -79,22 +60,25 @@
 		186226901AB1A98C002D71E5 /* PPBlinkOcrHelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpPageViewController.m; sourceTree = "<group>"; };
 		186226911AB1A98C002D71E5 /* PPBlinkOcrHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPBlinkOcrHelpViewController.h; sourceTree = "<group>"; };
 		186226921AB1A98C002D71E5 /* PPBlinkOcrHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPBlinkOcrHelpViewController.m; sourceTree = "<group>"; };
-		186226B31AB1A9B5002D71E5 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		186227291AB1C3D9002D71E5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
-		1862272B1AB1C3D9002D71E5 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
-		1862272C1AB1C3D9002D71E5 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
-		1862272D1AB1C3D9002D71E5 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
-		1862272E1AB1C3D9002D71E5 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
-		1862272F1AB1C3D9002D71E5 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
-		186227301AB1C3D9002D71E5 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
-		186227311AB1C3D9002D71E5 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
-		186227321AB1C3D9002D71E5 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
-		186227331AB1C3D9002D71E5 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
-		186227341AB1C3D9002D71E5 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
 		18CC82061B697EBE000F6DA5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		18CC82081B697EC4000F6DA5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		18CC820C1B697ED5000F6DA5 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		31D04D6E1CF4AE38000055B9 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
+		31D04D6F1CF4AE38000055B9 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		31D04D721CF4AE42000055B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		31D04D741CF4AE4A000055B9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		31D04D761CF4AE53000055B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		31D04D791CF4B2B9000055B9 /* PPFormOcrOverlay.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PPFormOcrOverlay.xcassets; sourceTree = "<group>"; };
+		31D04D7A1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFormOcrOverlayViewController.h; sourceTree = "<group>"; };
+		31D04D7B1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFormOcrOverlayViewController.m; sourceTree = "<group>"; };
+		31D04D7C1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPFormOcrOverlayViewController.xib; sourceTree = "<group>"; };
+		31D04D7D1CF4B2B9000055B9 /* PPPivotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPivotView.h; sourceTree = "<group>"; };
+		31D04D7E1CF4B2B9000055B9 /* PPPivotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPivotView.m; sourceTree = "<group>"; };
+		31D04D7F1CF4B2B9000055B9 /* PPScanElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanElement.h; sourceTree = "<group>"; };
+		31D04D801CF4B2B9000055B9 /* PPScanElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanElement.m; sourceTree = "<group>"; };
+		31D04D811CF4B2B9000055B9 /* PPScanResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPScanResultView.h; sourceTree = "<group>"; };
+		31D04D821CF4B2B9000055B9 /* PPScanResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPScanResultView.m; sourceTree = "<group>"; };
+		31D04D831CF4B2B9000055B9 /* PPScanResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPScanResultView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +86,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D04D771CF4AE53000055B9 /* libc++.tbd in Frameworks */,
+				31D04D751CF4AE4A000055B9 /* libiconv.tbd in Frameworks */,
+				31D04D731CF4AE42000055B9 /* Accelerate.framework in Frameworks */,
 				18CC820B1B697ECE000F6DA5 /* AudioToolbox.framework in Frameworks */,
 				18CC82091B697EC4000F6DA5 /* CoreMedia.framework in Frameworks */,
+				31D04D711CF4AE38000055B9 /* MicroBlink.framework in Frameworks */,
 				18CC82071B697EBE000F6DA5 /* AVFoundation.framework in Frameworks */,
-				186227351AB1C3D9002D71E5 /* MicroBlink.framework in Frameworks */,
-				18CC820D1B697ED5000F6DA5 /* libiconv.dylib in Frameworks */,
-				186226B41AB1A9B5002D71E5 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +104,6 @@
 			children = (
 				1862264C1AB1A948002D71E5 /* FormScanning-sample */,
 				1862269A1AB1A99A002D71E5 /* Frameworks */,
-				18CC820C1B697ED5000F6DA5 /* libiconv.dylib */,
-				186226B31AB1A9B5002D71E5 /* libc++.dylib */,
 				1862264B1AB1A948002D71E5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,8 +126,8 @@
 				186226571AB1A948002D71E5 /* Main.storyboard */,
 				1862265A1AB1A948002D71E5 /* Images.xcassets */,
 				1862265C1AB1A948002D71E5 /* LaunchScreen.xib */,
-				186226731AB1A986002D71E5 /* FormOcrOverlay */,
 				186226861AB1A98C002D71E5 /* OcrHelp */,
+				31D04D781CF4B2B9000055B9 /* FormOcrOverlay */,
 				1862264D1AB1A948002D71E5 /* Supporting Files */,
 			);
 			path = "FormScanning-sample";
@@ -158,24 +141,6 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		186226731AB1A986002D71E5 /* FormOcrOverlay */ = {
-			isa = PBXGroup;
-			children = (
-				186226741AB1A986002D71E5 /* PPFormOcrOverlay.xcassets */,
-				186226751AB1A986002D71E5 /* PPFormOcrOverlayViewController.h */,
-				186226761AB1A986002D71E5 /* PPFormOcrOverlayViewController.m */,
-				186226771AB1A986002D71E5 /* PPFormOcrOverlayViewController.xib */,
-				186226781AB1A986002D71E5 /* PPPivotView.h */,
-				186226791AB1A986002D71E5 /* PPPivotView.m */,
-				1862267A1AB1A986002D71E5 /* PPScanElement.h */,
-				1862267B1AB1A986002D71E5 /* PPScanElement.m */,
-				1862267C1AB1A986002D71E5 /* PPScanResultView.h */,
-				1862267D1AB1A986002D71E5 /* PPScanResultView.m */,
-				1862267E1AB1A986002D71E5 /* PPScanResultView.xib */,
-			);
-			path = FormOcrOverlay;
-			sourceTree = SOURCE_ROOT;
 		};
 		186226861AB1A98C002D71E5 /* OcrHelp */ = {
 			isa = PBXGroup;
@@ -199,7 +164,11 @@
 		1862269A1AB1A99A002D71E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				186227281AB1C3D9002D71E5 /* MicroBlink.embeddedframework */,
+				31D04D761CF4AE53000055B9 /* libc++.tbd */,
+				31D04D741CF4AE4A000055B9 /* libiconv.tbd */,
+				31D04D721CF4AE42000055B9 /* Accelerate.framework */,
+				31D04D6E1CF4AE38000055B9 /* MicroBlink.bundle */,
+				31D04D6F1CF4AE38000055B9 /* MicroBlink.framework */,
 				18CC820A1B697ECE000F6DA5 /* AudioToolbox.framework */,
 				18CC82081B697EC4000F6DA5 /* CoreMedia.framework */,
 				18CC82061B697EBE000F6DA5 /* AVFoundation.framework */,
@@ -207,31 +176,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		186227281AB1C3D9002D71E5 /* MicroBlink.embeddedframework */ = {
+		31D04D781CF4B2B9000055B9 /* FormOcrOverlay */ = {
 			isa = PBXGroup;
 			children = (
-				186227291AB1C3D9002D71E5 /* MicroBlink.framework */,
-				1862272A1AB1C3D9002D71E5 /* Resources */,
+				31D04D791CF4B2B9000055B9 /* PPFormOcrOverlay.xcassets */,
+				31D04D7A1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.h */,
+				31D04D7B1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.m */,
+				31D04D7C1CF4B2B9000055B9 /* PPFormOcrOverlayViewController.xib */,
+				31D04D7D1CF4B2B9000055B9 /* PPPivotView.h */,
+				31D04D7E1CF4B2B9000055B9 /* PPPivotView.m */,
+				31D04D7F1CF4B2B9000055B9 /* PPScanElement.h */,
+				31D04D801CF4B2B9000055B9 /* PPScanElement.m */,
+				31D04D811CF4B2B9000055B9 /* PPScanResultView.h */,
+				31D04D821CF4B2B9000055B9 /* PPScanResultView.m */,
+				31D04D831CF4B2B9000055B9 /* PPScanResultView.xib */,
 			);
-			name = MicroBlink.embeddedframework;
-			path = ../../MicroBlink.embeddedframework;
-			sourceTree = "<group>";
-		};
-		1862272A1AB1C3D9002D71E5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				1862272B1AB1C3D9002D71E5 /* ocr_model.zzip */,
-				1862272C1AB1C3D9002D71E5 /* PPbeep.wav */,
-				1862272D1AB1C3D9002D71E5 /* torchoff.png */,
-				1862272E1AB1C3D9002D71E5 /* torchoff@2x.png */,
-				1862272F1AB1C3D9002D71E5 /* torchoff_pressed.png */,
-				186227301AB1C3D9002D71E5 /* torchoff_pressed@2x.png */,
-				186227311AB1C3D9002D71E5 /* torchon.png */,
-				186227321AB1C3D9002D71E5 /* torchon@2x.png */,
-				186227331AB1C3D9002D71E5 /* torchon_pressed.png */,
-				186227341AB1C3D9002D71E5 /* torchon_pressed@2x.png */,
-			);
-			path = Resources;
+			path = FormOcrOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,23 +252,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				186226941AB1A98C002D71E5 /* PPBlinkOcrHelp.xcassets in Resources */,
+				31D04D8A1CF4B2B9000055B9 /* PPScanResultView.xib in Resources */,
+				31D04D841CF4B2B9000055B9 /* PPFormOcrOverlay.xcassets in Resources */,
 				186226591AB1A948002D71E5 /* Main.storyboard in Resources */,
-				1862273E1AB1C3D9002D71E5 /* torchon_pressed.png in Resources */,
-				1862273F1AB1C3D9002D71E5 /* torchon_pressed@2x.png in Resources */,
-				186227371AB1C3D9002D71E5 /* PPbeep.wav in Resources */,
-				186227391AB1C3D9002D71E5 /* torchoff@2x.png in Resources */,
 				1862265E1AB1A948002D71E5 /* LaunchScreen.xib in Resources */,
-				186227381AB1C3D9002D71E5 /* torchoff.png in Resources */,
+				31D04D861CF4B2B9000055B9 /* PPFormOcrOverlayViewController.xib in Resources */,
 				186226931AB1A98C002D71E5 /* PPBlinkOcrHelp.storyboard in Resources */,
-				1862273A1AB1C3D9002D71E5 /* torchoff_pressed.png in Resources */,
-				1862273D1AB1C3D9002D71E5 /* torchon@2x.png in Resources */,
 				1862265B1AB1A948002D71E5 /* Images.xcassets in Resources */,
-				1862273C1AB1C3D9002D71E5 /* torchon.png in Resources */,
-				186226811AB1A986002D71E5 /* PPFormOcrOverlayViewController.xib in Resources */,
-				186227361AB1C3D9002D71E5 /* ocr_model.zzip in Resources */,
-				186226851AB1A986002D71E5 /* PPScanResultView.xib in Resources */,
-				1862273B1AB1C3D9002D71E5 /* torchoff_pressed@2x.png in Resources */,
-				1862267F1AB1A986002D71E5 /* PPFormOcrOverlay.xcassets in Resources */,
+				31D04D701CF4AE38000055B9 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,15 +273,15 @@
 				186226961AB1A98C002D71E5 /* PPBlinkOcrHelpPage2ViewController.m in Sources */,
 				186226991AB1A98C002D71E5 /* PPBlinkOcrHelpViewController.m in Sources */,
 				186226951AB1A98C002D71E5 /* PPBlinkOcrHelpPage1ViewController.m in Sources */,
+				31D04D881CF4B2B9000055B9 /* PPScanElement.m in Sources */,
+				31D04D871CF4B2B9000055B9 /* PPPivotView.m in Sources */,
 				186226981AB1A98C002D71E5 /* PPBlinkOcrHelpPageViewController.m in Sources */,
-				186226801AB1A986002D71E5 /* PPFormOcrOverlayViewController.m in Sources */,
-				186226831AB1A986002D71E5 /* PPScanElement.m in Sources */,
 				186226561AB1A948002D71E5 /* ViewController.m in Sources */,
-				186226841AB1A986002D71E5 /* PPScanResultView.m in Sources */,
 				186226531AB1A948002D71E5 /* AppDelegate.m in Sources */,
-				186226821AB1A986002D71E5 /* PPPivotView.m in Sources */,
+				31D04D891CF4B2B9000055B9 /* PPScanResultView.m in Sources */,
 				186226971AB1A98C002D71E5 /* PPBlinkOcrHelpPage3ViewController.m in Sources */,
 				186226501AB1A948002D71E5 /* main.m in Sources */,
+				31D04D851CF4B2B9000055B9 /* PPFormOcrOverlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +327,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
+				FRAMEWORK_SEARCH_PATHS = ../../;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -420,7 +371,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
+				FRAMEWORK_SEARCH_PATHS = ../../;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

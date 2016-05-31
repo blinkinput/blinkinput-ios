@@ -1,3 +1,37 @@
+### Transition to 1.2.0
+
+- Renamed `PPOcrRecognizerSettings` and `PPOcrRecognizerResult` to `PPBlinkOcrRecognizerSettings` and `PPBlinkOcrRecognizerResult` respectively
+
+- PPOverlayViewController changed the way Overlay Subviews are added to the view hierarchy. Instead of calling `addOverlaySubview:` (which automatically added a view to view hierarachy), you now need to call `registerOverlaySubview:` (which registers subview for scanning events), and manually add subview to view hierarchy using `addSubview:` method. This change gives you more flexibility for adding views and managing autolayout and autoresizing masks. So, replace all calls to (assuming self is a `PPOverlayViewController` instance)
+
+```objective-c
+[self addOverlaySubview:subview];
+```
+
+with 
+```objective-c
+[self registerOverlaySubview:subview];
+[self.view addSubview:subview];
+```
+
+- Remove the old .embeddedframework package completely from your project
+
+- Add new .framework and .bundle package to your project. Verify that Framework search path really contains a path to the .framework folder.
+
+- If necessary, add all required system frameworks and libraries:
+
+    - libc++.tbd
+    - libiconv.tbd
+    - AVFoundation.framework
+    - AudioToolbox.framework
+    - CoreMedia.framework
+    - AssetsLibrary.framework
+    - Accelerate.framework
+	
+- If you use `PPMetadataSettings` objects, 
+	- `successfulScanFrame` property replace with `successfulFrame`
+	- `currentVideoFrame` property replace with `currentFrame`
+
 ### Transition to 1.1.1
 
 - No backwards incompatible changes.

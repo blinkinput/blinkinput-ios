@@ -1,3 +1,29 @@
+## 1.2.0
+
+- iOS bugfixes:
+
+	- fixed potential deadlock when multiple instances of `PPCoordinator` objects are instantiated
+
+- Implemented templating API
+
+    - Templating API allows implementing custom document scanners, linking specific parsers to specific locations on detected documents
+	
+- Added Regex parser
+
+	- Regex parser allows you to create your custom ocr parser factory
+	
+- PPOverlayViewController changed the way Overlay Subviews are added to the view hierarchy. Instead of calling `addOverlaySubview:` (which automatically added a view to view hierarachy), you now need to call `registerOverlaySubview:` (which registers subview for scanning events), and manually add subview to view hierarchy using `addSubview:` method. This change gives you more flexibility for adding views and managing autolayout and autoresizing masks.
+
+- Better Swift interoperability
+    - Support for modules
+    - Added nullability annotations
+	
+- Framework is now distributed as a .framework + .bundle, instead of .embeddedframework. This helps keep resources in a separate "namespace", and avoids mistakes
+
+- The library inside the framework is now static library. This makes it easier to include the library inside other libraries
+
+- Added bitcode support for Xcode 7
+
 ## 1.1.1
 
 - Added support for using BlinkOCR as a camera capture API. To do that, implement the following

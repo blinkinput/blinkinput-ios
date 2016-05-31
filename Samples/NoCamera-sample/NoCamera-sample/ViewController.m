@@ -33,6 +33,7 @@
 /**
  * Method allocates and initializes the Scanning coordinator object.
  * Coordinator is initialized with settings for scanning
+ * Modify this method to include only those recognizer settings you need. This will give you optimal performance
  *
  *  @param error Error object, if scanning isn't supported
  *
@@ -42,7 +43,7 @@
 
     /** 0. Check if scanning is supported */
 
-    if ([PPCoordinator isScanningUnsupported:error]) {
+    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error: error]) {
         return nil;
     }
 
@@ -56,7 +57,7 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"N3OYQEGF-6RPONJ2R-F6S4RDZ5-PR6HY7D4-PR6HY7D4-PR6HY7D4-PR6HY7D4-QI6WL7LV";
+    settings.licenseSettings.licenseKey = @"GOPIZ6KY-JZ2UNEJ7-V4Z5AVDI-DJHHPT3Q-U4IZC72S-NXVBB2E4-QOYNSHCV-T72WORBZ";
 
 
     /**
@@ -65,15 +66,24 @@
      */
 
     // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
-    PPOcrRecognizerSettings *ocrRecognizerSettings = [[PPOcrRecognizerSettings alloc] init];
-
-    // We want raw OCR parsing
-    [ocrRecognizerSettings addOcrParser:[self priceOcrParserFactory] name:self.priceParserId];
-
-    // We want to parse prices from raw OCR result as well
-    [ocrRecognizerSettings addOcrParser:[self rawOcrParserFactory] name:self.rawOcrParserId];
-
-    // Add the recognizer setting to a list of used recognizer
+    PPBlinkOcrRecognizerSettings *ocrRecognizerSettings = [[PPBlinkOcrRecognizerSettings alloc] init];
+    
+    
+    PPRawOcrParserFactory *rawParserFactory = [[PPRawOcrParserFactory alloc] init];
+    // Denotes if this parser is required to output results.
+    rawParserFactory.isRequired = NO;
+    
+    // We want extract raw OCR, this outputs all recognized characters on an image
+    [ocrRecognizerSettings addOcrParser:rawParserFactory name:self.rawOcrParserId];
+    
+    PPPriceOcrParserFactory *priceParserFactory = [[PPPriceOcrParserFactory alloc] init];
+    // Denotes if this parser is required to output results.
+    priceParserFactory.isRequired = NO;
+    
+    // We want to extract price, this outputs all recognized prices/amounts on an image
+    [ocrRecognizerSettings addOcrParser:priceParserFactory name:self.priceParserId];
+    
+    // Add the recognizer setting to a list of used recognizers
     [settings.scanSettings addRecognizerSettings:ocrRecognizerSettings];
 
 
@@ -182,11 +192,12 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
-
+    
     // Handle a still image capture
     if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
         UIImage *originalImage = (UIImage *)[info objectForKey: UIImagePickerControllerOriginalImage];
-
+        
+        // Process the selected image
         [self.coordinator processImage:originalImage
                         scanningRegion:CGRectMake(0.0, 0.0, 1.0, 1.0)
                               delegate:self];
@@ -212,35 +223,44 @@
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController>*)scanningViewController
               didOutputResults:(NSArray*)results {
-
-    // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-    // Perform your logic here
-
+    
+    /**
+     * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
+     * Each member of results array will represent one result for a single processed image
+     * Usually (and in this sample app) there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. detected OCR
+     * result and pdf417 code in case both recognizers are used)
+     */
+    
     NSString *title = @"No result";
     NSString *message = nil;
-
+    
+    // Collect data from the result
     for (PPRecognizerResult *result in results) {
-        if ([result isKindOfClass:[PPOcrRecognizerResult class]]) {
-            PPOcrRecognizerResult* ocrRecognizerResult = (PPOcrRecognizerResult*)result;
-
+        if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
+            /** Characters were detected */
+            PPBlinkOcrRecognizerResult* ocrRecognizerResult = (PPBlinkOcrRecognizerResult*)result;
+            
             NSLog(@"OCR results are:");
+            
+            /** We fetch OCR results from different parsers by parser names (which we used when we were creating parsers) */
             NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:self.rawOcrParserId]);
             NSLog(@"Price: %@", [ocrRecognizerResult parsedResultForName:self.priceParserId]);
-
+            
+            // Positions of detected characters
             PPOcrLayout* ocrLayout = [ocrRecognizerResult ocrLayout];
             NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect([ocrLayout box]));
-
+            
             title = @"OCR result";
             message = [ocrRecognizerResult parsedResultForName:self.rawOcrParserId];
         }
     };
-
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:message
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
-
+    
     [alertView show];
 }
 

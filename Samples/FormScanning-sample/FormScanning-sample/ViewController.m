@@ -25,7 +25,7 @@
 - (IBAction)didTapScan:(id)sender {
     // Check if blink ocr is supported
     NSError *error;
-    if ([PPCoordinator isScanningUnsupported:&error]) {
+    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:&error]) {
         NSString *messageString = [error localizedDescription];
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
         return;
@@ -39,18 +39,18 @@
     ibanElement.localizedTitle = @"IBAN";
     ibanElement.localizedTooltip = @"Scan IBAN";
 
-    PPScanElement *referenceElement = [[PPScanElement alloc] initWithIdentifier:@"Reference" parserFactory:[[PPCroReferenceOcrParserFactory alloc] init]];
-    referenceElement.localizedTitle = @"Reference";
-    referenceElement.localizedTooltip = @"Scan reference number";
+    PPScanElement *dateElement = [[PPScanElement alloc] initWithIdentifier:@"Date" parserFactory:[[PPDateOcrParserFactory alloc] init]];
+    dateElement.localizedTitle = @"Date";
+    dateElement.localizedTooltip = @"Scan date";
 
     PPSettings* settings = [[PPSettings alloc] init];
-    settings.licenseSettings.licenseKey = @"54ED2PZC-E7J7HGDF-7SDHX34V-IWABJ7LQ-5QLC7H7Z-SOQATW6J-J6MCKPO6-76G6ZVHR";
+    settings.licenseSettings.licenseKey = @"R3ZDZEI7-JBQIU6EB-YGWVATRC-E7IVOYE5-EIT5CV3A-TURCPUKX-MCOSEJ6Q-QJYPLHSH";
 
     // Allocate the recognition coordinator object
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
 
     PPFormOcrOverlayViewController *overlayViewController = [PPFormOcrOverlayViewController allocFromNibName:@"PPFormOcrOverlayViewController"];
-    overlayViewController.scanElements = @[priceElement, ibanElement, referenceElement];
+    overlayViewController.scanElements = @[priceElement, ibanElement, dateElement];
     overlayViewController.coordinator = coordinator;
     overlayViewController.delegate = self;
 
