@@ -7,45 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		182DC1921B9F97DB00512E41 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182DC1851B9F97DB00512E41 /* MicroBlink.framework */; };
-		182DC1931B9F97DB00512E41 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 182DC1871B9F97DB00512E41 /* en.strings */; };
-		182DC1941B9F97DB00512E41 /* ocr_model.zzip in Resources */ = {isa = PBXBuildFile; fileRef = 182DC1881B9F97DB00512E41 /* ocr_model.zzip */; };
-		182DC1951B9F97DB00512E41 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 182DC1891B9F97DB00512E41 /* PPbeep.wav */; };
-		182DC1961B9F97DB00512E41 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18A1B9F97DB00512E41 /* torchoff.png */; };
-		182DC1971B9F97DB00512E41 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18B1B9F97DB00512E41 /* torchoff@2x.png */; };
-		182DC1981B9F97DB00512E41 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18C1B9F97DB00512E41 /* torchoff_pressed.png */; };
-		182DC1991B9F97DB00512E41 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18D1B9F97DB00512E41 /* torchoff_pressed@2x.png */; };
-		182DC19A1B9F97DB00512E41 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18E1B9F97DB00512E41 /* torchon.png */; };
-		182DC19B1B9F97DB00512E41 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC18F1B9F97DB00512E41 /* torchon@2x.png */; };
-		182DC19C1B9F97DB00512E41 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC1901B9F97DB00512E41 /* torchon_pressed.png */; };
-		182DC19D1B9F97DB00512E41 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182DC1911B9F97DB00512E41 /* torchon_pressed@2x.png */; };
 		18509B161B57BEE100C21ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B151B57BEE100C21ACF /* main.m */; };
 		18509B191B57BEE100C21ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B181B57BEE100C21ACF /* AppDelegate.m */; };
 		18509B1C1B57BEE100C21ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B1B1B57BEE100C21ACF /* ViewController.m */; };
 		18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18509B1D1B57BEE100C21ACF /* Main.storyboard */; };
 		18509B211B57BEE100C21ACF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18509B201B57BEE100C21ACF /* Images.xcassets */; };
-		18509B6B1B57C37D00C21ACF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18509B6A1B57C37D00C21ACF /* libc++.dylib */; };
-		18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18509B6C1B57C38500C21ACF /* libiconv.dylib */; };
 		18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */; };
 		18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */; };
 		18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD41B6A5097006C14C0 /* AVFoundation.framework */; };
 		18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD61B6A509C006C14C0 /* CoreMedia.framework */; };
 		18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */; };
+		31D04D8D1CF4B4AF000055B9 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D8B1CF4B4AF000055B9 /* MicroBlink.bundle */; };
+		31D04D8E1CF4B4AF000055B9 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; };
+		31D04D901CF4B4B6000055B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */; };
+		31D04D921CF4B4BC000055B9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D911CF4B4BC000055B9 /* libiconv.tbd */; };
+		31D04D941CF4B4C1000055B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D931CF4B4C1000055B9 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		182DC1851B9F97DB00512E41 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
-		182DC1871B9F97DB00512E41 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
-		182DC1881B9F97DB00512E41 /* ocr_model.zzip */ = {isa = PBXFileReference; lastKnownFileType = file; path = ocr_model.zzip; sourceTree = "<group>"; };
-		182DC1891B9F97DB00512E41 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
-		182DC18A1B9F97DB00512E41 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
-		182DC18B1B9F97DB00512E41 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
-		182DC18C1B9F97DB00512E41 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
-		182DC18D1B9F97DB00512E41 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
-		182DC18E1B9F97DB00512E41 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
-		182DC18F1B9F97DB00512E41 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
-		182DC1901B9F97DB00512E41 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
-		182DC1911B9F97DB00512E41 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
 		18509B101B57BEE100C21ACF /* pdf417-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf417-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18509B141B57BEE100C21ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18509B151B57BEE100C21ACF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,14 +34,17 @@
 		18509B1B1B57BEE100C21ACF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18509B1E1B57BEE100C21ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18509B201B57BEE100C21ACF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		18509B6A1B57C37D00C21ACF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		18509B6C1B57C38500C21ACF /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
 		18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
 		18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 		18627AD41B6A5097006C14C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		18627AD61B6A509C006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		31D04D8B1CF4B4AF000055B9 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
+		31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		31D04D911CF4B4BC000055B9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		31D04D931CF4B4C1000055B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,46 +52,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182DC1921B9F97DB00512E41 /* MicroBlink.framework in Frameworks */,
+				31D04D941CF4B4C1000055B9 /* libc++.tbd in Frameworks */,
+				31D04D921CF4B4BC000055B9 /* libiconv.tbd in Frameworks */,
+				31D04D901CF4B4B6000055B9 /* Accelerate.framework in Frameworks */,
 				18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */,
 				18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */,
+				31D04D8E1CF4B4AF000055B9 /* MicroBlink.framework in Frameworks */,
 				18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */,
-				18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */,
-				18509B6B1B57C37D00C21ACF /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		182DC1841B9F97DB00512E41 /* MicroBlink.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				182DC1851B9F97DB00512E41 /* MicroBlink.framework */,
-				182DC1861B9F97DB00512E41 /* Resources */,
-			);
-			name = MicroBlink.embeddedframework;
-			path = ../../MicroBlink.embeddedframework;
-			sourceTree = "<group>";
-		};
-		182DC1861B9F97DB00512E41 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				182DC1871B9F97DB00512E41 /* en.strings */,
-				182DC1881B9F97DB00512E41 /* ocr_model.zzip */,
-				182DC1891B9F97DB00512E41 /* PPbeep.wav */,
-				182DC18A1B9F97DB00512E41 /* torchoff.png */,
-				182DC18B1B9F97DB00512E41 /* torchoff@2x.png */,
-				182DC18C1B9F97DB00512E41 /* torchoff_pressed.png */,
-				182DC18D1B9F97DB00512E41 /* torchoff_pressed@2x.png */,
-				182DC18E1B9F97DB00512E41 /* torchon.png */,
-				182DC18F1B9F97DB00512E41 /* torchon@2x.png */,
-				182DC1901B9F97DB00512E41 /* torchon_pressed.png */,
-				182DC1911B9F97DB00512E41 /* torchon_pressed@2x.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		18509B071B57BEE100C21ACF = {
 			isa = PBXGroup;
 			children = (
@@ -154,12 +109,14 @@
 		18509B391B57C0A300C21ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				182DC1841B9F97DB00512E41 /* MicroBlink.embeddedframework */,
+				31D04D931CF4B4C1000055B9 /* libc++.tbd */,
+				31D04D911CF4B4BC000055B9 /* libiconv.tbd */,
+				31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */,
+				31D04D8B1CF4B4AF000055B9 /* MicroBlink.bundle */,
+				31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */,
 				18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */,
 				18627AD41B6A5097006C14C0 /* AVFoundation.framework */,
 				18627AD61B6A509C006C14C0 /* CoreMedia.framework */,
-				18509B6C1B57C38500C21ACF /* libiconv.dylib */,
-				18509B6A1B57C37D00C21ACF /* libc++.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,20 +196,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182DC19C1B9F97DB00512E41 /* torchon_pressed.png in Resources */,
-				182DC19B1B9F97DB00512E41 /* torchon@2x.png in Resources */,
 				18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */,
-				182DC1941B9F97DB00512E41 /* ocr_model.zzip in Resources */,
-				182DC1961B9F97DB00512E41 /* torchoff.png in Resources */,
-				182DC1931B9F97DB00512E41 /* en.strings in Resources */,
 				18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */,
-				182DC1951B9F97DB00512E41 /* PPbeep.wav in Resources */,
-				182DC1991B9F97DB00512E41 /* torchoff_pressed@2x.png in Resources */,
-				182DC19D1B9F97DB00512E41 /* torchon_pressed@2x.png in Resources */,
 				18509B211B57BEE100C21ACF /* Images.xcassets in Resources */,
-				182DC1971B9F97DB00512E41 /* torchoff@2x.png in Resources */,
-				182DC19A1B9F97DB00512E41 /* torchon.png in Resources */,
-				182DC1981B9F97DB00512E41 /* torchoff_pressed.png in Resources */,
+				31D04D8D1CF4B4AF000055B9 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +321,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					../../MicroBlink.embeddedframework,
+					../../,
 				);
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -392,7 +339,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					../../MicroBlink.embeddedframework,
+					../../,
 				);
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

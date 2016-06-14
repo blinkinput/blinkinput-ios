@@ -29,21 +29,23 @@ BlinkOCR powers [PhotoMath app](https://photomath.net/en/) where it's used to [r
 - [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free demo license key** to start using the SDK in your app (registration required)
 - [Contact us](http://www.microblink.com) to get pricing info
 - Check out the [comprehensive documentation](http://cocoadocs.org/docsets/PPBlinkOCR/) of all APIs available in PDF417.mobi SDK
+
+### Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like BlinkOCR in your projects. See the ["Getting Started" guide for more information](https://github.com/BlinkOCR/blinkocr-ios/wiki/Getting-started).
+
+- If you wish to use version v1.2.0 or above, you need to install Git Large File storage as described here: https://git-lfs.github.com
 - If you're using CocoaPods, you can easily try our sample apps by running the following command in your terminal window:
 
 ```shell
 pod try PPBlinkOCR
 ```
 
-### Installation with CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like BlinkOCR in your projects. See the ["Getting Started" guide for more information](https://github.com/BlinkOCR/blinkocr-ios/wiki/Getting-started).
-
 #### Podfile
 
 ```ruby
-platform :ios, '6.0'
-pod 'PPBlinkOCR', '~> 1.1.1'
+platform :ios, '7.0'
+pod 'PPBlinkOCR', '~> 1.2.0'
 ```
 
 ## Requirements
