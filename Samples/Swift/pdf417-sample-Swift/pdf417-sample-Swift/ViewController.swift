@@ -18,6 +18,15 @@ class ViewController: UIViewController, PPScanDelegate {
         super.viewDidLoad()
     }
 
+    /**
+     * Method allocates and initializes the Scanning coordinator object.
+     * Coordinator is initialized with settings for scanning
+     * Modify this method to include only those recognizer settings you need. This will give you optimal performance
+     *
+     *  @param error Error object, if scanning isn't supported
+     *
+     *  @return initialized coordinator
+     */
     private func coordinatorWithError(error: NSErrorPointer) -> PPCoordinator? {
 
         /** 0. Check if scanning is supported */
@@ -121,7 +130,11 @@ class ViewController: UIViewController, PPScanDelegate {
 
         let scanConroller : PPScanningViewController = scanningViewController as! PPScanningViewController
 
-        // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
+        /**
+         * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
+         * Each member of results array will represent one result for a single processed image
+         * Usually there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. pdf417 and QR code side by side)
+         */
 
         // first, pause scanning until we process all the results
         scanConroller.pauseScanning()
