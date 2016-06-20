@@ -41,7 +41,8 @@ typedef NS_ENUM(NSUInteger, PPMrtdDetectionCode) {
 /**
  * Result of MRTD detector
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMrtdDetectorResult : PPQuadDetectorResult
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPMrtdDetectorResult : PPQuadDetectorResult
 
 /**
  * Detection code of MRTD detection

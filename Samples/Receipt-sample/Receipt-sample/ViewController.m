@@ -10,7 +10,7 @@
 
 #import <MicroBlink/MicroBlink.h>
 
-@interface ViewController () <PPScanDelegate>
+@interface ViewController () <PPScanningDelegate>
 
 @end
 
@@ -73,11 +73,11 @@
  *
  *  @return initialized coordinator
  */
-- (PPCoordinator *)coordinatorWithError:(NSError**)error {
+- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
 
     /** 0. Check if scanning is supported */
 
-    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
+    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
         return nil;
     }
 
@@ -91,7 +91,7 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"VL4NW2IZ-VGEIDKBT-VB75BQM3-V4TYNNUE-RHXGVDGO-IYBW3XDO-LGYT23O5-BQ6XJNNZ";
+    settings.licenseSettings.licenseKey = @"2ELFRSKS-URHXUBAJ-DGSYAFTV-YGN26J4G-W2CIT3TK-RTHEMA3N-3RXFSMIO-GSUZGSV5";
 
     /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
@@ -110,7 +110,7 @@
 
     /** 4. Initialize the Scanning Coordinator object */
 
-    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
+    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
     
     return coordinator;
 }
@@ -133,7 +133,7 @@
 
     /** Instantiate the scanning coordinator */
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
 
     /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
@@ -142,7 +142,7 @@
     }
 
     /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
     
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];

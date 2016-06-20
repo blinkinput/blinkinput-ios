@@ -24,7 +24,7 @@
     // note - this might return nil if frameworkBundle is nil!
     #define MB_LOCALIZED(key) NSLocalizedStringWithDefaultValue(key, \
         [[PPApp instance] language], \
-        [[PPApp instance] frameworkBundle], \
+        [[PPApp instance] resourcesBundle], \
         MB_LOCALIZED_DEFAULT_STRING(key), \
         nil)
 #endif
@@ -33,7 +33,7 @@
     // note - this might return nil if frameworkBundle is nil!
     #define MB_LOCALIZED_FORMAT(key,...) [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(key, \
         [[PPApp instance] language], \
-        [[PPApp instance] frameworkBundle], \
+        [[PPApp instance] resourcesBundle], \
         MB_LOCALIZED_DEFAULT_STRING(key), \
         nil), \
         ##__VA_ARGS__]

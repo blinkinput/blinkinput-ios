@@ -38,6 +38,16 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPTextMetadata : PPMetadata
 @property (nonatomic, assign) PPTextMetadataType type;
 
 /**
+ * Please use one available initializers
+ */
+- (instancetype)init NS_UNAVAILABLE;
+
+/**
+ * Please use one available initializers
+ */
+- (instancetype)initWithName:(NSString *)name NS_UNAVAILABLE;
+
+/**
  * Retuns an initialized PPTextMetadata object with given name and text value
  *
  * Default type is PPTextMetadataTypeTxt
@@ -61,7 +71,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPTextMetadata : PPMetadata
  */
 - (instancetype)initWithName:(NSString *)name
                         text:(NSString*)text
-                        type:(PPTextMetadataType)type;
+                        type:(PPTextMetadataType)type NS_DESIGNATED_INITIALIZER;
 
 @end
 

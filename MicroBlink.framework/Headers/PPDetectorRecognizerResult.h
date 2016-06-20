@@ -17,6 +17,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Recognizer wrapper for PPDetectorResult
+ */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDetectorRecognizerResult : PPRecognizerResult
 
 /**

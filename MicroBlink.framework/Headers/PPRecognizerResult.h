@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "PPMicroBlinkDefines.h"
 #import "PPQuadrangle.h"
 
@@ -16,18 +17,16 @@
 @class PPDetectorResult;
 
 NS_ASSUME_NONNULL_BEGIN
-
-struct RecognitionResultImpl;
-typedef struct RecognitionResultImpl RecognitionResultImpl;
-
 /**
  Common superclass for all result classes of MicroBlink scanning library
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPRecognizerResult : NSObject <NSCopying>
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPRecognizerResult : NSObject <NSCopying>
 
-@property (nonatomic, assign) RecognitionResultImpl *recognitionResult;
-
-- (instancetype)initWithRecognitionResult:(struct RecognitionResultImpl *)recognitionResult;
+/**
+ * These objects are always privately constructed
+ */
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * All data obtained in the recotnition phase is contained in this Dictionay as Key-Value pairs.

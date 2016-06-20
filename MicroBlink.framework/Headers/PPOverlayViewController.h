@@ -8,14 +8,15 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+
 #import "PPScanningViewController.h"
 #import "PPMicroBlinkDefines.h"
+#import "PPOverlayContainerViewController.h"
 
 #import "PPDetectorResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol PPOverlayContainerViewController;
 @class PPOcrLayout;
 @class PPMetadata;
 @class PPRecognizerResult;
@@ -126,7 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
     or by custom rotation management on rotation events.
  
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOverlayViewController : UIViewController
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOverlayViewController : UIViewController
 
 /** 
  Overlay View's delegate object. Responsible for sending messages to PhotoPay's 
@@ -145,7 +147,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOverlayViewController : UIViewControlle
  CGRect provided here specifies the origin (upper left point) of the scanning region, and the size of the
  region in hereby described coordinating system.
  */
-@property (nonatomic, assign) CGRect scanningRegion;
+@property (nonatomic) CGRect scanningRegion;
 
 /**
  * Scanning library requested authorization for Camera access from the user, but the user declined it.
@@ -174,7 +176,12 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOverlayViewController : UIViewControlle
  This might not be meaningful for the user in all cases. 
  */
 - (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-          didPublishProgress:(float)progress;
+          didPublishProgress:(CGFloat)progress;
+
+/**
+ * Camera view reports the start of detection cycle.
+ */
+- (void)cameraViewControllerDidStartDetection:(UIViewController<PPScanningViewController> *)cameraViewController;
 
 /**
  Camera view reports the status of the object detection. Scanning status contain information 
@@ -212,8 +219,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOverlayViewController : UIViewControlle
  
  If you're interested in valid data, use cameraViewController:didOutputResult: method
  */
-- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-didFinishRecognitionWithResult:(id)result;
+- (void)cameraViewControllerDidFinishRecognition:(UIViewController<PPScanningViewController>*)cameraViewController;
 
 /**
  Camera view controller ended the recognition cycle with a certain Scanning result.
@@ -252,64 +258,6 @@ didFinishRecognitionWithResult:(id)result;
  */
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                          duration:(NSTimeInterval)duration;
-
-@end
-
-
-/**
- Overlay View Controller also needs to notify CameraViewController on certain events. 
- Those are events specified by PPOverlayViewControllerDelegate protocol.
- */
-@protocol PPOverlayContainerViewController <PPScanningViewController>
-
-@required
-
-/** 
- Notification sent when Overlay View Controller wants to close camera, for example, 
- by pressing Cancel button.
- */
-- (void)overlayViewControllerWillCloseCamera:(PPOverlayViewController*)overlayViewController;
-
-/**
- Overlay View Controller should ask it's delegete if it's necessary to display Torch (Light) button. 
- Torch button is not necessary if the device doesn't support torch mode (e.g. iPad devices).
- */
-- (BOOL)overlayViewControllerShouldDisplayTorch:(PPOverlayViewController*)overlayViewController;
-
-/** 
- Overlay View Controller must notify it's delegete to set the torch mode to On or Off
- 
- Returns YES if torch mode was set successfully, otherwise NO.
- */
-- (BOOL)overlayViewController:(PPOverlayViewController*)overlayViewController
-                 willSetTorch:(BOOL)isTorchOn;
-
-/**
- * If help mechanism is implemented using PPScanDelegate's scanningViewControllerWillPresentHelp method, 
- * Overlay view controller should ask it's container whether it's appropriate do display help button;
- *
- *  @return YES if help button should be displayed.
- */
-- (BOOL)shouldDisplayHelpButton;
-
-/**
- Overlay View Controller should know if it's presented modally or on navigation view controller.
- 
- Use this method to ask if it's necessary to display Cancel button. (when on navigation view controller, button back is presented by default)
- 
- This method replaced old method overlayViewControllerShouldDisplayCancel.
- */
-- (BOOL)isPresentedModally;
-
-/**
- Overlay View Controller can ask it's delegete about the status of Torch
- */
-- (BOOL)isTorchOn;
-
-/**
- Overlay View Controller can get Video Capture Preview Layer object from it's delegete.
- */
-- (AVCaptureVideoPreviewLayer*)getPreviewLayer;
 
 @end
 

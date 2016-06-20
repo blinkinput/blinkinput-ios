@@ -11,11 +11,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Base class for outputting various data via 'didOutputMetadata:' method
+ */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMetadata : NSObject
 
+/**
+ * Unique metadata name/Id
+ */
 @property (nonatomic, strong, readonly) NSString *name;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 @end
 

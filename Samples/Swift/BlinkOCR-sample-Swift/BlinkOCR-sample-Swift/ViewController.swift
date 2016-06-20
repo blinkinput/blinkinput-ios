@@ -10,7 +10,7 @@ import UIKit
 import MobileCoreServices
 import MicroBlink
 
-class ViewController: UIViewController, PPScanDelegate  {
+class ViewController: UIViewController, PPScanningDelegate  {
 
     var rawOcrParserId : String = "Raw ocr"
     var priceParserId : String = "Price"
@@ -27,13 +27,13 @@ class ViewController: UIViewController, PPScanDelegate  {
      *
      *  @return initialized coordinator
      */
-    func coordinatorWithError(error: NSErrorPointer) -> PPCoordinator? {
+    func coordinatorWithError(error: NSErrorPointer) -> PPCameraCoordinator? {
         
-        NSLog("%@", PPCoordinator.getBuildVersionString());
+        NSLog("%@", PPCameraCoordinator.buildVersionString());
 
         /** 0. Check if scanning is supported */
 
-        if (PPCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error: nil)) {
+        if (PPCameraCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error: nil)) {
             return nil;
         }
 
@@ -47,7 +47,7 @@ class ViewController: UIViewController, PPScanDelegate  {
         /** 2. Setup the license key */
 
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = "NFJGS7UK-OMTBE6ML-2436HH6W-CXO2GQTR-HRHRX3E4-URUWS2LJ-NFUWS2LJ-MH2ZS5LK"
+        settings.licenseSettings.licenseKey = "P55IH6JF-FNTAXYR7-PW753MY4-WBE5IABN-XA7X3MY4-WBE5IABN-XA7X2M4H-UEK4JVQX"
 
 
         /**
@@ -76,7 +76,7 @@ class ViewController: UIViewController, PPScanDelegate  {
 
         /** 4. Initialize the Scanning Coordinator object */
 
-        let coordinator: PPCoordinator = PPCoordinator(settings: settings)
+        let coordinator: PPCameraCoordinator = PPCameraCoordinator(settings: settings)
 
         return coordinator
     }
@@ -84,8 +84,8 @@ class ViewController: UIViewController, PPScanDelegate  {
     @IBAction func didTapScan(sender: AnyObject) {
 
         /** Instantiate the scanning coordinator */
-        let error: NSErrorPointer=nil
-        let coordinator:PPCoordinator?=self.coordinatorWithError(error)
+        let error : NSErrorPointer=nil
+        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
 
         /** If scanning isn't supported, present an error */
         if coordinator == nil {
@@ -95,7 +95,7 @@ class ViewController: UIViewController, PPScanDelegate  {
         }
 
         /** Allocate and present the scanning view controller */
-        let scanningViewController: UIViewController = coordinator!.cameraViewControllerWithDelegate(self)
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, coordinator: coordinator!, error: nil);
 
         /** You can use other presentation methods as well */
         self.presentViewController(scanningViewController, animated: true, completion: nil)

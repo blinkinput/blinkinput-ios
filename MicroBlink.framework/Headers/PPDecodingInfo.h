@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Object describing a part of the document which is being processed (decoded) in the recognition process. 
+ * Object describing a part of the document which is being processed (decoded) in the recognition process.
  * Decoding info defines which part of the detected document is being processed (location property). In the processing
  * stage, this part of the image is being dewarped to a standardized resolution, and the height of the dewarped image
  * is also defined in this object (dewarpedHeight)
@@ -53,6 +53,9 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDecodingInfo : NSObject
                   dewarpedHeight:(CGFloat)dewarpedHeight
                         uniqueId:(NSString *)uniqueId NS_DESIGNATED_INITIALIZER;
 
+/**
+ * Please use designated initializer.
+ */
 - (instancetype)init NS_UNAVAILABLE;
 
 @end
