@@ -33,28 +33,31 @@ NS_ASSUME_NONNULL_BEGIN
  * @see PPOcrLine
  * @see PPOcrChar
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLayout : NSObject
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOcrLayout : NSObject
 
 /**
  * Bounding box of the layout. Given in the coordinate system of the image on which OCR was performed.
  */
-@property (nonatomic, assign) CGRect box;
+@property (nonatomic) CGRect box;
 
 /**
  * Ocr blocks of the layout
  */
-@property (nonatomic, strong) NSArray *blocks;
+@property (nonatomic) NSArray *blocks;
 
 /**
  * Tranformation matrix which transforms the coordinate system in which the OCR layout is given 
  * (i.e. coordinate system of the image) to the coordinate system of the device screen.
  */
-@property (nonatomic, assign) CGAffineTransform transform;
+@property (nonatomic) CGAffineTransform transform;
 
 /**
  * OCR layout was recognized from flipped image
  */
-@property (nonatomic, assign) BOOL flipped;
+@property (nonatomic) BOOL flipped;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * Initializer from blocks and transformation
@@ -64,7 +67,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLayout : NSObject
  *
  *  @return initialized ocr layout
  */
-- (instancetype)initWithOcrBlocks:(NSArray *)ocrBlocks transform:(CGAffineTransform)transform;
+- (instancetype)initWithOcrBlocks:(NSArray *)ocrBlocks transform:(CGAffineTransform)transform box:(CGRect)box flipped:(BOOL)flipped NS_DESIGNATED_INITIALIZER;
 
 /**
  * Initializer from blocks
@@ -89,12 +92,15 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLayout : NSObject
  *
  * @see PPOcrLine
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrBlock : NSObject
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOcrBlock : NSObject
 
 /**
  * Ocr lines of the block
  */
-@property (nonatomic, strong) NSArray *lines;
+@property (nonatomic) NSArray *lines;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * Initializer from lines
@@ -103,7 +109,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrBlock : NSObject
  *
  *  @return initialized ocr block
  */
-- (instancetype)initWithOcrLines:(NSArray *)ocrLines;
+- (instancetype)initWithOcrLines:(NSArray *)ocrLines NS_DESIGNATED_INITIALIZER;
 
 /**
  * Helper method which returna a simple string representation of the ocr block
@@ -119,12 +125,15 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrBlock : NSObject
  *
  * @see PPOcrChar
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLine : NSObject
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOcrLine : NSObject
 
 /**
  * Ocr chars of the line
  */
-@property (nonatomic, strong) NSArray *chars;
+@property (nonatomic) NSArray *chars;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * Initializer from chars
@@ -133,7 +142,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLine : NSObject
  *
  *  @return initialized ocr line
  */
-- (instancetype)initWithOcrChars:(NSArray *)ocrChars;
+- (instancetype)initWithOcrChars:(NSArray *)ocrChars NS_DESIGNATED_INITIALIZER;
 
 /**
  * Helper method which returna a simple string representation of the ocr line
@@ -147,47 +156,48 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrLine : NSObject
 /**
  * Class representing an individual OCR character obtained in the OCR process.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrChar : NSObject
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOcrChar : NSObject
 
 /**
  * Unicode value of the char
  */
-@property (nonatomic, assign) unichar value;
+@property (nonatomic) unichar value;
 
 /**
  * Position of the char on the image, in the coordinate system of the image
  */
-@property (nonatomic, retain) PPPosition *position;
+@property (nonatomic) PPPosition *position;
 
 /**
  * Height of the char
  */
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic) CGFloat height;
 
 /**
  * YES if font is bold
  */
-@property (nonatomic, assign, getter = isBold) BOOL bold;
+@property (nonatomic, getter = isBold) BOOL bold;
 
 /**
  * YES if font is italic
  */
-@property (nonatomic, assign, getter = isItalic) BOOL italic;
+@property (nonatomic, getter = isItalic) BOOL italic;
 
 /**
  * YES if char is uncertain
  */
-@property (nonatomic, assign, getter = isUncertain) BOOL uncertain;
+@property (nonatomic, getter = isUncertain) BOOL uncertain;
 
 /**
  * Integer value representing OCR quality of the char
  */
-@property (nonatomic, assign) NSInteger quality;
+@property (nonatomic) NSInteger quality;
 
 /**
  * Font of the character
  */
-@property (nonatomic, assign) PPOcrFont font;
+@property (nonatomic) PPOcrFont font;
 
 /**
  * Alternative characters which are possible instead of this character.
@@ -199,7 +209,9 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrChar : NSObject
  *
  * @Warning If you use variants, please note you need to take font into account.
  */
-@property (nonatomic, strong) NSSet *variants;
+@property (nonatomic) NSSet *variants;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * Initializer for a char
@@ -212,7 +224,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrChar : NSObject
  */
 - (instancetype)initWithValue:(unichar)value
                      position:(PPPosition *)position
-                       height:(CGFloat)height;
+                       height:(CGFloat)height NS_DESIGNATED_INITIALIZER;
 
 @end
 
@@ -220,27 +232,30 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOcrChar : NSObject
  * Class representing a position on the image. It's given as a box, with 
  * sides aligned to the sides of the image.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPPosition : NSObject
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPPosition : NSObject
 
 /**
  * Upper left corner
  */
-@property (nonatomic, assign) CGPoint ul;
+@property (nonatomic) CGPoint ul;
 
 /**
  * Upper right corner
  */
-@property (nonatomic, assign) CGPoint ur;
+@property (nonatomic) CGPoint ur;
 
 /**
  * Lower left corner
  */
-@property (nonatomic, assign) CGPoint ll;
+@property (nonatomic) CGPoint ll;
 
 /**
  * Lower right corner
  */
-@property (nonatomic, assign) CGPoint lr;
+@property (nonatomic) CGPoint lr;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /**
  * Initializer
@@ -255,7 +270,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPPosition : NSObject
 - (instancetype)initWithUpperLeft:(CGPoint)ul
                        upperRight:(CGPoint)ur
                         lowerLeft:(CGPoint)ll
-                       lowerRight:(CGPoint)lr;
+                       lowerRight:(CGPoint)lr NS_DESIGNATED_INITIALIZER;
 
 /**
  * Creates a position with offset to a current position. Offset is added.

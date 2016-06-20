@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#import "PPMicroBlinkDefines.h"
 #import "PPDetectorResult.h"
-#import "PPRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class PPOcrLayout;
 @class PPOverlayViewController;
+@class PPRecognizerResult;
 
 /**
  * Common interface for all OverlaySubviews
@@ -34,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol PPOverlaySubview <NSObject>
 
 /** Delegate which is notified on Overlay events */
-@property (nonatomic, assign, nullable) id<PPOverlaySubviewDelegate> delegate;
+@property (nonatomic, weak, nullable) id<PPOverlaySubviewDelegate> delegate;
 
 /** The overlay view controller containing this overlay subview (if any) */
 @property (nonatomic, weak) PPOverlayViewController* overlay;
@@ -68,14 +70,20 @@ NS_ASSUME_NONNULL_BEGIN
 
  If you're interested in valid data, use cameraViewController:didOutputResults: method
  */
-- (void)overlayDidFinishRecognitionWithResult:(id)result;
+- (void)overlayDidFinishRecognition;
+
+/**
+ * Overlay started new detection cycle.  Since detection is done on video frames,
+ there might be multiple detection cycles before the scanning completes.
+ */
+- (void)overlayDidStartDetection;
 
 /**
  Overlay reports the progress of the current OCR/barcode scanning recognition cycle.
  Note: this is not the actual progress from the moment camera appears.
  This might not be meaningful for the user in all cases.
  */
-- (void)overlayDidPublishProgress:(float)progress;
+- (void)overlayDidPublishProgress:(CGFloat)progress;
 
 /**
  Overlay reports the status of the object detection. Scanning status contain information
@@ -103,11 +111,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)overlayDidOutputResults:(NSArray<PPRecognizerResult*>*)results;
 
 /**
- Overlay wants to remove all animations from a subview
- */
-- (void)overlayWillRemoveAllAnimations;
-
-/**
  Method called when a rotation to a given
  interface orientation is about to happen
  */
@@ -132,9 +135,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Base class for all overlay subviews
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPOverlaySubview : UIView<PPOverlaySubview>
-
-- (NSArray*)getSortedPoints:(NSArray*)points;
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPOverlaySubview : UIView<PPOverlaySubview>
 
 @end
 

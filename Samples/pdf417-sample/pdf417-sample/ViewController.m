@@ -12,7 +12,7 @@
 
 #import "PPCameraOverlayViewController.h"
 
-@interface ViewController () <PPScanDelegate, UIAlertViewDelegate>
+@interface ViewController () <PPScanningDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -37,11 +37,11 @@
  *
  *  @return initialized coordinator
  */
-- (PPCoordinator *)coordinatorWithError:(NSError**)error {
+- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
     
     /** 0. Check if scanning is supported */
     
-    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
+    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
         return nil;
     }
     
@@ -88,7 +88,7 @@
     
     /** 4. Initialize the Scanning Coordinator object */
     
-    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
+    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
     
     return coordinator;
 }
@@ -111,7 +111,7 @@
     
     /** Instantiate the scanning coordinator */
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
     
     /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
@@ -120,7 +120,7 @@
     }
     
     /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
     
     // Allow scanning view controller to autorotate
     scanningViewController.autorotate = YES;
@@ -134,7 +134,7 @@
     /** Instantiate the scanning coordinator */
     
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
     
     /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
@@ -148,8 +148,7 @@
     PPCameraOverlayViewController *overlayVC = [[PPCameraOverlayViewController alloc] init];
     
     /** Create new scanning view controller with desired custom overlay */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self
-                                                                                                 overlayViewController:overlayVC];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self overlayViewController:overlayVC coordinator:coordinator error:nil];
     
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];

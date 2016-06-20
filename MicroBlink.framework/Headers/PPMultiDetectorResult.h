@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Result of detection of multi detector object
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMultiDetectorResult : PPDetectorResult
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPMultiDetectorResult : PPDetectorResult
 
 /**
  * Array of detector results

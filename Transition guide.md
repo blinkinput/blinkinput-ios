@@ -1,8 +1,16 @@
+### Transition to 2.0.0
+
+- `PPCameraCoordinator` now assumes the role of `PPCoordinator`. If you do not use your own camera management or Direct API you can rename all instances of `PPCoordinator` to `PPCameraCoordinator`
+- `PPCoordinator` method `cameraViewControllerWithDelegate:` has been removed. To create `PPScanningViewControllers` you can now use `[PPViewControllerFactory cameraViewControllerWithDelegate: coordinator: error:]`
+- Direct API is now located in `PPCoordinator`. To process image use 'processImage:' method and be sure to set 'PPCoordinatorDelegate' when creating 'PPCoordinator' to recieve scanning results and events. You can se processing image roi and processing orientation on 'PPImage' object.
+- Methods of 'PPOverlayContainerViewController' protocol should now be called after camera view has appeared.
+
 ### Transition to 1.2.0
 
 - Renamed `PPOcrRecognizerSettings` and `PPOcrRecognizerResult` to `PPBlinkOcrRecognizerSettings` and `PPBlinkOcrRecognizerResult` respectively
 
 - PPOverlayViewController changed the way Overlay Subviews are added to the view hierarchy. Instead of calling `addOverlaySubview:` (which automatically added a view to view hierarachy), you now need to call `registerOverlaySubview:` (which registers subview for scanning events), and manually add subview to view hierarchy using `addSubview:` method. This change gives you more flexibility for adding views and managing autolayout and autoresizing masks. So, replace all calls to (assuming self is a `PPOverlayViewController` instance)
+- PPScanDelegate has been renamed to PPScanningDelegate
 
 ```objective-c
 [self addOverlaySubview:subview];

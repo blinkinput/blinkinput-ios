@@ -9,17 +9,21 @@
 #ifndef PhotoPayFramework_MicroBlink_h
 #define PhotoPayFramework_MicroBlink_h
 
-#import "PPScanDelegate.h"
+#import "PPScanningDelegate.h"
 
 #import "PPSettings.h"
 
-#import "PPCoordinator.h"
+#import "PPViewControllerFactory.h"
+#import "PPCameraCoordinator.h"
 #import "PPDetectionStatus.h"
 
 /** UI */
 #import "PPModernBaseOverlayViewController.h"
 #import "PPModernOcrResultOverlaySubview.h"
 #import "PPOcrResultOverlaySubview.h"
+#import "PPDotsOverlaySubview.h"
+#import "PPModernViewfinderOverlaySubview.h"
+#import "PPViewfinderOverlaySubview.h"
 
 /** OCR */
 #import "PPBlinkOcrRecognizerSettings.h"

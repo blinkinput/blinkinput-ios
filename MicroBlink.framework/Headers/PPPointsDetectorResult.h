@@ -13,8 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Result of the detection of a point detector. Point Detectors are used for QR and similar barcodes
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPPointsDetectorResult : PPDetectorResult
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPPointsDetectorResult : PPDetectorResult
 
+/**
+ * Coordinates of points (CGPoint) of a detected object.
+ */
 @property (nonatomic) NSArray *points;
 
 @end

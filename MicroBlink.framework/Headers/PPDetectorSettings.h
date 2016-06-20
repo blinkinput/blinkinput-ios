@@ -12,29 +12,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-struct DetectorSettingsImpl;
-typedef struct DetectorSettingsImpl DetectorSettingsImpl;
-
 /**
- * MicroBlink scanning libraries run detector objects to find objects on image
- *
- * Each detector is configured with PPDetectorSettings object
- *
- * This class is common superclass for each of the Detector settings,
+ * MicroBlink scanning libraries run detector objects to find objects on image.
+ * Each detector is configured with PPDetectorSettings object.
+ * This class is common superclass for each of the Detector settings.
  */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDetectorSettings : NSObject <NSCopying>
 
-@property (nonatomic, readonly, assign) DetectorSettingsImpl* settings;
-
 /**
- * Designated initializer. Internal.
- *
- *  @param settings implementation object
- *
- *  @return instantiated object
+ * This is an abstract class. Please use one of concrete classes.
  */
-- (instancetype)initWithSettings:(DetectorSettingsImpl*)settings NS_DESIGNATED_INITIALIZER;
-
 - (instancetype)init NS_UNAVAILABLE;
 
 @end

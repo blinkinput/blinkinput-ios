@@ -21,20 +21,39 @@
 #import "PPEmailOcrParserFactory.h"
 #import "PPIbanOcrParserFactory.h"
 #import "PPPriceOcrParserFactory.h"
+#import "PPVinOcrParserFactory.h"
 
 #import "PPDetectorSettings.h"
 #import "PPDocumentClassifier.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Class used for OCR or Templating API
+ */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPBlinkOcrRecognizerSettings : PPTemplatingRecognizerSettings
 
 - (instancetype)init;
 
+/**
+ * Detector settings used in Templating API
+ *
+ * Default: nil
+ */
 @property (nonatomic) PPDetectorSettings *detectorSettings;
 
+/**
+ * Templating API documents will be processed twice: once regulary and second time flipped upside down.
+ *
+ * Default: NO
+ */
 @property (nonatomic) BOOL allowFlippedRecognition;
 
+/**
+ * Delegate for document classification.
+ *
+ * Default: nil
+ */
 @property (nonatomic) id<PPDocumentClassifier> documentClassifier;
 
 @end

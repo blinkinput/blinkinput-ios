@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol PPScanningDelegate;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Protocol for View controllers which present camera and provide scanning features
  */
 @protocol PPScanningViewController <NSObject>
+
+@property (nonatomic, weak) id<PPScanningDelegate> scanningDelegate;
 
 /**
  * Scanning region
@@ -26,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  *   covers 40% of screen width
  *   and 30% of screen heeight
  */
-@property (nonatomic, assign) CGRect scanningRegion;
+@property (nonatomic) CGRect scanningRegion;
 
 /**
  * ScanningViewController's shouldAutorotate will return this value.
@@ -35,14 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Set it to YES if you want scanning view controller to autorotate.
  */
-@property (nonatomic, assign) BOOL autorotate;
+@property (nonatomic) BOOL autorotate;
 
 /**
  * ScanningViewController's supportedInterfaceOrientations will return this value.
  *
  * Default: UIInterfaceOrientationMaskPortrait.
  */
-@property (nonatomic, assign) NSUInteger supportedOrientations;
+@property (nonatomic) NSUInteger supportedOrientations;
 
 /**
  * Pause scanning without dismissing the camera view.
@@ -52,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * @warning must be called from Main thread to ensure thread synchronization
  */
-- (void)pauseScanning;
+- (BOOL)pauseScanning;
 
 /**
  * Retrieve the current state of scanning.
@@ -78,17 +82,24 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @warning must be called from Main thread to ensure thread synchronization
  */
-- (void)resumeScanningAndResetState:(BOOL)resetState;
+- (BOOL)resumeScanningAndResetState:(BOOL)resetState;
 
 /**
  * Resumes camera session. This method is automatically called in viewWillAppear when ScanningViewController enters screen.
  */
-- (void)resumeCamera;
+- (BOOL)resumeCamera;
 
 /**
  * Pauses camera session. This method is automatically called in viewDidDissapear when ScanningViewController exits screen.
  */
-- (void)pauseCamera;
+- (BOOL)pauseCamera;
+
+/**
+ * Retrieve the current state of camera.
+ *
+ *  @return YES if camera is paused. NO if camera is active
+ */
+- (BOOL)isCameraPaused;
 
 @end
 

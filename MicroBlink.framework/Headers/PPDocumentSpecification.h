@@ -12,9 +12,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-struct DocumentImpl;
-typedef struct DocumentImpl DocumentImpl;
-
 /**
  * Struct which defines a range on the image
  */
@@ -84,11 +81,9 @@ typedef NS_ENUM(NSUInteger, PPDocumentPreset) {
 
 /**
  * Document class describes a document which is being detected by DocumentDetector.
+ * We encurage users to create specifications with one of our presets, if possible.
  */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopying>
-
-// internal implementation
-@property (nonatomic, readonly, assign) DocumentImpl *documentImpl;
 
 /**
  * Use this initializer for specifiying a document format.
@@ -101,8 +96,6 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopy
 - (instancetype)initWithAspectRatio:(CGFloat)aspectRatio
                        decodingInfo:(NSArray<PPDecodingInfo*> *)decodingInfoArray;
 
-// used for internal initialization
-- (instancetype)initWithDocument:(DocumentImpl *)documentImpl NS_DESIGNATED_INITIALIZER;
 
 // unavailable initializer
 - (instancetype)init NS_UNAVAILABLE;

@@ -15,29 +15,29 @@ xctool -project Samples/BlinkOCR-sample/BlinkOCR-sample.xcodeproj \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xctool -project Samples/NoCamera-sample/NoCamera-sample.xcodeproj \
-	-scheme NoCamera-sample \
+xctool -project Samples/DirectAPI-sample/DirectAPI-sample.xcodeproj \
+	-scheme DirectAPI-Sample \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xctool -project Samples/NoCamera-sample/NoCamera-sample.xcodeproj \
-	-scheme NoCamera-sample \
+xctool -project Samples/DirectAPI-sample/DirectAPI-sample.xcodeproj \
+	-scheme DirectAPI-Sample \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xctool -project Samples/FormScanning-sample/FormScanning-sample.xcodeproj \
-	-scheme FormScanning-sample \
+xctool -project Samples/SegmentScan-sample/SegmentScanDemo.xcodeproj \
+	-scheme SegmentScanDemo \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xctool -project Samples/FormScanning-sample/FormScanning-sample.xcodeproj \
-	-scheme FormScanning-sample \
+xctool -project Samples/SegmentScan-sample/SegmentScanDemo.xcodeproj \
+	-scheme SegmentScanDemo \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \

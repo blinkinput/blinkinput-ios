@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313305071D183C010086CADF /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 313305051D183C010086CADF /* MicroBlink.bundle */; };
+		313305081D183C010086CADF /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313305061D183C010086CADF /* MicroBlink.framework */; };
 		3139C81B1C22B2AC005AC32C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139C81A1C22B2AC005AC32C /* AppDelegate.swift */; };
 		3139C81D1C22B2AC005AC32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139C81C1C22B2AC005AC32C /* ViewController.swift */; };
 		3139C8201C22B2AC005AC32C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3139C81E1C22B2AC005AC32C /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		313305051D183C010086CADF /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../../MicroBlink.bundle; sourceTree = "<group>"; };
+		313305061D183C010086CADF /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../../MicroBlink.framework; sourceTree = "<group>"; };
 		3139C8171C22B2AC005AC32C /* pdf417-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf417-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3139C81A1C22B2AC005AC32C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3139C81C1C22B2AC005AC32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 				3139C8381C22B33E005AC32C /* libiconv.tbd in Frameworks */,
 				3139C8361C22B338005AC32C /* libc++.tbd in Frameworks */,
 				3139C8341C22B333005AC32C /* AudioToolbox.framework in Frameworks */,
+				313305081D183C010086CADF /* MicroBlink.framework in Frameworks */,
 				3139C8321C22B324005AC32C /* CoreMedia.framework in Frameworks */,
 				3139C8301C22B31D005AC32C /* AVFoundation.framework in Frameworks */,
 				3139C82E1C22B319005AC32C /* Accelerate.framework in Frameworks */,
@@ -91,6 +96,8 @@
 		3139C82C1C22B30C005AC32C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				313305051D183C010086CADF /* MicroBlink.bundle */,
+				313305061D183C010086CADF /* MicroBlink.framework */,
 				3139C8371C22B33E005AC32C /* libiconv.tbd */,
 				3139C8351C22B338005AC32C /* libc++.tbd */,
 				3139C8331C22B333005AC32C /* AudioToolbox.framework */,
@@ -176,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				313305071D183C010086CADF /* MicroBlink.bundle in Resources */,
 				3139C8251C22B2AC005AC32C /* LaunchScreen.storyboard in Resources */,
 				3139C8221C22B2AC005AC32C /* Assets.xcassets in Resources */,
 				3139C8201C22B2AC005AC32C /* Main.storyboard in Resources */,

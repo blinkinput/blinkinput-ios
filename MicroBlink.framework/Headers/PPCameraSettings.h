@@ -62,7 +62,8 @@ typedef NS_ENUM(NSUInteger, PPCameraAutofocusRestriction) {
 /**
  * Settings class containing parameters for camera capture
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPCameraSettings : NSObject <NSCopying>
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPCameraSettings : NSObject <NSCopying>
 
 /**
  * Camera preset. With this property you can set the resolution of the camera
