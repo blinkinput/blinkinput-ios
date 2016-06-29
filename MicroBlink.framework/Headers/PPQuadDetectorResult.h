@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Result of the detection of a Quad detector.
- * Quad results are results of detecting various rectangular objects.
+ * Quad results are results of detecting various rectangular objects (such as ID cards, passports etc.).
  */
 PP_CLASS_AVAILABLE_IOS(6.0)
 @interface PPQuadDetectorResult : PPDetectorResult

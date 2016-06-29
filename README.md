@@ -36,6 +36,8 @@ BlinkOCR powers [PhotoMath app](https://photomath.net/en/) where it's used to [r
 
 - If you wish to use version v1.2.0 or above, you need to install Git Large File storage as described here: https://git-lfs.github.com
 
+- **Be sure to restart your console after installing Git LFS**
+
 - If you're using CocoaPods, you can easily try our sample apps by running the following command in your terminal window:
 
 ```shell
@@ -46,7 +48,7 @@ pod try PPBlinkOCR
 
 ```ruby
 platform :ios, '7.0'
-pod 'PPBlinkOCR', '~> 2.0.0'
+pod 'PPBlinkOCR', '~> 2.1.0'
 ```
 
 ## Requirements
