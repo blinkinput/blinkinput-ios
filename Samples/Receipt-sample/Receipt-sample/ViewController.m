@@ -28,11 +28,13 @@
 
 - (PPRawOcrParserFactory *)rawParserForReceipts {
     PPRawOcrParserFactory* rawParserFactory = [[PPRawOcrParserFactory alloc] init];
+    
+    PPOcrEngineOptions *options = [[PPOcrEngineOptions alloc] init];
 
-    rawParserFactory.options.minimalLineHeight = 10;
-    rawParserFactory.options.maximalLineHeight = 50;
-    rawParserFactory.options.maxCharsExpected = 3000;
-    rawParserFactory.options.colorDropoutEnabled = NO;
+    options.minimalLineHeight = 10;
+    options.maximalLineHeight = 50;
+    options.maxCharsExpected = 3000;
+    options.colorDropoutEnabled = NO;
 
     // initialize new char whitelist
     NSMutableSet *charWhitelist = [[NSMutableSet alloc] init];
@@ -59,7 +61,9 @@
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'%' font:PP_OCR_FONT_ANY]];
 
     // set the whitelist
-    rawParserFactory.options.charWhitelist = charWhitelist;
+    options.charWhitelist = charWhitelist;
+    
+    [rawParserFactory setOptions:options];
 
     return rawParserFactory;
 }

@@ -76,16 +76,6 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  */
 - (void)setScanningRegion:(CGRect)scanningRegion;
 
-/** 
- * Tell coordinator that scanning has started
- */
-- (void)start;
-
-/** 
- * Tell coordinator scanning has stopped
- */
-- (void)stop;
-
 /**
  * Pauses recognition of input images. Any image inputted will not be processed
  */
