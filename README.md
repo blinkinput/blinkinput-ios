@@ -34,7 +34,11 @@ BlinkOCR powers [PhotoMath app](https://photomath.net/en/) where it's used to [r
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like BlinkOCR in your projects. See the ["Getting Started" guide for more information](https://github.com/BlinkOCR/blinkocr-ios/wiki/Getting-started).
 
-- If you wish to use version v1.2.0 or above, you need to install Git Large File storage as described here: https://git-lfs.github.com
+- If you wish to use version v1.2.0 or above, you need to install [Git Large File Storage](https://git-lfs.github.com) by running these comamnds:
+```shell
+brew install git-lfs
+git lfs install
+```
 
 - **Be sure to restart your console after installing Git LFS**
 
@@ -48,7 +52,7 @@ pod try PPBlinkOCR
 
 ```ruby
 platform :ios, '7.0'
-pod 'PPBlinkOCR', '~> 2.1.0'
+pod 'PPBlinkOCR', '~> 2.1.1'
 ```
 
 ## Requirements

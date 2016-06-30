@@ -1,3 +1,7 @@
+### Transition to 2.1.1
+
+- No changes
+
 ### Transition to 2.1.0
 
 - Removed PPOcrEngineOptions property from PPRegexOcrParserFactory and PPRawOcrParserFactory. Replaced property with setter method.

@@ -1,3 +1,8 @@
+## 2.1.1
+
+- iOS bugfixes:
+	- Detectors are now built correctly. Incorrect builds caused Templating API not to work as desired
+
 ## 2.1.0
 
 - iOS updates:
