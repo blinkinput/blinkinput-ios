@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A18EE1F71D23CF000074C21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F61D23CF000074C21A /* main.m */; };
+		A18EE1FA1D23CF000074C21A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F91D23CF000074C21A /* AppDelegate.m */; };
+		A18EE1FD1D23CF000074C21A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1FC1D23CF000074C21A /* ViewController.m */; };
+		A18EE2001D23CF000074C21A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EE1FE1D23CF000074C21A /* Main.storyboard */; };
+		A18EE2021D23CF000074C21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2011D23CF000074C21A /* Assets.xcassets */; };
+		A18EE2051D23CF000074C21A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */; };
+		A18EE2101D23FE8B0074C21A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE20F1D23FE8B0074C21A /* Accelerate.framework */; };
+		A18EE2121D23FE940074C21A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2111D23FE940074C21A /* AudioToolbox.framework */; };
+		A18EE2141D23FE9D0074C21A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2131D23FE9D0074C21A /* AVFoundation.framework */; };
+		A18EE2161D23FEA60074C21A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2151D23FEA60074C21A /* CoreMedia.framework */; };
+		A18EE2181D23FEB60074C21A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2171D23FEB60074C21A /* libc++.tbd */; };
+		A18EE21A1D23FEC90074C21A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2191D23FEC90074C21A /* libiconv.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		A18EE21C1D23FF530074C21A /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE21B1D23FF530074C21A /* MicroBlink.framework */; };
+		A18EE2211D2400E60074C21A /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2201D2400E60074C21A /* MicroBlink.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A18EE1F21D23CF000074C21A /* USCheque-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "USCheque-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18EE1F61D23CF000074C21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A18EE1F81D23CF000074C21A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A18EE1F91D23CF000074C21A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A18EE1FB1D23CF000074C21A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A18EE1FC1D23CF000074C21A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A18EE1FF1D23CF000074C21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A18EE2011D23CF000074C21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A18EE2041D23CF000074C21A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A18EE2061D23CF000074C21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A18EE20F1D23FE8B0074C21A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A18EE2111D23FE940074C21A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A18EE2131D23FE9D0074C21A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A18EE2151D23FEA60074C21A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A18EE2171D23FEB60074C21A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A18EE2191D23FEC90074C21A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		A18EE21B1D23FF530074C21A /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		A18EE2201D2400E60074C21A /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A18EE1EF1D23CF000074C21A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18EE2141D23FE9D0074C21A /* AVFoundation.framework in Frameworks */,
+				A18EE2121D23FE940074C21A /* AudioToolbox.framework in Frameworks */,
+				A18EE2101D23FE8B0074C21A /* Accelerate.framework in Frameworks */,
+				A18EE21C1D23FF530074C21A /* MicroBlink.framework in Frameworks */,
+				A18EE2161D23FEA60074C21A /* CoreMedia.framework in Frameworks */,
+				A18EE21A1D23FEC90074C21A /* libiconv.tbd in Frameworks */,
+				A18EE2181D23FEB60074C21A /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A18EE1E91D23CF000074C21A = {
+			isa = PBXGroup;
+			children = (
+				A18EE21F1D2400740074C21A /* Frameworks */,
+				A18EE1F41D23CF000074C21A /* USCheque-Sample */,
+				A18EE1F31D23CF000074C21A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A18EE1F31D23CF000074C21A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A18EE1F21D23CF000074C21A /* USCheque-Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A18EE1F41D23CF000074C21A /* USCheque-Sample */ = {
+			isa = PBXGroup;
+			children = (
+				A18EE1F81D23CF000074C21A /* AppDelegate.h */,
+				A18EE1F91D23CF000074C21A /* AppDelegate.m */,
+				A18EE1FB1D23CF000074C21A /* ViewController.h */,
+				A18EE1FC1D23CF000074C21A /* ViewController.m */,
+				A18EE1FE1D23CF000074C21A /* Main.storyboard */,
+				A18EE2011D23CF000074C21A /* Assets.xcassets */,
+				A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */,
+				A18EE2061D23CF000074C21A /* Info.plist */,
+				A18EE1F51D23CF000074C21A /* Supporting Files */,
+			);
+			path = "USCheque-Sample";
+			sourceTree = "<group>";
+		};
+		A18EE1F51D23CF000074C21A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A18EE1F61D23CF000074C21A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A18EE21F1D2400740074C21A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A18EE2171D23FEB60074C21A /* libc++.tbd */,
+				A18EE2191D23FEC90074C21A /* libiconv.tbd */,
+				A18EE2201D2400E60074C21A /* MicroBlink.bundle */,
+				A18EE20F1D23FE8B0074C21A /* Accelerate.framework */,
+				A18EE2111D23FE940074C21A /* AudioToolbox.framework */,
+				A18EE2131D23FE9D0074C21A /* AVFoundation.framework */,
+				A18EE2151D23FEA60074C21A /* CoreMedia.framework */,
+				A18EE21B1D23FF530074C21A /* MicroBlink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A18EE1F11D23CF000074C21A /* USCheque-Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "USCheque-Sample" */;
+			buildPhases = (
+				A18EE1EE1D23CF000074C21A /* Sources */,
+				A18EE1EF1D23CF000074C21A /* Frameworks */,
+				A18EE1F01D23CF000074C21A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "USCheque-Sample";
+			productName = "USCheque-Sample";
+			productReference = A18EE1F21D23CF000074C21A /* USCheque-Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A18EE1EA1D23CF000074C21A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = MicroBlink;
+				TargetAttributes = {
+					A18EE1F11D23CF000074C21A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A18EE1ED1D23CF000074C21A /* Build configuration list for PBXProject "USCheque-Sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A18EE1E91D23CF000074C21A;
+			productRefGroup = A18EE1F31D23CF000074C21A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A18EE1F11D23CF000074C21A /* USCheque-Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A18EE1F01D23CF000074C21A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18EE2051D23CF000074C21A /* LaunchScreen.storyboard in Resources */,
+				A18EE2021D23CF000074C21A /* Assets.xcassets in Resources */,
+				A18EE2001D23CF000074C21A /* Main.storyboard in Resources */,
+				A18EE2211D2400E60074C21A /* MicroBlink.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A18EE1EE1D23CF000074C21A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18EE1FD1D23CF000074C21A /* ViewController.m in Sources */,
+				A18EE1FA1D23CF000074C21A /* AppDelegate.m in Sources */,
+				A18EE1F71D23CF000074C21A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A18EE1FE1D23CF000074C21A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A18EE1FF1D23CF000074C21A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A18EE2041D23CF000074C21A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A18EE2071D23CF000074C21A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A18EE2081D23CF000074C21A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A18EE20A1D23CF000074C21A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = ../../;
+				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.USCheque-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A18EE20B1D23CF000074C21A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = ../../;
+				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.USCheque-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A18EE1ED1D23CF000074C21A /* Build configuration list for PBXProject "USCheque-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18EE2071D23CF000074C21A /* Debug */,
+				A18EE2081D23CF000074C21A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "USCheque-Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A18EE20A1D23CF000074C21A /* Debug */,
+				A18EE20B1D23CF000074C21A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A18EE1EA1D23CF000074C21A /* Project object */;
+}
