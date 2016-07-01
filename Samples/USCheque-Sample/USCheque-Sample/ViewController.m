@@ -11,11 +11,16 @@
 
 @interface ViewController () <PPScanningDelegate, PPDocumentClassifier>
 
+@property (nonatomic, strong) PPImageMetadata *imageMetadata;
+
 @end
 
 @implementation ViewController
 
+static NSString *US_CHEQUE_CLASSIFICATION = @"classification";
 static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
+static NSString *CLASS_US_CHEQUE = @"classUSCheque";
+static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
 
 
 - (void)viewDidLoad {
@@ -39,30 +44,33 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
  */
 - (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
     
-    /** 0. Check if scanning is supported */
+    /*--------------------------------------*/
+    /*  0. Check if scanning is supported   */
+    /*--------------------------------------*/
     
     if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
         return nil;
     }
     
+    /*---------------------------------------*/
+    /*  1. Initialize the Scanning settings  */
+    /*---------------------------------------*/
     
-    /** 1. Initialize the Scanning settings */
-    
-    // Initialize the scanner settings object. This initialize settings with all default values.
+    // This initialize settings with all default values.
     PPSettings *settings = [[PPSettings alloc] init];
     
     // tell which metadata you want to receive. Metadata collection takes CPU time - so use it only if necessary!
-    settings.metadataSettings.dewarpedImage = YES; // get dewarped image of ID documents
-    settings.metadataSettings.debugMetadata.debugOcrInputFrame = YES;
+    settings.metadataSettings.dewarpedImage = YES; // get dewarped image of documents
     
-    
-    /** 2. Setup the license key */
+    /*----------------------------*/
+    /*  2. Setup the license key  */
+    /*----------------------------*/
     
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"G4RQQQFB-2CW2RQWZ-TAYZQMLH-NW5AVO3P-WI2SNHPV-HSSUH2FY-PYPHCENS-ZKMNOIVO"; // Valid temporarily
+    settings.licenseSettings.licenseKey = @"WYJEKDWZ-MSZCFGY2-5KDVCIU3-5J4KUJHF-H64RWKKL-K2GYGCEQ-L77DAWSW-OJI4JOQI"; // Valid temporarily
     
 
-
+ 
     
     /**********************************************************************************************************************/
     /**************  For Croatian ID sample images please check Croatian_ID_Images.xcassets in this project  **************/
@@ -71,53 +79,96 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
     
     
     
-    /**
-     * 3. Set up what is being scanned. See detailed guides for specific use cases.
-     * Remove undesired recognizers (added below) for optimal performance.
-     */
+    /*------------------------------------*/
+    /*  3. Set up what is being scanned.  */
+    /*------------------------------------*/
     {
         PPBlinkOcrRecognizerSettings *ocrSettings = [[PPBlinkOcrRecognizerSettings alloc] init];
         
-        NSMutableArray<PPDecodingInfo*> *decodingInfosArray = [NSMutableArray array];
+        NSMutableArray<PPDecodingInfo*> *classificationInfosArray = [NSMutableArray array];
+        NSMutableArray<PPDecodingInfo*> *ocrLineInfosArray = [NSMutableArray array];
+        
+        /**
+         * Locations of OCR line is at the bottom of the document
+         */
+        CGRect ocrLineLocation = CGRectMake(0.0, 0.82, 1.0, 0.16);
+        
+        /**
+         * Pixel height of image for reading OCR line
+         */
+        int dewarpHeight = 200;
         
         /** Setup reading of suspected OCR line with all awailable fonts */
         {
-            /** Pixel height of returned image */
-            int dewarpHeight = 150;
+            /**
+             * For detecting of detected document has something that looks like OCR line we use Regex parser
+             * which only checks if suspected OCR line has something what we expect
+             */
+            PPRegexOcrParserFactory *classificationParser = [[PPRegexOcrParserFactory alloc] initWithRegex:@"([+-<>]?\\d{2,}[+-<>]? ?){3,10}"];
             
             /**
-             * For extracting first and last names, we will use regex parser with regular expression which
-             * attempts to extract as many uppercase words as possible from single line.
+             * Tweak OCR engine options - allow all fonts
              */
-            PPRegexOcrParserFactory *ocrLineParser = [[PPRegexOcrParserFactory alloc] initWithRegex:@"[A-Za-z0-9+-<> ]{10,40}"];
-            
-            /**
-             * tweak OCR engine options - allow only recognition of uppercase letters used in Croatia
-             */
-            PPOcrEngineOptions* ocrEngineoptions = [[PPOcrEngineOptions alloc] init];
-//            ocrEngineoptions.minimalLineHeight = 10;
-//            ocrEngineoptions.minimalLineHeight = 140;
-            ocrEngineoptions.imageProcessingEnabled = true;
-            ocrEngineoptions.charWhitelist = [self commonWhitelist];
-            [ocrLineParser setOptions:ocrEngineoptions];
+            PPOcrEngineOptions* classificationOcrEngineOptions = [[PPOcrEngineOptions alloc] init];
+            classificationOcrEngineOptions.minimalLineHeight = 25;
+            classificationOcrEngineOptions.charWhitelist = [self commonWhitelist];
+            [classificationParser setOptions:classificationOcrEngineOptions];
 
             /**
              * Add parser to recognizer settings
              */
-            [ocrSettings addOcrParser:ocrLineParser name:US_CHEQUE_OCR_LINE group:US_CHEQUE_OCR_LINE];
-
-            /** 
-             * Locations of first name string on borth old and new ID cards
-             */
-            CGRect ocrLineLocation = CGRectMake(0.0, 0.85, 1.0, 0.1);
+            [ocrSettings addOcrParser:classificationParser name:US_CHEQUE_CLASSIFICATION group:US_CHEQUE_CLASSIFICATION];
             
             /**
-             * Add locations to list
-             * Since we want to use selected parsers on these locations, uniqueId of decoding infos must be the same as parser group id.
+             * Add locations to classification list. To perform parsing with classificationParser on desired location,
+             * uniqueId of decoding infos must be the same as parser groupId.
              */
-            [decodingInfosArray addObject:[[PPDecodingInfo alloc] initWithLocation:ocrLineLocation dewarpedHeight:dewarpHeight uniqueId:US_CHEQUE_OCR_LINE]];
+            [classificationInfosArray addObject:[[PPDecodingInfo alloc] initWithLocation:ocrLineLocation dewarpedHeight:dewarpHeight uniqueId:US_CHEQUE_CLASSIFICATION]];
         }
         
+        /** Setup reading of confirmed OCR line with MICR font only */
+        {
+            /**
+             * For reading of micr OCR line use Regex parser with regex which corresponds with actual OCR line
+             */
+            NSString *chequeRegexOne = @"<\\d+< ?(\\+?\\d+-)?\\d+\\+ ?(\\d+-?)+<( ?\\d+)?";
+            NSString *chequeRegexTwo = @"\\+\\d+\\+ ?<?(\\d{2,} ?)+< ?\\d{2,}";
+            PPRegexOcrParserFactory *ocrLineParser = [[PPRegexOcrParserFactory alloc] initWithRegex:[NSString stringWithFormat:@"(%@)|(%@)", chequeRegexOne, chequeRegexTwo]];
+            
+            /**
+             * Tweak OCR engine options - use onlly MICR font
+             */
+            PPOcrEngineOptions* ocrEngineOptions = [[PPOcrEngineOptions alloc] init];
+            ocrEngineOptions.minimalLineHeight = 25;
+            ocrEngineOptions.charWhitelist = [self micrWhitelist];
+            [ocrLineParser setOptions:ocrEngineOptions];
+            
+            /**
+             * Add parser to recognizer settings
+             */
+            [ocrSettings addOcrParser:ocrLineParser name:US_CHEQUE_OCR_LINE group:US_CHEQUE_OCR_LINE];
+            
+            /**
+             * Add location to ocrLine list. To perform parsing with ocrLineParser on desired location,
+             * uniqueID of decoding infos must be the same as parser groupId.
+             */
+            [ocrLineInfosArray addObject:[[PPDecodingInfo alloc] initWithLocation:ocrLineLocation dewarpedHeight:dewarpHeight uniqueId:US_CHEQUE_OCR_LINE]];
+        }
+        
+        /** Setup image to be displayed */
+        {
+            /*
+             * Display full image
+             */
+            CGRect ocrLineLocation = CGRectMake(0.0, 0.0, 1.0, 1.0);
+            
+            /**
+             * Pixel height of returned full document image
+             */
+            int fullDocumentDewarpHeight = 500;
+            
+            [ocrLineInfosArray addObject:[[PPDecodingInfo alloc] initWithLocation:ocrLineLocation dewarpedHeight:fullDocumentDewarpHeight uniqueId:FULL_DOCUMENT_IMAGE]];
+        }
         
         /**
          * Create ID card document specification. Document specification defines geometric/scanning properties of documents to be detected
@@ -127,7 +178,7 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
         /**
          * Set decoding infos as our classification decoding infos. One has location of document number on old id, other on new Id
          */
-        [usChequeDocumentSpecification setDecodingInfo:decodingInfosArray];
+        [usChequeDocumentSpecification setDecodingInfo:classificationInfosArray];
         
         /**
          * Wrap Document specification in detector settings
@@ -139,13 +190,24 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
          * Add created detector settings to recognizer
          */
         [ocrSettings setDetectorSettings:detectorSettings];
-
+        
+        /**
+         * Set this class as document classifier delegate
+         */
+        [ocrSettings setDocumentClassifier:self];
+        
+        /**
+         * Add decoding infos for classified results. These infos and their parsers will only be processed if classifier outputs the selected class
+         */
+        [ocrSettings setDecodingInfoSet:ocrLineInfosArray forClassifierResult:CLASS_US_CHEQUE];
         
         [settings.scanSettings addRecognizerSettings:ocrSettings];
     }
     
     
-    /** 4. Initialize the Scanning Coordinator object */
+    /*-------------------------------------------------*/
+    /*  4. Initialize the Scanning Coordinator object  */
+    /*-------------------------------------------------*/
     
     PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings delegate:nil];
     
@@ -161,21 +223,14 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
     for (int c = '0'; c <= '9'; c++) {
         [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
     }
-    for (int c = 'A'; c <= 'Z'; c++) {
-        [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
-    }
-    for (int c = 'a'; c <= 'z'; c++) {
-        [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
-    }
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'+' font:PP_OCR_FONT_ANY]];
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'-' font:PP_OCR_FONT_ANY]];
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'<' font:PP_OCR_FONT_ANY]];
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'>' font:PP_OCR_FONT_ANY]];
     
     return charWhitelist;
 }
 
-- (NSMutableSet *)micrCharsWhitelist {
+- (NSMutableSet *)micrWhitelist {
     
     // initialize new char whitelist
     NSMutableSet *charWhitelist = [[NSMutableSet alloc] init];
@@ -187,7 +242,6 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'+' font:PP_OCR_FONT_MICR]];
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'-' font:PP_OCR_FONT_MICR]];
     [charWhitelist addObject:[PPOcrCharKey keyWithCode:'<' font:PP_OCR_FONT_MICR]];
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'>' font:PP_OCR_FONT_MICR]];
     
     return charWhitelist;
 }
@@ -259,46 +313,9 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
         if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
             /** Specified document was detected */
             PPBlinkOcrRecognizerResult* blinkOcrResult = (PPBlinkOcrRecognizerResult*)result;
-            PPOcrLayout* ocrResult = [blinkOcrResult ocrLayoutForParserGroup:US_CHEQUE_OCR_LINE];
             
-            NSInteger numCharacters = 0;
-            NSInteger numMicrCharacters = 0;
-            NSInteger sumMicrCharactersQuality = 0;
-            NSInteger sumHeights = 0;
-            
-            for (PPOcrBlock* block in [ocrResult blocks]) {
-                for (PPOcrLine* line in [block lines]){
-                    for (PPOcrChar* character in [line chars]){
-                        if ([character value] == ' ') continue;
-                        
-                        numCharacters ++;
-                        sumHeights += [character height];
-                        if ([character font] == PP_OCR_FONT_MICR) {
-                            numMicrCharacters ++;
-                            sumMicrCharactersQuality += [character quality];
-                        }
-                    }
-                }
-            }
-            
-            bool thrueCheque = true;
-            
-//            NSString* heightString = [NSString stringWithFormat:@"%d", (int) ((float )sumHeights / (float) numCharacters)];
-            NSString* heightString = [NSString stringWithFormat:@"%d", (int) ((float) sumHeights / (float) numCharacters)];
-            
-            if (thrueCheque){
-                title = @"US Cheque";
-                message = [blinkOcrResult parsedResultForName:US_CHEQUE_OCR_LINE parserGroup:US_CHEQUE_OCR_LINE];
-                message = [message stringByAppendingString:@"\nNumCharacters: "];
-                message = [message stringByAppendingString:[NSString stringWithFormat:@"%d", numCharacters]];
-                message = [message stringByAppendingString:@"\nNumMICR: "];
-                message = [message stringByAppendingString:[NSString stringWithFormat:@"%d", numMicrCharacters]];
-                message = [message stringByAppendingString:@" avgHeight: "];
-                message = [message stringByAppendingString:heightString];
-            }else{
-                title = @"Not US Cheque";
-                message = @"";
-            }
+            title = @"US Cheque";
+            message = [blinkOcrResult parsedResultForName:US_CHEQUE_OCR_LINE parserGroup:US_CHEQUE_OCR_LINE];
         }
     };
     
@@ -317,20 +334,10 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
     if ([metadata isKindOfClass:[PPImageMetadata class]]) {
         
         PPImageMetadata *imageMetadata = (PPImageMetadata *)metadata;
-        UIImage *img = imageMetadata.image;
         
-        if ([imageMetadata.name isEqualToString:@"EUDL"]) {
-            UIImage *eudlImage = [imageMetadata image];
-            NSLog(@"We have dewarped and trimmed image of the EUDL, with size (%@, %@)", @(eudlImage.size.width), @(eudlImage.size.height));
-        } else if ([imageMetadata.name isEqualToString:@"MRTD"]) {
-            UIImage *mrtdImage = [imageMetadata image];
-            NSLog(@"We have dewarped and trimmed image of the Machine readable travel document, with size (%@, %@)", @(mrtdImage.size.width), @(mrtdImage.size.height));
-        } else if ([imageMetadata.name isEqualToString:@"MyKad"]) {
-            UIImage *myKadImage = [imageMetadata image];
-            NSLog(@"We have dewarped and trimmed image of the MyKad, with size (%@, %@)", @(myKadImage.size.width), @(myKadImage.size.height));
-        } else {
-            UIImage *image = [imageMetadata image];
-            NSLog(@"We have image %@ with size (%@, %@)", metadata.name, @(image.size.width), @(image.size.height));
+        if ([imageMetadata.name isEqualToString:FULL_DOCUMENT_IMAGE]) {
+            self.imageMetadata = (PPImageMetadata *)metadata;
+            NSLog(@"We have dewarped and cropped image of the US cheque");
         }
     }
 }
@@ -343,8 +350,53 @@ static NSString *US_CHEQUE_OCR_LINE = @"ocrLine";
 #pragma mark - PPDocumentClassifier
 
 - (NSString *)classifyDocumentFromResult:(PPTemplatingRecognizerResult *)result {
+    
+    PPBlinkOcrRecognizerResult* blinkOcrResult = (PPBlinkOcrRecognizerResult*)result;
+
     /**
-     * Document is detected but it doesnt contain document numbers on their expected locations
+     * If we did'n find anything structured on specified position this is definitely not US cheque
+     */
+    if ([[blinkOcrResult parsedResultForName:US_CHEQUE_CLASSIFICATION parserGroup:US_CHEQUE_CLASSIFICATION] length] == 0){
+        return @"";
+    }
+    
+    /**
+     *  Analyze full OCR result to determine if scanned region is indeed OCR line from US cheque
+     */
+    PPOcrLayout* ocrResult = [blinkOcrResult ocrLayoutForParserGroup:US_CHEQUE_CLASSIFICATION];
+
+    NSInteger numMicrCharacters = 0;
+    NSInteger numRelevantCharacters = 0;
+    NSCharacterSet *isSpaceChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    for (PPOcrBlock* block in [ocrResult blocks]) {
+        for (PPOcrLine* line in [block lines]){
+            for (PPOcrChar* character in [line chars]){
+                
+                if ([isSpaceChar characterIsMember:[character value]] || [character value] == '0'
+                        || [character value] == 'O' || [character value] == 'o') {
+                    continue;
+                }
+                
+                numRelevantCharacters ++;
+                
+                if ([character font] == PP_OCR_FONT_MICR) {
+                    numMicrCharacters ++;
+                }
+                
+            }
+        }
+    }
+    
+    /**
+     * US cheques should have at least 30% characters that are in MICR font
+     */
+    if (numMicrCharacters > (int) ((float) numRelevantCharacters * 0.3)){
+        return CLASS_US_CHEQUE;
+    }
+    
+    /**
+     * Document is detected but it doesnt contain MICR on expected location
      */
     return @"";
 }
