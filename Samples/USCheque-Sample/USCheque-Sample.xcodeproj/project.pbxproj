@@ -21,6 +21,7 @@
 		A18EE21A1D23FEC90074C21A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2191D23FEC90074C21A /* libiconv.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		A18EE21C1D23FF530074C21A /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE21B1D23FF530074C21A /* MicroBlink.framework */; };
 		A18EE2211D2400E60074C21A /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2201D2400E60074C21A /* MicroBlink.bundle */; };
+		A18EE22F1D2FED450074C21A /* Cheque_Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EE22E1D2FED450074C21A /* Cheque_Image.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A18EE2191D23FEC90074C21A /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A18EE21B1D23FF530074C21A /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A18EE2201D2400E60074C21A /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
+		A18EE22E1D2FED450074C21A /* Cheque_Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Cheque_Image.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */,
 				A18EE2061D23CF000074C21A /* Info.plist */,
 				A18EE1F51D23CF000074C21A /* Supporting Files */,
+				A18EE22E1D2FED450074C21A /* Cheque_Image.xcassets */,
 			);
 			path = "USCheque-Sample";
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18EE22F1D2FED450074C21A /* Cheque_Image.xcassets in Resources */,
 				A18EE2051D23CF000074C21A /* LaunchScreen.storyboard in Resources */,
 				A18EE2021D23CF000074C21A /* Assets.xcassets in Resources */,
 				A18EE2001D23CF000074C21A /* Main.storyboard in Resources */,
@@ -344,6 +348,7 @@
 				A18EE20B1D23CF000074C21A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

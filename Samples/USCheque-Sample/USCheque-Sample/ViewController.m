@@ -73,7 +73,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
  
     
     /**********************************************************************************************************************/
-    /**************  For Croatian ID sample images please check Croatian_ID_Images.xcassets in this project  **************/
+    /**************  For Croatian ID sample images please check Cheque_sample.xcassets in this project  **************/
     /**********************************************************************************************************************/
     
     
