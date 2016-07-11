@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31C5303D1D33C5ED000B4941 /* PPResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303C1D33C5ED000B4941 /* PPResultViewController.m */; };
+		31C5303F1D33C74B000B4941 /* PPCustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */; };
 		A18EE1F71D23CF000074C21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F61D23CF000074C21A /* main.m */; };
 		A18EE1FA1D23CF000074C21A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F91D23CF000074C21A /* AppDelegate.m */; };
 		A18EE1FD1D23CF000074C21A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1FC1D23CF000074C21A /* ViewController.m */; };
@@ -25,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31C5303B1D33C5ED000B4941 /* PPResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPResultViewController.h; sourceTree = "<group>"; };
+		31C5303C1D33C5ED000B4941 /* PPResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPResultViewController.m; sourceTree = "<group>"; };
+		31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCustomOverlay.m; sourceTree = "<group>"; };
+		31C530401D33C758000B4941 /* PPCustomOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCustomOverlay.h; sourceTree = "<group>"; };
 		A18EE1F21D23CF000074C21A /* USCheque-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "USCheque-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18EE1F61D23CF000074C21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A18EE1F81D23CF000074C21A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,9 +94,13 @@
 				A18EE1F91D23CF000074C21A /* AppDelegate.m */,
 				A18EE1FB1D23CF000074C21A /* ViewController.h */,
 				A18EE1FC1D23CF000074C21A /* ViewController.m */,
-				A18EE1FE1D23CF000074C21A /* Main.storyboard */,
+				31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */,
+				31C530401D33C758000B4941 /* PPCustomOverlay.h */,
+				31C5303B1D33C5ED000B4941 /* PPResultViewController.h */,
+				31C5303C1D33C5ED000B4941 /* PPResultViewController.m */,
 				A18EE2011D23CF000074C21A /* Assets.xcassets */,
 				A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */,
+				A18EE1FE1D23CF000074C21A /* Main.storyboard */,
 				A18EE2061D23CF000074C21A /* Info.plist */,
 				A18EE1F51D23CF000074C21A /* Supporting Files */,
 				A18EE22E1D2FED450074C21A /* Cheque_Image.xcassets */,
@@ -194,7 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A18EE1FD1D23CF000074C21A /* ViewController.m in Sources */,
+				31C5303D1D33C5ED000B4941 /* PPResultViewController.m in Sources */,
 				A18EE1FA1D23CF000074C21A /* AppDelegate.m in Sources */,
+				31C5303F1D33C74B000B4941 /* PPCustomOverlay.m in Sources */,
 				A18EE1F71D23CF000074C21A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +323,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.USCheque-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -323,6 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.USCheque-Sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";

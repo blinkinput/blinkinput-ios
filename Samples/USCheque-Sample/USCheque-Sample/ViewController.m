@@ -7,11 +7,17 @@
 //
 
 #import "ViewController.h"
+#import "PPCustomOverlay.h"
+#import "PPResultViewController.h"
 #import <MicroBlink/MicroBlink.h>
 
-@interface ViewController () <PPScanningDelegate, PPDocumentClassifier>
+@interface ViewController () <PPScanningDelegate, PPDocumentClassifier, PPResultViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) PPImageMetadata *imageMetadata;
+@property (nonatomic) PPCustomOverlay *overlay;
+@property (nonatomic) UIViewController<PPScanningViewController> *scanningViewController;
+@property(nonatomic) UIImageView *succesfulImage;
+@property(nonatomic) UIView *blurView;
 
 @end
 
@@ -31,6 +37,11 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
 }
 
 /**
@@ -265,11 +276,13 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     }
     
     /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
+    self.overlay = [[PPCustomOverlay alloc] init];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self overlayViewController:self.overlay coordinator:coordinator error:nil];
     
     // allow rotation if VC is displayed as a modal view controller
     scanningViewController.autorotate = YES;
     scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAll;
+    self.scanningViewController = scanningViewController;
     
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];
@@ -304,9 +317,6 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     // first, pause scanning until we process all the results
     [scanningViewController pauseScanning];
     
-    NSString* message;
-    NSString* title;
-    
     // Collect data from the result
     for (PPRecognizerResult* result in results) {
         
@@ -314,20 +324,18 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
             /** Specified document was detected */
             PPBlinkOcrRecognizerResult* blinkOcrResult = (PPBlinkOcrRecognizerResult*)result;
             
-            title = @"US Cheque";
-            message = [blinkOcrResult parsedResultForName:US_CHEQUE_OCR_LINE parserGroup:US_CHEQUE_OCR_LINE];
+            [self showResultViewWithResult:blinkOcrResult];
         }
     };
-    
-    // present the alert view with scanned results
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
 }
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanninvViewController didFinishDetectionWithResult:(PPDetectorResult *)result {
 
 }
 
+/**
+ * Since we setup to return full dewarped image in coordinatorWithError:, this method will be called each time document is detected. Then, we will store last found image to a variable so we can present it if needed
+ */
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didOutputMetadata:(PPMetadata *)metadata {
     
     // Check if metadata obtained is image. You can set what type of image is outputed by setting different properties of PPMetadataSettings (currently, dewarpedImage is set at line 57)
@@ -342,17 +350,12 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     }
 }
 
-// dismiss the scanning view controller when user presses OK.
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - PPDocumentClassifier
 
 - (NSString *)classifyDocumentFromResult:(PPTemplatingRecognizerResult *)result {
     
     PPBlinkOcrRecognizerResult* blinkOcrResult = (PPBlinkOcrRecognizerResult*)result;
-
+    
     /**
      * If we did'n find anything structured on specified position this is definitely not US cheque
      */
@@ -364,7 +367,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
      *  Analyze full OCR result to determine if scanned region is indeed OCR line from US cheque
      */
     PPOcrLayout* ocrResult = [blinkOcrResult ocrLayoutForParserGroup:US_CHEQUE_CLASSIFICATION];
-
+    
     NSInteger numMicrCharacters = 0;
     NSInteger numRelevantCharacters = 0;
     NSCharacterSet *isSpaceChar = [NSCharacterSet whitespaceAndNewlineCharacterSet];
@@ -374,7 +377,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
             for (PPOcrChar* character in [line chars]){
                 
                 if ([isSpaceChar characterIsMember:[character value]] || [character value] == '0'
-                        || [character value] == 'O' || [character value] == 'o') {
+                    || [character value] == 'O' || [character value] == 'o') {
                     continue;
                 }
                 
@@ -399,6 +402,207 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
      * Document is detected but it doesnt contain MICR on expected location
      */
     return @"";
+}
+
+#pragma mark - UI, Result view
+/**
+ * This section contains UI setupt of showing scanning result and dewarped image of cheque and does not contain SDK-related content
+ */
+
+- (void)showResultViewWithResult:(PPBlinkOcrRecognizerResult*)result {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:[result parsedResultForName:US_CHEQUE_OCR_LINE parserGroup:US_CHEQUE_OCR_LINE] forKey:@"OCR Line"];
+    PPResultViewController *resultView = [[PPResultViewController alloc] initWithTitle:@"US CHEQUE" labels:dict subTitle:@"" labelOrder:nil];
+    [self.scanningViewController addChildViewController:resultView];
+    resultView.view.alpha = 0.0f;
+    [self.scanningViewController.view addSubview:resultView.view];
+    [resultView didMoveToParentViewController:self.scanningViewController];
+    resultView.delegate = self;
+    
+    
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:30.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeHeight multiplier:0.8 constant:0.0]];
+    
+    [self.scanningViewController.view layoutIfNeeded];
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         resultView.view.alpha = 0.95f;
+                     }];
+}
+
+- (void)buttonCloseDidTap:(PPResultViewController *)viewController {
+    self.overlay.view.userInteractionEnabled = YES;
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         viewController.view.alpha = 0.0f;
+                     }
+                     completion:^(BOOL finished) {
+                         [viewController removeFromParentViewController];
+                         [viewController.view removeFromSuperview];
+                         [self.scanningViewController resumeScanningAndResetState:YES];
+                     }];
+}
+
+- (void)buttonRightDidTap:(PPResultViewController *)viewController {
+    NSMutableDictionary *temp = [viewController.labelMap mutableCopy];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:temp
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
+- (void)buttonMiddleDidTap:(PPResultViewController *)viewController {
+    [self showResultImage];
+}
+
+- (void)showResultImage {
+    if(self.succesfulImage) return;
+    self.succesfulImage = [[UIImageView alloc] init];
+    self.succesfulImage.userInteractionEnabled = YES;
+    
+    UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSuccesfulImage:)];
+    tapRecognizer.delegate = self;
+    [self.succesfulImage addGestureRecognizer:tapRecognizer];
+    
+    float finalAlpha = 1.0;
+    
+    self.blurView = [[UIView alloc] init];
+    
+    UIView *blurBackground;
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    blurBackground = blurEffectView;
+    
+    self.blurView.backgroundColor = [UIColor clearColor];
+    
+    [self.scanningViewController.view addSubview:self.blurView];
+    [self.blurView addSubview:blurBackground];
+    
+    UIGestureRecognizer *tapRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapSuccesfulImage:)];
+    tapRecognizer2.delegate = self;
+    [self.blurView addGestureRecognizer:tapRecognizer2];
+    
+    [self.blurView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [blurBackground setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.blurView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.blurView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.blurView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.blurView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+    
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:blurBackground attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:blurBackground attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:blurBackground attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0.0]];
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:blurBackground attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+    
+    
+    UIButton *buttonClose = [[UIButton alloc] init];
+    [buttonClose setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonClose setTitle:@"Close" forState:UIControlStateNormal];
+    [buttonClose setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonClose setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    buttonClose.contentEdgeInsets = UIEdgeInsetsMake(15.0, 15.0, 15.0, 15.0);
+    [self.blurView addSubview:buttonClose];
+    
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:buttonClose attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:20.0]];
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:buttonClose attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeTop multiplier:1.0 constant:20.0]];
+    
+    UIButton *buttonSave = [[UIButton alloc] init];
+    [buttonSave setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonSave setTitle:@"Save to Gallery" forState:UIControlStateNormal];
+    [buttonSave setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [buttonSave setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    buttonSave.contentEdgeInsets = UIEdgeInsetsMake(15.0, 15.0, 15.0, 15.0);
+    [self.blurView addSubview:buttonSave];
+    
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:buttonSave attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-20.0]];
+    [self.blurView addConstraint:[NSLayoutConstraint constraintWithItem:buttonSave attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.blurView attribute:NSLayoutAttributeTop multiplier:1.0 constant:20.0]];
+    
+    [buttonClose addTarget:self
+                    action:@selector(closeResultImage)
+          forControlEvents:UIControlEventTouchUpInside];
+    [buttonSave addTarget:self
+                   action:@selector(blurViewSave)
+         forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    [self.succesfulImage setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    self.succesfulImage.image = self.imageMetadata.image;
+    [self.succesfulImage.layer setCornerRadius:5.0f];
+    [self.succesfulImage.layer setBorderColor:[UIColor blackColor].CGColor];
+    [self.succesfulImage.layer setBorderWidth:1.0f];
+    self.succesfulImage.layer.masksToBounds = YES;
+    
+    [self.scanningViewController.view addSubview:self.succesfulImage];
+    
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
+    
+    float aspectRatio = self.imageMetadata.image.size.height / self.imageMetadata.image.size.width;
+    
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeWidth multiplier:0.0 constant:1.0];
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeHeight multiplier:0.0 constant:1.0];
+    
+    
+    width = [NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeWidth multiplier:0.9 constant:0.0];
+    width.priority = 999;
+    height = [NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeWidth multiplier:aspectRatio constant:0.0];
+    height.priority = 999;
+    [self.scanningViewController.view addConstraint:[NSLayoutConstraint constraintWithItem:self.succesfulImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationLessThanOrEqual toItem:self.scanningViewController.view attribute:NSLayoutAttributeHeight multiplier:0.6 constant:0.0]];
+    [self.scanningViewController.view addConstraint:width];
+    [self.scanningViewController.view addConstraint:height];
+    [self.scanningViewController.view layoutIfNeeded];
+    
+    self.succesfulImage.alpha = 0.0;
+    self.blurView.alpha = 0.0;
+    
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.blurView.alpha = finalAlpha;
+                         self.succesfulImage.alpha = 1.0;
+                     }];
+}
+
+- (void)closeResultImage {
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.succesfulImage.alpha = 0.0;
+                         self.blurView.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished){
+                         [self.blurView removeFromSuperview];
+                         [self.succesfulImage removeFromSuperview];
+                     }];
+    self.succesfulImage = nil;
+}
+
+- (void)didTapSuccesfulImage:(UITapGestureRecognizer *)recognizer {
+    if (self.succesfulImage != nil) {
+        [self closeResultImage];
+    }
+}
+
+- (void) blurViewSave {
+    if (self.succesfulImage != nil) {
+        UIImageWriteToSavedPhotosAlbum(self.imageMetadata.image,
+                                       nil,nil,nil);
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (self.succesfulImage != nil) {
+        return true;
+    }
+    return false;
 }
 
 @end
