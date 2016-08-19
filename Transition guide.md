@@ -1,3 +1,7 @@
+### Transition to 2.1.2
+
+- No changes
+
 ### Transition to 2.1.1
 
 - No changes
