@@ -10,16 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * Base class of all default overlays included in SDK. This class is an abstract class and should be subclassed.
+ */
 PP_CLASS_AVAILABLE_IOS(6.0) @interface PPModernBaseOverlayViewController : PPBaseOverlayViewController
 
+/**
+ * Button to cancel scanning/dismiss view.
+ */
 @property (nonatomic, strong) UIButton *cancelButton;
+
+/**
+ * Button for displaying flash.
+ */
 @property (nonatomic, strong) UIButton *torchButton;
-
-- (void)applyViewShadow:(UIView*)view;
-
-- (void)applyViewShadow:(UIView*)view radius:(CGFloat)radius;
-
-- (void)applyFrameWithTouchInset:(UIButton*)button frame:(CGRect)frame inset:(CGSize)inset;
 
 @end
 

@@ -1,3 +1,13 @@
+## 2.1.2
+
+- iOS fixes:
+	- CFBundleSUpportedPlatforms removed from Info.plist files
+	- Applying affine transformation to `PPQuadrangle` now correctly assigns points.
+	- When using both Direct API and `PPCameraCoordinator`, scanning results will now be correctly outputted to `PPCoordinatorDelegate` and `PPScanningDelegate` respectively
+	- Fixed crashes related to camera permissions and added dummy view when camera permission is disabled
+	- Fixed issues related to topLayoutGuide on iOS6
+	- Improved performance of Date parser
+
 ## 2.1.1
 
 - iOS bugfixes:
