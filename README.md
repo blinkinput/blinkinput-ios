@@ -24,7 +24,7 @@ BlinkOCR powers [PhotoMath app](https://photomath.net/en/) where it's used to [r
 
 ## How to get started
 
-- [Download BlinkOCR SDK](https://github.com/BlinkOCR/blinkocr-ios/archive/master.zip) and try out the included iOS sample apps
+- [Download BlinkOCR SDK](https://github.com/BlinkOCR/blinkocr-ios/releases) and try out the included iOS sample apps (Download .zip or .tar.gz file starting with BlinkOCR. DO NOT download Source Code as GitHub does not fully support Git Large File Storage)
 - Read the ["Getting Started" guide](https://github.com/BlinkOCR/blinkocr-ios/wiki/Getting-started) to integrate the SDK in your app(s)
 - [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free demo license key** to start using the SDK in your app (registration required)
 - [Contact us](http://www.microblink.com) to get pricing info
