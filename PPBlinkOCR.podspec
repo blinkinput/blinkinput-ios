@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPBlinkOCR"
-  s.version     = "2.1.2"
+  s.version     = "2.2.0"
   s.summary     = "A state-of-the-art OCR module for mobile devices"
   s.homepage    = "http://microblink.com"
   
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.source      = { 
         :git => 'https://github.com/BlinkOCR/blinkocr-ios.git', 
-        :tag => 'v2.1.2'
+        :tag => 'v2.2.0'
   }
 
   s.platform     = :ios
