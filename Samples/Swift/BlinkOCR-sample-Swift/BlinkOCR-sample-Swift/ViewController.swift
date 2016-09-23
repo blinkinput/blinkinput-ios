@@ -33,7 +33,7 @@ class ViewController: UIViewController, PPScanningDelegate  {
 
         /** 0. Check if scanning is supported */
 
-        if (PPCameraCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error: nil)) {
+        if (PPCameraCoordinator.isScanningUnsupported(for: PPCameraType.back, error: nil)) {
             return nil;
         }
 
@@ -71,7 +71,7 @@ class ViewController: UIViewController, PPScanningDelegate  {
         ocrRecognizerSettings.addOcrParser(priceOcrFactory, name: self.priceParserId)
 
         // Add the recognizer setting to a list of used recognizer
-        settings.scanSettings.addRecognizerSettings(ocrRecognizerSettings)
+        settings.scanSettings.add(ocrRecognizerSettings)
 
 
         /** 4. Initialize the Scanning Coordinator object */
@@ -81,27 +81,27 @@ class ViewController: UIViewController, PPScanningDelegate  {
         return coordinator
     }
 
-    @IBAction func didTapScan(sender: AnyObject) {
+    @IBAction func didTapScan(_ sender: AnyObject) {
 
         /** Instantiate the scanning coordinator */
-        let error : NSErrorPointer=nil
-        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
+        let error : NSErrorPointer = nil
+        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error: error)
 
         /** If scanning isn't supported, present an error */
         if coordinator == nil {
-            let messageString: String = (error.memory?.localizedDescription) ?? ""
+            let messageString: String = (error!.pointee?.localizedDescription) ?? ""
             UIAlertView(title: "Warning", message: messageString, delegate: nil, cancelButtonTitle: "Ok").show()
             return
         }
 
         /** Allocate and present the scanning view controller */
-        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, coordinator: coordinator!, error: nil);
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewController(with: self, coordinator: coordinator!, error: nil);
 
         /** You can use other presentation methods as well */
-        self.presentViewController(scanningViewController, animated: true, completion: nil)
+        self.present(scanningViewController, animated: true, completion: nil)
     }
     
-    func scanningViewController(scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
+    func scanningViewController(_ scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
         
         let scanConroller : PPScanningViewController = scanningViewController as! PPScanningViewController
         
@@ -114,12 +114,12 @@ class ViewController: UIViewController, PPScanningDelegate  {
         // Collect data from the result
         for result in results {
             
-            if(result.isKindOfClass(PPBlinkOcrRecognizerResult)) {
+            if(result.isKind(of: PPBlinkOcrRecognizerResult.self)) {
                 let ocrRecognizerResult = result as! PPBlinkOcrRecognizerResult
                 
                 print("OCR results are:");
-                print("Raw ocr: %@", ocrRecognizerResult.parsedResultForName(self.rawOcrParserId))
-                print("Price: %@", ocrRecognizerResult.parsedResultForName(self.priceParserId))
+                print("Raw ocr: %@", ocrRecognizerResult.parsedResult(forName: self.rawOcrParserId))
+                print("Price: %@", ocrRecognizerResult.parsedResult(forName: self.priceParserId))
                 
                 let ocrLayout : PPOcrLayout=ocrRecognizerResult.ocrLayout()
                 print("Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box))
@@ -130,21 +130,21 @@ class ViewController: UIViewController, PPScanningDelegate  {
         scanConroller.resumeScanningAndResetState(false);
     }
 
-    func scanningViewControllerUnauthorizedCamera(scanningViewController: UIViewController){
+    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController){
         // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
     }
 
-    func scanningViewController(scanningViewController: UIViewController, didFindError error: NSError) {
+    func scanningViewController(_ scanningViewController: UIViewController, didFindError error: Error) {
         // Can be ignored. See description of the method
     }
 
-    func scanningViewControllerDidClose(scanningViewController: UIViewController) {
+    func scanningViewControllerDidClose(_ scanningViewController: UIViewController) {
         // As scanning view controller is presented full screen and modally, dismiss it
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func alertView(_ alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

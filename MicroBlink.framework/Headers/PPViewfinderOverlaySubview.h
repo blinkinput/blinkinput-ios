@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PPOverlaySubview.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  A wrapper around CAShapeLayer which is used for presenting a status about payslip and barcode detection.
  
@@ -41,6 +43,10 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPViewfinderOverlaySubview : PPOverlaySub
 /**
  Initializes the layer
  */
-- (id)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

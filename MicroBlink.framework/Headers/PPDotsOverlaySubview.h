@@ -37,7 +37,9 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDotsOverlaySubview : PPOverlaySubview
 /**
  Initializes the layer
  */
-- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 @end
 

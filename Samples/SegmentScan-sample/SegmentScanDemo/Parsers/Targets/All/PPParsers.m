@@ -72,6 +72,15 @@
     vinElement.scanningRegionWidth = 0.8;
     [retArray addObject:vinElement];
     
+    PPMobileCouponsOcrParserFactory *couponsFactory = [[PPMobileCouponsOcrParserFactory alloc] init];
+    couponsFactory.isRequired = NO;
+    PPScanElement *couponElement = [[PPScanElement alloc] initWithIdentifier:@"MobileCoupons" parserFactory:couponsFactory];
+    couponElement.localizedTitle = @"Mobile Coupon";
+    couponElement.localizedTooltip = @"Please position mobile coupon in this field";
+    couponElement.scanningRegionHeight = 0.09;
+    couponElement.scanningRegionWidth = 0.8;
+    [retArray addObject:couponElement];
+    
     return retArray;
     
 }
@@ -104,6 +113,15 @@
     ibanElement.scanningRegionHeight = 0.09;
     ibanElement.scanningRegionWidth = 0.8;
     [retArray addObject:ibanElement];
+    
+    PPMobileCouponsOcrParserFactory *couponsFactory = [[PPMobileCouponsOcrParserFactory alloc] init];
+    couponsFactory.isRequired = NO;
+    PPScanElement *couponElement = [[PPScanElement alloc] initWithIdentifier:@"MobileCoupons" parserFactory:couponsFactory];
+    couponElement.localizedTitle = @"Mobile Coupon";
+    couponElement.localizedTooltip = @"Please position mobile coupon in this field";
+    couponElement.scanningRegionHeight = 0.09;
+    couponElement.scanningRegionWidth = 0.8;
+    [retArray addObject:couponElement];
     
     return retArray;
 }

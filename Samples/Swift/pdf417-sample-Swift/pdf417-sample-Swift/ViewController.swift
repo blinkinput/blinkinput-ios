@@ -11,9 +11,6 @@ import MicroBlink
 
 class ViewController: UIViewController, PPScanningDelegate {
 
-    var rawOcrParserId : String = "Raw ocr"
-    var priceParserId : String = "Price"
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +28,7 @@ class ViewController: UIViewController, PPScanningDelegate {
 
         /** 0. Check if scanning is supported */
 
-        if (PPCameraCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error: nil)) {
+        if PPCameraCoordinator.isScanningUnsupported(for: PPCameraType.back, error: error) {
             return nil;
         }
 
@@ -50,21 +47,32 @@ class ViewController: UIViewController, PPScanningDelegate {
 
         /**
          * 3. Set up what is being scanned. See detailed guides for specific use cases.
-         * Here's an example for initializing PDF417 scanning
+         * Remove undesired recognizers (added below) for optimal performance.
          */
 
-        // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-        let ocrRecognizerSettings: PPPdf417RecognizerSettings = PPPdf417RecognizerSettings()
+        // Remove this code if you don't need to scan Pdf417
+        do {
+            // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
+            let ocrRecognizerSettings: PPPdf417RecognizerSettings = PPPdf417RecognizerSettings()
 
-        // Add PDF417 Recognizer setting to a list of used recognizer settings
-        settings.scanSettings.addRecognizerSettings(ocrRecognizerSettings)
+            /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
 
-        // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-        let zxingRecognizerSettings: PPZXingRecognizerSettings = PPZXingRecognizerSettings()
-        zxingRecognizerSettings.scanQR=true; // we use just QR code
+            // Add PDF417 Recognizer setting to a list of used recognizer settings
+            settings.scanSettings.add(ocrRecognizerSettings)
+        }
 
-        // Add ZXingRecognizer setting to a list of used recognizer settings
-        settings.scanSettings.addRecognizerSettings(zxingRecognizerSettings)
+        // Remove this code if you don't need to scan QR codes
+        do {
+            // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
+            let zxingRecognizerSettings: PPZXingRecognizerSettings = PPZXingRecognizerSettings()
+
+
+            /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
+            zxingRecognizerSettings.scanQR=true // we use just QR code
+
+            // Add ZXingRecognizer setting to a list of used recognizer settings
+            settings.scanSettings.add(zxingRecognizerSettings)
+        }
 
 
         /** 4. Initialize the Scanning Coordinator object */
@@ -74,61 +82,63 @@ class ViewController: UIViewController, PPScanningDelegate {
         return coordinator
     }
 
-    @IBAction func didTapScan(sender: AnyObject) {
+    @IBAction func didTapScan(_ sender: AnyObject) {
 
         /** Instantiate the scanning coordinator */
-        let error : NSErrorPointer=nil
-        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
+        let error: NSErrorPointer = nil
+        let coordinator  = self.coordinatorWithError(error: error)
 
         /** If scanning isn't supported, present an error */
         if coordinator == nil {
-            let messageString: String = (error.memory?.localizedDescription)!
+            let messageString: String = (error!.pointee?.localizedDescription)!
             UIAlertView(title: "Warning", message: messageString, delegate: nil, cancelButtonTitle: "Ok").show()
             return
         }
 
-        /** Allocate and present the scanning view controller */
-        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, coordinator: coordinator!, error: nil);
+        /** Create new scanning view controller */
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewController(with: self, coordinator: coordinator!, error: nil)
 
-        /** You can use other presentation methods as well */
-        self.presentViewController(scanningViewController, animated: true, completion: nil)
+        /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
+        self.present(scanningViewController, animated: true, completion: nil)
     }
 
-    @IBAction func didTapScanCustomUI(sender: AnyObject) {
+    @IBAction func didTapScanCustomUI(_ sender: AnyObject) {
         let error : NSErrorPointer = nil
-        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
+        let coordinator = self.coordinatorWithError(error: error)
 
         if(coordinator == nil) {
-            let messageString: String = (error.memory?.localizedDescription)!
+            let messageString: String = (error!.pointee?.localizedDescription)!
             UIAlertView(title: "Warning", message: messageString, delegate: nil, cancelButtonTitle: "Ok").show()
             return
         }
 
-        /** Present the scanning view controller */
-        let overlay : PPCameraOverlayViewController = PPCameraOverlayViewController(nibName: "PPCameraOverlayViewController",bundle: nil)
-        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, overlayViewController: overlay, coordinator: coordinator!, error: nil);
+        /** Init scanning view controller custom overlay */
+        let overlay: PPCameraOverlayViewController = PPCameraOverlayViewController(nibName: "PPCameraOverlayViewController",bundle: nil)
+        /** Create new scanning view controller with desired custom overlay */
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewController(with: self, overlayViewController: overlay, coordinator: coordinator!, error: nil);
 
-        /** You can use other presentation methods as well */
-        self.presentViewController(scanningViewController, animated: true, completion: nil)
+        /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
+        self.present(scanningViewController, animated: true, completion: nil)
 
     }
 
-    func scanningViewControllerUnauthorizedCamera(scanningViewController: UIViewController){
+    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController) {
         // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
     }
-    
-    func scanningViewController(scanningViewController: UIViewController, didFindError error: NSError) {
+
+    func scanningViewController(_ scanningViewController: UIViewController, didFindError error: Error) {
         // Can be ignored. See description of the method
     }
-    
-    func scanningViewControllerDidClose(scanningViewController: UIViewController) {
+
+    func scanningViewControllerDidClose(_ scanningViewController: UIViewController) {
+
         // As scanning view controller is presented full screen and modally, dismiss it
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
-    func scanningViewController(scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
+    func scanningViewController(_ scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
 
-        let scanConroller : PPScanningViewController = scanningViewController as! PPScanningViewController
+        let scanConroller: PPScanningViewController = scanningViewController as! PPScanningViewController
 
         /**
          * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
@@ -139,30 +149,41 @@ class ViewController: UIViewController, PPScanningDelegate {
         // first, pause scanning until we process all the results
         scanConroller.pauseScanning()
 
-        var message : String = "";
-        var title : String = "";
+        var message: String = ""
+        var title: String = ""
+
 
         // Collect data from the result
         for result in results {
-            if(result.isKindOfClass(PPPdf417RecognizerResult)) {
-                let pdf417Result=result as! PPPdf417RecognizerResult
-                title = "PDF417"
-                message=pdf417Result.stringUsingGuessedEncoding()
-            }
-            if(result.isKindOfClass(PPZXingRecognizerSettings)) {
-                let zxingResult=result as! PPZXingRecognizerResult
+            if(result is PPZXingRecognizerResult) {
+                /** One of QR code was detected */
+
+                let zxingResult = result as! PPZXingRecognizerResult
+
                 title = "QR code"
-                message=zxingResult.stringUsingGuessedEncoding()
+
+                // Save the string representation of the code
+                message = zxingResult.stringUsingGuessedEncoding()
+            }
+            if(result is PPPdf417RecognizerResult) {
+                /** Pdf417 code was detected */
+
+                let pdf417Result = result as! PPPdf417RecognizerResult
+
+                title = "PDF417"
+
+                // Save the string representation of the code
+                message = pdf417Result.stringUsingGuessedEncoding()
             }
         }
         // present the alert view with scanned results
-        let alertView : UIAlertView = UIAlertView.init(title: title, message: message, delegate: self, cancelButtonTitle: "OK")
+        let alertView: UIAlertView = UIAlertView.init(title: title, message: message, delegate: self, cancelButtonTitle: "OK")
         alertView.show()
     }
 
     // dismiss the scanning view controller when user presses OK.
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
