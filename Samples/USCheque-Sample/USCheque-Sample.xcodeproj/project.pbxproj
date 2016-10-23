@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188174761DBC003900E6FB23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1FC1D23CF000074C21A /* ViewController.m */; };
+		188174771DBC003900E6FB23 /* PPResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303C1D33C5ED000B4941 /* PPResultViewController.m */; };
+		188174781DBC003900E6FB23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F91D23CF000074C21A /* AppDelegate.m */; };
+		188174791DBC003900E6FB23 /* PPCustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */; };
+		1881747A1DBC003900E6FB23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F61D23CF000074C21A /* main.m */; };
+		1881747C1DBC003900E6FB23 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2131D23FE9D0074C21A /* AVFoundation.framework */; };
+		1881747D1DBC003900E6FB23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2111D23FE940074C21A /* AudioToolbox.framework */; };
+		1881747E1DBC003900E6FB23 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE20F1D23FE8B0074C21A /* Accelerate.framework */; };
+		1881747F1DBC003900E6FB23 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE21B1D23FF530074C21A /* MicroBlink.framework */; };
+		188174801DBC003900E6FB23 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2151D23FEA60074C21A /* CoreMedia.framework */; };
+		188174811DBC003900E6FB23 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2191D23FEC90074C21A /* libiconv.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		188174821DBC003900E6FB23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A18EE2171D23FEB60074C21A /* libc++.tbd */; };
+		188174841DBC003900E6FB23 /* Cheque_Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EE22E1D2FED450074C21A /* Cheque_Image.xcassets */; };
+		188174851DBC003900E6FB23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2031D23CF000074C21A /* LaunchScreen.storyboard */; };
+		188174861DBC003900E6FB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2011D23CF000074C21A /* Assets.xcassets */; };
+		188174871DBC003900E6FB23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18EE1FE1D23CF000074C21A /* Main.storyboard */; };
+		188174881DBC003900E6FB23 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A18EE2201D2400E60074C21A /* MicroBlink.bundle */; };
 		31C5303D1D33C5ED000B4941 /* PPResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303C1D33C5ED000B4941 /* PPResultViewController.m */; };
 		31C5303F1D33C74B000B4941 /* PPCustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */; };
 		A18EE1F71D23CF000074C21A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EE1F61D23CF000074C21A /* main.m */; };
@@ -27,11 +44,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1881748C1DBC003900E6FB23 /* Check Scan Enterprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Scan Enterprise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C5303B1D33C5ED000B4941 /* PPResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPResultViewController.h; sourceTree = "<group>"; };
 		31C5303C1D33C5ED000B4941 /* PPResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPResultViewController.m; sourceTree = "<group>"; };
 		31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCustomOverlay.m; sourceTree = "<group>"; };
 		31C530401D33C758000B4941 /* PPCustomOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCustomOverlay.h; sourceTree = "<group>"; };
-		A18EE1F21D23CF000074C21A /* USCheque-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "USCheque-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18EE1F21D23CF000074C21A /* Check Scan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Scan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18EE1F61D23CF000074C21A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A18EE1F81D23CF000074C21A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A18EE1F91D23CF000074C21A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +71,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1881747B1DBC003900E6FB23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1881747C1DBC003900E6FB23 /* AVFoundation.framework in Frameworks */,
+				1881747D1DBC003900E6FB23 /* AudioToolbox.framework in Frameworks */,
+				1881747E1DBC003900E6FB23 /* Accelerate.framework in Frameworks */,
+				1881747F1DBC003900E6FB23 /* MicroBlink.framework in Frameworks */,
+				188174801DBC003900E6FB23 /* CoreMedia.framework in Frameworks */,
+				188174811DBC003900E6FB23 /* libiconv.tbd in Frameworks */,
+				188174821DBC003900E6FB23 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18EE1EF1D23CF000074C21A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,7 +114,8 @@
 		A18EE1F31D23CF000074C21A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A18EE1F21D23CF000074C21A /* USCheque-Sample.app */,
+				A18EE1F21D23CF000074C21A /* Check Scan.app */,
+				1881748C1DBC003900E6FB23 /* Check Scan Enterprise.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,9 +167,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A18EE1F11D23CF000074C21A /* USCheque-Sample */ = {
+		188174741DBC003900E6FB23 /* Check Scan Enterprise */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "USCheque-Sample" */;
+			buildConfigurationList = 188174891DBC003900E6FB23 /* Build configuration list for PBXNativeTarget "Check Scan Enterprise" */;
+			buildPhases = (
+				188174751DBC003900E6FB23 /* Sources */,
+				1881747B1DBC003900E6FB23 /* Frameworks */,
+				188174831DBC003900E6FB23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Check Scan Enterprise";
+			productName = "USCheque-Sample";
+			productReference = 1881748C1DBC003900E6FB23 /* Check Scan Enterprise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A18EE1F11D23CF000074C21A /* Check Scan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "Check Scan" */;
 			buildPhases = (
 				A18EE1EE1D23CF000074C21A /* Sources */,
 				A18EE1EF1D23CF000074C21A /* Frameworks */,
@@ -146,9 +196,9 @@
 			);
 			dependencies = (
 			);
-			name = "USCheque-Sample";
+			name = "Check Scan";
 			productName = "USCheque-Sample";
-			productReference = A18EE1F21D23CF000074C21A /* USCheque-Sample.app */;
+			productReference = A18EE1F21D23CF000074C21A /* Check Scan.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,8 +210,12 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
+					188174741DBC003900E6FB23 = {
+						DevelopmentTeam = 7B3464NEDQ;
+					};
 					A18EE1F11D23CF000074C21A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CQTJWP89J7;
 					};
 				};
 			};
@@ -178,12 +232,25 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A18EE1F11D23CF000074C21A /* USCheque-Sample */,
+				A18EE1F11D23CF000074C21A /* Check Scan */,
+				188174741DBC003900E6FB23 /* Check Scan Enterprise */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		188174831DBC003900E6FB23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188174841DBC003900E6FB23 /* Cheque_Image.xcassets in Resources */,
+				188174851DBC003900E6FB23 /* LaunchScreen.storyboard in Resources */,
+				188174861DBC003900E6FB23 /* Assets.xcassets in Resources */,
+				188174871DBC003900E6FB23 /* Main.storyboard in Resources */,
+				188174881DBC003900E6FB23 /* MicroBlink.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18EE1F01D23CF000074C21A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +266,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		188174751DBC003900E6FB23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				188174761DBC003900E6FB23 /* ViewController.m in Sources */,
+				188174771DBC003900E6FB23 /* PPResultViewController.m in Sources */,
+				188174781DBC003900E6FB23 /* AppDelegate.m in Sources */,
+				188174791DBC003900E6FB23 /* PPCustomOverlay.m in Sources */,
+				1881747A1DBC003900E6FB23 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18EE1EE1D23CF000074C21A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -233,6 +312,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1881748A1DBC003900E6FB23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7B3464NEDQ;
+				FRAMEWORK_SEARCH_PATHS = ../../;
+				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.photopay.checkscan;
+				PRODUCT_NAME = CheckScan;
+			};
+			name = Debug;
+		};
+		1881748B1DBC003900E6FB23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7B3464NEDQ;
+				FRAMEWORK_SEARCH_PATHS = ../../;
+				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.photopay.checkscan;
+				PRODUCT_NAME = CheckScan;
+			};
+			name = Release;
+		};
 		A18EE2071D23CF000074C21A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -321,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQTJWP89J7;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -334,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQTJWP89J7;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "USCheque-Sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -346,6 +455,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		188174891DBC003900E6FB23 /* Build configuration list for PBXNativeTarget "Check Scan Enterprise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1881748A1DBC003900E6FB23 /* Debug */,
+				1881748B1DBC003900E6FB23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A18EE1ED1D23CF000074C21A /* Build configuration list for PBXProject "USCheque-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -355,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "USCheque-Sample" */ = {
+		A18EE2091D23CF000074C21A /* Build configuration list for PBXNativeTarget "Check Scan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A18EE20A1D23CF000074C21A /* Debug */,

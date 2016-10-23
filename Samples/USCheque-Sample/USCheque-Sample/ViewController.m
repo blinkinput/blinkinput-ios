@@ -76,18 +76,20 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     /*----------------------------*/
     /*  2. Setup the license key  */
     /*----------------------------*/
-    
-    // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"WYJEKDWZ-MSZCFGY2-5KDVCIU3-5J4KUJHF-H64RWKKL-K2GYGCEQ-L77DAWSW-OJI4JOQI"; // Valid temporarily
-    
 
- 
+    NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+
+    if ([appID isEqualToString:@"com.microblink.USCheque-Sample"]) {
+        // Visit www.microblink.com to get the license key for your app
+        settings.licenseSettings.licenseKey = @"74XUZZMF-LVYKALAT-DLVIOUO2-RPMKOV5O-TPVHRKRE-4U73SGZJ-JNLI266C-23MX5UZC"; // Valid temporarily
+    } else if ([appID isEqualToString:@"com.microblink.photopay.checkscan"]) {
+        // Visit www.microblink.com to get the license key for your app
+        settings.licenseSettings.licenseKey = @"WSKYLZR7-EY6SMOJQ-ZYJABDOY-GERETDFF-4OESXE3X-S2VPP725-QHEA2473-HKKO2ZNN"; // Valid temporarily
+    }
     
     /**********************************************************************************************************************/
     /**************  For Croatian ID sample images please check Cheque_sample.xcassets in this project  **************/
     /**********************************************************************************************************************/
-    
-    
     
     
     /*------------------------------------*/
@@ -281,7 +283,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     
     // allow rotation if VC is displayed as a modal view controller
     scanningViewController.autorotate = YES;
-    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAll;
+    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskLandscape;
     self.scanningViewController = scanningViewController;
     
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
