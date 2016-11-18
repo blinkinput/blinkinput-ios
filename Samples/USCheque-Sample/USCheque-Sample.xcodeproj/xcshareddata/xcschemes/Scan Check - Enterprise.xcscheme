@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "188174741DBC003900E6FB23"
-               BuildableName = "Check Scan Enterprise.app"
+               BuildableName = "CheckScan.app"
                BlueprintName = "Check Scan Enterprise"
                ReferencedContainer = "container:USCheque-Sample.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188174741DBC003900E6FB23"
-            BuildableName = "Check Scan Enterprise.app"
+            BuildableName = "CheckScan.app"
             BlueprintName = "Check Scan Enterprise"
             ReferencedContainer = "container:USCheque-Sample.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188174741DBC003900E6FB23"
-            BuildableName = "Check Scan Enterprise.app"
+            BuildableName = "CheckScan.app"
             BlueprintName = "Check Scan Enterprise"
             ReferencedContainer = "container:USCheque-Sample.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "188174741DBC003900E6FB23"
-            BuildableName = "Check Scan Enterprise.app"
+            BuildableName = "CheckScan.app"
             BlueprintName = "Check Scan Enterprise"
             ReferencedContainer = "container:USCheque-Sample.xcodeproj">
          </BuildableReference>
