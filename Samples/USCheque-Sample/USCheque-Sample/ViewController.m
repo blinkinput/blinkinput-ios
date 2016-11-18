@@ -125,6 +125,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
             PPOcrEngineOptions* classificationOcrEngineOptions = [[PPOcrEngineOptions alloc] init];
             classificationOcrEngineOptions.minimalLineHeight = 25;
             classificationOcrEngineOptions.charWhitelist = [self commonWhitelist];
+            classificationOcrEngineOptions.colorDropoutEnabled = YES;
             [classificationParser setOptions:classificationOcrEngineOptions];
 
             /**
@@ -146,7 +147,8 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
              */
             NSString *chequeRegexOne = @"<\\d+< ?(\\+?\\d+-)?\\d+\\+ ?(\\d+-?)+<( ?\\d+)?";
             NSString *chequeRegexTwo = @"\\+\\d+\\+ ?<?(\\d{2,} ?)+< ?\\d{2,}";
-            PPRegexOcrParserFactory *ocrLineParser = [[PPRegexOcrParserFactory alloc] initWithRegex:[NSString stringWithFormat:@"(%@)|(%@)", chequeRegexOne, chequeRegexTwo]];
+            NSString *chequeRegexThree = @"<\\d+< ?\\+(\\d+-)?\\d+\\+ ?(\\d+ ?)+\\d+<";
+            PPRegexOcrParserFactory *ocrLineParser = [[PPRegexOcrParserFactory alloc] initWithRegex:[NSString stringWithFormat:@"(%@)|(%@)|(%@)", chequeRegexOne, chequeRegexTwo, chequeRegexThree]];
             
             /**
              * Tweak OCR engine options - use onlly MICR font
