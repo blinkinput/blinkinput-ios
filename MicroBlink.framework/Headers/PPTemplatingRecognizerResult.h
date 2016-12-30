@@ -26,7 +26,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPTemplatingRecognizerResult : PPRecogniz
 - (PPOcrLayout *)ocrLayout;
 
 /**
- * If only default parser group is used, this method returns parsed string from the defaul parser group
+ * If only default parser group is used, this method returns parsed string from the default parser group
  *
  *  @param name name of the parser responsible for parsing the wanted string
  *
