@@ -370,7 +370,7 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
     /**
      *  Analyze full OCR result to determine if scanned region is indeed OCR line from US cheque
      */
-    PPOcrLayout* ocrResult = [blinkOcrResult ocrLayoutForParserGroup:US_CHEQUE_CLASSIFICATION];
+    PPOcrLayout* ocrResult = [blinkOcrResult getOcrLayoutElement:@"classification.OCRResult"];
     
     NSInteger numMicrCharacters = 0;
     NSInteger numRelevantCharacters = 0;
