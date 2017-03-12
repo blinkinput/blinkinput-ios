@@ -19,11 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.ocrSubview = [[PPOcrResultOverlaySubview alloc] initWithFrame:self.view.bounds];
     [self registerOverlaySubview:self.ocrSubview];
     [self.view addSubview:self.ocrSubview];
-    
+
     self.viewfinderSubview = [[PPModernViewfinderOverlaySubview alloc] init];
     self.viewfinderSubview.moveable = YES;
     self.viewfinderSubview.delegate = self.overlaySubviewsDelegate;
@@ -39,7 +39,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
+
     self.viewfinderSubview.frame = self.view.bounds;
     self.ocrSubview.frame = self.view.bounds;
 }

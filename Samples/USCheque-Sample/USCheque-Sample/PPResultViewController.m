@@ -10,27 +10,27 @@
 
 @interface PPResultViewController ()
 
-@property(nonatomic) UILabel *labelTitle;
+@property (nonatomic) UILabel *labelTitle;
 
-@property(nonatomic) UILabel *labelSubTitle;
+@property (nonatomic) UILabel *labelSubTitle;
 
-@property(nonatomic) NSMutableDictionary *allLabels;
+@property (nonatomic) NSMutableDictionary *allLabels;
 
-@property(nonatomic) UIButton *rightButton;
+@property (nonatomic) UIButton *rightButton;
 
 /* Constraints for each key-value label combination */
 
 // Constraints when labels are bottom aligned - when key-value distance is greater than minimumLabelDistance
-@property(nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueAligned;
+@property (nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueAligned;
 
 // Constraints when labels are seperated by labelTopMargin - when key-value distance is less than minimumLabelDistance
-@property(nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueDropped;
+@property (nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueDropped;
 
 // Constraints for maximum width of labelValue - when key-value distance is less than minimumLabelDistance
-@property(nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueDroppedWidth;
+@property (nonatomic) NSMutableArray<NSLayoutConstraint *> *labelValueDroppedWidth;
 
 // Main Scroll View containting key-value labels
-@property(nonatomic) UIScrollView *scrollView;
+@property (nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -83,7 +83,10 @@ static float labelFullNameTopMargin = 24.0f;
 // Horizontal Margin between buttons and self.view
 static float buttonHorizontalMargin = 12.0f;
 
-- (instancetype)initWithTitle:(NSString *)title labels:(NSDictionary *)labels subTitle:(NSString *)subTitle labelOrder:(NSArray *)orderList {
+- (instancetype)initWithTitle:(NSString *)title
+                       labels:(NSDictionary *)labels
+                     subTitle:(NSString *)subTitle
+                   labelOrder:(NSArray *)orderList {
 
     self = [super init];
     if (self) {
@@ -665,7 +668,8 @@ static float buttonHorizontalMargin = 12.0f;
         CGSize sizeKey = [labelKey.text sizeWithAttributes:@{NSFontAttributeName : labelKey.font}];
         CGSize sizeValue = [labelValue.text sizeWithAttributes:@{NSFontAttributeName : labelValue.font}];
 
-        if ((sizeKey.width + sizeValue.width + labelLeadingMargin + labelTrailingMargin + minimumLabelDistance) > self.view.bounds.size.width ||
+        if ((sizeKey.width + sizeValue.width + labelLeadingMargin + labelTrailingMargin + minimumLabelDistance) >
+                self.view.bounds.size.width ||
             [labelValue.text containsString:@"\n"]) {
             [self.scrollView removeConstraint:[self.labelValueAligned objectAtIndex:i]];
             [self.scrollView addConstraint:[self.labelValueDropped objectAtIndex:i]];
