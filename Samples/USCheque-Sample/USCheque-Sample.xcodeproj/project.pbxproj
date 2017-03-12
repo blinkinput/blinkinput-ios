@@ -44,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1881748C1DBC003900E6FB23 /* Check Scan Enterprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Scan Enterprise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1881748C1DBC003900E6FB23 /* Check Scan Enterprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Check Scan Enterprise.app"; path = CheckScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C5303B1D33C5ED000B4941 /* PPResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPResultViewController.h; sourceTree = "<group>"; };
 		31C5303C1D33C5ED000B4941 /* PPResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPResultViewController.m; sourceTree = "<group>"; };
 		31C5303E1D33C74B000B4941 /* PPCustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCustomOverlay.m; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		A18EE1E91D23CF000074C21A = {
 			isa = PBXGroup;
 			children = (
-				A18EE21F1D2400740074C21A /* Frameworks */,
 				A18EE1F41D23CF000074C21A /* USCheque-Sample */,
+				A18EE21F1D2400740074C21A /* Frameworks */,
 				A18EE1F31D23CF000074C21A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,14 +152,14 @@
 		A18EE21F1D2400740074C21A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A18EE2171D23FEB60074C21A /* libc++.tbd */,
-				A18EE2191D23FEC90074C21A /* libiconv.tbd */,
 				A18EE2201D2400E60074C21A /* MicroBlink.bundle */,
 				A18EE20F1D23FE8B0074C21A /* Accelerate.framework */,
 				A18EE2111D23FE940074C21A /* AudioToolbox.framework */,
 				A18EE2131D23FE9D0074C21A /* AVFoundation.framework */,
 				A18EE2151D23FEA60074C21A /* CoreMedia.framework */,
 				A18EE21B1D23FF530074C21A /* MicroBlink.framework */,
+				A18EE2171D23FEB60074C21A /* libc++.tbd */,
+				A18EE2191D23FEC90074C21A /* libiconv.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 		A18EE1EA1D23CF000074C21A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					188174741DBC003900E6FB23 = {
@@ -354,8 +354,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -399,8 +401,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
