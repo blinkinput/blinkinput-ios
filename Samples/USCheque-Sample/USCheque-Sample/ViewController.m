@@ -81,10 +81,10 @@ static NSString *FULL_DOCUMENT_IMAGE = @"fullDocumentImage";
 
     if ([appID isEqualToString:@"com.microblink.USCheque-Sample"]) {
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = @"74XUZZMF-LVYKALAT-DLVIOUO2-RPMKOV5O-TPVHRKRE-4U73SGZJ-JNLI266C-23MX5UZC"; // Valid temporarily
+        settings.licenseSettings.licenseKey = @"4W4JKWIP-GUSUWVWN-ZDTWROI3-FFFVNDMD-BCIF77RQ-TKQ5GIDB-4YC52RKM-52O6ZZZD"; // Valid temporarily
     } else if ([appID isEqualToString:@"com.microblink.photopay.checkscan"]) {
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = @"WSKYLZR7-EY6SMOJQ-ZYJABDOY-GERETDFF-4OESXE3X-S2VPP725-QHEA2473-HKKO2ZNN"; // Valid temporarily
+        settings.licenseSettings.licenseKey = @"5SKB73YC-ER2FPW3K-PL5Y3T47-MHFVZCJL-SN3ZNKXX-75OYDSAN-RPQKRPMS-C37BOC6R"; // Valid temporarily
     }
     
     /**********************************************************************************************************************/
