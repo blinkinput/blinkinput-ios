@@ -64,8 +64,8 @@
 		310E458D1C20612300B546BD = {
 			isa = PBXGroup;
 			children = (
-				310E45AB1C2063F300B546BD /* Frameworks */,
 				310E45981C20612300B546BD /* BlinkOCR-sample-Swift */,
+				310E45AB1C2063F300B546BD /* Frameworks */,
 				310E45971C20612300B546BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				310E45991C20612300B546BD /* AppDelegate.swift */,
-				310E459D1C20612300B546BD /* Main.storyboard */,
 				31BF2FD31D95498C008816F3 /* ViewController.swift */,
+				310E459D1C20612300B546BD /* Main.storyboard */,
 				310E45A01C20612300B546BD /* Assets.xcassets */,
 				310E45A21C20612300B546BD /* LaunchScreen.storyboard */,
 				310E45A51C20612300B546BD /* Info.plist */,
