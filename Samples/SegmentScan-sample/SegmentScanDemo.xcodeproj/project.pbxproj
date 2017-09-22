@@ -10,7 +10,6 @@
 		311FC80B1C1B300B00969AA0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311FC80A1C1B300B00969AA0 /* Accelerate.framework */; };
 		3131C58E1CAE7B3200745EE9 /* PPSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3131C58D1CAE7B3200745EE9 /* PPSettingsManager.m */; };
 		3133050B1D183CB50086CADF /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 313305091D183CB50086CADF /* MicroBlink.bundle */; };
-		3133050C1D183CB50086CADF /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133050A1D183CB50086CADF /* MicroBlink.framework */; };
 		314A99EF1C1ED32500B0D397 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 314A99EE1C1ED32500B0D397 /* Images.xcassets */; };
 		314BE0A31CA2C27D004820E1 /* PPResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 314BE0A21CA2C27D004820E1 /* PPResultViewController.m */; };
 		31AD73841CAE6D3D006D2353 /* PPAvailableParsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AD73751CAE6D3D006D2353 /* PPAvailableParsersViewController.m */; };
@@ -50,7 +49,24 @@
 		31D826091C15D40A00361082 /* PPFieldItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D826081C15D40A00361082 /* PPFieldItemViewController.xib */; };
 		31D8260C1C15D5AA00361082 /* PPFieldItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D8260B1C15D5AA00361082 /* PPFieldItemViewController.m */; };
 		31D8260E1C16DE5000361082 /* PPFieldOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D8260D1C16DE5000361082 /* PPFieldOverlayViewController.m */; };
+		A2FE13711F75084600C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133050A1D183CB50086CADF /* MicroBlink.framework */; };
+		A2FE13721F75084600C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3133050A1D183CB50086CADF /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FE13751F75085200C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13741F75085200C6F1EA /* libz.tbd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FE13731F75084600C6F1EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FE13721F75084600C6F1EA /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		311FC80A1C1B300B00969AA0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -119,6 +135,7 @@
 		31D8260B1C15D5AA00361082 /* PPFieldItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFieldItemViewController.m; sourceTree = "<group>"; };
 		31D8260D1C16DE5000361082 /* PPFieldOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFieldOverlayViewController.m; sourceTree = "<group>"; };
 		31D8260F1C16DE6000361082 /* PPFieldOverlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPFieldOverlayViewController.h; sourceTree = "<group>"; };
+		A2FE13741F75085200C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,10 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				311FC80B1C1B300B00969AA0 /* Accelerate.framework in Frameworks */,
+				A2FE13751F75085200C6F1EA /* libz.tbd in Frameworks */,
 				31D475081C0F582800E5B503 /* libiconv.tbd in Frameworks */,
 				31D475061C0F581F00E5B503 /* libc++.tbd in Frameworks */,
-				3133050C1D183CB50086CADF /* MicroBlink.framework in Frameworks */,
+				311FC80B1C1B300B00969AA0 /* Accelerate.framework in Frameworks */,
+				A2FE13711F75084600C6F1EA /* MicroBlink.framework in Frameworks */,
 				31D475041C0F581300E5B503 /* CoreMedia.framework in Frameworks */,
 				31D475021C0F580C00E5B503 /* AVFoundation.framework in Frameworks */,
 				31D475001C0F580500E5B503 /* AudioToolbox.framework in Frameworks */,
@@ -228,10 +246,11 @@
 		31D474E41C0F57DA00E5B503 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				313305091D183CB50086CADF /* MicroBlink.bundle */,
-				3133050A1D183CB50086CADF /* MicroBlink.framework */,
+				A2FE13741F75085200C6F1EA /* libz.tbd */,
 				31D475071C0F582800E5B503 /* libiconv.tbd */,
 				31D475051C0F581F00E5B503 /* libc++.tbd */,
+				313305091D183CB50086CADF /* MicroBlink.bundle */,
+				3133050A1D183CB50086CADF /* MicroBlink.framework */,
 				311FC80A1C1B300B00969AA0 /* Accelerate.framework */,
 				31D475031C0F581300E5B503 /* CoreMedia.framework */,
 				31D475011C0F580C00E5B503 /* AVFoundation.framework */,
@@ -303,6 +322,7 @@
 				31D474C61C0F570900E5B503 /* Sources */,
 				31D474C71C0F570900E5B503 /* Frameworks */,
 				31D474C81C0F570900E5B503 /* Resources */,
+				A2FE13731F75084600C6F1EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,7 +340,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Dino;
 				TargetAttributes = {
 					31D474C91C0F570900E5B503 = {
@@ -431,14 +451,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -481,14 +507,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -527,7 +559,7 @@
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"LICENSE_KEY='\"KKB3NVOF-X4G334BM-5RFFHRQE-FDM5ABJ5-F4U76IMY-BZJ5MRO3-NJ7UTBEJ-W3QYDRNZ\"'",
+					"LICENSE_KEY='\"UAGYKT7U-JCK7A3BI-3HODRGEO-YJLIXHMG-DQBVK5FQ-AU6S6KP7-EGMA54ZG-AVAVOKP3\"'",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SegmentScanDemo/Info.plist;
@@ -549,7 +581,7 @@
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"LICENSE_KEY='\"KKB3NVOF-X4G334BM-5RFFHRQE-FDM5ABJ5-F4U76IMY-BZJ5MRO3-NJ7UTBEJ-W3QYDRNZ\"'",
+					"LICENSE_KEY='\"UAGYKT7U-JCK7A3BI-3HODRGEO-YJLIXHMG-DQBVK5FQ-AU6S6KP7-EGMA54ZG-AVAVOKP3\"'",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SegmentScanDemo/Info.plist;

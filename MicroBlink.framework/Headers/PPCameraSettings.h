@@ -67,14 +67,14 @@ PP_CLASS_AVAILABLE_IOS(6.0)
 
 /**
  * Camera preset. With this property you can set the resolution of the camera
- * 
+ *
  * Default: PPCameraPresetOptimal
  */
 @property (nonatomic, assign) PPCameraPreset cameraPreset;
 
 /**
  * Camera type. You can choose between front and back facing.
- * 
+ *
  * Default: PPCameraTypeBack
  */
 @property (nonatomic, assign) PPCameraType cameraType;
@@ -82,12 +82,10 @@ PP_CLASS_AVAILABLE_IOS(6.0)
 /**
  * Interval between forcing two camera focuses. If <= 0, forced focuses arent performed
  * and only continuous autofocus mode will be used.
- * 
+ *
  * Default
  *  - 10.0f for BlinkID and BlinkOCR product
- *  - 3.2f for PhotoPay product
- *  - 5.0f for Pdf417 product
- *  - 0.0f for PhotoMath product
+ *  - 8.0f for PhotoPay, pdf417 and other products
  */
 @property (nonatomic, assign) NSTimeInterval autofocusInterval;
 

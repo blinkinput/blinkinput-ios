@@ -17,14 +17,14 @@ class PPCameraOverlayViewController : PPOverlayViewController {
     }
     
     @IBAction func didTapClose(_ sender: AnyObject) {
-        (self.containerViewController as! PPOverlayContainerViewController).overlayViewControllerWillCloseCamera(self)
+        (self.containerViewController)?.overlayViewControllerWillCloseCamera(self)
     }
 
     @IBAction func didTapTorch(_ sender: AnyObject) {
-        self.torchOn = (self.containerViewController as! PPOverlayContainerViewController).isTorchOn()
+        self.torchOn = ((self.containerViewController)?.isTorchOn())!
         self.torchOn = !self.torchOn
-        if((self.containerViewController as! PPOverlayContainerViewController).overlayViewControllerShouldDisplayTorch(self)) {
-            (self.containerViewController as! PPOverlayContainerViewController).overlayViewController(self, willSetTorch: self.torchOn)
+        if((self.containerViewController)?.overlayViewControllerShouldDisplayTorch(self))! {
+            (self.containerViewController)?.overlayViewController(self, willSetTorch: self.torchOn)
         }
     }
 }

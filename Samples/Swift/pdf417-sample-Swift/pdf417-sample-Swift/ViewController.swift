@@ -42,7 +42,8 @@ class ViewController: UIViewController, PPScanningDelegate {
         /** 2. Setup the license key */
 
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = "JOKZIKWH-FZV2DXBQ-SHCQU6XS-OIRURMJ5-VT2EU3A2-WTU5B5S5-K26MRJNQ-URV26UQP"
+        // Valid until 2017-12-21
+        settings.licenseSettings.licenseKey = "PTIULGXP-WL7W44P3-HBNHDK5Q-TUJIKL4Z-BOBV7IDW-CDM246ZI-PMUHXCAN-NDBVYOXU"
 
 
         /**
@@ -64,14 +65,14 @@ class ViewController: UIViewController, PPScanningDelegate {
         // Remove this code if you don't need to scan QR codes
         do {
             // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-            let zxingRecognizerSettings: PPZXingRecognizerSettings = PPZXingRecognizerSettings()
+            let barcodeRecognizerSettings: PPBarcodeRecognizerSettings = PPBarcodeRecognizerSettings()
 
 
             /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
-            zxingRecognizerSettings.scanQR=true // we use just QR code
+            barcodeRecognizerSettings.scanQR=true // we use just QR code
 
             // Add ZXingRecognizer setting to a list of used recognizer settings
-            settings.scanSettings.add(zxingRecognizerSettings)
+            settings.scanSettings.add(barcodeRecognizerSettings)
         }
 
 
@@ -121,59 +122,57 @@ class ViewController: UIViewController, PPScanningDelegate {
         self.present(scanningViewController, animated: true, completion: nil)
 
     }
-
-    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController) {
-        // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
+    
+    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController & PPScanningViewController) {
+        
     }
-
-    func scanningViewController(_ scanningViewController: UIViewController, didFindError error: Error) {
-        // Can be ignored. See description of the method
+    
+    func scanningViewController(_ scanningViewController: UIViewController & PPScanningViewController, didFindError error: Error) {
+        
     }
-
-    func scanningViewControllerDidClose(_ scanningViewController: UIViewController) {
-
+    
+    func scanningViewControllerDidClose(_ scanningViewController: UIViewController & PPScanningViewController) {
         // As scanning view controller is presented full screen and modally, dismiss it
         self.dismiss(animated: true, completion: nil)
     }
-
-    func scanningViewController(_ scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
-
-        let scanConroller: PPScanningViewController = scanningViewController as! PPScanningViewController
-
+    
+    func scanningViewController(_ scanningViewController: (UIViewController & PPScanningViewController)?, didOutputResults results: [PPRecognizerResult]) {
+        let scanConroller: PPScanningViewController = scanningViewController!
+        
         /**
          * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
          * Each member of results array will represent one result for a single processed image
          * Usually there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. pdf417 and QR code side by side)
          */
-
+        
         // first, pause scanning until we process all the results
         scanConroller.pauseScanning()
-
+        
         var message: String = ""
         var title: String = ""
-
-
+        
+        
         // Collect data from the result
         for result in results {
-            if(result is PPZXingRecognizerResult) {
+            if(result is PPBarcodeRecognizerResult) {
                 /** One of QR code was detected */
-
-                let zxingResult = result as! PPZXingRecognizerResult
-
+                
+                let barcodeResult = result as! PPBarcodeRecognizerResult
+                
                 title = "QR code"
-
+                
                 // Save the string representation of the code
-                message = zxingResult.stringUsingGuessedEncoding()
+                message = barcodeResult.stringUsingGuessedEncoding()!
             }
             if(result is PPPdf417RecognizerResult) {
                 /** Pdf417 code was detected */
-
+                
                 let pdf417Result = result as! PPPdf417RecognizerResult
-
+                
                 title = "PDF417"
-
+                
                 // Save the string representation of the code
-                message = pdf417Result.stringUsingGuessedEncoding()
+                message = pdf417Result.stringUsingGuessedEncoding()!
             }
         }
         // present the alert view with scanned results

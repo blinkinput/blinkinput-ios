@@ -12,6 +12,7 @@
 
 #import "PPMetadata.h"
 #import "PPImageMetadata.h"
+#import "PPRecognitionStatusMetadata.h"
 #import "PPTextMetadata.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,7 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Settings class containing information which metadata is captured in the scanning process
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMetadataSettings : NSObject <NSCopying>
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPMetadataSettings : NSObject <NSCopying>
 
 /**
  * If YES, currently processed video frame will be captured.
@@ -49,7 +51,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMetadataSettings : NSObject <NSCopying>
  *
  * Default: instance obtained using PPDebugMetadata init method.
  */
-@property (nonatomic, strong) PPDebugMetadata* debugMetadata;
+@property (nonatomic, strong) PPDebugMetadata *debugMetadata;
 
 /**
  * Designated initializer. Initializes the object with default settings (see above for defaults)
@@ -61,7 +63,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPMetadataSettings : NSObject <NSCopying>
 @end
 
 /**
- * Settings for debuging various data. 
+ * Settings for debuging various data.
  * These settings can help you understand why something isn't working as expected.
  */
 @interface PPDebugMetadata : NSObject <NSCopying>

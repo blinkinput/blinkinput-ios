@@ -68,29 +68,41 @@ static NSString *CLASS_NEW_ID = @"newCroId";
     /** 2. Setup the license key */
     
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"ZNP44VOM-3AIGKXEP-UE2XJI3O-DE3YGZK4-Z5SVZT3F-LTHWKXGP-MVOM7ZOV-C7U3EE7H"; // Valid temporarily
-    
-
-
+    // Valid until 2017-12-21
+    settings.licenseSettings.licenseKey = @"7SVVDMV5-4XLVPFZ6-KU5QC42N-57IYYO2J-RWH2COKU-EPJSVPVD-NYMTOI6S-L3DPFN5L"; // Valid temporarily
     
     /**********************************************************************************************************************/
     /**************  For Croatian ID sample images please check Croatian_ID_Images.xcassets in this project  **************/
     /**********************************************************************************************************************/
-    
-    
-    
     
     /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
      * Remove undesired recognizers (added below) for optimal performance.
      */
     {
-        PPBlinkOcrRecognizerSettings *ocrSettings = [[PPBlinkOcrRecognizerSettings alloc] init];
+        PPDocumentDetectorSettings *documentSettings = [[PPDocumentDetectorSettings alloc] initWithNumStableDetectionsThreshold:5];
+        
+        NSMutableArray<PPDecodingInfo*> *classificationDecodingInfoArray = [NSMutableArray array];
+        
+        [classificationDecodingInfoArray addObject:[[PPDecodingInfo alloc] initWithLocation:CGRectMake(0.047, 0.519, 0.224, 0.111) dewarpedHeight:150 uniqueId:ID_DOCUMENT_NUMBER_OLD]];
+        [classificationDecodingInfoArray addObject:[[PPDecodingInfo alloc] initWithLocation:CGRectMake(0.047, 0.685, 0.224, 0.111) dewarpedHeight:150 uniqueId:ID_DOCUMENT_NUMBER_NEW]];
+        
+        /**
+         * Create ID card document specification. Document specification defines geometric/scanning properties of documents to be detected
+         */
+        PPDocumentSpecification *idSpec = [PPDocumentSpecification newFromPreset:PPDocumentPresetId1Card];
+        
+        /**
+         * Set decoding infos as our classification decoding infos. One has location of document number on old id, other on new Id
+         */
+        [idSpec setDecodingInfo:classificationDecodingInfoArray];
+        
+        [documentSettings setDocumentSpecifications:@[idSpec]];
+        
+        PPDetectorRecognizerSettings *ocrSettings = [[PPDetectorRecognizerSettings alloc] initWithDetectorSettings:documentSettings];
         
         NSMutableArray<PPDecodingInfo*> *oldIdDecodingInfoArray = [NSMutableArray array];
         NSMutableArray<PPDecodingInfo*> *newIdDecodingInfoArray = [NSMutableArray array];
-        
-        NSMutableArray<PPDecodingInfo*> *classificationDecodingInfoArray = [NSMutableArray array];
         
         /** Setup first name decoding */
         {
@@ -194,9 +206,6 @@ static NSString *CLASS_NEW_ID = @"newCroId";
              * Since document number is located differently on old and new ID cards, we will use it as our classification.
              */
             
-            [classificationDecodingInfoArray addObject:[[PPDecodingInfo alloc] initWithLocation:CGRectMake(0.047, 0.519, 0.224, 0.111) dewarpedHeight:150 uniqueId:ID_DOCUMENT_NUMBER_OLD]];
-            [classificationDecodingInfoArray addObject:[[PPDecodingInfo alloc] initWithLocation:CGRectMake(0.047, 0.685, 0.224, 0.111) dewarpedHeight:150 uniqueId:ID_DOCUMENT_NUMBER_NEW]];
-            
             PPRegexOcrParserFactory *documentNumberParser = [[PPRegexOcrParserFactory alloc] initWithRegex:@"\\d{9}"];
             
             NSMutableSet *charWhitelist = [[NSMutableSet alloc] init];
@@ -214,29 +223,11 @@ static NSString *CLASS_NEW_ID = @"newCroId";
         }
         
         /**
-         * Create ID card document specification. Document specification defines geometric/scanning properties of documents to be detected
-         */
-        PPDocumentSpecification *idSpec = [PPDocumentSpecification newFromPreset:PPDocumentPresetId1Card];
-        
-        /**
-         * Set decoding infos as our classification decoding infos. One has location of document number on old id, other on new Id
-         */
-        [idSpec setDecodingInfo:classificationDecodingInfoArray];
-        
-        /**
          * Wrap Document specification in detector settings
          */
         PPDocumentDetectorSettings *detectorSettings = [[PPDocumentDetectorSettings alloc] initWithNumStableDetectionsThreshold:1];
         [detectorSettings setDocumentSpecifications:@[idSpec]];
-        
-        /**
-         * Add created detector settings to recognizer
-         */
-        [ocrSettings setDetectorSettings:detectorSettings];
-        /**
-         * Set this class as document classifier delegate
-         */
-        [ocrSettings setDocumentClassifier:self];
+    
         /**
          * Add decoding infos for classifier results. These infos and their parsers will only be processed if classifier outputs the selected result
          */
@@ -330,9 +321,9 @@ static NSString *CLASS_NEW_ID = @"newCroId";
     // Collect data from the result
     for (PPRecognizerResult* result in results) {
         
-        if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
+        if ([result isKindOfClass:[PPDetectorRecognizerResult class]]) {
             /** MRTD was detected */
-            PPBlinkOcrRecognizerResult* ocrResult = (PPBlinkOcrRecognizerResult*)result;
+            PPDetectorRecognizerResult* ocrResult = (PPDetectorRecognizerResult*)result;
             message = [ocrResult parsedResultForName:ID_SEX parserGroup:ID_SEX_CITIZENSHIP_DOB];
                         message = [[message stringByAppendingString:@" "] stringByAppendingString:[ocrResult parsedResultForName:ID_CITIZENSHIP parserGroup:ID_SEX_CITIZENSHIP_DOB]];
                         message = [[message stringByAppendingString:@" "] stringByAppendingString:[ocrResult parsedResultForName:ID_DATE_OF_BIRTH parserGroup:ID_SEX_CITIZENSHIP_DOB]];

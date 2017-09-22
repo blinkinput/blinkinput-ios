@@ -20,9 +20,25 @@
 		3153E6931D097A4200797C93 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6921D097A4200797C93 /* libc++.tbd */; };
 		3153E6951D097A4800797C93 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6941D097A4800797C93 /* libiconv.tbd */; };
 		3153E6981D097A5900797C93 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3153E6961D097A5900797C93 /* MicroBlink.bundle */; };
-		3153E6991D097A5900797C93 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6971D097A5900797C93 /* MicroBlink.framework */; };
 		31F4D2DD1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F4D2DC1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets */; };
+		A2FE13801F7512BB00C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6971D097A5900797C93 /* MicroBlink.framework */; };
+		A2FE13811F7512BB00C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6971D097A5900797C93 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FE13841F7512C700C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13831F7512C700C6F1EA /* libz.tbd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FE13821F7512BB00C6F1EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FE13811F7512BB00C6F1EA /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3153E66F1D08758900797C93 /* Templating-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Templating-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +60,7 @@
 		3153E6961D097A5900797C93 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		3153E6971D097A5900797C93 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		31F4D2DC1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Croatian_ID_Images.xcassets; sourceTree = "<group>"; };
+		A2FE13831F7512C700C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FE13841F7512C700C6F1EA /* libz.tbd in Frameworks */,
 				3153E6951D097A4800797C93 /* libiconv.tbd in Frameworks */,
 				3153E6931D097A4200797C93 /* libc++.tbd in Frameworks */,
+				A2FE13801F7512BB00C6F1EA /* MicroBlink.framework in Frameworks */,
 				3153E68E1D097A3C00797C93 /* Accelerate.framework in Frameworks */,
-				3153E6991D097A5900797C93 /* MicroBlink.framework in Frameworks */,
 				3153E68F1D097A3C00797C93 /* AudioToolbox.framework in Frameworks */,
 				3153E6901D097A3C00797C93 /* AVFoundation.framework in Frameworks */,
 				3153E6911D097A3C00797C93 /* CoreMedia.framework in Frameworks */,
@@ -109,10 +127,11 @@
 		3153E6891D097A0C00797C93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3153E6961D097A5900797C93 /* MicroBlink.bundle */,
-				3153E6971D097A5900797C93 /* MicroBlink.framework */,
+				A2FE13831F7512C700C6F1EA /* libz.tbd */,
 				3153E6941D097A4800797C93 /* libiconv.tbd */,
 				3153E6921D097A4200797C93 /* libc++.tbd */,
+				3153E6961D097A5900797C93 /* MicroBlink.bundle */,
+				3153E6971D097A5900797C93 /* MicroBlink.framework */,
 				3153E68A1D097A3C00797C93 /* Accelerate.framework */,
 				3153E68B1D097A3C00797C93 /* AudioToolbox.framework */,
 				3153E68C1D097A3C00797C93 /* AVFoundation.framework */,
@@ -131,6 +150,7 @@
 				3153E66B1D08758900797C93 /* Sources */,
 				3153E66C1D08758900797C93 /* Frameworks */,
 				3153E66D1D08758900797C93 /* Resources */,
+				A2FE13821F7512BB00C6F1EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,7 +167,7 @@
 		3153E6671D08758900797C93 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Dino;
 				TargetAttributes = {
 					3153E66E1D08758900797C93 = {
@@ -231,14 +251,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -278,14 +304,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

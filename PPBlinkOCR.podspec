@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPBlinkOCR"
-  s.version     = "2.2.0"
+  s.version     = "2.3.0"
   s.summary     = "A state-of-the-art OCR module for mobile devices"
   s.homepage    = "http://microblink.com"
   
@@ -20,18 +20,19 @@ Pod::Spec.new do |s|
   s.license     = { 
         :type => 'commercial',
         :text => <<-LICENSE
-                © 2013-2015 MicroBlink Ltd. All rights reserved.
+                © 2013-2017 MicroBlink Ltd. All rights reserved.
                 LICENSE
         }
 
   s.authors     = {
         "MicroBlink" => "info@microblink.com",
-        "Jurica Cerovec" => "jurica.cerovec@microblink.com"
+        "Jurica Cerovec" => "jurica.cerovec@microblink.com",
+        "Jura Skrlec" => "jura.skrlec@microblink.com"
   }
 
   s.source      = { 
         :git => 'https://github.com/BlinkOCR/blinkocr-ios.git', 
-        :tag => 'v2.2.0'
+        :tag => 'v2.3.0'
   }
 
   s.platform     = :ios
@@ -43,7 +44,7 @@ Pod::Spec.new do |s|
   s.ios.requires_arc = false
   s.ios.vendored_frameworks = 'MicroBlink.framework'
   s.ios.frameworks = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'AssetsLibrary', 'CoreMedia'
-  s.ios.libraries = 'c++', 'iconv'
+  s.ios.libraries = 'c++', 'iconv', 'z'
 
 
 end

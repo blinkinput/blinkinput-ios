@@ -207,7 +207,6 @@
     drawingLayer.strokeColor = [color CGColor];
     drawingLayer.fillColor = [[UIColor clearColor] CGColor];
     drawingLayer.opacity = 0.9f;
-    drawingLayer.delegate = self;
     drawingLayer.lineWidth = 4.0f;
     drawingLayer.masksToBounds = YES;
     

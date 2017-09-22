@@ -37,7 +37,6 @@ class ViewController: UIViewController, PPScanningDelegate  {
             return nil;
         }
 
-
         /** 1. Initialize the Scanning settings */
 
          // Initialize the scanner settings object. This initialize settings with all default values.
@@ -47,7 +46,8 @@ class ViewController: UIViewController, PPScanningDelegate  {
         /** 2. Setup the license key */
 
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = "YVNJMEOS-O7PXTS2J-2QGPSPRY-ZUJHTSYJ-2J35YFHB-4YYVZMCJ-2QAC2GEP-PLJG5NQS"
+        // Valid until 2017-12-21
+        settings.licenseSettings.licenseKey = "TAGJ4KTO-QSKAXYR7-PW753M44-SWPNQOYY-R3C6226L-BHJHPXAU-4HTDD7AZ-JL3YMF2F"
         // This license key is valid temporarily until 2017-06-20
 
         /**
@@ -56,19 +56,19 @@ class ViewController: UIViewController, PPScanningDelegate  {
          */
 
          // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
-        let ocrRecognizerSettings = PPBlinkOcrRecognizerSettings()
+        let ocrRecognizerSettings = PPBlinkInputRecognizerSettings()
         
         // We want raw OCR parsing
         let rawOcrFactory = PPRawOcrParserFactory()
-        rawOcrFactory.isRequired = false;
+        rawOcrFactory?.isRequired = false;
 
-        ocrRecognizerSettings.addOcrParser(rawOcrFactory, name: self.rawOcrParserId)
+        ocrRecognizerSettings.addOcrParser(rawOcrFactory!, name: self.rawOcrParserId)
 
         // We want to parse prices from raw OCR result as well
         let priceOcrFactory = PPPriceOcrParserFactory()
-        priceOcrFactory.isRequired = false;
+        priceOcrFactory?.isRequired = false;
         
-        ocrRecognizerSettings.addOcrParser(priceOcrFactory, name: self.priceParserId)
+        ocrRecognizerSettings.addOcrParser(priceOcrFactory!, name: self.priceParserId)
 
         // Add the recognizer setting to a list of used recognizer
         settings.scanSettings.add(ocrRecognizerSettings)
@@ -101,10 +101,9 @@ class ViewController: UIViewController, PPScanningDelegate  {
         self.present(scanningViewController, animated: true, completion: nil)
     }
     
-    func scanningViewController(_ scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
+    func scanningViewController(_ scanningViewController: (UIViewController & PPScanningViewController)?, didOutputResults results: [PPRecognizerResult]) {
         
-        let scanConroller : PPScanningViewController = scanningViewController as! PPScanningViewController
-        
+        let scanConroller : PPScanningViewController = scanningViewController!
         
         // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
         
@@ -114,14 +113,14 @@ class ViewController: UIViewController, PPScanningDelegate  {
         // Collect data from the result
         for result in results {
             
-            if(result.isKind(of: PPBlinkOcrRecognizerResult.self)) {
-                let ocrRecognizerResult = result as! PPBlinkOcrRecognizerResult
+            if(result.isKind(of: PPBlinkInputRecognizerResult.self)) {
+                let ocrRecognizerResult = result as! PPBlinkInputRecognizerResult
                 
                 print("OCR results are:");
-                print("Raw ocr: %@", ocrRecognizerResult.parsedResult(forName: self.rawOcrParserId))
-                print("Price: %@", ocrRecognizerResult.parsedResult(forName: self.priceParserId))
+                print("Raw ocr: %@", ocrRecognizerResult.parsedResult(forName: self.rawOcrParserId) ?? "")
+                print("Price: %@", ocrRecognizerResult.parsedResult(forName: self.priceParserId) ?? "")
                 
-                let ocrLayout : PPOcrLayout=ocrRecognizerResult.ocrLayout()
+                let ocrLayout : PPOcrLayout=ocrRecognizerResult.ocrLayout()!
                 print("Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box))
             }
         }
@@ -130,19 +129,18 @@ class ViewController: UIViewController, PPScanningDelegate  {
         scanConroller.resumeScanningAndResetState(false);
     }
 
-    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController){
-        // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
+    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController & PPScanningViewController) {
+        
     }
-
-    func scanningViewController(_ scanningViewController: UIViewController, didFindError error: Error) {
-        // Can be ignored. See description of the method
+    
+    func scanningViewController(_ scanningViewController: UIViewController & PPScanningViewController, didFindError error: Error) {
+        
     }
-
-    func scanningViewControllerDidClose(_ scanningViewController: UIViewController) {
-        // As scanning view controller is presented full screen and modally, dismiss it
-        self.dismiss(animated: true, completion: nil)
+    
+    func scanningViewControllerDidClose(_ scanningViewController: UIViewController & PPScanningViewController) {
+        
     }
-
+    
     func alertView(_ alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         self.dismiss(animated: true, completion: nil)
     }
