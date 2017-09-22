@@ -1,3 +1,100 @@
+## 2.3.0
+
+- Updates and additions:
+	- Microblink.framework is now a dynamic framework. The change is introduced because of the following reasons:
+        - isolation of code
+        - smaller binary size
+        - better interop with third party libraries (such as Asseco SEE Mobile Token)
+    - improved Screen shown when Camera permission is not granted:
+        - fixed crash which happened on tap anywhere on screen
+        - close button can now be removed (for example, if the scanning screen is inside `UINavigationController` instance)
+        - header is now public so you can instantiate that class if needed
+    - updated `PPUiSettings` with new features:
+        - flag `showStatusBar` which you can use to show or hide status bar on camera screen 
+        - flag `showCloseButton` which you can use to show or hide close button on camera screen. By default it's presented, but when inside `UINavigationController` it should be hidden
+        - flag `showTorchButton` which you can use to show or hide torch button on camera screen.
+    - deprecated `PPHelpDisplayMode`. You should replace it with a custom logic for presenting help inside the application using the SDK.
+    - renamed internal extension method with namespace so that they don't interfere with third party libraries
+    - added standard tap to focus overlay subview in all default OverlayViewControllers. Also added it as a public header.
+    - `PScanningViewController` now has a simple method to turn on torch
+    - simplified `PPOcrLayout` class (removed properties which were not used)
+	- internal switch to new build system using cmake. This allows faster deployments and easier updates in the future
+ 	- added support for hungarian parsers in segment scan
+		- account number parser
+		- payer ID parser
+	- added support for slovenian parsers in segment scan
+		- reference parser
+	- all recognizer results (classes that derive `PPRecognizerResult`) now have annotated nullability for their getters. Some of them used to assume non-null, while still returning `nil` sometimes. This has now been corrected and all getters are `_Nullable`
+	- added support for scanning IBANs that contain spaces and dashes
+	- added support for scanning IBAN from Georgia in Segment Scan
+	- added Belgian account number check to IBAN parser
+	- added Slovak Data Matrix codes
+	- added property `allowResultForEveryFrame` in `PPScanSettings` which can be used when using Direct API to force calling `didOutputResults:` callback for every frame
+	- added feature to enable frame quality estimation when using Direct API (by exposing property `estimateFrameQuality`)
+	- added logging of the SDK name when the license key is invalid for easier troubleshooting
+	- added a property which you can use to set a custom location for resources. For example, if you would like to avoid using Microblink.bundle as resources bundle, you can set a different one in PPSettings object
+	- added `PPSimNumberRecognizer`
+	- added Generic parsing in TopUpOcrParser
+	- added designated initializers to all `PPOcrParserFactory` objects
+	- added play success sound method to `PPScanningViewController` protocol
+	- added Barcode Recognizer `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+    - deprecated `PPBarDecoderRecognizerResult` and `PPBarDecoderRecognizerSettings`. Use Barcode Recognizer
+    - deprecated `PPZXingRecognizerResult` and `PPZXingRecognizerSettings`. Use Barcode Recognizer
+    - `PPBlinkOcrRecognizerResult` and `PPBlinkOcrRecognizerSettings` are now deprecated. Use `PPDetectorRecognizerResult` and `PPDetectorRecognizerSettings` for templating or `PPBlinkInputRecognizerResult` and `PPBlinkInputRecognizerSettings` for segment scan
+    - added reading of mirrored QR codes
+    - introduced `GlareDetector` which is by default used in all recognizers whose settings implement `GlareDetectorOptions`:
+        - when glare is detected, OCR will not be performed on the affected document position to prevent errors in the extracted data
+        - if the glare detector is used and obtaining of glare metadata is enabled in `MetadataSettings`
+        - glare detector can be disabled by using `detectGlare` property on the recognizer settings
+    - added `PPQuadDetectorResultWithSize` which inherits existing `PPQuadDetectorResult`
+        - it's subclasses are `PPDocumentDetectorResult` and `PPMrtdDetectorResult`
+        - returns information about physical size (height) in inches of the detected location when physical size is known   
+    - `CFBundleShortVersionString` is now updated with each release
+
+- Bugfixes:
+	- fixed frame quality issue in PPimageMetadata. Previously it was always nan if used after image getter
+	- fixed Torch button on default camera overlays. Previously it never changed state after it was turned on
+	- Fixed crash when the user tapped anywhere on the view controller presented when camera permission wasn't allowed
+	- fixed warning message when language is set to something other than @en, @de and @fr and @cro
+	- fixed crash on start in swift if custom UI was used to handle detector results
+	- fixed a problem which caused internal recognizer state not to be reset when using the scanner for the second time with the same PPCoordinator instance
+	- fixed ocrLayout getter in PPBlinkOcrRecognizer which previously returned nil
+	- fixed an issue which caused camera settings to be reset each time PPCoordinator's applySettings method was called. This issue manifested, for example, by automatically turning off torch after successful scan in SegmentScan
+	- fixed redundant log warnings in setting language ("Trying to set language to nil, returning") and CameraManager ("Should not have been observing autofocus")
+	- fixed issue with resuming camera when user is first asked for camera permission. This manifested as sometimes camera going black
+	- fixed issue with blurred camera display when `PPCoordinator` instance was reused between consecutive scanning sessions
+	- fixed crashed which happened when multiple instances of `PPCoordinator` were used simultaneously (one being terminated and one starting recognition). This most commonly happened when after scanning session, a new view controller was pushed to a Navigation View Controller, when the user repeated the procedure a number of times (five or more).
+	- fixed issue with Direct API which disabled processing
+	- fixed crash when multiple QR code-based recognizers were used together
+	- fixed bug which caused didOutputResults: not to get called in DirectAPI
+    - fixed case sensitivity in class & file naming
+    - fixed issue which sometimes caused scanning not to be started when the user is asked for camera permission (first run of the app)
+    - fixed rare crash which Camera paused label UI being updated on background thread
+    - fixed incorrect handling of camera mirror when using front facing camera
+    - fixed crash which sometimes happened when presenting help screens (if `PPHelpDisplayModeAlways` or `PPHelpDisplayModeFirstRun` were used)
+    - fixed crash in QR code which happened periodically in all recognizers
+    - fixed autorotation of overlay view controller
+    - fixed scanning return result type of `PPDetectorRecognizerSettings` when initialized with `PPMrtdDetectorSettings` - returning `PPMrtdDetectorResult`
+
+- Improvements in ID scanning performance:
+	- improved IBAN parser
+	- improved amount parser
+	- improved Croatian Reference number parsing:
+		- trailing whitespace is removed from result when using Segment scanning
+	- improved `TopUpParser`: added option to enable all prefixes at the same time (generic prefix)	
+	- added suport for 14 digits long sim numbers in addition to existing lengths (12, 19, 20)
+    - TopUp scanning improvements
+    - improved reading of pdf417 barcodes having width:height bar aspect ratio less than 2:1
+    - date parsing improvements
+    - added parsing of curly brackets
+
+- Changes in Samples:
+     - added libz to all samples to prevent linker errors (caused by slimming down the SDK)
+     - samples updated to use new dynamic framework
+     - added a build phase in each sample which removes unused architectures from the dynamic framework    
+     - samples updated for XCode 9
+     - all Swift samples are updated to Swift 4
+
 ## 2.2.0
 
 - iOS updates:
