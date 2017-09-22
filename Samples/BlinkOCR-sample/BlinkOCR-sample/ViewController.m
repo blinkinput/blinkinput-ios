@@ -56,8 +56,8 @@
     /** 2. Setup the license key */
     
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"J24OPHRZ-NHG4L3OT-YHIK4XRM-R6JOE2W5-42F2LCLS-I3R365JH-S6QPHF5B-NRD74Q5L";
-    // This license key is valid temporarily until 2017-05-29
+    settings.licenseSettings.licenseKey = @"CEIA37ES-4JU7TDWP-GRD26DTQ-AFSQ6JJH-S6QPGN44-WQDCHOK5-K3GMWDIP-FXLHMYTT";
+    // This license key is valid temporarily until 2017-12-21
     
     
     /**
@@ -66,7 +66,7 @@
      */
     
     // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
-    PPBlinkOcrRecognizerSettings *ocrRecognizerSettings = [[PPBlinkOcrRecognizerSettings alloc] init];
+    PPBlinkInputRecognizerSettings *ocrRecognizerSettings = [[PPBlinkInputRecognizerSettings alloc] init];
     
     
     // We want raw OCR parsing
@@ -143,8 +143,8 @@
     // Collect data from the result
     for (PPRecognizerResult* result in results) {
         
-        if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
-            PPBlinkOcrRecognizerResult* ocrRecognizerResult = (PPBlinkOcrRecognizerResult*)result;
+        if ([result isKindOfClass:[PPBlinkInputRecognizerResult class]]) {
+            PPBlinkInputRecognizerResult* ocrRecognizerResult = (PPBlinkInputRecognizerResult*)result;
             
             NSLog(@"OCR results are:");
             NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:self.rawOcrParserId]);
