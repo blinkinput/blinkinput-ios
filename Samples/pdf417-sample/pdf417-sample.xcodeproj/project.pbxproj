@@ -18,11 +18,27 @@
 		18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD61B6A509C006C14C0 /* CoreMedia.framework */; };
 		18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */; };
 		31D04D8D1CF4B4AF000055B9 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D8B1CF4B4AF000055B9 /* MicroBlink.bundle */; };
-		31D04D8E1CF4B4AF000055B9 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; };
 		31D04D901CF4B4B6000055B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */; };
 		31D04D921CF4B4BC000055B9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D911CF4B4BC000055B9 /* libiconv.tbd */; };
 		31D04D941CF4B4C1000055B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D931CF4B4C1000055B9 /* libc++.tbd */; };
+		A2FE13671F7506BC00C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; };
+		A2FE13681F7506BC00C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FE136B1F7506C500C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE136A1F7506C500C6F1EA /* libz.tbd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FE13691F7506BC00C6F1EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FE13681F7506BC00C6F1EA /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		18509B101B57BEE100C21ACF /* pdf417-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf417-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +61,7 @@
 		31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		31D04D911CF4B4BC000055B9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		31D04D931CF4B4C1000055B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A2FE136A1F7506C500C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FE136B1F7506C500C6F1EA /* libz.tbd in Frameworks */,
 				31D04D941CF4B4C1000055B9 /* libc++.tbd in Frameworks */,
 				31D04D921CF4B4BC000055B9 /* libiconv.tbd in Frameworks */,
+				A2FE13671F7506BC00C6F1EA /* MicroBlink.framework in Frameworks */,
 				31D04D901CF4B4B6000055B9 /* Accelerate.framework in Frameworks */,
 				18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */,
 				18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */,
-				31D04D8E1CF4B4AF000055B9 /* MicroBlink.framework in Frameworks */,
 				18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +127,7 @@
 		18509B391B57C0A300C21ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2FE136A1F7506C500C6F1EA /* libz.tbd */,
 				31D04D931CF4B4C1000055B9 /* libc++.tbd */,
 				31D04D911CF4B4BC000055B9 /* libiconv.tbd */,
 				31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */,
@@ -149,6 +168,7 @@
 				18509B0C1B57BEE100C21ACF /* Sources */,
 				18509B0D1B57BEE100C21ACF /* Frameworks */,
 				18509B0E1B57BEE100C21ACF /* Resources */,
+				A2FE13691F7506BC00C6F1EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,7 +185,7 @@
 		18509B081B57BEE100C21ACF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					18509B0F1B57BEE100C21ACF = {
@@ -240,13 +260,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -284,13 +312,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

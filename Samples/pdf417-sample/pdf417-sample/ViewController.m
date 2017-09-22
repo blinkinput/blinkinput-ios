@@ -55,7 +55,8 @@
     /** 2. Setup the license key */
     
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"T4SHF3VG-LSHRN42L-PXRBSSQV-PMJUKRKF-IVCUKRKF-IVCUKRKF-IVCULRPD-NOIZG6QM";
+    // Valid until 2017-12-21
+    settings.licenseSettings.licenseKey = @"VDDXAB7K-PS5FKSZ5-K3KRFFV6-TFEXOVAI-IRQEB5EH-WUUZV54Z-JF3VJKCF-JX3B57NC";
     
     
     /**
@@ -76,14 +77,14 @@
     
     {// Remove this code if you don't need to scan QR codes
         // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-        PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
+        PPBarcodeRecognizerSettings *barcodeRecognizerSettings = [[PPBarcodeRecognizerSettings alloc] init];
         
         /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
-        zxingRecognizerSettings.scanQR = YES; // we use just QR code
+        barcodeRecognizerSettings.scanQR = YES; // we use just QR code
         
         
         // Add ZXingRecognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
+        [settings.scanSettings addRecognizerSettings:barcodeRecognizerSettings];
     }
     
     /** 4. Initialize the Scanning Coordinator object */
@@ -190,15 +191,15 @@
     NSString* title;
     
     for (PPRecognizerResult* result in results) {
-        if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
+        if ([result isKindOfClass:[PPBarcodeRecognizerResult class]]) {
             /** One of ZXing codes was detected */
                
-            PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;
+            PPBarcodeRecognizerResult *barcodeResult = (PPBarcodeRecognizerResult *)result;
         
             title = @"QR code";
             
             // Save the string representation of the code
-            message = [zxingResult stringUsingGuessedEncoding];
+            message = [barcodeResult stringUsingGuessedEncoding];
         }
         if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
             /** Pdf417 code was detected */
