@@ -33,7 +33,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
 
 @property(nonatomic, assign) NSUInteger currentElementIndex;
 
-@property(nonatomic, strong) PPBlinkOcrRecognizerSettings *ocrRecognizerSettings;
+@property(nonatomic, strong) PPBlinkInputRecognizerSettings *ocrRecognizerSettings;
 
 @property(nonatomic, assign) SystemSoundID sound;
 
@@ -93,7 +93,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     for (PPRecognizerSettings *settings in self.coordinator.currentSettings.scanSettings.recognizerSettingsList) {
         [self.coordinator.currentSettings.scanSettings removeRecognizerSettings:settings];
     }
-    self.ocrRecognizerSettings = [[PPBlinkOcrRecognizerSettings alloc] init];
+    self.ocrRecognizerSettings = [[PPBlinkInputRecognizerSettings alloc] init];
     [self.ocrRecognizerSettings addOcrParser:scanElement.factory name:scanElement.identifier];
     [self.coordinator.currentSettings.scanSettings addRecognizerSettings:self.ocrRecognizerSettings];
 
@@ -348,14 +348,14 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
 - (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController didOutputResults:(NSArray *)results {
 
     for (PPRecognizerResult *result in results) {
-        if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
-            PPBlinkOcrRecognizerResult *ocrRecognizerResult = (PPBlinkOcrRecognizerResult *)result;
+        if ([result isKindOfClass:[PPBlinkInputRecognizerResult class]]) {
+            PPBlinkInputRecognizerResult *ocrRecognizerResult = (PPBlinkInputRecognizerResult *)result;
             [self processOcrRecognizerResult:ocrRecognizerResult];
         }
     }
 }
 
-- (void)processOcrRecognizerResult:(PPBlinkOcrRecognizerResult *)ocrRecognizerResult {
+- (void)processOcrRecognizerResult:(PPBlinkInputRecognizerResult *)ocrRecognizerResult {
 
     if (self.movingPivotView) {
         return;

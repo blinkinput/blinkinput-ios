@@ -30,7 +30,7 @@
 
 @property(weak, nonatomic) PPFieldItemViewController *currentElementView;
 
-@property(nonatomic) PPBlinkOcrRecognizerSettings *settings;
+@property(nonatomic) PPBlinkInputRecognizerSettings *settings;
 
 @property(nonatomic) PPFieldOverlayViewController *overlay;
 
@@ -174,7 +174,7 @@ float const bottomItemBottomMargin = 8.0;
     if (self.currentElement != nil) {
         [self.settings removeOcrParserWithName:self.currentElement.identifier];
     } else {
-        self.settings = [[PPBlinkOcrRecognizerSettings alloc] init];
+        self.settings = [[PPBlinkInputRecognizerSettings alloc] init];
         [self.coordinator.currentSettings.scanSettings addRecognizerSettings:self.settings];
     }
     [self.settings addOcrParser:element.factory name:element.identifier];
@@ -210,14 +210,14 @@ float const bottomItemBottomMargin = 8.0;
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController didOutputResults:(NSArray *)results {
     for (PPRecognizerResult *result in results) {
-        if ([result isKindOfClass:[PPBlinkOcrRecognizerResult class]]) {
-            PPBlinkOcrRecognizerResult *ocrRecognizerResult = (PPBlinkOcrRecognizerResult *)result;
+        if ([result isKindOfClass:[PPBlinkInputRecognizerResult class]]) {
+            PPBlinkInputRecognizerResult *ocrRecognizerResult = (PPBlinkInputRecognizerResult *)result;
             [self processOcrRecognizerResult:ocrRecognizerResult];
         }
     }
 }
 
-- (void)processOcrRecognizerResult:(PPBlinkOcrRecognizerResult *)ocrRecognizerResult {
+- (void)processOcrRecognizerResult:(PPBlinkInputRecognizerResult *)ocrRecognizerResult {
     NSString *result = [ocrRecognizerResult parsedResultForName:self.currentElement.identifier];
     if ([self.currentElement.factory class] == [PPIbanOcrParserFactory class]) {
         NSMutableString *separatedIban = [result mutableCopy];
