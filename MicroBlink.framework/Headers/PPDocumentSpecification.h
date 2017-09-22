@@ -66,8 +66,11 @@ typedef NS_ENUM(NSUInteger, PPScanningMode) {
 /** Presets which can be used to instantiate document specification for a specific document format */
 typedef NS_ENUM(NSUInteger, PPDocumentPreset) {
 
-    /** Preset for detecting ID cards */
+    /** Preset for detecting ID1 cards */
     PPDocumentPresetId1Card,
+
+    /** Preset for detecting ID2 cards */
+    PPDocumentPresetId2Card,
 
     /** Preset for detecting cheques */
     PPDocumentPresetCheque,
@@ -83,7 +86,8 @@ typedef NS_ENUM(NSUInteger, PPDocumentPreset) {
  * Document class describes a document which is being detected by DocumentDetector.
  * We encurage users to create specifications with one of our presets, if possible.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopying>
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPDocumentSpecification : NSObject <NSCopying>
 
 /**
  * Use this initializer for specifiying a document format.
@@ -93,8 +97,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopy
  *
  *  @return initialized object
  */
-- (instancetype)initWithAspectRatio:(CGFloat)aspectRatio
-                       decodingInfo:(NSArray<PPDecodingInfo*> *)decodingInfoArray;
+- (instancetype)initWithAspectRatio:(CGFloat)aspectRatio decodingInfo:(NSArray<PPDecodingInfo *> *)decodingInfoArray physicalSizeInInches:(CGFloat)physicalSizeInInches;
 
 
 // unavailable initializer
@@ -119,7 +122,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopy
  *
  *  @param decodingInfoArray decoding information
  */
-- (void)setDecodingInfo:(NSArray<PPDecodingInfo*> *)decodingInfoArray;
+- (void)setDecodingInfo:(NSArray<PPDecodingInfo *> *)decodingInfoArray;
 
 /**
  * Maximum angle for document detection
@@ -162,6 +165,12 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDocumentSpecification : NSObject<NSCopy
  * Default: PPMakeRange(-1, -1);
  */
 @property (nonatomic, assign) PPRange yRange;
+
+
+/**
+ * Physical size of document in inches
+ */
+@property (nonatomic, assign, readonly) CGFloat physicalSizeInInches;
 
 @end
 

@@ -11,6 +11,12 @@
 /**
  *  Parses license plates
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPLicensePlatesParserFactory : PPOcrParserFactory
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPLicensePlatesParserFactory : PPOcrParserFactory
+
+/**
+ * Creates parser instance with default parametars.
+ */
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 @end

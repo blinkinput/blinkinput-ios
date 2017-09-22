@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Different options for displaying help
  */
-typedef NS_ENUM(NSUInteger, PPHelpDisplayMode) {
+typedef PP_DEPRECATED_IOS(1_0, 5_9) NS_ENUM(NSUInteger, PPHelpDisplayMode) {
 
     /** Defines that help should never be displayed */
     PPHelpDisplayModeNever,
@@ -31,7 +31,8 @@ typedef NS_ENUM(NSUInteger, PPHelpDisplayMode) {
 /**
  * Settings class containing UI information
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUiSettings : NSObject <NSCopying>
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPUiSettings : NSObject <NSCopying>
 
 /**
  * If YES, default camera overlay will display Cancel button.
@@ -42,6 +43,22 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUiSettings : NSObject <NSCopying>
 @property (nonatomic, assign) BOOL showCloseButton;
 
 /**
+ * If YES, default camera overlay will display Torch button.
+ * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to NO.
+ *
+ * Default: YES.
+ */
+@property (nonatomic, assign) BOOL showTorchButton;
+
+/**
+ * If YES, default camera overlay will display Status bar.
+ * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to YES.
+ *
+ * Default: NO.
+ */
+@property (nonatomic, assign) BOOL showStatusBar;
+
+/**
  * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
  *
  * Default: NO.
@@ -50,7 +67,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUiSettings : NSObject <NSCopying>
 
 /**
  * If YES, OCR results will be passed to the UI callbacks. For you, this means OCR effects will be shown on screen.
- * 
+ *
  * Default: YES. Use NO if you care about scanning speed.
  */
 @property (nonatomic, assign) BOOL showOcrResults;
@@ -60,14 +77,14 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUiSettings : NSObject <NSCopying>
  *
  * Default: nil, because it uses default language of the device
  */
-@property (nonatomic, strong, nullable) NSString* language;
+@property (nonatomic, strong, nullable) NSString *language;
 
 /**
  * Full path to the sound file which is played when the valid result is scanned.
  *
- * Default: `[[NSBundle mainBundle] pathForResource:@"PPbeep" ofType:@"wav"];`
+ * Default: `[bundle pathForResource:@"PPbeep" ofType:@"wav"];`, where bundle is either Microblink.bundle, or bundle used by PPSettings
  */
-@property (nonatomic, strong, nullable) NSString* soundFilePath;
+@property (nonatomic, strong, nullable) NSString *soundFilePath;
 
 /**
  * Label which is displayed on screen when camera is paused, but still exists on the screen.
@@ -104,14 +121,24 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUiSettings : NSObject <NSCopying>
  *
  * Default: PPHelpDisplayModeFirstRun
  */
-@property (nonatomic, assign) PPHelpDisplayMode helpDisplayMode;
+@property (nonatomic, assign) PPHelpDisplayMode helpDisplayMode PP_DEPRECATED_IOS(1_0, 5_9, "Perform manual help display in your app");
+
 
 /**
- * Designated initializer. Initializes the object with default settings (see above for defaults)
+ * Initializes the object with default settings (see above for defaults).
  *
  *  @return object initialized with default values.
  */
 - (instancetype)init;
+
+/**
+ * Designated initializer. Initializes the object with default settings (see above for defaults).
+ *
+ * Also receives a path to the sound file used when scanning finishes successfully
+ *
+ *  @return object initialized with default values.
+ */
+- (instancetype)initWithSoundFilePath:(nullable NSString *)soundFilePath NS_DESIGNATED_INITIALIZER;
 
 @end
 

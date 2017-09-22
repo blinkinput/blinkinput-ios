@@ -14,22 +14,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  A wrapper around CAShapeLayer which is used for presenting a status about payslip and barcode detection.
- 
+
  The layer is used to draw a scanning window with a viewwinder.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPViewfinderOverlaySubview : PPOverlaySubview
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPViewfinderOverlaySubview : PPOverlaySubview
 
 /* Animation layer for viewfinder */
-@property (nonatomic, strong) CAShapeLayer* trackingLayer;
+@property (nonatomic, strong) CAShapeLayer *trackingLayer;
 
 /** Initial margin of the viewfinder */
 @property (nonatomic, assign) CGFloat initialViewfinderMargin;
 
 /** Initial Color of the viewfinder */
-@property (nonatomic, strong) UIColor* initialColor;
+@property (nonatomic, strong) UIColor *initialColor;
 
 /** Success Color of the viewfinder */
-@property (nonatomic, strong) UIColor* successColor;
+@property (nonatomic, strong) UIColor *successColor;
 
 /** Width of the dots */
 @property (nonatomic, assign) CGFloat strokeWidth;

@@ -9,38 +9,40 @@
 #ifndef PhotoPayFramework_MicroBlink_h
 #define PhotoPayFramework_MicroBlink_h
 
-#import "PPScanningDelegate.h"
-
-#import "PPSettings.h"
-
+// Common API
 #import "PPViewControllerFactory.h"
-#import "PPCameraCoordinator.h"
-#import "PPDetectionStatus.h"
+#import "PPApp.h"
 
-/** UI */
+/*  UI  */
+// Overlays
 #import "PPModernBaseOverlayViewController.h"
+#import "PPBarcodeOverlayViewController.h"
+#import "PPBaseBarcodeOverlayViewController.h"
+#import "PPFieldOfViewOverlayViewController.h"
+#import "PPIDCardOverlayViewController.h"
+#import "PPModernOverlayViewController.h"
+#import "PPOcrLineOverlayViewController.h"
+#import "PPSegmentScanOverlayViewController.h"
+#import "PPTemplatingOverlayViewController.h"
+#import "PPTapToFocusOverlaySubview.h"
+
+// Permission denied view controller
+#import "PPPermissionDeniedViewController.h"
+
+// Overlay subviews
 #import "PPModernOcrResultOverlaySubview.h"
-#import "PPOcrResultOverlaySubview.h"
-#import "PPDotsOverlaySubview.h"
 #import "PPModernViewfinderOverlaySubview.h"
+#import "PPOcrResultOverlaySubview.h"
+#import "PPBlurredFieldOfViewOverlaySubview.h"
+#import "PPDotsOverlaySubview.h"
+#import "PPFieldOfViewOverlaySubview.h"
+#import "PPModernToastOverlaySubview.h"
+#import "PPOcrLineOverlaySubview.h"
+#import "PPToastOverlaySubview.h"
 #import "PPViewfinderOverlaySubview.h"
 
-/** OCR */
-#import "PPBlinkOcrRecognizerSettings.h"
-#import "PPBlinkOcrRecognizerResult.h"
-
-/** Detector */
-#import "PPDetectorRecognizerSettings.h"
-#import "PPDetectorRecognizerResult.h"
-
-/* Barcodes */
-#import "PPBarcodeDetailedData.h"
-#import "PPPdf417RecognizerSettings.h"
-#import "PPPdf417RecognizerResult.h"
-#import "PPZXingRecognizerSettings.h"
-#import "PPZXingRecognizerResult.h"
-#import "PPBarDecoderRecognizerSettings.h"
-#import "PPBarDecoderRecognizerResult.h"
+// Recognizers
+#import "PPBlinkInputRecognizers.h"
 
 
 #endif

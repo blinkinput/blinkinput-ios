@@ -6,13 +6,14 @@
 //  Copyright © 2015 MicroBlink Ltd. All rights reserved.
 //
 
-#import "PPRecognizerSettings.h"
+#import "PPTemplatingRecognizerSettings.h"
 
 #import "PPDetectorSettings.h"
 
 #import "PPDocumentDetectorSettings.h"
 #import "PPMrtdDetectorSettings.h"
 #import "PPMultiDetectorSettings.h"
+#import "PPFaceDetectorSettings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * If multiple detectors are needed, please check PPMultiDetectorSettings.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDetectorRecognizerSettings : PPRecognizerSettings
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPDetectorRecognizerSettings : PPTemplatingRecognizerSettings
 
 /**
  * Initializes the recognizer with desired detector settings.
@@ -33,6 +35,13 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPDetectorRecognizerSettings : PPRecogniz
  * Please use designated initializer.
  */
 - (instancetype)init NS_UNAVAILABLE;
+
+/**
+ * With this enabled, documents will be processed twice: once regulary and second time flipped upside down.
+ *
+ * Default: NO
+ */
+@property (nonatomic) BOOL allowFlippedRecognition;
 
 @end
 

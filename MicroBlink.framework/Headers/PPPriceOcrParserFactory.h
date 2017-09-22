@@ -11,7 +11,13 @@
 /**
  *  Parses various transaction amount formats on invoices.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPPriceOcrParserFactory : PPOcrParserFactory
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPPriceOcrParserFactory : PPOcrParserFactory
+
+/**
+ * Creates parser instance with default parametars.
+ */
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic) BOOL arabicIndicModeEnabled;
 
@@ -21,10 +27,5 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPPriceOcrParserFactory : PPOcrParserFact
 
 @property (nonatomic) BOOL allowNegativeAmounts;
 
-@property (nonatomic) BOOL expectCurrencySymbol;
-
-@property (nonatomic) BOOL expectAsterixOrEqualsPrefix;
-
-@property (nonatomic) int idealNumberOfDigits;
 
 @end
