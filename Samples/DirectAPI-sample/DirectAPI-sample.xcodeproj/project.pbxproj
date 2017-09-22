@@ -22,8 +22,24 @@
 		3170EA031CC0EF680017ABF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3170EA021CC0EF680017ABF0 /* libc++.tbd */; };
 		3170EA051CC0EF6F0017ABF0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */; };
 		319649BD1D0AE282000561C5 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 319649BB1D0AE282000561C5 /* MicroBlink.bundle */; };
-		319649BE1D0AE282000561C5 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; };
+		A2FE13621F75059200C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; };
+		A2FE13631F75059200C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FE13661F75059C00C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13651F75059C00C6F1EA /* libz.tbd */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FE13641F75059300C6F1EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FE13631F75059200C6F1EA /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1819B6F01B7745150002325E /* DirectAPI-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DirectAPI-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +64,7 @@
 		3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		319649BB1D0AE282000561C5 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		319649BC1D0AE282000561C5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		A2FE13651F75059C00C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FE13661F75059C00C6F1EA /* libz.tbd in Frameworks */,
 				3170EA051CC0EF6F0017ABF0 /* libiconv.tbd in Frameworks */,
 				3170EA031CC0EF680017ABF0 /* libc++.tbd in Frameworks */,
+				A2FE13621F75059200C6F1EA /* MicroBlink.framework in Frameworks */,
 				3170E9FE1CC0EEE60017ABF0 /* Accelerate.framework in Frameworks */,
-				319649BE1D0AE282000561C5 /* MicroBlink.framework in Frameworks */,
 				3170E9FF1CC0EEE60017ABF0 /* AudioToolbox.framework in Frameworks */,
 				3170EA001CC0EEE60017ABF0 /* AVFoundation.framework in Frameworks */,
 				3170EA011CC0EEE60017ABF0 /* CoreMedia.framework in Frameworks */,
@@ -116,10 +134,11 @@
 		3170E9F91CC0EECF0017ABF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				319649BB1D0AE282000561C5 /* MicroBlink.bundle */,
-				319649BC1D0AE282000561C5 /* MicroBlink.framework */,
+				A2FE13651F75059C00C6F1EA /* libz.tbd */,
 				3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */,
 				3170EA021CC0EF680017ABF0 /* libc++.tbd */,
+				319649BB1D0AE282000561C5 /* MicroBlink.bundle */,
+				319649BC1D0AE282000561C5 /* MicroBlink.framework */,
 				3170E9FA1CC0EEE60017ABF0 /* Accelerate.framework */,
 				3170E9FB1CC0EEE60017ABF0 /* AudioToolbox.framework */,
 				3170E9FC1CC0EEE60017ABF0 /* AVFoundation.framework */,
@@ -138,6 +157,7 @@
 				1819B6EC1B7745150002325E /* Sources */,
 				1819B6ED1B7745150002325E /* Frameworks */,
 				1819B6EE1B7745150002325E /* Resources */,
+				A2FE13641F75059300C6F1EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,7 +174,7 @@
 		1819B6E81B7745150002325E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					1819B6EF1B7745150002325E = {
@@ -238,14 +258,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -285,14 +311,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
