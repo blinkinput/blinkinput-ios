@@ -71,6 +71,11 @@
 @property(nonatomic, strong) NSString *value;
 
 /**
+ * Multiple actual value for this element
+ */
+@property(nonatomic, strong) NSArray *multipleValues;
+
+/**
  * Width of scanning region used in UI. Values are between 0.0 and 1.0 where 1.0 is whole screen width and 0.5 is half width.
  */
 @property(nonatomic) float scanningRegionWidth;

@@ -36,6 +36,7 @@
     [encoder encodeBool:self.scanned forKey:@"scanner"];
     [encoder encodeBool:self.edited forKey:@"edited"];
     [encoder encodeObject:self.value forKey:@"value"];
+    [encoder encodeObject:self.multipleValues forKey:@"multipleValues"];
     [encoder encodeFloat:self.scanningRegionHeight forKey:@"height"];
     [encoder encodeFloat:self.scanningRegionWidth forKey:@"width"];
 }
@@ -52,6 +53,7 @@
         _scanned=[encoder decodeBoolForKey:@"scanner"];
         _edited=[encoder decodeBoolForKey:@"edited"];
         _value=[encoder decodeObjectForKey:@"value"];
+        _multipleValues = [encoder decodeObjectForKey:@"multipleValues"];
         _scanningRegionHeight=[encoder decodeFloatForKey:@"height"];
         _scanningRegionWidth=[encoder decodeFloatForKey:@"width"];
     }

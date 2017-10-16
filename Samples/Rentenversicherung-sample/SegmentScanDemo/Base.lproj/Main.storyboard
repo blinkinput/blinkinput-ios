@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--BlinkOCR Demo-->
+        <!--RV Demo-->
         <scene sceneID="qOW-7o-f3x">
             <objects>
                 <viewController id="EU9-xK-eJX" customClass="ViewController" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="30" id="KdO-Qn-Ar9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Form Scanning">
+                                <state key="normal" title="RV Scanning">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
@@ -46,7 +46,7 @@
                                     <action selector="didTapScanForm:" destination="EU9-xK-eJX" eventType="touchUpInside" id="KDr-be-zIS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqN-Q9-oLO">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqN-Q9-oLO">
                                 <rect key="frame" x="8" y="136" width="360" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Individual Field Scanning">
@@ -56,7 +56,7 @@
                                     <action selector="didTapScanFields:" destination="EU9-xK-eJX" eventType="touchUpInside" id="loP-XW-b9K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-dB-GjP">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9k4-dB-GjP">
                                 <rect key="frame" x="154" y="625" width="67" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Settings"/>
@@ -77,7 +77,7 @@
                             <constraint firstItem="9k4-dB-GjP" firstAttribute="centerX" secondItem="fF0-Qy-2TY" secondAttribute="centerX" id="tgr-V8-jDt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BlinkOCR Demo" id="DiS-Nm-7fm"/>
+                    <navigationItem key="navigationItem" title="RV Demo" id="DiS-Nm-7fm"/>
                     <connections>
                         <outlet property="buttonSettings" destination="9k4-dB-GjP" id="fjt-Xf-dIB"/>
                     </connections>
