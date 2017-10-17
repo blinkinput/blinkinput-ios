@@ -12,6 +12,11 @@
 
 @end
 
+NSString * const kVersicherungsnummer = @"Versicherungsnummer";
+NSString * const kDatum = @"RenteverischerungDatum";
+NSString * const kRente = @"RenteverischerungRente";
+
+
 @implementation PPScanElement
 
 - (instancetype)initWithIdentifier:(NSString *)identifier parserFactory:(PPOcrParserFactory *)factory {

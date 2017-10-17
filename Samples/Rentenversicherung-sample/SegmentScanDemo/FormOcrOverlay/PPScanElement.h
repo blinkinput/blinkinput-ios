@@ -10,6 +10,10 @@
 
 #import <MicroBlink/PPBlinkOcrRecognizerSettings.h>
 
+extern NSString * const kVersicherungsnummer;
+extern NSString * const kDatum;
+extern NSString * const kRente;
+
 /**
  * The easiest way to UI for Ocr scanning is by specifying the PPScanElements.
  *
@@ -42,6 +46,11 @@
  * Localized tooltip (used in the tooltip label above the viewfinder)
  */
 @property(nonatomic, strong) NSString *localizedTooltip;
+
+/**
+ * Localized description (used as the result in table view controller)
+ */
+@property(nonatomic, strong) NSString *localizedDescription;
 
 /**
  * Keyboard type used when editing
