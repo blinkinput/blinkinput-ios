@@ -370,7 +370,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     NSString *val = [ocrRecognizerResult parsedResultForName:element.identifier];
     NSRange  searchedRange = NSMakeRange(0, [val length]);
     
-    if ([element.identifier isEqualToString:@"Versicherungsnummer"]) {
+    if ([element.identifier isEqualToString:kVersicherungsnummer]) {
         
         NSString *pattern = @"([0-9]{2}\\s[0-9]{6}\\s[A-Z]{1}\\s[0-9]{3})";
         NSError  *error = nil;
@@ -379,7 +379,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
         NSTextCheckingResult *match = [regex firstMatchInString:val options:0 range: searchedRange];
         val = [[val substringWithRange:[match rangeAtIndex:1]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     }
-    else if ([element.identifier isEqualToString:@"Rente"]) {
+    else if ([element.identifier isEqualToString:kRente]) {
         NSString *pattern = @"(\\d+\\.?\\d+,?\\d*\\sEUR)";
         NSError  *error = nil;
         
@@ -400,30 +400,6 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
                 
                 element.multipleValues = values.copy;
             }
-        }
-    }
-    else if ([element.identifier isEqualToString:@"Entgelpunkte"]) {
-        NSString *pattern = @"(\\d+\\.?\\d+,?\\d*)";
-        NSError  *error = nil;
-        
-        NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-        if (val.length > 0) {
-            NSArray* matches = [regex matchesInString:val options:0 range: searchedRange];
-            
-            if (matches.count == 4) {
-                NSMutableArray *values = [NSMutableArray new];
-                for (NSTextCheckingResult* match in matches) {
-                    NSString* matchText = [val substringWithRange:[match range]];
-                    NSLog(@"Match: %@", matchText);
-                    NSRange valueRange = [match rangeAtIndex:1];
-                    NSLog(@"Value: %@", [val substringWithRange:valueRange]);
-                    NSString *eurRenten = [val substringWithRange:valueRange];
-                    [values addObject:eurRenten];
-                }
-                
-                element.multipleValues = values.copy;
-            }
-
         }
     }
 
