@@ -63,12 +63,21 @@
         controller.scanElements = self.scanElements;
         [self.navigationController pushViewController:controller animated:YES];
     } else {
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"No Scan Elements Present"
-                                                           message:@"Tap Settings to add Scan Elements"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-        [theAlert show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"No Scan Elements Present"
+                                     message:@"Tap Settings to add Scan Elements"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* noButton = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+        
+        [alert addAction:noButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -76,7 +85,21 @@
     NSError *error;
     if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:&error]) {
         NSString *messageString = [error localizedDescription];
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Warning"
+                                     message:messageString
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* noButton = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+        
+        [alert addAction:noButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
         return nil;
     }
     PPSettings *settings = [[PPSettings alloc] init];
@@ -110,12 +133,21 @@
 
         [self presentViewController:scanningViewController animated:YES completion:nil];
     } else {
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"No Scan Elements Present"
-                                                           message:@"Tap Settings to add Scan Elements"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-        [theAlert show];
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"No Scan Elements Present"
+                                     message:@"Tap Settings to add Scan Elements"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* noButton = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                       //Handle no, thanks button
+                                   }];
+        
+        [alert addAction:noButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
