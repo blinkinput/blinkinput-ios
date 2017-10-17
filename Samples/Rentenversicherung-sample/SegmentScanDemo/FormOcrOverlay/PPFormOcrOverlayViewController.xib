@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-WA-aMR">
-                    <rect key="frame" x="20" y="413.5" width="335" height="233.5"/>
+                    <rect key="frame" x="20" y="383.5" width="335" height="263.5"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4K-6S-29s" userLabel="Upper Shadow View">
@@ -50,7 +50,7 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaX-yi-vHZ" userLabel="Close Button">
-                    <rect key="frame" x="20" y="30" width="50" height="50"/>
+                    <rect key="frame" x="20" y="20" width="50" height="50"/>
                     <state key="normal" image="icon-exit">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdY-JL-RrS" userLabel="Light Button">
-                    <rect key="frame" x="162.5" y="30" width="50" height="50"/>
+                    <rect key="frame" x="162.5" y="20" width="50" height="50"/>
                     <state key="normal" image="icon-flashlight">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -71,7 +71,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuT-sq-SqH" userLabel="Help Button">
-                    <rect key="frame" x="305" y="30" width="50" height="50"/>
+                    <rect key="frame" x="305" y="20" width="50" height="50"/>
                     <state key="normal" image="icon-help">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -81,10 +81,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-GT-C80" userLabel="Pivot View Container">
-                    <rect key="frame" x="0.0" y="80" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="70" width="375" height="60"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="vIr-89-Lah"/>
+                        <constraint firstAttribute="height" constant="60" id="vIr-89-Lah"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position Amount in this Frame" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="0fh-cH-qFV" userLabel="Scan Tooltip">
@@ -170,13 +170,13 @@
                 <constraint firstAttribute="bottom" secondItem="jNv-9d-OQM" secondAttribute="bottom" id="MDb-XR-4dF"/>
                 <constraint firstItem="jNv-9d-OQM" firstAttribute="centerX" secondItem="q3G-wI-DBM" secondAttribute="centerX" id="NCx-Y0-uwq"/>
                 <constraint firstItem="1dv-xd-C35" firstAttribute="height" secondItem="q3G-wI-DBM" secondAttribute="height" id="NP2-Wg-Jht"/>
-                <constraint firstItem="WdY-JL-RrS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="O1x-7n-qvS"/>
+                <constraint firstItem="WdY-JL-RrS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="O1x-7n-qvS"/>
                 <constraint firstAttribute="trailing" secondItem="xs8-QX-1mE" secondAttribute="trailing" id="QHe-ll-wQj"/>
                 <constraint firstItem="X4K-6S-29s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="USR-Uu-JAe"/>
                 <constraint firstAttribute="bottom" secondItem="q3G-wI-DBM" secondAttribute="centerY" constant="80" id="XU5-Bt-Xvu"/>
                 <constraint firstItem="0fh-cH-qFV" firstAttribute="bottom" secondItem="9iY-oQ-R1X" secondAttribute="top" constant="-4" id="YDt-fC-v8V"/>
-                <constraint firstItem="pHT-WA-aMR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" constant="-100" id="ZPf-tj-HXg"/>
-                <constraint firstItem="CuT-sq-SqH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Zce-Lu-PLQ"/>
+                <constraint firstItem="pHT-WA-aMR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" constant="-70" id="ZPf-tj-HXg"/>
+                <constraint firstItem="CuT-sq-SqH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Zce-Lu-PLQ"/>
                 <constraint firstItem="X4K-6S-29s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZeK-Jo-J9q"/>
                 <constraint firstAttribute="centerX" secondItem="q3G-wI-DBM" secondAttribute="centerX" id="bNw-SI-OVB"/>
                 <constraint firstItem="0fh-cH-qFV" firstAttribute="top" secondItem="h5D-GT-C80" secondAttribute="bottom" id="cAR-mS-Fys"/>
@@ -196,7 +196,7 @@
                 <constraint firstItem="jNv-9d-OQM" firstAttribute="top" secondItem="tBg-aS-qjg" secondAttribute="bottom" id="s8i-Zy-daD"/>
                 <constraint firstAttribute="trailing" secondItem="jNv-9d-OQM" secondAttribute="trailing" id="ssb-rS-caV"/>
                 <constraint firstItem="tBg-aS-qjg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="t3v-6D-659"/>
-                <constraint firstItem="xaX-yi-vHZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="tuq-Px-V2I"/>
+                <constraint firstItem="xaX-yi-vHZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="tuq-Px-V2I"/>
                 <constraint firstAttribute="trailing" secondItem="9iY-oQ-R1X" secondAttribute="trailing" priority="999" constant="20" id="tyg-78-RRe"/>
                 <constraint firstAttribute="centerX" secondItem="0fh-cH-qFV" secondAttribute="centerX" id="x07-VB-sAK"/>
                 <constraint firstItem="9iY-oQ-R1X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" priority="999" constant="20" id="yod-gO-9gS"/>

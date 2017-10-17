@@ -242,7 +242,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
 #pragma mark - Status bar
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    return YES;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
