@@ -10,4 +10,8 @@
 
 @interface MBResultTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *scanElements;
+
++(instancetype)viewControllerFromStoryBoard;
+
 @end
