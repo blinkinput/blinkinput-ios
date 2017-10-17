@@ -20,57 +20,32 @@
     NSMutableArray *retArray = [NSMutableArray array];
     PPRawOcrParserFactory *rawFactory = [[PPRawOcrParserFactory alloc] init];
     rawFactory.isRequired = NO;
-    PPScanElement *rawElement = [[PPScanElement alloc] initWithIdentifier:@"Raw" parserFactory:rawFactory];
+    PPScanElement *rawElement = [[PPScanElement alloc] initWithIdentifier:kVersicherungsnummer parserFactory:rawFactory];
     rawElement.localizedTitle = @"Versicherungsnummer";
     rawElement.localizedTooltip = @"Bitte positionieren Sie die Versicherungsnummer in diesem Feld";
-    rawElement.scanningRegionHeight = 0.09;
+    rawElement.scanningRegionHeight = 0.14;
     rawElement.scanningRegionWidth = 0.8;
     [retArray addObject:rawElement];
     
-    PPPriceOcrParserFactory *priceFactory = [[PPPriceOcrParserFactory alloc] init];
-    priceFactory.isRequired = NO;
-    PPScanElement *priceElement = [[PPScanElement alloc] initWithIdentifier:@"Price" parserFactory:priceFactory];
-    priceElement.localizedTitle = @"Amount";
-    priceElement.localizedTooltip = @"Please position amount in this field";
-    priceElement.scanningRegionHeight = 0.09;
-    priceElement.scanningRegionWidth = 0.8;
-    [retArray addObject:priceElement];
-    
-    PPIbanOcrParserFactory *ibanFactory = [[PPIbanOcrParserFactory alloc] init];
-    ibanFactory.isRequired = NO;
-    PPScanElement *ibanElement = [[PPScanElement alloc] initWithIdentifier:@"IBAN" parserFactory:ibanFactory];
-    ibanElement.localizedTitle = @"IBAN";
-    ibanElement.localizedTooltip = @"Please position IBAN in this field";
-    ibanElement.scanningRegionHeight = 0.09;
-    ibanElement.scanningRegionWidth = 0.8;
-    [retArray addObject:ibanElement];
-    
     PPDateOcrParserFactory *dateFactory = [[PPDateOcrParserFactory alloc] init];
     dateFactory.isRequired = NO;
-    PPScanElement *dateElement = [[PPScanElement alloc] initWithIdentifier:@"Date" parserFactory:dateFactory];
-    dateElement.localizedTitle = @"Date";
-    dateElement.localizedTooltip = @"Please position date in this field";
-    dateElement.scanningRegionHeight = 0.09;
-    ibanElement.scanningRegionWidth = 0.8;
+    PPScanElement *dateElement = [[PPScanElement alloc] initWithIdentifier:kDatum parserFactory:dateFactory];
+    dateElement.localizedTitle = @"Datum";
+    dateElement.localizedTooltip = @"Bitte positionieren Sie Datum in diesem Feld";
+    dateElement.scanningRegionHeight = 0.10;
+    dateElement.scanningRegionWidth = 0.7;
     [retArray addObject:dateElement];
     
-    PPEmailOcrParserFactory *emailFactory = [[PPEmailOcrParserFactory alloc] init];
-    emailFactory.isRequired = NO;
-    PPScanElement *emailElement = [[PPScanElement alloc] initWithIdentifier:@"Email" parserFactory:emailFactory];
-    emailElement.localizedTitle = @"Email";
-    emailElement.localizedTooltip = @"Please position Email in this field";
-    emailElement.scanningRegionHeight = 0.09;
-    emailElement.scanningRegionWidth = 0.8;
-    [retArray addObject:emailElement];
     
-    PPVinOcrParserFactory *vinFactory = [[PPVinOcrParserFactory alloc] init];
-    vinFactory.isRequired = NO;
-    PPScanElement *vinElement = [[PPScanElement alloc] initWithIdentifier:@"IBAN" parserFactory:vinFactory];
-    vinElement.localizedTitle = @"VIN";
-    vinElement.localizedTooltip = @"Please position VIN in this field";
-    vinElement.scanningRegionHeight = 0.09;
-    vinElement.scanningRegionWidth = 0.8;
-    [retArray addObject:vinElement];
+    PPRawOcrParserFactory *priceFactory = [[PPRawOcrParserFactory  alloc] init];
+    priceFactory.isRequired = NO;
+    PPScanElement *priceElement = [[PPScanElement alloc] initWithIdentifier:kRente parserFactory:priceFactory];
+    priceElement.localizedTitle = @"Renten";
+    priceElement.localizedTooltip = @"Bitte positionieren Sie die monatliche Renten in diesem Feld";
+    priceElement.scanningRegionHeight = 0.30;
+    priceElement.scanningRegionWidth = 0.5;
+    [retArray addObject:priceElement];
+    
     
     return retArray;
     
@@ -80,36 +55,38 @@
     NSMutableArray *retArray = [NSMutableArray array];
     PPRawOcrParserFactory *rawFactory = [[PPRawOcrParserFactory alloc] init];
     rawFactory.isRequired = NO;
-    PPScanElement *rawElement = [[PPScanElement alloc] initWithIdentifier:@"Versicherungsnummer" parserFactory:rawFactory];
+    PPScanElement *rawElement = [[PPScanElement alloc] initWithIdentifier:kVersicherungsnummer parserFactory:rawFactory];
     rawElement.localizedTitle = @"Versicherungsnummer";
     rawElement.localizedTooltip = @"Bitte positionieren Sie die Versicherungsnummer in diesem Feld";
     rawElement.scanningRegionHeight = 0.14;
     rawElement.scanningRegionWidth = 0.8;
     [retArray addObject:rawElement];
     
+    PPDateOcrParserFactory *dateFactory = [[PPDateOcrParserFactory alloc] init];
+    dateFactory.isRequired = NO;
+    PPScanElement *dateElement = [[PPScanElement alloc] initWithIdentifier:kDatum parserFactory:dateFactory];
+    dateElement.localizedTitle = @"Datum";
+    dateElement.localizedTooltip = @"Bitte positionieren Sie Datum in diesem Feld";
+    dateElement.scanningRegionHeight = 0.10;
+    dateElement.scanningRegionWidth = 0.7;
+    [retArray addObject:dateElement];
+    
+    
     PPRawOcrParserFactory *priceFactory = [[PPRawOcrParserFactory  alloc] init];
     priceFactory.isRequired = NO;
-    PPScanElement *priceElement = [[PPScanElement alloc] initWithIdentifier:@"Rente" parserFactory:priceFactory];
+    PPScanElement *priceElement = [[PPScanElement alloc] initWithIdentifier:kRente parserFactory:priceFactory];
     priceElement.localizedTitle = @"Renten";
     priceElement.localizedTooltip = @"Bitte positionieren Sie die monatliche Renten in diesem Feld";
     priceElement.scanningRegionHeight = 0.30;
     priceElement.scanningRegionWidth = 0.5;
     [retArray addObject:priceElement];
     
-    PPRawOcrParserFactory *ibanFactory = [[PPRawOcrParserFactory alloc] init];
-    ibanFactory.isRequired = NO;
-    PPScanElement *ibanElement = [[PPScanElement alloc] initWithIdentifier:@"Entgelpunkte" parserFactory:ibanFactory];
-    ibanElement.localizedTitle = @"Rentenbeiträge";
-    ibanElement.localizedTooltip = @"Bitte positionieren Sie die Rentenbeiträge in diesem Feld";
-    ibanElement.scanningRegionHeight = 0.30;
-    ibanElement.scanningRegionWidth = 0.5;
-    [retArray addObject:ibanElement];
     
     return retArray;
 }
 
 + (BOOL)areSettingsAllowed {
-    return YES;
+    return NO;
 }
 
 @end
