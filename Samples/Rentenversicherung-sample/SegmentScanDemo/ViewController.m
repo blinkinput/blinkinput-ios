@@ -15,6 +15,7 @@
 #import <MicroBlink/PPBlinkOcrRecognizerResult.h>
 #import "PPParsers.h"
 #import "PPSelectedParsersViewController.h"
+#import "MBResultTableViewController.h"
 
 @interface ViewController () <PPFormOcrOverlayViewControllerDelegate, PPResultViewControllerDelegate, PPFieldViewControllerDelegate>
 
@@ -142,58 +143,13 @@
 }
 
 - (void)showResultWithScanElements:(NSArray *)scanElements {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    for (PPScanElement *element in scanElements) {
-        [dict setValue:element.value forKey:element.localizedTitle];
-    }
-
-    PPResultViewController *resultView = [[PPResultViewController alloc] initWithTitle:@"Scan Results" labels:dict subTitle:@"" labelOrder:nil];
-    resultView.delegate = self;
-    resultView.view.alpha = 0.0f;
-    [resultView.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-    [self addChildViewController:resultView];
-    [self.view addSubview:resultView.view];
-    [resultView didMoveToParentViewController:self];
-
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view
-                                                          attribute:NSLayoutAttributeCenterX
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeCenterX
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view
-                                                          attribute:NSLayoutAttributeCenterY
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeCenterY
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view
-                                                          attribute:NSLayoutAttributeLeading
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeading
-                                                         multiplier:1.0
-                                                           constant:30.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:resultView.view
-                                                          attribute:NSLayoutAttributeHeight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeHeight
-                                                         multiplier:0.8
-                                                           constant:0.0]];
-
-    [self.view layoutIfNeeded];
-
-    [UIView animateWithDuration:0.3
-                          delay:0.1
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                       resultView.view.alpha = 0.95f;
-                     }
-                     completion:nil];
+    
+    MBResultTableViewController *vc = [MBResultTableViewController viewControllerFromStoryBoard];
+    vc.scanElements = scanElements;
+    
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nvc animated:YES completion:nil];
 }
 - (IBAction)buttonSettingsDidTap:(id)sender {
     PPSelectedParsersViewController *someViewController = [PPSelectedParsersViewController viewControllerFromStoryboard];
