@@ -49,6 +49,7 @@
 		31D826091C15D40A00361082 /* PPFieldItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D826081C15D40A00361082 /* PPFieldItemViewController.xib */; };
 		31D8260C1C15D5AA00361082 /* PPFieldItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D8260B1C15D5AA00361082 /* PPFieldItemViewController.m */; };
 		31D8260E1C16DE5000361082 /* PPFieldOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D8260D1C16DE5000361082 /* PPFieldOverlayViewController.m */; };
+		A207037A1F9503FA006E0279 /* MBResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A20703791F9503FA006E0279 /* MBResultTableViewController.m */; };
 		A2FE13711F75084600C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3133050A1D183CB50086CADF /* MicroBlink.framework */; };
 		A2FE13721F75084600C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3133050A1D183CB50086CADF /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE13751F75085200C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13741F75085200C6F1EA /* libz.tbd */; };
@@ -135,6 +136,8 @@
 		31D8260B1C15D5AA00361082 /* PPFieldItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFieldItemViewController.m; sourceTree = "<group>"; };
 		31D8260D1C16DE5000361082 /* PPFieldOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFieldOverlayViewController.m; sourceTree = "<group>"; };
 		31D8260F1C16DE6000361082 /* PPFieldOverlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPFieldOverlayViewController.h; sourceTree = "<group>"; };
+		A20703781F9503FA006E0279 /* MBResultTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBResultTableViewController.h; sourceTree = "<group>"; };
+		A20703791F9503FA006E0279 /* MBResultTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBResultTableViewController.m; sourceTree = "<group>"; };
 		A2FE13741F75085200C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -231,6 +234,8 @@
 				31D4753D1C10828B00E5B503 /* FormOcrOverlay */,
 				31D475291C10737300E5B503 /* OcrHelp */,
 				31D474CD1C0F570900E5B503 /* Supporting Files */,
+				A20703781F9503FA006E0279 /* MBResultTableViewController.h */,
+				A20703791F9503FA006E0279 /* MBResultTableViewController.m */,
 			);
 			path = SegmentScanDemo;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 				31AD73841CAE6D3D006D2353 /* PPAvailableParsersViewController.m in Sources */,
 				31D8260C1C15D5AA00361082 /* PPFieldItemViewController.m in Sources */,
 				31D475381C10737300E5B503 /* PPBlinkOcrHelpPage1ViewController.m in Sources */,
+				A207037A1F9503FA006E0279 /* MBResultTableViewController.m in Sources */,
 				31AD73861CAE6D3D006D2353 /* PPParserDetailViewController.m in Sources */,
 				31D4753C1C10737300E5B503 /* PPBlinkOcrHelpViewController.m in Sources */,
 				31D4754A1C10828B00E5B503 /* PPFormOcrOverlayViewController.m in Sources */,
