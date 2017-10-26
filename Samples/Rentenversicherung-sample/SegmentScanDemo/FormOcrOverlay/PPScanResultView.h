@@ -16,7 +16,13 @@
 /**
  * Text field which can be used to manually edit the text
  */
+@property (strong, nonatomic) IBOutlet UIView *textfieldUnderline;
 @property(weak, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UIView *rentenContainerView;
+@property (strong, nonatomic) IBOutlet UIView *rentenLine;
+@property (strong, nonatomic) IBOutlet UILabel *kunftigeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *rentenanpassungLabel;
+@property (strong, nonatomic) IBOutlet UILabel *erwerbsminderungLabel;
 
 /**
  * Animates the display of scan result view.
@@ -53,5 +59,9 @@
 + (instancetype)allocFromNibName:(NSString *)nibName;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelResultTitle;
+
+- (void)showOneLinerResultView:(BOOL)showView;
+- (void)showRentenView:(BOOL)showView;
+- (void)resetRentenView;
 
 @end

@@ -28,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.scanElements = [[PPParsers getInitialParsers] mutableCopy];
 }
 
@@ -125,6 +124,9 @@
     if (self.scanElements.count > 0) {
         PPFormOcrOverlayViewController *overlayViewController = [PPFormOcrOverlayViewController allocFromNibName:@"PPFormOcrOverlayViewController"];
 
+        for (PPScanElement *scanElement in self.scanElements) {
+            scanElement.multipleValues = nil;
+        }
         overlayViewController.scanElements = self.scanElements;
         overlayViewController.coordinator = coordinator;
         overlayViewController.delegate = self;

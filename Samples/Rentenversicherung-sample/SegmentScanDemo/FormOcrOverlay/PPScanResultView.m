@@ -188,4 +188,28 @@
     return resultView;
 }
 
+- (void)showOneLinerResultView:(BOOL)showView {
+    self.textField.hidden = !showView;
+    self.textfieldUnderline.hidden = !showView;
+}
+
+- (void)showRentenView:(BOOL)showView {
+    
+    self.rentenLine.hidden = !showView;
+    
+    [UIView transitionWithView:self.rentenContainerView
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.rentenContainerView.hidden = !showView;
+                    }
+                    completion:NULL];
+}
+
+- (void)resetRentenView {
+    self.kunftigeLabel.text = @"0";
+    self.rentenanpassungLabel.text = @"0";
+    self.erwerbsminderungLabel.text = @"0";
+}
+
 @end

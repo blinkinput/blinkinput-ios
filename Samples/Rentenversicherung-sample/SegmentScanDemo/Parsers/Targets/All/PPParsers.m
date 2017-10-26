@@ -27,7 +27,7 @@
     rawElement.scanningRegionWidth = 0.8;
     [retArray addObject:rawElement];
     
-    PPDateOcrParserFactory *dateFactory = [[PPDateOcrParserFactory alloc] init];
+    PPRawOcrParserFactory *dateFactory = [[PPRawOcrParserFactory alloc] init];
     dateFactory.isRequired = NO;
     PPScanElement *dateElement = [[PPScanElement alloc] initWithIdentifier:kDatum parserFactory:dateFactory];
     dateElement.localizedTitle = @"Datum";

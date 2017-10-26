@@ -73,10 +73,20 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     // instantiate and hide result view
     self.scanResultView = [PPScanResultView allocFromNibName:@"PPScanResultView"];
     self.scanResultView.hidden = YES;
-    self.scanResultView.alpha = 0.0f;
     self.scanResultView.userInteractionEnabled = NO;
 
-    [self.view insertSubview:self.scanResultView belowSubview:self.buttonNext];
+    // [self.view insertSubview:self.scanResultView belowSubview:self.buttonNext];
+    
+    [self.resultViewPlaceholder addSubview:self.scanResultView];
+    
+    [self.scanResultView.leftAnchor constraintEqualToAnchor:self.resultViewPlaceholder.leftAnchor constant:0.f].active = YES;
+    [self.scanResultView.rightAnchor constraintEqualToAnchor:self.resultViewPlaceholder.rightAnchor constant:0.f].active = YES;
+    [self.scanResultView.topAnchor constraintEqualToAnchor:self.resultViewPlaceholder.topAnchor constant:0.f].active = YES;
+    [self.scanResultView.bottomAnchor constraintEqualToAnchor:self.resultViewPlaceholder.bottomAnchor constant:0.f].active = YES;
+    
+    [self.scanResultView layoutIfNeeded];
+    
+    [self.scanResultView resetRentenView];
 
     self.currentConstraints = [NSMutableArray array];
 
@@ -102,6 +112,7 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     self.labelTooltip.text = scanElement.localizedTooltip;
 
     [self registerForKeyboardNotifications];
+    
 }
 
 - (NSArray *)pivotViewTitles {
@@ -280,11 +291,13 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
 
     scanElement.value = self.scanResultView.textField.text;
     self.scanResultView.textField.text = @"";
+    [self.scanResultView resetRentenView];
 
     if (self.currentElementIndex < self.scanElements.count - 1) {
         [self.pivotView moveForward];
     } else {
         [self.delegate formOcrOverlayViewController:self didFinishScanningWithElements:self.scanElements];
+        
     }
 }
 
@@ -376,15 +389,30 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
         NSError  *error = nil;
         
         NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-        NSTextCheckingResult *match = [regex firstMatchInString:val options:0 range: searchedRange];
-        val = [[val substringWithRange:[match rangeAtIndex:1]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        if (searchedRange.length > 0) {
+            NSTextCheckingResult *match = [regex firstMatchInString:val options:0 range: searchedRange];
+            val = [[val substringWithRange:[match rangeAtIndex:1]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        }
+    }
+    else if ([element.identifier isEqualToString:kDatum]) {
+        
+        if (val.length > 0) {
+            NSString *pattern = @"(\\d{2}(\\.)\\d{2}(\\.)\\d{4})";
+            NSError  *error = nil;
+            
+            NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+            if (searchedRange.length > 0) {
+                NSTextCheckingResult *match = [regex firstMatchInString:val options:0 range: searchedRange];
+                val = [[val substringWithRange:[match rangeAtIndex:1]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+            }
+        }
     }
     else if ([element.identifier isEqualToString:kRente]) {
         NSString *pattern = @"(\\d+\\.?\\d+,?\\d*\\sEUR)";
         NSError  *error = nil;
         
         NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
-        if (val.length > 0) {
+        if (val.length > 0 && searchedRange.length > 0) {
             NSArray* matches = [regex matchesInString:val options:0 range: searchedRange];
             
             if (matches.count == 3) {
@@ -422,9 +450,6 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     if (!element.scanned) {
         element.scanned = YES;
 
-
-        self.scanResultView.textField.text = val;
-
         self.buttonSkip.enabled = NO;
         self.buttonSkip.hidden = YES;
         self.buttonNext.enabled = YES;
@@ -446,6 +471,22 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
                         }
                         completion:nil];
     }
+    
+    if ([element.identifier isEqualToString:kRente]) {
+        [self.scanResultView showOneLinerResultView:NO];
+        [self.scanResultView showRentenView:YES];
+        if (element.multipleValues.count > 0) {
+            self.scanResultView.kunftigeLabel.text = element.multipleValues[0] != nil ? element.multipleValues[0] : @"";
+            self.scanResultView.rentenanpassungLabel.text = element.multipleValues[1] != nil ? element.multipleValues[1] : @"";
+            self.scanResultView.erwerbsminderungLabel.text = element.multipleValues[2] != nil ? element.multipleValues[2] : @"";
+            
+        }
+    }
+    else {
+        [self.scanResultView showOneLinerResultView:YES];
+        [self.scanResultView showRentenView:NO];
+        self.scanResultView.textField.text = val;
+    }
 }
 
 #pragma mark - UI stuff when displaying result
@@ -466,13 +507,14 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
 }
 
 - (void)showResultView {
-
-    [self.scanResultView animateShowFromViewCenter:self.viewfinder
-                                           toFrame:self.resultViewPlaceholder
-                                 animationDuration:0.3
-                                        completion:^(BOOL finished) {
-                                          self.scanResultView.userInteractionEnabled = YES;
-                                        }];
+    
+    [UIView transitionWithView:self.scanResultView
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.scanResultView.hidden = NO;
+                    }
+                    completion:NULL];
 }
 
 - (void)hideResultView {
@@ -480,8 +522,14 @@ CGRect CGRectBounds(CGRect rect) { return CGRectMake(0, 0, rect.size.width, rect
     [self.scanResultView.textField endEditing:YES];
 
     self.scanResultView.userInteractionEnabled = NO;
-
-    [self.scanResultView animateHideToViewCenter:self.buttonNext animationDuration:0.3 completion:nil];
+    
+    [UIView transitionWithView:self.scanResultView
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.scanResultView.hidden = YES;
+                    }
+                    completion:NULL];
 }
 
 #pragma mark - Autorotation
