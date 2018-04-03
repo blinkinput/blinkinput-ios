@@ -6,7 +6,7 @@
 //
 //
 
-#import "PPMetadata.h"
+#import "MBMetadata.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, PPRecognitionStatus) {
 };
 
 PP_CLASS_AVAILABLE_IOS(6.0)
-@interface PPRecognitionStatusMetadata : PPMetadata
+@interface PPRecognitionStatusMetadata : MBMetadata
 
 @property (nonatomic, assign) PPRecognitionStatus status;
 

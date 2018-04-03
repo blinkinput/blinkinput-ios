@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class PPOcrLayout;
+@class MBOcrLayout;
 
 /**
  * Overlay subview presenting status of OCR detection. OCR results are displayed as green characters over detected locations.

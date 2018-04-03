@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
 //
 
-#import "PPMetadata.h"
+#import "MBMetadata.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, PPTextMetadataType) {
  * Textual type of Metadata returned by MicroBlink scanner.
  */
 PP_CLASS_AVAILABLE_IOS(6.0)
-@interface PPTextMetadata : PPMetadata
+@interface PPTextMetadata : MBMetadata
 
 /**
  * Actual text in the metadata.
