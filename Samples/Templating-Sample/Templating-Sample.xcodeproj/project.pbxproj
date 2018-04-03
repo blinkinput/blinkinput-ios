@@ -21,6 +21,9 @@
 		3153E6951D097A4800797C93 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6941D097A4800797C93 /* libiconv.tbd */; };
 		3153E6981D097A5900797C93 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3153E6961D097A5900797C93 /* MicroBlink.bundle */; };
 		31F4D2DD1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31F4D2DC1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets */; };
+		A26E96B2206E54DF009D8557 /* Licenses in Resources */ = {isa = PBXBuildFile; fileRef = A26E96B1206E54DF009D8557 /* Licenses */; };
+		A26E96B8206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A26E96B4206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.m */; };
+		A26E96B9206E550C009D8557 /* MBCroatianIDTemplateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A26E96B7206E550C009D8557 /* MBCroatianIDTemplateUtils.m */; };
 		A2FE13801F7512BB00C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6971D097A5900797C93 /* MicroBlink.framework */; };
 		A2FE13811F7512BB00C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3153E6971D097A5900797C93 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE13841F7512C700C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13831F7512C700C6F1EA /* libz.tbd */; };
@@ -60,6 +63,11 @@
 		3153E6961D097A5900797C93 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		3153E6971D097A5900797C93 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		31F4D2DC1D0EF87A00D87FE4 /* Croatian_ID_Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Croatian_ID_Images.xcassets; sourceTree = "<group>"; };
+		A26E96B1206E54DF009D8557 /* Licenses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Licenses; sourceTree = "<group>"; };
+		A26E96B4206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCroatianIDFrontTemplateRecognizer.m; sourceTree = "<group>"; };
+		A26E96B5206E550C009D8557 /* MBCroatianIDTemplateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCroatianIDTemplateUtils.h; sourceTree = "<group>"; };
+		A26E96B6206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCroatianIDFrontTemplateRecognizer.h; sourceTree = "<group>"; };
+		A26E96B7206E550C009D8557 /* MBCroatianIDTemplateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCroatianIDTemplateUtils.m; sourceTree = "<group>"; };
 		A2FE13831F7512C700C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,8 @@
 		3153E6711D08758900797C93 /* Templating-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				A26E96B3206E550C009D8557 /* Croatia */,
+				A26E96B1206E54DF009D8557 /* Licenses */,
 				3153E6751D08758900797C93 /* AppDelegate.h */,
 				3153E6761D08758900797C93 /* AppDelegate.m */,
 				3153E6781D08758900797C93 /* ViewController.h */,
@@ -138,6 +148,17 @@
 				3153E68D1D097A3C00797C93 /* CoreMedia.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A26E96B3206E550C009D8557 /* Croatia */ = {
+			isa = PBXGroup;
+			children = (
+				A26E96B6206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.h */,
+				A26E96B4206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.m */,
+				A26E96B5206E550C009D8557 /* MBCroatianIDTemplateUtils.h */,
+				A26E96B7206E550C009D8557 /* MBCroatianIDTemplateUtils.m */,
+			);
+			path = Croatia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +224,7 @@
 				3153E6821D08758900797C93 /* LaunchScreen.storyboard in Resources */,
 				3153E67F1D08758900797C93 /* Assets.xcassets in Resources */,
 				3153E67D1D08758900797C93 /* Main.storyboard in Resources */,
+				A26E96B2206E54DF009D8557 /* Licenses in Resources */,
 				3153E6981D097A5900797C93 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +238,8 @@
 			files = (
 				3153E67A1D08758900797C93 /* ViewController.m in Sources */,
 				3153E6771D08758900797C93 /* AppDelegate.m in Sources */,
+				A26E96B9206E550C009D8557 /* MBCroatianIDTemplateUtils.m in Sources */,
+				A26E96B8206E550C009D8557 /* MBCroatianIDFrontTemplateRecognizer.m in Sources */,
 				3153E6741D08758900797C93 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
