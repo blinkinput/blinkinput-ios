@@ -19,8 +19,8 @@
 		3139C8341C22B333005AC32C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8331C22B333005AC32C /* AudioToolbox.framework */; };
 		3139C8361C22B338005AC32C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8351C22B338005AC32C /* libc++.tbd */; };
 		3139C8381C22B33E005AC32C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8371C22B33E005AC32C /* libiconv.tbd */; };
-		3139C87E1C245950005AC32C /* PPCameraOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3139C87D1C245950005AC32C /* PPCameraOverlayViewController.swift */; };
-		3139C8801C2838B3005AC32C /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3139C87F1C2838B3005AC32C /* PPCameraOverlayViewController.xib */; };
+		A288D47B2073B5F20042A45F /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A288D47A2073B5F20042A45F /* CustomOverlay.swift */; };
+		A288D47D2073B69C0042A45F /* License in Resources */ = {isa = PBXBuildFile; fileRef = A288D47C2073B69C0042A45F /* License */; };
 		A2FE137B1F75106600C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313305061D183C010086CADF /* MicroBlink.framework */; };
 		A2FE137C1F75106600C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 313305061D183C010086CADF /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE137F1F75106F00C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE137E1F75106F00C6F1EA /* libz.tbd */; };
@@ -56,8 +56,8 @@
 		3139C8331C22B333005AC32C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3139C8351C22B338005AC32C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3139C8371C22B33E005AC32C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		3139C87D1C245950005AC32C /* PPCameraOverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPCameraOverlayViewController.swift; sourceTree = "<group>"; };
-		3139C87F1C2838B3005AC32C /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
+		A288D47A2073B5F20042A45F /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		A288D47C2073B69C0042A45F /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A2FE137E1F75106F00C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,8 @@
 		3139C8191C22B2AC005AC32C /* pdf417-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				3139C83E1C22B6AD005AC32C /* Camera Overlays */,
+				A288D47C2073B69C0042A45F /* License */,
+				A288D47A2073B5F20042A45F /* CustomOverlay.swift */,
 				3139C81A1C22B2AC005AC32C /* AppDelegate.swift */,
 				3139C81C1C22B2AC005AC32C /* ViewController.swift */,
 				3139C81E1C22B2AC005AC32C /* Main.storyboard */,
@@ -127,23 +128,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3139C83E1C22B6AD005AC32C /* Camera Overlays */ = {
-			isa = PBXGroup;
-			children = (
-				3139C83F1C22B6B9005AC32C /* Simple */,
-			);
-			name = "Camera Overlays";
-			sourceTree = "<group>";
-		};
-		3139C83F1C22B6B9005AC32C /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				3139C87D1C245950005AC32C /* PPCameraOverlayViewController.swift */,
-				3139C87F1C2838B3005AC32C /* PPCameraOverlayViewController.xib */,
-			);
-			name = Simple;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +139,7 @@
 				3139C8141C22B2AC005AC32C /* Frameworks */,
 				3139C8151C22B2AC005AC32C /* Resources */,
 				A2FE137D1F75106600C6F1EA /* Embed Frameworks */,
+				A2FFA80620406DEA006666D1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -208,12 +193,28 @@
 				313305071D183C010086CADF /* MicroBlink.bundle in Resources */,
 				3139C8251C22B2AC005AC32C /* LaunchScreen.storyboard in Resources */,
 				3139C8221C22B2AC005AC32C /* Assets.xcassets in Resources */,
+				A288D47D2073B69C0042A45F /* License in Resources */,
 				3139C8201C22B2AC005AC32C /* Main.storyboard in Resources */,
-				3139C8801C2838B3005AC32C /* PPCameraOverlayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2FFA80620406DEA006666D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3139C8131C22B2AC005AC32C /* Sources */ = {
@@ -222,7 +223,7 @@
 			files = (
 				3139C81D1C22B2AC005AC32C /* ViewController.swift in Sources */,
 				3139C81B1C22B2AC005AC32C /* AppDelegate.swift in Sources */,
-				3139C87E1C245950005AC32C /* PPCameraOverlayViewController.swift in Sources */,
+				A288D47B2073B5F20042A45F /* CustomOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +360,7 @@
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-BlinkInput-LibraryUsage-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -375,7 +376,7 @@
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-BlinkInput-LibraryUsage-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

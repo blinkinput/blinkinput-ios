@@ -9,181 +9,149 @@
 import UIKit
 import MicroBlink
 
-class ViewController: UIViewController, PPScanningDelegate {
-
+class ViewController: UIViewController, MBCustomOverlayViewControllerDelegate, MBBarcodeOverlayViewControllerDelegate {
+    
+    var pdf417Recognizer : MBPdf417Recognizer?
+    var barcodeRecognizer : MBBarcodeRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Valid until: 2018-04-29
+        MBMicroblinkSDK.sharedInstance().setLicenseResource("license-pdf-swift", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
     }
-
-    /**
-     * Method allocates and initializes the Scanning coordinator object.
-     * Coordinator is initialized with settings for scanning
-     * Modify this method to include only those recognizer settings you need. This will give you optimal performance
-     *
-     *  @param error Error object, if scanning isn't supported
-     *
-     *  @return initialized coordinator
-     */
-    private func coordinatorWithError(error: NSErrorPointer) -> PPCameraCoordinator? {
-
-        /** 0. Check if scanning is supported */
-
-        if PPCameraCoordinator.isScanningUnsupported(for: PPCameraType.back, error: error) {
-            return nil;
-        }
-
-
-        /** 1. Initialize the Scanning settings */
-
-         // Initialize the scanner settings object. This initialize settings with all default values.
-        let settings: PPSettings = PPSettings()
-
-
-        /** 2. Setup the license key */
-
-        // Visit www.microblink.com to get the license key for your app
-        // Valid until 2017-12-21
-        settings.licenseSettings.licenseKey = "PTIULGXP-WL7W44P3-HBNHDK5Q-TUJIKL4Z-BOBV7IDW-CDM246ZI-PMUHXCAN-NDBVYOXU"
-
-
-        /**
-         * 3. Set up what is being scanned. See detailed guides for specific use cases.
-         * Remove undesired recognizers (added below) for optimal performance.
-         */
-
-        // Remove this code if you don't need to scan Pdf417
-        do {
-            // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-            let ocrRecognizerSettings: PPPdf417RecognizerSettings = PPPdf417RecognizerSettings()
-
-            /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
-
-            // Add PDF417 Recognizer setting to a list of used recognizer settings
-            settings.scanSettings.add(ocrRecognizerSettings)
-        }
-
-        // Remove this code if you don't need to scan QR codes
-        do {
-            // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-            let barcodeRecognizerSettings: PPBarcodeRecognizerSettings = PPBarcodeRecognizerSettings()
-
-
-            /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
-            barcodeRecognizerSettings.scanQR=true // we use just QR code
-
-            // Add ZXingRecognizer setting to a list of used recognizer settings
-            settings.scanSettings.add(barcodeRecognizerSettings)
-        }
-
-
-        /** 4. Initialize the Scanning Coordinator object */
-
-        let coordinator: PPCameraCoordinator = PPCameraCoordinator(settings: settings)
-
-        return coordinator
+    
+    func createScanSettings() -> MBSettings {
+        /** Create barcode recognizer */
+        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer?.scanPdf417 = true
+        
+        self.pdf417Recognizer = MBPdf417Recognizer()
+        
+        /** Create barcode settings */
+        let settings : MBSettings = MBSettings()
+        
+        /** Crate recognizer collection */
+        let recognizerList : Array = [self.barcodeRecognizer!, self.pdf417Recognizer!] as! [MBRecognizer]
+        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        
+        /** Add recognizer collection to barcode settings */
+        settings.uiSettings.recognizerCollection = recognizerCollection
+        return settings;
     }
-
+    
+    @IBAction func didTapCustomUI(_ sender: Any) {
+        
+        /** Create barcode recognizer */
+        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer?.scanQR = true
+        
+        self.pdf417Recognizer = MBPdf417Recognizer()
+        
+        /** Create barcode settings */
+        let settings : MBSettings = MBSettings()
+        
+        /** Crate recognizer collection */
+        let recognizerList : Array = [self.barcodeRecognizer!, self.pdf417Recognizer!] as! [MBRecognizer]
+        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        
+        /** Add recognizer collection to barcode settings */
+        settings.uiSettings.recognizerCollection = recognizerCollection
+        
+        /** Create your overlay view controller */
+        let customOverlayViewController : CustomOverlay = CustomOverlay.initFromStoryboardWith(settings: settings, delegate: self)
+        
+        /** Create recognizer view controller with wanted overlay view controller */
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: customOverlayViewController)
+        
+        /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+        self.present(recognizerRunneViewController, animated: true, completion: nil)
+    }
     @IBAction func didTapScan(_ sender: AnyObject) {
-
-        /** Instantiate the scanning coordinator */
-        let error: NSErrorPointer = nil
-        let coordinator  = self.coordinatorWithError(error: error)
-
-        /** If scanning isn't supported, present an error */
-        if coordinator == nil {
-            let messageString: String = (error!.pointee?.localizedDescription)!
-            UIAlertView(title: "Warning", message: messageString, delegate: nil, cancelButtonTitle: "Ok").show()
-            return
-        }
-
-        /** Create new scanning view controller */
-        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewController(with: self, coordinator: coordinator!, error: nil)
-
-        /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
-        self.present(scanningViewController, animated: true, completion: nil)
-    }
-
-    @IBAction func didTapScanCustomUI(_ sender: AnyObject) {
-        let error : NSErrorPointer = nil
-        let coordinator = self.coordinatorWithError(error: error)
-
-        if(coordinator == nil) {
-            let messageString: String = (error!.pointee?.localizedDescription)!
-            UIAlertView(title: "Warning", message: messageString, delegate: nil, cancelButtonTitle: "Ok").show()
-            return
-        }
-
-        /** Init scanning view controller custom overlay */
-        let overlay: PPCameraOverlayViewController = PPCameraOverlayViewController(nibName: "PPCameraOverlayViewController",bundle: nil)
-        /** Create new scanning view controller with desired custom overlay */
-        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewController(with: self, overlayViewController: overlay, coordinator: coordinator!, error: nil);
-
-        /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
-        self.present(scanningViewController, animated: true, completion: nil)
-
+        
+        /** Create barcode recognizer */
+        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer?.scanQR = true
+        
+        self.pdf417Recognizer = MBPdf417Recognizer()
+        
+        /** Create barcode settings */
+        let settings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+        
+        /** Crate recognizer collection */
+        let recognizerList : Array = [self.barcodeRecognizer!, self.pdf417Recognizer!] as! [MBRecognizer]
+        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        
+        /** Add recognizer collection to barcode settings */
+        settings.uiSettings.recognizerCollection = recognizerCollection
+        
+        /** Create your overlay view controller */
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, andDelegate: self)
+        
+        /** Create recognizer view controller with wanted overlay view controller */
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+        
+        /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+        self.present(recognizerRunneViewController, animated: true, completion: nil)
     }
     
-    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController & PPScanningViewController) {
+    func overlayViewControllerDidFinishScanning(_ overlayViewController: MBOverlayViewController, state: MBRecognizerResultState) {
         
-    }
-    
-    func scanningViewController(_ scanningViewController: UIViewController & PPScanningViewController, didFindError error: Error) {
+        let recognizerRunnerViewController = overlayViewController.recognizerRunnerViewController as MBRecognizerRunnerViewController
+        /** This is done on background thread */
+        recognizerRunnerViewController.pauseScanning()
         
-    }
-    
-    func scanningViewControllerDidClose(_ scanningViewController: UIViewController & PPScanningViewController) {
-        // As scanning view controller is presented full screen and modally, dismiss it
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func scanningViewController(_ scanningViewController: (UIViewController & PPScanningViewController)?, didOutputResults results: [PPRecognizerResult]) {
-        let scanConroller: PPScanningViewController = scanningViewController!
         
-        /**
-         * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-         * Each member of results array will represent one result for a single processed image
-         * Usually there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. pdf417 and QR code side by side)
-         */
-        
-        // first, pause scanning until we process all the results
-        scanConroller.pauseScanning()
         
         var message: String = ""
         var title: String = ""
         
-        
-        // Collect data from the result
-        for result in results {
-            if(result is PPBarcodeRecognizerResult) {
-                /** One of QR code was detected */
-                
-                let barcodeResult = result as! PPBarcodeRecognizerResult
-                
-                title = "QR code"
-                
-                // Save the string representation of the code
-                message = barcodeResult.stringUsingGuessedEncoding()!
-            }
-            if(result is PPPdf417RecognizerResult) {
-                /** Pdf417 code was detected */
-                
-                let pdf417Result = result as! PPPdf417RecognizerResult
-                
-                title = "PDF417"
-                
-                // Save the string representation of the code
-                message = pdf417Result.stringUsingGuessedEncoding()!
-            }
+        if (self.barcodeRecognizer!.result.resultState == MBRecognizerResultState.valid) {
+            title = "QR code"
+            
+            // Save the string representation of the code
+            message = self.barcodeRecognizer!.result.stringData()
         }
-        // present the alert view with scanned results
-        let alertView: UIAlertView = UIAlertView.init(title: title, message: message, delegate: self, cancelButtonTitle: "OK")
-        alertView.show()
+        else if (self.pdf417Recognizer!.result.resultState == MBRecognizerResultState.valid) {
+            title = "PDF417"
+            
+            // Save the string representation of the code
+            message = self.pdf417Recognizer!.result.stringData()
+        }
+        
+        /** Needs to be called on main thread beacuse everything prior is on background thread */
+        DispatchQueue.main.async {
+            // present the alert view with scanned results
+            
+            let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                                                             handler: { (action) -> Void in
+                                                                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(okAction)
+            overlayViewController.present(alertController, animated: true, completion: nil)
+        }
     }
-
-    // dismiss the scanning view controller when user presses OK.
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+    
+    func overlayViewControllerDidTapClose(_ overlayViewController: MBOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func customOverlayViewControllerDidFinishScanning(_ customOverlay: CustomOverlay, state: MBRecognizerResultState) {
+        self.overlayViewControllerDidFinishScanning(customOverlay, state: state)
+    }
+    
+    func customOverlayViewControllerDidTapClose(customOverlay: CustomOverlay) {
+        self.overlayViewControllerDidTapClose(customOverlay)
+    }
+    
+    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+        self.overlayViewControllerDidFinishScanning(barcodeOverlayViewController, state: state)
+    }
+    
+    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+        self.overlayViewControllerDidTapClose(barcodeOverlayViewController)
+    }
+    
 }
-
-
