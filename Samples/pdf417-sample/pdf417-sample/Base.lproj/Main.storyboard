@@ -1,7 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,31 +19,31 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEa-nz-Y55">
-                                <rect key="frame" x="278" y="242" width="45" height="36"/>
+                                <rect key="frame" x="165.5" y="275.5" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Scan">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqR-WR-lsj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4H-1X-nQu">
-                                <rect key="frame" x="253" y="322" width="95" height="36"/>
+                                <rect key="frame" x="141.5" y="355.5" width="92" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Custom UI">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapScanCustomUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qC6-bl-O1T"/>
+                                    <action selector="didTapCustomUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nvs-Nw-YwU"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="MEa-nz-Y55" secondAttribute="centerY" constant="40" id="BtO-VU-GH4"/>
                             <constraint firstAttribute="centerX" secondItem="MEa-nz-Y55" secondAttribute="centerX" id="Kce-GX-gTN"/>
@@ -48,6 +54,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Custom Overlay-->
+        <scene sceneID="41a-jm-83A">
+            <objects>
+                <viewController restorationIdentifier="CustomOverlay" storyboardIdentifier="CustomOverlay" id="l5l-Up-4g6" customClass="CustomOverlay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QaL-l9-x66"/>
+                        <viewControllerLayoutGuide type="bottom" id="r1W-Pp-1Hy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HWB-iq-5Li">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6H-Ha-LFx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXF-5T-d2K">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e55-VB-0OA">
+                                <rect key="frame" x="337.5" y="200" width="37.5" height="167"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnX-qU-ZcC">
+                                <rect key="frame" x="0.0" y="200" width="37.5" height="167"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPO-ni-LaT" userLabel="Close">
+                                <rect key="frame" x="14" y="30" width="46" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="didTapClose:" destination="l5l-Up-4g6" eventType="touchUpInside" id="iuG-1Y-lsV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BXF-5T-d2K" firstAttribute="leading" secondItem="HWB-iq-5Li" secondAttribute="leading" id="28P-sq-cX0"/>
+                            <constraint firstItem="BXF-5T-d2K" firstAttribute="height" secondItem="HWB-iq-5Li" secondAttribute="height" multiplier="0.45" id="2tA-KH-U7M"/>
+                            <constraint firstItem="sPO-ni-LaT" firstAttribute="top" secondItem="QaL-l9-x66" secondAttribute="bottom" constant="10" id="HAP-Nu-kcW"/>
+                            <constraint firstAttribute="trailing" secondItem="M6H-Ha-LFx" secondAttribute="trailing" id="HT4-Ig-BlM"/>
+                            <constraint firstAttribute="trailing" secondItem="e55-VB-0OA" secondAttribute="trailing" id="HwG-cT-hAs"/>
+                            <constraint firstAttribute="trailing" secondItem="BXF-5T-d2K" secondAttribute="trailing" id="JFk-Nh-2F0"/>
+                            <constraint firstItem="M6H-Ha-LFx" firstAttribute="top" secondItem="HWB-iq-5Li" secondAttribute="top" id="NNS-hu-zaZ"/>
+                            <constraint firstItem="e55-VB-0OA" firstAttribute="width" secondItem="HWB-iq-5Li" secondAttribute="width" multiplier="0.1" id="OD1-9T-fDw"/>
+                            <constraint firstAttribute="bottom" secondItem="BXF-5T-d2K" secondAttribute="bottom" id="Prf-Oo-Lfm"/>
+                            <constraint firstItem="AnX-qU-ZcC" firstAttribute="width" secondItem="HWB-iq-5Li" secondAttribute="width" multiplier="0.1" id="ReC-mA-W9p"/>
+                            <constraint firstItem="M6H-Ha-LFx" firstAttribute="leading" secondItem="HWB-iq-5Li" secondAttribute="leading" id="ZtQ-rA-fRV"/>
+                            <constraint firstItem="sPO-ni-LaT" firstAttribute="leading" secondItem="HWB-iq-5Li" secondAttribute="leading" constant="14" id="efE-cR-Ptz"/>
+                            <constraint firstItem="e55-VB-0OA" firstAttribute="top" secondItem="M6H-Ha-LFx" secondAttribute="bottom" id="h3G-fr-sPL"/>
+                            <constraint firstItem="AnX-qU-ZcC" firstAttribute="leading" secondItem="HWB-iq-5Li" secondAttribute="leading" id="iVO-nG-XMR"/>
+                            <constraint firstItem="M6H-Ha-LFx" firstAttribute="height" secondItem="HWB-iq-5Li" secondAttribute="height" multiplier="0.3" id="l8c-Qm-pDP"/>
+                            <constraint firstItem="BXF-5T-d2K" firstAttribute="top" secondItem="AnX-qU-ZcC" secondAttribute="bottom" id="qa9-pW-vpY"/>
+                            <constraint firstItem="AnX-qU-ZcC" firstAttribute="top" secondItem="M6H-Ha-LFx" secondAttribute="bottom" id="ugA-JW-yBA"/>
+                            <constraint firstItem="BXF-5T-d2K" firstAttribute="top" secondItem="e55-VB-0OA" secondAttribute="bottom" id="vY3-so-C71"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPc-bb-MuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="30"/>
         </scene>
     </scenes>
 </document>

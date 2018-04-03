@@ -12,8 +12,6 @@
 		18509B1C1B57BEE100C21ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B1B1B57BEE100C21ACF /* ViewController.m */; };
 		18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18509B1D1B57BEE100C21ACF /* Main.storyboard */; };
 		18509B211B57BEE100C21ACF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18509B201B57BEE100C21ACF /* Images.xcassets */; };
-		18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */; };
-		18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */; };
 		18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD41B6A5097006C14C0 /* AVFoundation.framework */; };
 		18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD61B6A509C006C14C0 /* CoreMedia.framework */; };
 		18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */; };
@@ -21,6 +19,8 @@
 		31D04D901CF4B4B6000055B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */; };
 		31D04D921CF4B4BC000055B9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D911CF4B4BC000055B9 /* libiconv.tbd */; };
 		31D04D941CF4B4C1000055B9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D931CF4B4C1000055B9 /* libc++.tbd */; };
+		A288D4812073C5F00042A45F /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = A288D4802073C5F00042A45F /* CustomOverlay.m */; };
+		A288D4832073C6990042A45F /* License in Resources */ = {isa = PBXBuildFile; fileRef = A288D4822073C6990042A45F /* License */; };
 		A2FE13671F7506BC00C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; };
 		A2FE13681F7506BC00C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D8C1CF4B4AF000055B9 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE136B1F7506C500C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE136A1F7506C500C6F1EA /* libz.tbd */; };
@@ -50,9 +50,6 @@
 		18509B1B1B57BEE100C21ACF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		18509B1E1B57BEE100C21ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18509B201B57BEE100C21ACF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
-		18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
-		18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 		18627AD41B6A5097006C14C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		18627AD61B6A509C006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -61,6 +58,9 @@
 		31D04D8F1CF4B4B6000055B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		31D04D911CF4B4BC000055B9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		31D04D931CF4B4C1000055B9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A288D47F2073C5F00042A45F /* CustomOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
+		A288D4802073C5F00042A45F /* CustomOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
+		A288D4822073C6990042A45F /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A2FE136A1F7506C500C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -103,12 +103,13 @@
 		18509B121B57BEE100C21ACF /* pdf417-sample */ = {
 			isa = PBXGroup;
 			children = (
+				A288D4822073C6990042A45F /* License */,
+				A288D47E2073C5CF0042A45F /* CustomOverlay */,
 				18509B201B57BEE100C21ACF /* Images.xcassets */,
 				18509B171B57BEE100C21ACF /* AppDelegate.h */,
 				18509B181B57BEE100C21ACF /* AppDelegate.m */,
 				18509B1A1B57BEE100C21ACF /* ViewController.h */,
 				18509B1B1B57BEE100C21ACF /* ViewController.m */,
-				18509B6E1B57D2C500C21ACF /* Camera Overlays */,
 				18509B131B57BEE100C21ACF /* Supporting Files */,
 				18509B1D1B57BEE100C21ACF /* Main.storyboard */,
 			);
@@ -140,22 +141,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		18509B6E1B57D2C500C21ACF /* Camera Overlays */ = {
+		A288D47E2073C5CF0042A45F /* CustomOverlay */ = {
 			isa = PBXGroup;
 			children = (
-				18509B7D1B57D2C500C21ACF /* Simple */,
+				A288D47F2073C5F00042A45F /* CustomOverlay.h */,
+				A288D4802073C5F00042A45F /* CustomOverlay.m */,
 			);
-			path = "Camera Overlays";
-			sourceTree = "<group>";
-		};
-		18509B7D1B57D2C500C21ACF /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */,
-				18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */,
-				18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */,
-			);
-			path = Simple;
+			path = CustomOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +209,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */,
 				18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */,
 				18509B211B57BEE100C21ACF /* Images.xcassets in Resources */,
+				A288D4832073C6990042A45F /* License in Resources */,
 				31D04D8D1CF4B4AF000055B9 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +225,7 @@
 			files = (
 				18509B1C1B57BEE100C21ACF /* ViewController.m in Sources */,
 				18509B191B57BEE100C21ACF /* AppDelegate.m in Sources */,
-				18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */,
+				A288D4812073C5F00042A45F /* CustomOverlay.m in Sources */,
 				18509B161B57BEE100C21ACF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
