@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <MicroBlink/MicroBlink.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /** First, set license key as soon as possible */
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"receipt-license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
     return YES;
 }
 

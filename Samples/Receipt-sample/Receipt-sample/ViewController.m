@@ -10,7 +10,11 @@
 
 #import <MicroBlink/MicroBlink.h>
 
-@interface ViewController () <PPScanningDelegate>
+@interface ViewController () <MBBarcodeOverlayViewControllerDelegate>
+
+@property (nonatomic, strong) MBRawParser *rawParser;
+@property (nonatomic, strong) MBParserGroupProcessor *parserGroupProcessor;
+@property (nonatomic, strong) MBBlinkInputRecognizer *blinkInputRecognizer;
 
 @end
 
@@ -26,10 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (PPRawOcrParserFactory *)rawParserForReceipts {
-    PPRawOcrParserFactory* rawParserFactory = [[PPRawOcrParserFactory alloc] init];
+- (void)setupRawParser {
+    self.rawParser = [[MBRawParser alloc] init];
     
-    PPOcrEngineOptions *options = [[PPOcrEngineOptions alloc] init];
+    MBOcrEngineOptions *options = [[MBOcrEngineOptions alloc] init];
 
     options.minimalLineHeight = 10;
     options.maximalLineHeight = 50;
@@ -41,163 +45,77 @@
 
     // Add chars 'a'-'z'
     for (int c = 'a'; c <= 'z'; c++) {
-        [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
+        [charWhitelist addObject:[MBOcrCharKey keyWithCode:c font:MB_OCR_FONT_ANY]];
     }
 
     // Add chars 'A'-'Z'
     for (int c = 'A'; c <= 'Z'; c++) {
-        [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
+        [charWhitelist addObject:[MBOcrCharKey keyWithCode:c font:MB_OCR_FONT_ANY]];
     }
 
     // Add chars '0'-'9'
     for (int c = '0'; c <= '9'; c++) {
-        [charWhitelist addObject:[PPOcrCharKey keyWithCode:c font:PP_OCR_FONT_ANY]];
+        [charWhitelist addObject:[MBOcrCharKey keyWithCode:c font:MB_OCR_FONT_ANY]];
     }
 
     // Add chars ".-$%"
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'.' font:PP_OCR_FONT_ANY]];
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'-' font:PP_OCR_FONT_ANY]];
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'$' font:PP_OCR_FONT_ANY]];
-    [charWhitelist addObject:[PPOcrCharKey keyWithCode:'%' font:PP_OCR_FONT_ANY]];
+    [charWhitelist addObject:[MBOcrCharKey keyWithCode:'.' font:MB_OCR_FONT_ANY]];
+    [charWhitelist addObject:[MBOcrCharKey keyWithCode:'-' font:MB_OCR_FONT_ANY]];
+    [charWhitelist addObject:[MBOcrCharKey keyWithCode:'$' font:MB_OCR_FONT_ANY]];
+    [charWhitelist addObject:[MBOcrCharKey keyWithCode:'%' font:MB_OCR_FONT_ANY]];
 
     // set the whitelist
     options.charWhitelist = charWhitelist;
     
-    [rawParserFactory setOptions:options];
+    self.rawParser.ocrEngineOptions = options;
 
-    return rawParserFactory;
-}
-
-/**
- * Method allocates and initializes the Scanning coordinator object.
- * Coordinator is initialized with settings for scanning
- * Modify this method to include only those recognizer settings you need. This will give you optimal performance
- *
- *  @param error Error object, if scanning isn't supported
- *
- *  @return initialized coordinator
- */
-- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
-
-    /** 0. Check if scanning is supported */
-
-    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
-        return nil;
-    }
-
-
-    /** 1. Initialize the Scanning settings */
-
-    // Initialize the scanner settings object. This initialize settings with all default values.
-    PPSettings *settings = [[PPSettings alloc] init];
-
-
-    /** 2. Setup the license key */
-
-    // Visit www.microblink.com to get the license key for your app
-    // Valid until 2017-12-21
-    settings.licenseSettings.licenseKey = @"GZQX62U2-7TMNPS54-2PHA4LDF-IOPP54EW-GEHRM5OB-TOXSPBVW-QSE65SSR-IPROAKEB";
-
-    /**
-     * 3. Set up what is being scanned. See detailed guides for specific use cases.
-     * Here's an example for initializing raw OCR scanning.
-     */
-
-    // To specify we want to perform OCR recognition, initialize the OCR recognizer settings
-    PPBlinkInputRecognizerSettings *ocrRecognizerSettings = [[PPBlinkInputRecognizerSettings alloc] init];
-
-    // We want raw OCR parsing
-    [ocrRecognizerSettings addOcrParser:[self rawParserForReceipts] name:@"Raw"];
-
-    // Add the recognizer setting to a list of used recognizer
-    [settings.scanSettings addRecognizerSettings:ocrRecognizerSettings];
-
-
-    /** 4. Initialize the Scanning Coordinator object */
-
-    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
-    
-    return coordinator;
-}
-
-- (void)showCoordinatorError:(NSError *)error {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
-                                                                             message:[error localizedDescription]
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-
-    [alertController addAction:okAction];
-
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)didTapScan:(id)sender {
 
-    /** Instantiate the scanning coordinator */
-    NSError *error;
-    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
-
-    /** If scanning isn't supported, show an error */
-    if (coordinator == nil) {
-        [self showCoordinatorError:error];
-        return;
-    }
-
-    /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
+    MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
     
-    /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
-    [self presentViewController:scanningViewController animated:YES completion:nil];
+    [self setupRawParser];
+    
+    self.parserGroupProcessor = [[MBParserGroupProcessor alloc] initWithParsers:@[self.rawParser]];
+    self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
+    
+    /** Create recognizer collection */
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+    
+    /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
 }
 
-#pragma mark - PPScanDelegate
+#pragma mark - MBBarcodeOverlayViewControllerDelegate
 
-- (void)scanningViewControllerUnauthorizedCamera:(UIViewController<PPScanningViewController> *)scanningViewController {
-    // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
-}
-
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-                  didFindError:(NSError *)error {
-    // Can be ignored. See description of the method
-}
-
-- (void)scanningViewControllerDidClose:(UIViewController<PPScanningViewController> *)scanningViewController {
-
-    // As scanning view controller is presented full screen and modally, dismiss it
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-              didOutputResults:(NSArray *)results {
+- (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
     
-    /**
-     * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-     * Each member of results array will represent one result for a single processed image
-     * Usually (and in this sample app) there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. detected OCR
-     * result and pdf417 code in case both recognizers are used)
-     */
-    
-    // first, pause scanning until we process all the results
-    [scanningViewController pauseScanning];
-    
-    // Collect data from the result
-    for (PPRecognizerResult* result in results) {
+    // check for valid state
+    if (state == MBRecognizerResultStateValid) {
         
-        if ([result isKindOfClass:[PPBlinkInputRecognizerResult class]]) {
-            PPBlinkInputRecognizerResult* ocrRecognizerResult = (PPBlinkInputRecognizerResult*)result;
+        // first, pause scanning until we process all the results
+        [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
             
             NSLog(@"OCR results are:");
+            NSLog(@"Raw ocr: %@", self.rawParser.result.rawText);
             
-            /** We fetch OCR results from different parsers by parser names (which we used when we were creating parsers) */
-            NSLog(@"Raw ocr: %@", [ocrRecognizerResult parsedResultForName:@"Raw"]);
-        }
-    };
-    
-    // resume scanning while preserving internal recognizer state
-    [scanningViewController resumeScanningAndResetState:NO];
+            MBOcrLayout* ocrLayout = self.parserGroupProcessor.result.ocrLayout;
+            NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box));
+            
+            [barcodeOverlayViewController.recognizerRunnerViewController resumeScanningAndResetState:YES];
+        });
+    }
+}
+
+- (void)barcodeOverlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+    // As scanning view controller is presented full screen and modally, dismiss it
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

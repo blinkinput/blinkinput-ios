@@ -20,6 +20,7 @@
 		18E726CF1BD7B09C00B38EC7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E726CE1BD7B09C00B38EC7 /* CoreMedia.framework */; };
 		31D04D971CF4B602000055B9 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31D04D951CF4B602000055B9 /* MicroBlink.bundle */; };
 		31D04D9A1CF4B60C000055B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D991CF4B60C000055B9 /* Accelerate.framework */; };
+		A2DA17A12075040400A59D11 /* License in Resources */ = {isa = PBXBuildFile; fileRef = A2DA17A02075040400A59D11 /* License */; };
 		A2FE136C1F75078800C6F1EA /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D961CF4B602000055B9 /* MicroBlink.framework */; };
 		A2FE136D1F75078800C6F1EA /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D04D961CF4B602000055B9 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE13701F75079600C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE136F1F75079600C6F1EA /* libz.tbd */; };
@@ -58,6 +59,7 @@
 		31D04D951CF4B602000055B9 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		31D04D961CF4B602000055B9 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		31D04D991CF4B60C000055B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A2DA17A02075040400A59D11 /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A2FE136F1F75079600C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		18E726931BD7B01000B38EC7 /* Receipt-sample */ = {
 			isa = PBXGroup;
 			children = (
+				A2DA17A02075040400A59D11 /* License */,
 				18E726971BD7B01000B38EC7 /* AppDelegate.h */,
 				18E726981BD7B01000B38EC7 /* AppDelegate.m */,
 				18E7269A1BD7B01000B38EC7 /* ViewController.h */,
@@ -199,6 +202,7 @@
 				18E726A41BD7B01000B38EC7 /* LaunchScreen.storyboard in Resources */,
 				18E726A11BD7B01000B38EC7 /* Assets.xcassets in Resources */,
 				18E7269F1BD7B01000B38EC7 /* Main.storyboard in Resources */,
+				A2DA17A12075040400A59D11 /* License in Resources */,
 				31D04D971CF4B602000055B9 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
