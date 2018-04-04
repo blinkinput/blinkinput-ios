@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MicroBlink
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Valid until: 2018-04-30
+        MBMicroblinkSDK.sharedInstance().setLicenseResource("blinkocr-swift-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
         return true
     }
 
