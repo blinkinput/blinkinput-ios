@@ -19,9 +19,9 @@ typedef NS_ENUM(NSUInteger, MBProcessorResultState) {
     MBProcessorResultStateEmpty,
     
     /**
-     *  Invalid
+     *  Uncertain
      */
-    MBProcessorResultStateInvalid,
+    MBProcessorResultStateUncertain,
     
     /**
      *  Valid

@@ -18,8 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef NS_ENUM(NSUInteger, MBDeepOcrModel) {
 
-    /** Deep OCR model for Blink */
-    MBBlinkOCR
+    /** Deep OCR model for Blink Input */
+    MBBlinkInput
 
 };
 

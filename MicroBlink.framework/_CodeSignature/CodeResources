@@ -90,7 +90,7 @@
 		</data>
 		<key>Headers/MBDeepOcrEngineOptions.h</key>
 		<data>
-		sv2H5jovScX5+BhFLzTsOOKMF8Q=
+		T+2oZyDJo40MQ3aU1xPbPyzn5tE=
 		</data>
 		<key>Headers/MBDetectionRecognizerRunnerDelegate.h</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>Headers/MBProcessorResult.h</key>
 		<data>
-		AI8Pkoh0JwWPbqk5qwPD9YHRFAk=
+		3IeRBbbX/hVVb/+pHHCW4Wf8pZg=
 		</data>
 		<key>Headers/MBQuadDetector.h</key>
 		<data>
@@ -426,7 +426,7 @@
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizer.h</key>
 		<data>
-		hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
+		AtQQDt6MpUUgGFZZQ7q4V9wgpLM=
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
 		<data>
@@ -554,7 +554,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		h9sLHQk3qgAzOTV/+XLBcnH+Yzs=
+		Wg6+/5neppTrxgIGHGpq0dbb4n4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -798,11 +798,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sv2H5jovScX5+BhFLzTsOOKMF8Q=
+			T+2oZyDJo40MQ3aU1xPbPyzn5tE=
 			</data>
 			<key>hash2</key>
 			<data>
-			La53Hh0H2Vs4gG6vsW4rjAEAgcWZt+eRpn7D+4rVWng=
+			wB9XeJybjxTpzqS+EcMnTdDISaG2KS3GtzTbzhx9feM=
 			</data>
 		</dict>
 		<key>Headers/MBDetectionRecognizerRunnerDelegate.h</key>
@@ -1469,11 +1469,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AI8Pkoh0JwWPbqk5qwPD9YHRFAk=
+			3IeRBbbX/hVVb/+pHHCW4Wf8pZg=
 			</data>
 			<key>hash2</key>
 			<data>
-			aKye0sybZh6m12yNMdgwb2MYCV51a46AElExWRiMNbQ=
+			oSsh4f5m0FHdDV4BOJfgrWuDKnVrT9Sp57WS3ix3Ixw=
 			</data>
 		</dict>
 		<key>Headers/MBQuadDetector.h</key>
@@ -1722,11 +1722,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
+			AtQQDt6MpUUgGFZZQ7q4V9wgpLM=
 			</data>
 			<key>hash2</key>
 			<data>
-			GohreXh5yy2T9kir5Kp5u/Wms7gGzUK6jmQbFsJrny0=
+			a6BewuBNAVcwMQehdLdSB3UnwPNuOQTFs+jv3GjSBg4=
 			</data>
 		</dict>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
