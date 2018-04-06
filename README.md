@@ -605,13 +605,13 @@ The [`MBDetectorRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/
 
 # <a name="processorsAndParsers"></a> `MBProcessor` and `MBParser`
 
-The `MBProcessors` and `MBParsers` are standard processing units within *BlinkInput* SDK used for data extraction from the input images. Unlike the [`MBRecognizer`](#recognizerConcept), `MBProcessor` and `MBParser` are not stand-alone processing units. `MBProcessor` is always used within `Recognizer` and `MBParser` is used within appropriate `MBProcessor` to extract data from the OCR result.
+The `MBProcessors` and `MBParsers` are standard processing units within *BlinkInput* SDK used for data extraction from the input images. Unlike the [`MBRecognizer`](#recognizerConcept), `MBProcessor` and `MBParser` are not stand-alone processing units. `MBProcessor` is always used within `MBRecognizer` and `MBParser` is used within appropriate `MBProcessor` to extract data from the OCR result.
 
 ## <a name="processorConcept"></a> The `MBProcessor` concept
 
 `MBProcessor` is a processing unit used within some `Recognizer` which supports processors. It process the input image prepared by the enclosing `Recognizer` in the way that is characteristic to the implementation of the concrete `MBProcessor`.
 
-`MBProcessor` architecture is similar to `Recognizer` architecture described in [The Recognizer concept](#recognizerConcept) section. Each instance also has associated inner `MBRecognizerResult` object whose lifetime is bound to the lifetime of its parent `MBProcessor` object and it is updated while `MBProcessor` works. If you need your `MBRecognizerResult` object to outlive its parent `MBProcessor` object, you must make a copy of it by calling its method `copy`.
+`MBProcessor` architecture is similar to `MBRecognizer` architecture described in [The Recognizer concept](#recognizerConcept) section. Each instance also has associated inner `MBRecognizerResult` object whose lifetime is bound to the lifetime of its parent `MBProcessor` object and it is updated while `MBProcessor` works. If you need your `MBRecognizerResult` object to outlive its parent `MBProcessor` object, you must make a copy of it by calling its method `copy`.
 
 It also has its internal state and while it is in the *working state* during recognition process, it is not allowed to tweak `MBProcessor` object's properties.
 
@@ -623,9 +623,14 @@ This section will give a list of `MBProcessor` types that are available within *
 
 ### <a name="imageReturnProcessor"></a> Image Return Processor
 
-The [`MBImageReturnProcessor`](http://blinkinput.github.io/blinkinput-ios/Classes/MBImageReturnProcessor.html) is used for obtaining dewarped (cropped and rotated) input images. It simply saves the input image and makes it available after the scanning is done. The image is returned as the raw [`MBImage`](http://blinkinput.github.io/blinkinput-ios/Classes/MBImage.html) type.
+The [`MBImageReturnProcessor`](http://blinkinput.github.io/blinkinput-ios/Classes/MBImageReturnProcessor.html) is used for obtaining input images. It simply saves the input image and makes it available after the scanning is done.
+
+The appearance of the input image depends on the context in which `MBImageReturnProcessor` is used. For example, when it is used within [`MBBlinkInputRecognizer`](#blinkInputRecognizer), simply the raw image of the scanning region is processed. When it is used within the [`Templating API`](#detectorTemplating), input image is dewarped (cropped and rotated).
+ 
+The image is returned as the raw [`MBImage`](http://blinkinput.github.io/blinkinput-ios/Classes/MBImage.html) type. Also, processor can be configured to [encode saved image to JPEG](http://blinkinput.github.io/blinkinput-ios/Classes/MBImageReturnProcessor.html).
 
 ### <a name="parserGroupProcessor"></a> Parser Group Processor
+
 
 The [`MBParserGroupProcessor`](http://blinkinput.github.io/blinkinput-ios/Classes/MBParserGroupProcessor.html) is the type of the processor that performs the OCR (*Optical Character Recognition*) on the input image and lets all the parsers within the group to extract data from the OCR result. The concept of `MBParser` is described in [the next](#parserConcept) section.
 
@@ -633,7 +638,15 @@ Before performing the OCR, the best possible OCR engine options are calculated b
 
 Because of that, if multiple parsers and multiple parser group processors are used during the scan, it is very important to group parsers carefully.
 
-`MBParserGroupProcessor` is most commonly used `MBProcessor`. It is used whenever the OCR is needed. After the OCR is performed and all parsers are run, parsed results can be obtained through parser objects that are enclosed in the group. `MBParserGroupProcessor` instance also has associated inner `result` whose state is updated during processing and its property `ocrLayout` can be used to obtain the raw [`MBOcrLayout`](http://blinkinput.github.io/blinkinput-ios/Classes/MBOcrLayout.html) that was used for parsing data. Take note that `MBOcrLayout` is available only if it is allowed by the *BlinkInput* SDK license key.
+Let's see this on an example: assume that we have two parsers at our disposal: `MBAmountParser` and `MBEmailParser`. `MBAmountParser` knows how to extract amount's from OCR result and requires from OCR only to recognize digits, periods and commas and ignore letters. On the other hand, `MBEmailParser` knows how to extract e-mails from OCR result and requires from OCR to recognize letters, digits, '@' characters and periods, but not commas. 
+
+If we put both `MBAmountParser` and `MBEmailParser` into the same `MBParserGroupProcessor`, the merged OCR engine settings will require recognition of all letters, all digits, '@' character, both period and comma. Such OCR result will contain all characters for `MBEmailParser` to properly parse e-mail, but might confuse `MBAmountParser` if OCR misclassifies some characters into digits.
+
+If we put `MBAmountParser` in one `MBParserGroupProcessor` and `MBEmailParser` in another `MBParserGroupProcessor`, OCR will be performed for each parser group independently, thus preventing the `MBAmountParser` confusion, but two OCR passes of the image will be performed, which can have a performance impact.
+
+`MBParserGroupProcessor` is most commonly used `MBProcessor`. It is used whenever the OCR is needed. After the OCR is performed and all parsers are run, parsed results can be obtained through parser objects that are enclosed in the group. `MBParserGroupProcessor` instance also has associated inner `MBParserGroupProcessorResult` whose state is updated during processing and its property [`ocrLayout`](http://blinkinput.github.io/blinkinput-ios/Classes/MBParserGroupProcessor.html) can be used to obtain the raw [`MBOcrLayout`](http://blinkinput.github.io/blinkinput-ios/Classes/MBOcrLayout.html) that was used for parsing data.
+
+Take note that `MBOcrLayout` is available only if it is allowed by the *BlinkInput* SDK license key. `MBOcrLayout` structure contains information about all recognized characters and their positions on the image. To prevent someone to abuse that, obtaining of the `MBOcrLayout` structure is allowed only by the premium license keys.
 
 ## <a name="parserConcept"></a> The `MBParser` concept
 
@@ -684,7 +697,7 @@ There are a lot of different `MBParsers` for extracting most common fields which
 [`MBVinParser`](http://blinkinput.github.io/blinkinput-ios/Classes/MBVinParser.html) is used for extracting VIN (*Vehicle Identification Number*) from the OCR result.
 # <a name="detectorTemplating"></a> Scanning generic documents with Templating API
 
-This section discusses the setting up of `MBDetectorRecognizer` for scanning templated documents. Please check [Templating API whitepaper](https://github.com/blinkinput/blinkinput-android/blob/feature/templatingAPI-whitepaper/AND-53/templatingAPI/templatingAPI.md) and `BlinkInputTemplatingSample` sample app for source code examples.
+This section discusses the setting up of `MBDetectorRecognizer` for scanning templated documents. Please check `Templating-sample` sample app for source code examples.
 
 Templated document is any document which is defined by its template. Template contains the information about how the document should be detected, i.e. found on the camera scene and information about which part of the document contains which useful information.
 
@@ -706,7 +719,7 @@ There may be one or more variants of the same document type, for example for som
 
 1. Classification `MBProcessorGroups` are run on the defined locations to extract data. `MBProcessorGroup` is used to define the location of interest on the detected document and `MBProcessors` that will extract data from that location. You can find more about `MBProcessorGroup` in the [next section](#processorGroup).
 
-2. `MBTemplatingClassifier` is run with the data extracted by the classification processor groups to decide whether the currently scanned document belongs to the current class or not. Its [classify](http://blinkinput.github.io/blinkinput-ios/Protocols/MBTemplatingClassifier.html) method  simply returns `true` or `false`. If the classifier returns `false`, recognition is moved to the next class in the chain, if it exists. You can find more about `MBTemplatingClassifier` in [this](#implementingTemplatingClassifier) section.
+2. `MBTemplatingClassifier` is run with the data extracted by the classification processor groups to decide whether the currently scanned document belongs to the current class or not. Its [classify](http://blinkinput.github.io/blinkinput-ios/Protocols/MBTemplatingClassifier.html) method  simply returns `YES/true` or `NO/false`. If the classifier returns `NO/false`, recognition is moved to the next class in the chain, if it exists. You can find more about `MBTemplatingClassifier` in [this](#implementingTemplatingClassifier) section.
 
 3. If the `MBTemplatingClassifier` has decided that currently scanned document belongs to the current class, non-classification `MBProcessorGroups` are run to extract other fields of interest.
 
@@ -722,7 +735,7 @@ In templating API [`MBProcessorGroup`](http://blinkinput.github.io/blinkinput-io
 
 ### <a name="dewarpPolicyList"></a> List of available dewarp policies
 
-Concrete `MBDewarpPolicy` defines how specific location of interest should be dewarped (cropped and rotated). It determines the height and width of the resulting dewarped image in pixels. Here is the list of available dewarp policies with linked javadoc for more information:
+Concrete `MBDewarpPolicy` defines how specific location of interest should be dewarped (cropped and rotated). It determines the height and width of the resulting dewarped image in pixels. Here is the list of available dewarp policies with linked doc for more information:
 
 - [`MBFixedDewarpPolicy`](http://blinkinput.github.io/blinkinput-ios/Classes/MBFixedDewarpPolicy.html)
     - defines the exact height of the dewarped image in pixels
@@ -755,44 +768,29 @@ A component which decides whether the scanned document belongs to the current cl
 
 ### <a name="implementingTemplatingClassifier"></a> Implementing the `MBTemplatingClassifier`
 
-Each concrete templating classifier implements the [`MBTemplatingClassifier`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/TemplatingClassifier.html) interface, which requires to implement its [`classify`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/TemplatingClassifier.html#classify-TemplatingClass-) method that is invoked while evaluating associated `MBTemplatingClass`.
+Each concrete templating classifier implements the [`MBTemplatingClassifier`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBTemplatingClassifier.html) interface, which requires to implement its `classify` method that is invoked while evaluating associated `MBTemplatingClass`.
 
-Classification decision should be made based on the processing result which is returned by one or more processing units contained in the collection of the classification processor groups. As described in [The ProcessorGroup component](#processorGroup) section, each processor group contains one or more `Processors`. [There are different `Processors`](#processorList) which may enclose smaller processing units, for example, [`ParserGroupProcessor`](#parserGroupProcessor) maintains the group of [`Parsers`](#parserConcept). Result from each of the processing units in that hierarchy can be used for classification. In most cases `Parser` result is used to determine whether some data in the expected format exists on the specified location.
+Classification decision should be made based on the processing result which is returned by one or more processing units contained in the collection of the classification processor groups. As described in [The ProcessorGroup component](#processorGroup) section, each processor group contains one or more `MBProcessors`. [There are different `MBProcessors`](#processorList) which may enclose smaller processing units, for example, [`MBParserGroupProcessor`](#parserGroupProcessor) maintains the group of [`MBParsers`](#parserConcept). Result from each of the processing units in that hierarchy can be used for classification. In most cases `MBParser` result is used to determine whether some data in the expected format exists on the specified location.
 
-To be able to retrieve results from the various processing units that are needed for classification, their instances must be available when [`classify`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/TemplatingClassifier.html#classify-TemplatingClass-) method is called.
-
-`MBTemplatingRecognizer` can be parcelized and run on the different activity from the one within it is created, so it also implements [`Parcelable`](https://developer.android.com/reference/android/os/Parcelable.html) interface (`MBTemplatingClassifier` interface extends `Parcelable`). Here comes the tricky part of the templating classifier implementation. 
-
-In cases when `MBTemplatingRecognizer` is serialized and deserialized via [`Parcel`](https://developer.android.com/reference/android/os/Parcel.html), all processing component instances are different than originally created ones that were used during recognizer definition. So it is important to take care of this while implementing classification in cases when deparcelized processing units are used in `classify` method.
-
-When `classify` method is called, processing units that are needed for classification can be obtained from the given `MBTemplatingClass`, passed as the method argument. For that purpose there are following helper classes available:
-
-- [`ProcessorParcelization`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/parcelization/ProcessorParcelization.html) is utility class which helps to obtain the reference to the captured `Processor` from the `MBTemplatingClass` instance, after the parcelization. For more information see [javadoc](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/parcelization/ProcessorParcelization.html).
-
-- [`ParserParcelization`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/parcelization/ParserParcelization.html) is utility class which helps to obtain the reference to the captured `Parser` from the `MBTemplatingClass` instance, after the parcelization. For more information see [javadoc](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/templating/parcelization/ParserParcelization.html).
-
-For the complete source code sample, please check [Templating API whitepaper](https://github.com/blinkinput/blinkinput-android/blob/feature/templatingAPI-whitepaper/AND-53/templatingAPI/templatingAPI.md) and `BlinkInputTemplatingSample`.
+To be able to retrieve results from the various processing units that are needed for classification, their instances must be available when `classify` method is called.
 
 ## Obtaining recognition results
 
-When recognition is done, results can be obtained through processing units instances, such as: `Processors`, `Parsers`, etc. which are used for configuring the `MBTemplatingRecognizer` and later for processing the input image.
-
-In cases when `MBTemplatingRecognizer` needs to be serialized and deserialized when it is passed to scan activity, `MBTemplatingRecognizer` knows how to serialize and deserialize all contained components. When control is returned from the scan activity and [`RecognizerBundle.loadFromIntent`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/recognizers/RecognizerBundle.html#loadFromIntent-android.content.Intent-) is called, all kept processing unit instances are updated with the scanning results.
-
+When recognition is done, results can be obtained through processing units instances, such as: `MBProcessors`, `MBParsers`, etc. which are used for configuring the `MBTemplatingRecognizer` and later for processing the input image.
 
 # <a name="detectorConcept"></a> The `MBDetector` concept
 
-[`MBDetector`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/Detector.html) is a processing unit used within some `Recognizer` which supports detectors, such as [`DetectorRecognizer`](#detectorRecognizer). Concrete `MBDetector` knows how to find the certain object on the input image. `Recognizer` can use it to perform object detection prior to performing further recognition of detected object's contents.
+[`MBDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDetector.html) is a processing unit used within some `MBRecognizer` which supports detectors, such as [`MBDetectorRecognizer`](#detectorRecognizer). Concrete `MBDetector` knows how to find the certain object on the input image. `MBRecognizer` can use it to perform object detection prior to performing further recognition of detected object's contents.
 
-`MBDetector` architecture is similar to `Recognizer` architecture described in [The Recognizer concept](#recognizerConcept) section. Each instance also has associated inner `Result` object whose lifetime is bound to the lifetime of its parent `MBDetector` object and it is updated while `MBDetector` works. If you need your `Result` object to outlive its parent `MBDetector` object, you must make a copy of it by calling its [`clone()`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/Entity.Result.html#clone--) method.
+`MBDetector` architecture is similar to `MBRecognizer` architecture described in [The Recognizer concept](#recognizerConcept) section. Each instance also has associated inner `MBRecognizerResult` object whose lifetime is bound to the lifetime of its parent `MBDetector` object and it is updated while `MBDetector` works. If you need your `MBRecognizerResult` object to outlive its parent `MBDetector` object, you must make a copy of it by calling its `copy` method.
 
 It also has its internal state and while it is in the *working state* during recognition process, it is not allowed to tweak `MBDetector` object's properties.
 
-When detection is performed on the input image, each `MBDetector` in its associated `Result` object holds the following information:
+When detection is performed on the input image, each `MBDetector` in its associated `MBDetectorResult` object holds the following information:
 
-- [`DetectionCode`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/Detector.Result.DetectionCode.html) that indicates the type of the detection (*FAIL*, *FALLBACK* or *SUCCESS*) and can be obtained with the [`getDetectionCode`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/Detector.Result#getDetectionCode--) method.
+- [`MBDetectionCode`](http://blinkinput.github.io/blinkinput-ios/Enums/MBDetectionCode.html) that indicates the type of the detection.
 
-- [`DetectionStatus`](https://blinkinput.github.io/blinkinput-android/com/microblink/view/recognition/DetectionStatus) that represents the status of the detection which can be obtained with the [`getDetectionStatus`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/Detector.Result#getDetectionStatus--) method.
+- [`MBDetectionStatus`](http://blinkinput.github.io/blinkinput-ios/Enums/MBDetectionStatus.html) that represents the status of the detection.
 
 - each concrete detector returns additional information specific to the detector type
 
@@ -803,24 +801,24 @@ To support common use cases, there are several different `MBDetector` implementa
 
 ### <a name="documentDetector"></a> Document Detector
 
-[`DocumentDetector`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentDetector.html) is used to detect card documents, cheques, A4-sized documents, receipts and much more.
+[`MBDocumentDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentDetector.html) is used to detect card documents, cheques, A4-sized documents, receipts and much more.
 
-It accepts one or more `DocumentSpecifications`. [`DocumentSpecification`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentSpecification.html) represents a specification of the document that should be detected by using edge detection algorithm and predefined aspect ratio.
+It accepts one or more `MBDocumentSpecifications`. [`MBDocumentSpecification`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentSpecification.html) represents a specification of the document that should be detected by using edge detection algorithm and predefined aspect ratio.
 
-For the most commonly used document formats, there is a helper method  [DocumentSpecification.createFromPreset(DocumentSpecificationPreset)](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentSpecification.html#createFromPreset-DocumentSpecificationPreset-) which creates and initializes the document specification based on the given [DocumentSpecificationPreset](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentSpecificationPreset.html). For more information about `DocumentSpecification`, please see [javadoc](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentSpecification.html).
+For the most commonly used document formats, there is a helper method  `+ (instancetype)createFromPreset:(MBDocumentSpecificationPreset)preset` which creates and initializes the document specification based on the given [`MBDocumentSpecificationPreset`](http://blinkinput.github.io/blinkinput-ios/Enums/MBDocumentSpecificationPreset.html).
 
-For the list of all available configuration methods see [`DocumentDetector`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentDetector.html) javadoc, and for available result content see [`DocumentDetector.Result`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/document/DocumentDetector.Result.html) javadoc.
+For the list of all available configuration methods see [`MBDocumentDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentDetector.html) doc, and for available result content see [`MBDocumentDetectorResult`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentDetectorResult.html) doc.
 
 
 ### <a name="mrtdDetector"></a> MRTD Detector
 
-[`MRTDDetector`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDDetector.html) is used to perform detection of *Machine Readable Travel Documents (MRTD)*.
+[`MBMrtdDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdDetector.html) is used to perform detection of *Machine Readable Travel Documents (MRTD)*.
 
-Method [`setSpecifications`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDDetector.html#setSpecifications-MRTDSpecification:A-) can be used to define which MRTD documents should be detectable. It accepts the array of `MRTDSpecifications`. [`MRTDSpecification`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDSpecification.html) represents specification of MRTD that should be detected. It can be created from the [`MRTDSpecificationPreset`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDSpecificationPreset.html) by using [MRTDSpecification.createFromPreset(MRTDSpecificationPreset)](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDSpecification.html#createFromPreset-MRTDSpecificationPreset-) method.
+Method `- (void)setMrtdSpecifications:(NSArray<__kindof MBMrtdSpecification *> *)mrtdSpecifications` can be used to define which MRTD documents should be detectable. It accepts the array of `MBMrtdSpecification`. [`MBMrtdSpecification`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdSpecification.html) represents specification of MRTD that should be detected. It can be created from the [`MBMrtdSpecificationPreset`](http://blinkinput.github.io/blinkinput-ios/Enums/MBMrtdSpecificationPreset.html) by using `+ (instancetype)createFromPreset:(MBMrtdSpecificationPreset)preset` method.
 
-If `MRTDSpecifications` are not set, all supported MRTD formats will be detectable.
+If `MBMrtdSpecifications` are not set, all supported MRTD formats will be detectable.
 
-For the list of all available configuration methods see [`MRTDDetector`](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDDetector.html) javadoc, and for available result content see [MRTDDetector.Result](https://blinkinput.github.io/blinkinput-android/com/microblink/entities/detectors/quad/mrtd/MRTDDetector.Result.html) javadoc.
+For the list of all available configuration methods see [`MBMrtdDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdDetector.html) doc, and for available result content see [`MBMrtdDetectorResult`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdDetectorResult.html) doc.
 
 # <a name="troubleshoot"></a> Troubleshooting
 
