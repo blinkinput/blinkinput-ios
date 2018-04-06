@@ -199,7 +199,7 @@
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDetectorRecognizer.h",
       "line": 27,
-      "symbol": "MBDetectorRecognizer.-initWithDetector:",
+      "symbol": "MBDetectorRecognizer.-initWithQuadWithSizeDetector:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
