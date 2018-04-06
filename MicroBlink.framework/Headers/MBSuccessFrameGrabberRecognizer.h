@@ -26,6 +26,7 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  */
 @property (nonatomic, strong, readonly) MBSuccessFrameGrabberRecognizerResult *result;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

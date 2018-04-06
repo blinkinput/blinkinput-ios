@@ -12,7 +12,7 @@
 #import "MBDetectorRecognizerResult.h"
 #import "MBMicroBlinkInitialization.h"
 
-@class MBDetector;
+@class MBQuadWithSizeDetector;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,7 +24,7 @@ PP_CLASS_AVAILABLE_IOS(8.0)
 
 MB_INIT_UNAVAILABLE
 
-- (instancetype)initWithDetector:(MBDetector *)detector NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithQuadWithSizeDetector:(MBQuadWithSizeDetector *)detector NS_DESIGNATED_INITIALIZER;
 
 /**
  * Detector recognizer results
@@ -45,7 +45,7 @@ MB_INIT_UNAVAILABLE
 /**
  * Returns the detector that will be used for performing the document detection during recognition
  */
-@property (nonatomic, strong, readonly) MBDetector *detector;
+@property (nonatomic, strong, readonly) MBQuadWithSizeDetector *detector;
 
 @end
 

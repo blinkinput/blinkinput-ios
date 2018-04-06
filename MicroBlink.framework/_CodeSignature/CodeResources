@@ -110,7 +110,7 @@
 		</data>
 		<key>Headers/MBDetectorRecognizer.h</key>
 		<data>
-		agnNydClabZt2JQZoS7kGe1TsiI=
+		YLllSfj0OEme85+wpK2ZZEsywoA=
 		</data>
 		<key>Headers/MBDetectorRecognizerResult.h</key>
 		<data>
@@ -426,7 +426,7 @@
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizer.h</key>
 		<data>
-		AtQQDt6MpUUgGFZZQ7q4V9wgpLM=
+		hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
 		<data>
@@ -853,11 +853,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			agnNydClabZt2JQZoS7kGe1TsiI=
+			YLllSfj0OEme85+wpK2ZZEsywoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			l+oIhRrjzu/YdFy3s5aimjUbigzjWRoPeCcLgqPr0oM=
+			T9TzLnJrmNqKr4+EFuU2HUiWuJQPhBZxDM+z5UtRL+c=
 			</data>
 		</dict>
 		<key>Headers/MBDetectorRecognizerResult.h</key>
@@ -1722,11 +1722,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AtQQDt6MpUUgGFZZQ7q4V9wgpLM=
+			hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
 			</data>
 			<key>hash2</key>
 			<data>
-			a6BewuBNAVcwMQehdLdSB3UnwPNuOQTFs+jv3GjSBg4=
+			GohreXh5yy2T9kir5Kp5u/Wms7gGzUK6jmQbFsJrny0=
 			</data>
 		</dict>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
