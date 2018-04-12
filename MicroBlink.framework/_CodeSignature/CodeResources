@@ -156,6 +156,10 @@
 		<data>
 		EnxIh8GL+ZIKF1bILuO3mD41whQ=
 		</data>
+		<key>Headers/MBDotsResultOverlaySubview.h</key>
+		<data>
+		9Z9cCvpDOcjJzI/rxQoz02UfmjQ=
+		</data>
 		<key>Headers/MBEmailParser.h</key>
 		<data>
 		ssuFgRyLhNayLXOuGysetH+LiDU=
@@ -478,7 +482,7 @@
 		</data>
 		<key>Headers/MicroBlink.h</key>
 		<data>
-		uQbV6RGNfWdlrdKdUhvgO3wSOD4=
+		CGGlMPhYmmuJRpuTmgfQFwQDw8Q=
 		</data>
 		<key>Headers/PPApp.h</key>
 		<data>
@@ -519,10 +523,6 @@
 		<key>Headers/PPMicroBlinkDefines.h</key>
 		<data>
 		c8Gv5R+L6wLqZcT+VJCuwBjI2cc=
-		</data>
-		<key>Headers/PPModernOcrResultOverlaySubview.h</key>
-		<data>
-		OYDqavkz0JbdpuFfE91tzYgPO3A=
 		</data>
 		<key>Headers/PPModernToastOverlaySubview.h</key>
 		<data>
@@ -979,6 +979,17 @@
 			<key>hash2</key>
 			<data>
 			dsl/N74zXH6RndowUNO7ztVO73KlbhcaUMyjTTAGqpU=
+			</data>
+		</dict>
+		<key>Headers/MBDotsResultOverlaySubview.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9Z9cCvpDOcjJzI/rxQoz02UfmjQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			C+QCNUPjuArNv641bUrOq/kOtCGB7KWpRFK6ABCWg28=
 			</data>
 		</dict>
 		<key>Headers/MBEmailParser.h</key>
@@ -1865,11 +1876,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uQbV6RGNfWdlrdKdUhvgO3wSOD4=
+			CGGlMPhYmmuJRpuTmgfQFwQDw8Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			2H3wOz6aJ1a2rmDOGCUEUQM21LnYeE4PWYptHHfTQY0=
+			TXhMh1JfeIX0sgln4kuu8O1AsPNvb8Y6WrtRF29ZkeI=
 			</data>
 		</dict>
 		<key>Headers/PPApp.h</key>
@@ -1980,17 +1991,6 @@
 			<key>hash2</key>
 			<data>
 			DUo/o9HU1fG3CfQxTW6Y617C/HarYZPxqWhpwJzk7n8=
-			</data>
-		</dict>
-		<key>Headers/PPModernOcrResultOverlaySubview.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OYDqavkz0JbdpuFfE91tzYgPO3A=
-			</data>
-			<key>hash2</key>
-			<data>
-			TUWSBj5Lw5/p1eZUbBe9vE9rOwC7aiCeY/Q9fw8mwUE=
 			</data>
 		</dict>
 		<key>Headers/PPModernToastOverlaySubview.h</key>

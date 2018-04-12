@@ -30,7 +30,7 @@
 #import "MBPermissionDeniedViewController.h"
 
 // Overlay subviews
-#import "PPModernOcrResultOverlaySubview.h"
+#import "MBDotsResultOverlaySubview.h"
 #import "MBModernViewfinderOverlaySubview.h"
 #import "PPOcrResultOverlaySubview.h"
 #import "PPBlurredFieldOfViewOverlaySubview.h"

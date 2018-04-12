@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Overlay subview presenting status of OCR detection. Dots are displayed over locations of detected characters.
  */
 PP_CLASS_AVAILABLE_IOS(6.0)
-@interface PPModernOcrResultOverlaySubview : PPOverlaySubview
+@interface MBDotsResultOverlaySubview : PPOverlaySubview
 
 /**
  * Foreground color of dots.
