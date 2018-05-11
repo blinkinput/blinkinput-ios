@@ -8,40 +8,58 @@
 
 import MicroBlink
 
-protocol MBCustomOverlayViewControllerDelegate {
+class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerViewControllerDelegate {
     
-    func customOverlayViewControllerDidTapClose(customOverlay: CustomOverlay)
-    func customOverlayViewControllerDidFinishScanning(_ customOverlay: CustomOverlay, state: MBRecognizerResultState)
-}
-
-class CustomOverlay: MBOverlayViewController, MBOverlayViewControllerInterface, MBScanningRecognizerRunnerViewDelegate {
-    
-    var settings: MBSettings?
-    var delegate: MBCustomOverlayViewControllerDelegate?    
-    
-    static func initFromStoryboardWith(settings: MBSettings, delegate: MBCustomOverlayViewControllerDelegate) -> CustomOverlay {
+    static func initFromStoryboardWith() -> CustomOverlay {
         let customOverlay: CustomOverlay = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomOverlay") as! CustomOverlay
-        customOverlay.settings = settings
-        customOverlay.delegate = delegate
-        customOverlay.overlayViewControllerInterfaceDelegate = customOverlay
         return customOverlay
     }
     
     override func viewDidLoad() {
-        self.recognizerRunnerViewController.scanningRecognizerRunnerViewDelegate = self
-        self.scanningRegion = CGRect(origin: CGPoint(x: 0.1, y: 0.3), size: CGSize(width: 0.8, height: 0.25))
+        super.viewDidLoad()
+        super.scanningRecognizerRunnerViewControllerDelegate = self;
     }
     
-    func recognizerRunnerViewControllerDidFinishScanning(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, state: MBRecognizerResultState) {
-        self.delegate!.customOverlayViewControllerDidFinishScanning(self, state: state)
-    }
-    
-    public func getSettings() -> MBSettings {
-        return self.settings!
+    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, didFinishScanningWith state: MBRecognizerResultState) {
+        /** This is done on background thread */
+        if state == MBRecognizerResultState.valid {
+            recognizerRunnerViewController.pauseScanning();
+            
+            DispatchQueue.main.async {
+                
+                var message: String = ""
+                var title: String = ""
+                
+                for recognizer in self.recognizerCollection.recognizerList {
+                    if ( recognizer.baseResult?.resultState == MBRecognizerResultState.valid ) {
+                        if recognizer is MBBarcodeRecognizer {
+                            let barcodeRecognizer = recognizer as? MBBarcodeRecognizer
+                            title = "QR Code"
+                            message = (barcodeRecognizer?.result.stringData())!
+                        }
+                        else if recognizer is MBPdf417Recognizer {
+                            let pdf417Recognizer = recognizer as? MBPdf417Recognizer
+                            title = "PDF417"
+                            message = (pdf417Recognizer?.result.stringData())!
+                        }
+                    }
+                }
+                
+                let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                
+                let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                                                                 handler: { (action) -> Void in
+                                                                    self.dismiss(animated: true, completion: nil)
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
 
     @IBAction func didTapClose(_ sender: Any) {
-        self.delegate!.customOverlayViewControllerDidTapClose(customOverlay: self)
+        self.recognizerRunnerViewController?.overlayViewControllerWillCloseCamera(self);
+        self.dismiss(animated: true, completion: nil);
     }
     
 }
