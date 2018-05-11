@@ -15,8 +15,22 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBarcodeOverlaySettings.h",
+      "line": 18,
+      "symbol": "MBBarcodeOverlaySettings.displayBarcodeDots",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBarcodeOverlaySettings.h",
+      "line": 20,
+      "symbol": "MBBarcodeOverlaySettings.displayViewfinder",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBarcodeOverlayViewController.h",
-      "line": 19,
+      "line": 20,
       "symbol": "MBBarcodeOverlayViewController",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
@@ -43,22 +57,8 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBaseBarcodeOverlayViewController.h",
-      "line": 12,
-      "symbol": "MBBaseBarcodeOverlayViewController",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBasePhotoPayOverlayViewController.h",
-      "line": 12,
-      "symbol": "MBBasePhotoPayOverlayViewController",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBlinkInputRecognizer.h",
-      "line": 25,
+      "line": 24,
       "symbol": "MBBlinkInputRecognizer.-initWithProcessors:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
@@ -67,6 +67,62 @@
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBBlinkInputRecognizerResult.h",
       "line": 23,
       "symbol": "MBBlinkInputRecognizerResult.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 28,
+      "symbol": "MBCustomOverlayViewController.recognizerCollection",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 29,
+      "symbol": "MBCustomOverlayViewController.settings",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 30,
+      "symbol": "MBCustomOverlayViewController.metadataDelegates",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 31,
+      "symbol": "MBCustomOverlayViewController.scanningRecognizerRunnerViewControllerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 32,
+      "symbol": "MBCustomOverlayViewController.recognizerRunnerViewControllerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 41,
+      "symbol": "MBCustomOverlayViewController.-initWithRecognizerCollection:overlaySettings:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 43,
+      "symbol": "MBCustomOverlayViewController.-reconfigureRecognizers:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBCustomOverlayViewController.h",
+      "line": 45,
+      "symbol": "MBCustomOverlayViewController.-applySettings:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
@@ -177,7 +233,7 @@
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDateParserResult.h",
-      "line": 21,
+      "line": 22,
       "symbol": "MBDateParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
@@ -243,6 +299,13 @@
       "line": 22,
       "symbol": "MBDocumentDetectorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDocumentOverlaySettings.h",
+      "line": 18,
+      "symbol": "MBDocumentOverlaySettings.viewfinderMoveable",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
@@ -323,16 +386,16 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDotsOverlaySubview.h",
-      "line": 24,
-      "symbol": "MBDotsOverlaySubview.dotsLayer",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDotsSubview.h",
+      "line": 23,
+      "symbol": "MBDotsSubview.dotsLayer",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDotsOverlaySubview.h",
-      "line": 43,
-      "symbol": "MBDotsOverlaySubview.-initWithCoder:",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBDotsSubview.h",
+      "line": 42,
+      "symbol": "MBDotsSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
@@ -400,6 +463,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBFieldByFieldOverlaySettings.h",
+      "line": 24,
+      "symbol": "MBFieldByFieldOverlaySettings.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "line": 30,
+      "symbol": "MBFieldByFieldOverlayViewController.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "line": 32,
+      "symbol": "MBFieldByFieldOverlayViewController.-initWithNibName:bundle:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "line": 34,
+      "symbol": "MBFieldByFieldOverlayViewController.-initWithCoder:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 24,
       "symbol": "MBFrameGrabberRecognizer.-init",
@@ -421,31 +512,269 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareStatusOverlaySubview.h",
-      "line": 20,
-      "symbol": "MBGlareStatusOverlaySubview.label",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 27,
+      "symbol": "CGDelta",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareStatusOverlaySubview.h",
-      "line": 22,
-      "symbol": "MBGlareStatusOverlaySubview.-init",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 30,
+      "symbol": "",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareStatusOverlaySubview.h",
-      "line": 24,
-      "symbol": "MBGlareStatusOverlaySubview.-initWithCoder:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 30,
+      "symbol": "CGLine",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareStatusOverlaySubview.h",
-      "line": 26,
-      "symbol": "MBGlareStatusOverlaySubview.-initWithFrame:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 30,
+      "symbol": "CGLine.",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 31,
+      "symbol": ".point1",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 31,
+      "symbol": "CGLine..point1",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 32,
+      "symbol": ".point2",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 32,
+      "symbol": "CGLine..point2",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 38,
+      "symbol": "CGDeltaMake",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 41,
+      "symbol": "CGPointWithDelta",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 44,
+      "symbol": "CGPointDistance",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 47,
+      "symbol": "CGPointAlongLine",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 50,
+      "symbol": "CGPointRotatedAroundPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 55,
+      "symbol": "CGLineMake",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 58,
+      "symbol": "CGLineEqualToLine",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 61,
+      "symbol": "CGLineMidPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 64,
+      "symbol": "CGLineDirection",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 67,
+      "symbol": "CGLinesAngle",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 70,
+      "symbol": "CGLinesIntersectAtPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 73,
+      "symbol": "CGLineLength",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 76,
+      "symbol": "CGLineScale",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 79,
+      "symbol": "CGLineTranslate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 82,
+      "symbol": "CGLineScaleOnMidPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 85,
+      "symbol": "CGLineDelta",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 88,
+      "symbol": "CGLinesAreParallel",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 93,
+      "symbol": "CGRectTopLeftPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 94,
+      "symbol": "CGRectTopRightPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 95,
+      "symbol": "CGRectBottomLeftPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 96,
+      "symbol": "CGRectBottomRightPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 99,
+      "symbol": "CGRectResize",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 102,
+      "symbol": "CGRectInsetEdge",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 113,
+      "symbol": "CGRectCenterPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 116,
+      "symbol": "CGRectClosestTwoCornerPoints",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 120,
+      "symbol": "CGLineIntersectsRectAtPoint",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 129,
+      "symbol": "CGControlPointsForArcBetweenPointsWithRadius",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGeometry.h",
+      "line": 135,
+      "symbol": "scanningRegionForFrameInBounds",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareRecognizerRunnerDelegate.h",
+      "line": 13,
+      "symbol": "MBGlareRecognizerRunnerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBGlareRecognizerRunnerViewControllerDelegate.h",
+      "line": 15,
+      "symbol": "MBGlareRecognizerRunnerViewControllerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
@@ -463,10 +792,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBIdDocumentOverlaySubview.h",
-      "line": 56,
-      "symbol": "MBIdDocumentOverlaySubview.-initWithCoder:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBImageProcessingRecognizerRunnerDelegate.h",
+      "line": 11,
+      "symbol": "MBImageProcessingRecognizerRunnerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
@@ -498,17 +827,17 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBMetadata.h",
-      "line": 25,
-      "symbol": "MBMetadata.-init",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBMicroblinkApp.h",
+      "line": 37,
+      "symbol": "MBMicroblinkApp",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBMetadata.h",
-      "line": 27,
-      "symbol": "MBMetadata.-initWithName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBMicroblinkApp.h",
+      "line": 39,
+      "symbol": "MBMicroblinkApp.language",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
@@ -516,6 +845,13 @@
       "line": 19,
       "symbol": "MBMicroblinkSDK.+sharedInstance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBModernViewfinderSubview.h",
+      "line": 39,
+      "symbol": "MBModernViewfinderSubview.-forceResetPositions",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
@@ -582,23 +918,9 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBOcrRecognizerRunnerDelegate.h",
-      "line": 19,
-      "symbol": "MBOcrRecognizerRunnerDelegate.-recognizerRunner:didObtainOcrResult:withResultName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBOcrRecognizerRunnerViewDelegate.h",
-      "line": 21,
-      "symbol": "MBOcrRecognizerRunnerViewDelegate.-recognizerRunnerViewController:didObtainOcrResult:withResultName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBOverlayViewControllerInterface.h",
-      "line": 21,
-      "symbol": "MBOverlayViewControllerInterface.-getSettings",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBOverlayViewController.h",
+      "line": 33,
+      "symbol": "MBOverlayViewController.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
@@ -633,6 +955,13 @@
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBParserResult.h",
       "line": 41,
+      "symbol": "MBParserResult.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBParserResult.h",
+      "line": 43,
       "symbol": "MBParserResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
@@ -652,41 +981,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBPermissionDeniedViewController.h",
-      "line": 15,
-      "symbol": "MBPermissionDeniedViewController",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBPermissionDeniedViewController.h",
-      "line": 17,
-      "symbol": "MBPermissionDeniedViewController.delegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBPermissionDeniedViewController.h",
-      "line": 19,
-      "symbol": "MBPermissionDeniedViewController.hideCancelButton",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBPermissionDeniedViewController.h",
-      "line": 23,
-      "symbol": "MBPermissionDeniedDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBPermissionDeniedViewController.h",
-      "line": 25,
-      "symbol": "MBPermissionDeniedDelegate.-userDidTapCancel:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBProcessorGroup.h",
       "line": 23,
       "symbol": "MBProcessorGroup.-init",
@@ -696,6 +990,13 @@
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBProcessorResult.h",
       "line": 41,
+      "symbol": "MBProcessorResult.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBProcessorResult.h",
+      "line": 43,
       "symbol": "MBProcessorResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
@@ -744,7 +1045,7 @@
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizer.h",
-      "line": 29,
+      "line": 35,
       "symbol": "MBRecognizer.-getOptimalHudOrientation",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
@@ -766,98 +1067,119 @@
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerResult.h",
       "line": 41,
+      "symbol": "MBRecognizerResult.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerResult.h",
+      "line": 43,
       "symbol": "MBRecognizerResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 31,
+      "line": 28,
       "symbol": "MBRecognizerRunner.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 32,
+      "line": 29,
       "symbol": "MBRecognizerRunner.scanningRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 34,
+      "line": 30,
+      "symbol": "MBRecognizerRunner.imageProcessingRecognizerRunnerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
+      "line": 32,
       "symbol": "MBRecognizerRunner.coordinator",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 36,
+      "line": 34,
       "symbol": "MBRecognizerRunner.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 41,
+      "line": 39,
       "symbol": "MBRecognizerRunner.-resetState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 43,
+      "line": 41,
       "symbol": "MBRecognizerRunner.-resetState:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 63,
-      "symbol": "MBRecognizerRunner.-getSettings",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
-      "line": 23,
+      "line": 21,
       "symbol": "MBRecognizerRunnerMetadataDelegates.debugRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
-      "line": 24,
+      "line": 22,
       "symbol": "MBRecognizerRunnerMetadataDelegates.detectionRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
-      "line": 25,
+      "line": 23,
       "symbol": "MBRecognizerRunnerMetadataDelegates.ocrRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewMetadataDelegates.h",
-      "line": 18,
-      "symbol": "MBRecognizerRunnerViewMetadataDelegates.detectionRecognizerRunnerViewDelegate",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "line": 24,
+      "symbol": "MBRecognizerRunnerMetadataDelegates.glareRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewMetadataDelegates.h",
-      "line": 19,
-      "symbol": "MBRecognizerRunnerViewMetadataDelegates.debugRecognizerRunnerViewDelegate",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "line": 21,
+      "symbol": "MBRecognizerRunnerViewControllerMetadataDelegates.debugRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewMetadataDelegates.h",
-      "line": 20,
-      "symbol": "MBRecognizerRunnerViewMetadataDelegates.ocrRecognizerRunnerViewDelegate",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "line": 22,
+      "symbol": "MBRecognizerRunnerViewControllerMetadataDelegates.detectionRecognizerRunnerViewControllerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "line": 23,
+      "symbol": "MBRecognizerRunnerViewControllerMetadataDelegates.ocrRecognizerRunnerViewControllerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "line": 24,
+      "symbol": "MBRecognizerRunnerViewControllerMetadataDelegates.glareRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
@@ -876,24 +1198,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
-      "line": 28,
-      "symbol": "MBRecognizerRunnerViewController.metadataDelegates",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
-      "line": 29,
-      "symbol": "MBRecognizerRunnerViewController.scanningRecognizerRunnerViewDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
-      "line": 30,
-      "symbol": "MBRecognizerRunnerViewController.recognizerRunnerViewControllerDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBScanElement.h",
+      "line": 37,
+      "symbol": "MBScanElement.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
@@ -932,16 +1240,16 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBTapToFocusOverlaySubview.h",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBTapToFocusSubview.h",
       "line": 25,
-      "symbol": "MBTapToFocusOverlaySubview.-initWithCoder:",
+      "symbol": "MBTapToFocusSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBTapToFocusOverlaySubview.h",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBTapToFocusSubview.h",
       "line": 27,
-      "symbol": "MBTapToFocusOverlaySubview.-willFocusAtPoint:",
+      "symbol": "MBTapToFocusSubview.-willFocusAtPoint:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
@@ -995,20 +1303,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBViewFinderOverlaySubview.h",
-      "line": 24,
-      "symbol": "MBViewFinderOverlaySubview.trackingLayer",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBViewFinderOverlaySubview.h",
-      "line": 49,
-      "symbol": "MBViewFinderOverlaySubview.-initWithCoder:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBVinParser.h",
       "line": 22,
       "symbol": "MBVinParser.-init",
@@ -1023,423 +1317,17 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPApp.h",
-      "line": 37,
-      "symbol": "PPApp",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPApp.h",
-      "line": 39,
-      "symbol": "PPApp.language",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPBlurredFieldOfViewOverlaySubview.h",
-      "line": 20,
-      "symbol": "PPBlurredFieldOfViewOverlaySubview.-initWithFrame:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPBlurredFieldOfViewOverlaySubview.h",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBVinRecognizer.h",
       "line": 22,
-      "symbol": "PPBlurredFieldOfViewOverlaySubview.-initWithCoder:",
+      "symbol": "MBVinRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPFieldOfViewOverlaySubview.h",
+      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBVinRecognizerResult.h",
       "line": 20,
-      "symbol": "PPFieldOfViewOverlaySubview.-initWithFrame:",
+      "symbol": "MBVinRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPFieldOfViewOverlaySubview.h",
-      "line": 22,
-      "symbol": "PPFieldOfViewOverlaySubview.-initWithCoder:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPFieldOfViewOverlaySubview.h",
-      "line": 47,
-      "symbol": "PPFieldOfViewOverlaySubview.width",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPFieldOfViewOverlaySubview.h",
-      "line": 49,
-      "symbol": "PPFieldOfViewOverlaySubview.height",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPFieldOfViewOverlaySubview.h",
-      "line": 51,
-      "symbol": "PPFieldOfViewOverlaySubview.centerHeight",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 27,
-      "symbol": "CGDelta",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 30,
-      "symbol": "",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 30,
-      "symbol": "CGLine",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 30,
-      "symbol": "CGLine.",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 31,
-      "symbol": ".point1",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 31,
-      "symbol": "CGLine..point1",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 32,
-      "symbol": ".point2",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 32,
-      "symbol": "CGLine..point2",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 38,
-      "symbol": "CGDeltaMake",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 41,
-      "symbol": "CGPointWithDelta",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 44,
-      "symbol": "CGPointDistance",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 47,
-      "symbol": "CGPointAlongLine",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 50,
-      "symbol": "CGPointRotatedAroundPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 55,
-      "symbol": "CGLineMake",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 58,
-      "symbol": "CGLineEqualToLine",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 61,
-      "symbol": "CGLineMidPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 64,
-      "symbol": "CGLineDirection",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 67,
-      "symbol": "CGLinesAngle",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 70,
-      "symbol": "CGLinesIntersectAtPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 73,
-      "symbol": "CGLineLength",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 76,
-      "symbol": "CGLineScale",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 79,
-      "symbol": "CGLineTranslate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 82,
-      "symbol": "CGLineScaleOnMidPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 85,
-      "symbol": "CGLineDelta",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 88,
-      "symbol": "CGLinesAreParallel",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 93,
-      "symbol": "CGRectTopLeftPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 94,
-      "symbol": "CGRectTopRightPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 95,
-      "symbol": "CGRectBottomLeftPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 96,
-      "symbol": "CGRectBottomRightPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 99,
-      "symbol": "CGRectResize",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 102,
-      "symbol": "CGRectInsetEdge",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 113,
-      "symbol": "CGRectCenterPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 116,
-      "symbol": "CGRectClosestTwoCornerPoints",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 120,
-      "symbol": "CGLineIntersectsRectAtPoint",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 129,
-      "symbol": "CGControlPointsForArcBetweenPointsWithRadius",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPGeometry.h",
-      "line": 135,
-      "symbol": "scanningRegionForFrameInBounds",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPModernToastOverlaySubview.h",
-      "line": 14,
-      "symbol": "PPModernToastOverlaySubview",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPOcrLineOverlaySubview.h",
-      "line": 40,
-      "symbol": "PPOcrLineOverlaySubview.-initWithCoder:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPOcrLineOverlaySubview.h",
-      "line": 42,
-      "symbol": "PPOcrLineOverlaySubview.-initWithFrame:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 13,
-      "symbol": "PPRecognitionStatus",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 13,
-      "symbol": "PPRecognitionStatus",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 14,
-      "symbol": "PPRecognitionStatus.PPRecognitionStatusSuccess",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 15,
-      "symbol": "PPRecognitionStatus.PPRecognitionStatusGlare",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 19,
-      "symbol": "PPRecognitionStatusMetadata",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 21,
-      "symbol": "PPRecognitionStatusMetadata.status",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 23,
-      "symbol": "PPRecognitionStatusMetadata.-initWithName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPRecognitionStatusMetadata.h",
-      "line": 25,
-      "symbol": "PPRecognitionStatusMetadata.-initWithStatus:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPToastOverlaySubview.h",
-      "line": 15,
-      "symbol": "PPToastOverlaySubview",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPToastOverlaySubview.h",
-      "line": 17,
-      "symbol": "PPToastOverlaySubview.toastMargin",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPToastOverlaySubview.h",
-      "line": 19,
-      "symbol": "PPToastOverlaySubview.font",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/PPToastOverlaySubview.h",
-      "line": 21,
-      "symbol": "PPToastOverlaySubview.label",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     }
   ],
