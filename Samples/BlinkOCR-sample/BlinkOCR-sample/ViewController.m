@@ -34,9 +34,9 @@
     self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
 
     /** Create recognizer collection */
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
     
-    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andRecognizerCollection:recognizerCollection andDelegate:self];
     UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
     
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -54,12 +54,14 @@
         // first, pause scanning until we process all the results
         [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
         
+        ViewController __weak *weakSelf = self;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             NSLog(@"OCR results are:");
-            NSLog(@"Raw ocr: %@", self.rawParser.result.rawText);
+            NSLog(@"Raw ocr: %@", weakSelf.rawParser.result.rawText);
             
-            MBOcrLayout* ocrLayout = self.parserGroupProcessor.result.ocrLayout;
+            MBOcrLayout* ocrLayout = weakSelf.parserGroupProcessor.result.ocrLayout;
             NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box));
             
             [barcodeOverlayViewController.recognizerRunnerViewController resumeScanningAndResetState:YES];
