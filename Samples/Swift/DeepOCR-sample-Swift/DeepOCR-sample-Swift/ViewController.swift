@@ -40,9 +40,6 @@ class ViewController: UIViewController {
         self.parserGroupProcessor = MBParserGroupProcessor(parsers: [self.rawOcrParser!])
         self.blinkInputRecognizer = MBBlinkInputRecognizer(processors: [self.parserGroupProcessor!])
         
-        /** Create barcode settings */
-        let settings : MBSettings = MBSettings()
-        
         /** Crate recognizer collection */
         let recognizerList : Array = [self.blinkInputRecognizer!]
         let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
