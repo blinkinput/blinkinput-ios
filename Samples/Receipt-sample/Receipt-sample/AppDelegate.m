@@ -20,6 +20,7 @@
     // Override point for customization after application launch.
     
     /** First, set license key as soon as possible */
+    // Valid until: 2018-10-06
     [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"receipt-license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
     return YES;
 }
