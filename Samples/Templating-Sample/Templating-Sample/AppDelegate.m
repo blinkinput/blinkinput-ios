@@ -20,7 +20,8 @@
     // Override point for customization after application launch.
     
     /** First, set license key as soon as possible */
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"templating" withExtension:@"txt" inSubdirectory:@"Licenses" forBundle:[NSBundle mainBundle]];
+    // Valid until: 2018-10-06
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"templating-license" withExtension:@"txt" inSubdirectory:@"Licenses" forBundle:[NSBundle mainBundle]];
     
     return YES;
 }

@@ -342,10 +342,9 @@
  */
 - (void)configureDetectorRecognizer {
     
-    self.documentDetector = [[MBDocumentDetector alloc] init];
-    [self.documentDetector setDocumentSpecifications:@[[MBDocumentSpecification createFromPreset:MBDocumentSpecificationId1Card]]];
+    self.documentDetector = [[MBDocumentDetector alloc] initWithDocumentSpecifications:@[[MBDocumentSpecification createFromPreset:MBDocumentSpecificationId1Card]]];
     
-    self.detectorRecognizer = [[MBDetectorRecognizer alloc] initWithDetector:self.documentDetector];
+    self.detectorRecognizer = [[MBDetectorRecognizer alloc] initWithQuadWithSizeDetector:self.documentDetector];
     [self.detectorRecognizer setTemplatingClasses:@[self.oldID, self.neID]];
     
     /*
