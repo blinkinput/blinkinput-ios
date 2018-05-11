@@ -31,8 +31,8 @@ static NSString *rawOcrParserId = @"Raw ocr";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Valid until: 2018-04-29
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
+    // Valid until: 2018-10-06
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-direct" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -178,10 +178,9 @@ static NSString *rawOcrParserId = @"Raw ocr";
     
     [recognizers addObject:self.pdf417Recognizer];
     
-    MBSettings* settings = [[MBSettings alloc] init];
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
     
-    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
+    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithRecognizerCollection:recognizerCollection];
     self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
     
     [self.captureSession startRunning];
@@ -211,14 +210,17 @@ static NSString *rawOcrParserId = @"Raw ocr";
     }
 }
 
-- (void)recognizerRunnerDidFinish:(MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state {
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state {
     self.pauseRecognition = YES;
-    if (self.pdf417Recognizer.result.resultState == MBRecognizerResultStateValid) {
+    if (state == MBRecognizerResultStateValid) {
+        
+        CameraViewController __weak *weakSelf = self;
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *title = @"PDF417";
             
             // Save the string representation of the code
-            NSString *message = [self.pdf417Recognizer.result stringData];
+            NSString *message = [weakSelf.pdf417Recognizer.result stringData];
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                                      message:message
