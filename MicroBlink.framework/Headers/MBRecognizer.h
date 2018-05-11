@@ -6,15 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBEntity.h"
+#import "MBRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Base class for all recognizers
  */
-PP_CLASS_AVAILABLE_IOS(6.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBRecognizer : MBEntity
 
 /**
@@ -25,6 +26,11 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  * Default: YES
  */
 @property (nonatomic, getter=isEnabled) BOOL enabled;
+
+/**
+ * Base recognizer result.
+ */
+@property (nonatomic, readonly, weak) MBRecognizerResult *baseResult;
 
 - (UIInterfaceOrientationMask)getOptimalHudOrientation;
 

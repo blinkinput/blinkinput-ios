@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBParser.h"
 #import "MBEmailParserResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * MBEmailParser is used for parsing emails
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBEmailParser : MBParser <NSCopying>
 
 /**

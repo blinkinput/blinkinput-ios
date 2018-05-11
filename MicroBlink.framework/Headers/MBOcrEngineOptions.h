@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "MBOcrFont.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBBaseOcrEngineOptions.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  *     MBOcrCharKey* key = [[MBOcrCharKey alloc] initWithCode:'ü' font:MB_OCR_FONT_ANY];
  *
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBOcrCharKey : NSObject
 
 /**
@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, PPDocumentType) {
  * Options used for OCR process. These options enable you to customize how some OCR parsers work.
  * For example, you can set character whitelists, character height, supported fonts etc.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBOcrEngineOptions : MBBaseOcrEngineOptions <NSCopying>
 
 /**

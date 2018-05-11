@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBQuadWithSizeDetector.h"
 #import "MBDocumentDetectorResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -18,10 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Detector that can perform detection of card documents, cheques, papers, etc.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBDocumentDetector : MBQuadWithSizeDetector <NSCopying>
 
-MB_INIT
+MB_INIT_UNAVAILABLE
+
+/**
+ * @param documentSpecifications Document specifications that describe documents that should be detected.
+ */
+- (instancetype)initWithDocumentSpecifications:(NSArray<__kindof MBDocumentSpecification *> *)documentSpecifications NS_DESIGNATED_INITIALIZER;
 
 /**
  * Document detector result
@@ -37,12 +42,10 @@ MB_INIT
 @property (nonatomic, assign) NSUInteger numStableDetectionsThreshold;
 
 /**
- * Sets the document specifications. Document specifications describe the images that should be returned by
- * the detectior.
- *
- *  @param documentSpecifications document specifications
+ * Document specifications describe the documents that should be detected with
+ * document detector.
  */
-- (void)setDocumentSpecifications:(NSArray<__kindof MBDocumentSpecification *> *)documentSpecifications;
+@property (nonatomic, strong, readonly, nonnull) NSArray<__kindof MBDocumentSpecification *> *documentSpecifications;
 
 @end
 

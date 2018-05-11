@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, MBFrameQualityEstimationMode) {
 /**
  * Settings class containing settings related to scanner behaviour
  */
-PP_CLASS_AVAILABLE_IOS(6.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 
 @interface MBRecognizerCollection : NSObject<NSCopying>
 
@@ -69,13 +69,6 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  * Default: YES
  */
 @property (nonatomic) BOOL allowMultipleResults;
-
-/**
- * If YES, recognizers will call delegate's didOutputResults method for every image.
- *
- * Default: NO
- */
-@property (nonatomic) BOOL allowResultForEveryImage;
 
 /**
  * Timeout interval in which the partial scanning results in PhotoPay will be returned to the user.

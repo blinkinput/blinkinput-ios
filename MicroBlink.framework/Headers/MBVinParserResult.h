@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBParserResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * MBVinParser is used for parsing VIN numbers
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBVinParserResult : MBParserResult <NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the recognized VIN number or empty string if recognition failed.

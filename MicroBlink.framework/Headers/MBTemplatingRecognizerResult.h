@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 #import "MBBarcodeResult.h"
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Base of all recognizers result that support Templating API.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBTemplatingRecognizerResult : MBRecognizerResult
 
 - (instancetype)init NS_UNAVAILABLE;

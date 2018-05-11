@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 /**
  * Enumeration of posibble processor result state
@@ -35,8 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Base class for all processor results
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBProcessorResult : NSObject
+
+MB_INIT_UNAVAILABLE
 
 @property (nonatomic, assign, readonly) MBProcessorResultState resultState;
 

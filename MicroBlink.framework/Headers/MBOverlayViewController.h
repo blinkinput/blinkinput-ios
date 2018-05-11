@@ -9,30 +9,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 
-#import "MBScanningRecognizerRunnerViewController.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBRecognizerRunnerViewController.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBOverlayContainerViewController.h"
 
-#import "MBRecognizerResult.h"
-#import "MBDisplayableQuadDetection.h"
-#import "MBDisplayablePointsDetection.h"
-
-#import "PPLivenessAction.h"
-#import "PPLivenessError.h"
-#import "MBOverlayViewControllerInterface.h"
-
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol MBOcrRecognizerRunnerViewDelegate;
-@protocol MBDetectionRecognizerRunnerViewDelegate;
-@protocol MBScanningRecognizerRunnerViewDelegate;
-@protocol MBRecognizerRunnerViewControllerDelegate;
-@protocol MBDebugRecognizerRunnerViewDelegate;
-
-@class MBOcrLayout;
-@class MBMetadata;
-@class PPRecognizerResult;
-
 
 /**
  Overlay View Controller is an abstract class for all overlay views placed on top View Controller.
@@ -46,38 +27,17 @@ NS_ASSUME_NONNULL_BEGIN
  - a way to cancel the scanining, typically with a "cancel" or "back" button
  - a way to power on and off the light (i.e. "torch") button
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBOverlayViewController : UIViewController
+
+MB_INIT_UNAVAILABLE
 
 /**
  Overlay View's delegate object. Responsible for sending messages to PhotoPay's
  Camera View Controller
  */
-@property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> *containerViewController;
+@property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> *recognizerRunnerViewController;
 
-/**
- * Delegate for Overlay View controllers which returns required MBSettings
- */
-@property (nonatomic, weak) id<MBOverlayViewControllerInterface> overlayViewControllerInterfaceDelegate;
-
-/**
- Overlay View's recognizer runner controller. Responsible for sending messages to camera view controller
- */
-@property (nonatomic, strong) UIViewController<MBRecognizerRunnerViewController> *recognizerRunnerViewController;
-
-
-/**
- Scanning region in which the scaning is performed.
- Image is cropped to this region.
-
- Should be provided in the following coordinate system.
- - Upper left point has coordinates (0.0f, 0.0f) and corresponds to upper left corner of the overlay view
- - Lower right corner has coordinates (1.0f, 1.0f) and corresponds to lower right corner of the overlay view
-
- CGRect provided here specifies the origin (upper left point) of the scanning region, and the size of the
- region in hereby described coordinating system.
- */
-@property (nonatomic) CGRect scanningRegion;
 
 /**
  * If YES, default camera overlay will display Cancel button.
@@ -102,6 +62,34 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * Default: NO.
  */
 @property (nonatomic, assign) BOOL showStatusBar;
+
+/**
+ * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
+ *
+ * Default: NO.
+ */
+@property (nonatomic, assign) BOOL autorotateOverlay;
+
+/**
+ * Label which is displayed on screen when camera is paused, but still exists on the screen.
+ *
+ * This happens in split view and slide over modes in iOS 9.
+ *
+ * The view is centered on screen and displayed with a 0.4s fade in animation. It's dismissed with 0.4s
+ * fade out animation.
+ *
+ * Default:
+ *     UILabel *cameraPausedLabel = [[UILabel alloc] init];
+ *     cameraPausedLabel.text = @"Camera paused";
+ *     cameraPausedLabel.font = [UIFont systemFontOfSize:24.f];
+ *     cameraPausedLabel.textColor = [UIColor whiteColor];
+ *     cameraPausedLabel.layer.shadowRadius = 5.0f;
+ *     cameraPausedLabel.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+ *     cameraPausedLabel.layer.shadowOpacity = 1.0f;
+ *     cameraPausedLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+ *     [cameraPausedLabel sizeToFit];
+ */
+@property (nonatomic, strong, nullable) UIView *cameraPausedView;
 
 @end
 

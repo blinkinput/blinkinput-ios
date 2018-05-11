@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MBMicroBlinkInitialization.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 @class MBDewarpPolicy;
 @class MBProcessor;
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Class that represents a group of processors that will be executed on same dewarped image.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBProcessorGroup : NSObject
 
 MB_INIT_UNAVAILABLE

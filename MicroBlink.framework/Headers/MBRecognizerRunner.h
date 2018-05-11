@@ -7,17 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerRunnerMetadataDelegates.h"
+#import "MBScanningRecognizerRunnerDelegate.h"
+#import "MBImageProcessingRecognizerRunnerDelegate.h"
 
-@protocol MBDetectionRecognizerRunnerDelegate;
-@protocol MBOcrRecognizerRunnerDelegate;
-@protocol MBScanningRecognizerRunnerDelegate;
-@protocol MBDebugRecognizerRunnerDelegate;
-
-@class MBSettings;
 @class MBCoordinator;
 @class MBImage;
+@class MBRecognizerCollection;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,25 +22,32 @@ NS_ASSUME_NONNULL_BEGIN
  * Factory class containing static methods for creating camera view controllers.
  * Camera view controllers created this way will be managed internally by the SDK, and input frames will be processed.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBRecognizerRunner : NSObject
 
-@property (nonatomic, strong) MBRecognizerRunnerMetadataDelegates *metadataDelegates;
+@property (nonatomic, strong, nonnull, readonly) MBRecognizerRunnerMetadataDelegates *metadataDelegates;
 @property (nonatomic, weak) id<MBScanningRecognizerRunnerDelegate> scanningRecognizerRunnerDelegate;
+@property (nonatomic, weak, nullable) id<MBImageProcessingRecognizerRunnerDelegate> imageProcessingRecognizerRunnerDelegate;
 
 @property (nonatomic, nullable) MBCoordinator *coordinator;
 
 - (instancetype)init NS_UNAVAILABLE;
 
 /** Initializes the recognizer runner */
-- (instancetype)initWithSettings:(MBSettings *)settings NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRecognizerCollection:(MBRecognizerCollection *)recognizerCollection NS_DESIGNATED_INITIALIZER;
 
 - (void)resetState;
 
 - (void)resetState:(BOOL)hard;
 
 /**
- * Processes a PPImage object synchronously using current settings.
+ * Cancels all dispatched, but not yet processed image processing requests issued with processImage.
+ * NOTE: next call to processImage will resume processing.
+ */
+- (void)cancelProcessing;
+
+/**
+ * Processes a MBImage object synchronously using current settings.
  * Since this method is synchronous, calling it from a main thread will switch the call to alternate thread internally and output a warning.
  *
  * Results are passed a delegate object given upon a creation of PPCoordinator.
@@ -58,9 +62,7 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * Usual use case is to update settings on the fly, to perform some complex scanning functionality
  * where a reconfiguration of the recognizers is needed.
  */
-- (void)applySettings:(MBSettings *)newSettings;
-
-- (MBSettings *)getSettings;
+- (void)reconfigureRecognizers:(MBRecognizerCollection *)recognizerCollection;
 
 @end
 

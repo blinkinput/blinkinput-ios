@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 #import "MBBarcodeResult.h"
 
@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
  * Result of MBBarcodeRecognizer; is used for scanning most of 1D barcode formats, and 2D format
  * such as Aztec, DataMatrix and QR code
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBBarcodeRecognizerResult : MBRecognizerResult<NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Byte array with result of the scan

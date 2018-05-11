@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 /**
  * Camera resolution preset
@@ -62,7 +62,7 @@ typedef NS_ENUM(NSUInteger, PPCameraAutofocusRestriction) {
 /**
  * Settings class containing parameters for camera capture
  */
-PP_CLASS_AVAILABLE_IOS(6.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBCameraSettings : NSObject <NSCopying>
 
 /**

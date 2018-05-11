@@ -1,30 +1,27 @@
-//
-//  MBRecognizerRunnerMetadataDelegates.h
-//  Pdf417MobiDev
-//
-//  Created by Jura Skrlec on 09/02/2018.
-//
-
+// 
+// MBRecognizerRunnerMetadataDelegates.h
+// 
+// AUTOMATICALLY GENERATED SOURCE. DO NOT EDIT!
+// 
+ 
+#import "MBDebugRecognizerRunnerDelegate.h"
+#import "MBDetectionRecognizerRunnerDelegate.h"
+#import "MBOcrRecognizerRunnerDelegate.h"
+#import "MBGlareRecognizerRunnerDelegate.h"
+ 
+#import "MBMicroBlinkDefines.h"
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
-
-@protocol MBDetectionRecognizerRunnerDelegate;
-@protocol MBDebugRecognizerRunnerDelegate;
-@protocol MBOcrRecognizerRunnerDelegate;
-
-NS_ASSUME_NONNULL_BEGIN
-
+ 
 /**
  * Class containing all metadata delegates
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBRecognizerRunnerMetadataDelegates : NSObject
-
-@property (nonatomic, weak) id<MBDebugRecognizerRunnerDelegate> debugRecognizerRunnerDelegate;
-@property (nonatomic, weak) id<MBDetectionRecognizerRunnerDelegate> detectionRecognizerRunnerDelegate;
-@property (nonatomic, weak) id<MBOcrRecognizerRunnerDelegate> ocrRecognizerRunnerDelegate;
-
+ 
+@property (nonatomic, weak, nullable) id<MBDebugRecognizerRunnerDelegate> debugRecognizerRunnerDelegate;
+@property (nonatomic, weak, nullable) id<MBDetectionRecognizerRunnerDelegate> detectionRecognizerRunnerDelegate;
+@property (nonatomic, weak, nullable) id<MBOcrRecognizerRunnerDelegate> ocrRecognizerRunnerDelegate;
+@property (nonatomic, weak, nullable) id<MBGlareRecognizerRunnerDelegate> glareRecognizerRunnerDelegate;
+ 
 @end
-
-NS_ASSUME_NONNULL_END
-
+ 

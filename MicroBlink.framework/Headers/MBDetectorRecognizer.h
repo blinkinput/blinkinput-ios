@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBTemplatingRecognizer.h"
 #import "MBDetectorRecognizerResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Recognizer for scanning generic documents using custom MBDetector.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBDetectorRecognizer : MBTemplatingRecognizer<NSCopying>
 
 MB_INIT_UNAVAILABLE

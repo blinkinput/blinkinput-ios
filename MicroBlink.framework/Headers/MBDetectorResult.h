@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBDetectionStatus.h"
 
 /**
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Base class for all detectors results
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBDetectorResult : NSObject
 
 @property (nonatomic, assign, readonly) MBDetectionCode detectionCode;

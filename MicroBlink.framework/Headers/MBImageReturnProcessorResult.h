@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBProcessorResult.h"
 
 @class MBImage;
@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Processor that will simply save given image.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBImageReturnProcessorResult : MBProcessorResult <NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the raw image saved by the processor. If no image was saved by processor, returns null.

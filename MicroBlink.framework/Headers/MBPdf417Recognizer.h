@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBPdf417RecognizerResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer that can scan PDF417 2D barcodes.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBPdf417Recognizer : MBRecognizer<NSCopying>
 
 MB_INIT

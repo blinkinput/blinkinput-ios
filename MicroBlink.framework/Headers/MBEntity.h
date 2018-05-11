@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Base class for all entities processors, recognizers, detectors...
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBEntity : NSObject
 
 @end

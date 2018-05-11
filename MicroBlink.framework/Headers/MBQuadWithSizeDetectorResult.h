@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBDetectorResult.h"
 #import "MBQuadrangle.h"
 #import "MBQuadDetectorResult.h"
@@ -18,10 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
  * Base class for all detectors  that are used for MBQuadrangle
  * detection and can also provide physical size of the detected document.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBQuadWithSizeDetectorResult : MBQuadDetectorResult <NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the physical height of the detected MBQuadrangle in inches.

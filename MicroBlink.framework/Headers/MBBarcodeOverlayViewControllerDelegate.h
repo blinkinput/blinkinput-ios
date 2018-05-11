@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MBBarcodeOverlayViewController.h"
-#import "MBScanningRecognizerRunnerViewController.h"
+#import "MBRecognizerRunnerViewController.h"
+#import "MBRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

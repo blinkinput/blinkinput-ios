@@ -6,20 +6,24 @@
 //
 
 @class MBRecognizerRunner;
-@class MBMetadata;
-
-NS_ASSUME_NONNULL_BEGIN
+@class MBImage;
 
 /**
  * Protocol for obtaining debug metadata
  */
 @protocol MBDebugRecognizerRunnerDelegate <NSObject>
-@required
+@optional
+
 /**
- * Scanning library did output debug metadata
+ * Scanning library did output debug image
+ * NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
  */
-- (void)recognizerRunnerDidOutputDebugMetadata:(nonnull MBRecognizerRunner *)recognizerRunner metadata:(MBMetadata *)metadata;
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didOutputDebugImage:(nonnull MBImage *)image;
+
+/**
+ * Scanning library did output debug text
+ * NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
+ */
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didOutputDebugText:(nonnull NSString *)text;
 
 @end
-
-NS_ASSUME_NONNULL_END

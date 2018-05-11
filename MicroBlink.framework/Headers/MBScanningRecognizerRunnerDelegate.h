@@ -5,6 +5,8 @@
 //  Created by Jura Skrlec on 20/12/2017.
 //
 
+#import "MBRecognizerResult.h"
+
 @class MBRecognizerRunner;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  * - there may be 0, 1, or more than one scanning results.
  * - each scanning result belongs to a common MBRecognizerResult type
  * - handle different types differently
+ * - this method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
  *
  *  @param recognizerRunner recognizerRunner Scanning view controller responsible for scanning
  *  @param state                  state of scanning
@@ -33,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 
-- (void)recognizerRunnerDidFinish:(nonnull MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state;
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state;
 
 @end
 

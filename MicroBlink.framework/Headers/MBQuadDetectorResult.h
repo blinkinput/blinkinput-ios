@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBDetectorResult.h"
 #import "MBQuadrangle.h"
 
@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Base class for all detectors that are used for MBQuadrangle detection.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBQuadDetectorResult : MBDetectorResult <NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the location of detected quadrilateral in coordinate system of image in which detection was performed.

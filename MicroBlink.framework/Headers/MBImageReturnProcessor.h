@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "MBProcessor.h"
 #import "MBImageReturnProcessorResult.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBMicroBlinkInitialization.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Processor that will simply save given image.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBImageReturnProcessor : MBProcessor <NSCopying>
 
 MB_INIT

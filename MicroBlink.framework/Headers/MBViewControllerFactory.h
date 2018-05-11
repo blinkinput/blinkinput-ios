@@ -5,8 +5,8 @@
 //  Created by Jura Skrlec on 15/12/2017.
 //
 
-#import "PPMicroBlinkDefines.h"
-#import "MBScanningRecognizerRunnerViewController.h"
+#import "MBMicroBlinkDefines.h"
+#import "MBRecognizerRunnerViewController.h"
 #import "MBOverlayViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Factory class containing static methods for creating camera view controllers.
  * Camera view controllers created this way will be managed internally by the SDK, and input frames will be processed.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBViewControllerFactory : NSObject
 
 /**------------------------------------------*/

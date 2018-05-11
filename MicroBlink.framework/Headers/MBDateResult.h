@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBNativeResult.h"
 
 /**
@@ -16,7 +16,7 @@
  *
  * While converting to NSDate, internally prior knowledge about scanned document is used to use the right format.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBDateResult : NSObject <MBNativeResult>
 
 // Unavailable
@@ -48,6 +48,21 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * NSDate object which represents the same date as this result
  */
 @property (nonatomic, readonly, nonnull) NSDate *date;
+
+/**
+ * Day in month.
+ */
+@property (nonatomic, readonly, assign) NSInteger day;
+
+/**
+ * Month in year.
+ */
+@property (nonatomic, readonly, assign) NSInteger month;
+
+/**
+ * Year of the current date.
+ */
+@property (nonatomic, readonly, assign) NSInteger year;
 
 
 /**

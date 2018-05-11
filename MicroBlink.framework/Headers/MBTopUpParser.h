@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBParser.h"
 #import "MBTopUpParserResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * MBTopUpParser is used for parsing Top Up numbers
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBTopUpParser : MBParser <NSCopying>
 
 MB_INIT

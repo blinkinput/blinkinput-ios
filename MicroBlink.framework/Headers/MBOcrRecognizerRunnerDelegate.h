@@ -8,18 +8,18 @@
 @class MBRecognizerRunner;
 @class MBOcrLayout;
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
  * Protocol for obtaining ocr results
  */
 @protocol MBOcrRecognizerRunnerDelegate <NSObject>
 @required
 
+/**
+ * Called when Scanning library has MBOcrLayout available and ready to be displayed on UI.
+ * NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.
+ */
 - (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner
-      didObtainOcrResult:(MBOcrLayout *)ocrResult
-          withResultName:(NSString *)resultName;
+      didObtainOcrResult:(nonnull MBOcrLayout *)ocrResult
+          withResultName:(nonnull NSString *)resultName;
 
 @end
-
-NS_ASSUME_NONNULL_END

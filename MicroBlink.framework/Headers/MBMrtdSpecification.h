@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, MBMrtdSpecificationPreset) {
  * Mrtd class describes a document which is being detected by MrtdDetector.
  * We encurage users to create specifications with one of our presets, if possible.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBMrtdSpecification : NSObject <NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

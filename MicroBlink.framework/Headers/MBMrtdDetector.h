@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBQuadWithSizeDetector.h"
 #import "MBMrtdDetectorResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Detector that can perform detection of Machine Readable Travel Documents (MRTD).
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBMrtdDetector : MBQuadWithSizeDetector <NSCopying>
 
 MB_INIT

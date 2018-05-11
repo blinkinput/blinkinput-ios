@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 
 @class MBImage;
@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer that returns SuccessFrameGrabber result.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 
 @interface MBSuccessFrameGrabberRecognizerResult : MBRecognizerResult<NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Success frame PPImage of successful frame

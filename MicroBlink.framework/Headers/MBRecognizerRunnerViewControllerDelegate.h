@@ -6,7 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBScanningRecognizerRunnerViewController.h"
+
+@protocol MBRecognizerRunnerViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -61,14 +62,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param recognizerRunnerViewController recognizerRunnerViewController Recognizer runner view controller responsible for scanning
  */
-- (void)recognizerRunnerViewControlleDidResumeScanning:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController;
+- (void)recognizerRunnerViewControllerDidResumeScanning:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController;
 
 /**
  * Called when Scanning library is stopped scanning.
  *
  *  @param recognizerRunnerViewController recognizerRunnerViewController Recognizer runner view controller responsible for scanning
  */
-- (void)recognizerRunnerViewControlleDidStopScanning:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController;
+- (void)recognizerRunnerViewControllerDidStopScanning:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController;
 
 @end
 

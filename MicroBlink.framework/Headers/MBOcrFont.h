@@ -357,6 +357,16 @@ typedef NS_ENUM(NSUInteger, MBOcrFont) {
      */
     MB_OCR_FONT_EUROPA_GRO_SB_LIGHT,
 
+    /** Antonio regular font
+     @see http://allfont.net/cache/img/abc-10116_02d993c053756333957f0eed2629cd07.png
+     */
+    MB_OCR_FONT_ANTONIO_REGULAR,
+
+    /** Corporate S Light font
+     @see http://www.fontsplace.com/free/images/c/corporate_s_light_font_preview_characters.gif
+     */
+    MB_OCR_FONT_CORPORATE_LIGHT,
+
 
     // SPECIAL FONTS
 
@@ -385,7 +395,7 @@ typedef NS_ENUM(NSUInteger, MBOcrFont) {
     MB_OCR_FONT_COUNT,
 
     /** German license plate font **/
-    MB_OCR_FONT_FE_SCHRIFT,
+    MB_OCR_FONT_FE_SCHRIFT
 };
 
 #endif

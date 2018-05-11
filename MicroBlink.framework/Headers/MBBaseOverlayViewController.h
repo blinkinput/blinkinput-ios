@@ -8,31 +8,26 @@
 
 #import <Foundation/Foundation.h>
 #import "MBOverlayViewController.h"
-#import "PPOverlaySubview.h"
-#import "PPGeometry.h"
+#import "MBGeometry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Common base class for default overlay view controllers
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBBaseOverlayViewController : MBOverlayViewController
 
 /**
- * Registers a subview for PPOverlaySubview protocol events.
+ * Button to cancel scanning/dismiss view.
  */
-- (void)registerOverlaySubview:(UIView<PPOverlaySubview> *)subview;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 /**
- * Unregisters a subview for PPOverlaySubview protocol events.
+ * Button for displaying flash.
  */
-- (void)unregisterOverlaySubview:(UIView<PPOverlaySubview> *)subview;
+@property (nonatomic, strong) UIButton *torchButton;
 
-/**
- * Delegate for subview animation events.
- */
-@property (nonatomic, weak) id<PPOverlaySubviewDelegate> overlaySubviewsDelegate;
 
 @end
 

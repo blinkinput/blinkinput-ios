@@ -6,17 +6,34 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /**
  * Entry class for all Microblink SDKs - used for setting up license key and to add support for
  * optimisation of passing data.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBMicroblinkSDK : NSObject
 
 + (instancetype)sharedInstance;
+
+/**
+ * If YES, tooltip limited license key warning messages will appear on screen
+ *
+ * Default: YES.
+ */
+@property (nonatomic, assign) BOOL showLicenseKeyTimeLimitedWarning;
+
+/**
+ * Bundle in which the resources for the scanning process should be found. Usually, by default, this
+ * is equal to Microblink.bundle located in Main app bundle.
+ *
+ * i.e, this is by default initialized to:
+ *   [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"MicroBlink" ofType:@"bundle"];
+ *
+ */
+@property (nonatomic, strong) NSBundle *resourcesBundle;
 
 /**
  * Set license buffer and unlock the SDK. Application package will be used to validate the license.

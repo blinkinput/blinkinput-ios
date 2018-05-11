@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBBlinkInputRecognizerResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -18,8 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer for BlinkInput API and general OCR recognition
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
-
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBBlinkInputRecognizer : MBRecognizer<NSCopying>
 
 - (instancetype)initWithProcessors:(NSArray<MBProcessor *> *)processors NS_DESIGNATED_INITIALIZER;

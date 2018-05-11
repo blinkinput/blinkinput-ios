@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MBMicroBlinkInitialization.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 @protocol MBTemplatingClassifier;
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Class that represents a specific class of documents when used within Templating API.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBTemplatingClass : NSObject
 
 MB_INIT

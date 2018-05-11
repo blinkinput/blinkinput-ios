@@ -8,7 +8,7 @@
 
 #import <CoreGraphics/CGBase.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBBaseOcrEngineOptions.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSUInteger, MBDeepOcrModel) {
 
     /** Deep OCR model for Blink Input */
-    MBBlinkInput
+    MBDeepOcrModelBlinkInput
 
 };
 
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, MBDeepOcrModel) {
  * Options used for OCR process. These options enable you to customize how some OCR parsers work.
  * For example, you can set nms threshold, score threshold, the ID of the requested Deep OCR model etc.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBDeepOcrEngineOptions : MBBaseOcrEngineOptions <NSCopying>
 
 /**

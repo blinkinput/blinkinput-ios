@@ -8,7 +8,7 @@
 
 #import "Foundation/Foundation.h"
 #import "CoreMedia/CoreMedia.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, MBProcessingOrientation) {
 /**
  * Object which represents an image.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBImage : NSObject
 
 /**

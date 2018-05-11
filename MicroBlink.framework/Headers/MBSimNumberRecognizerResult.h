@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Recognizer that can perform recognition of barcodes on SIM packaging.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBSimNumberRecognizerResult : MBRecognizerResult<NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the recognized SIM number from barcode or empty string if recognition failed.

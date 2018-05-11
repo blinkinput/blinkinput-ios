@@ -8,14 +8,14 @@
 #import "MBDisplayableDetection.h"
 #import "MBQuadrangle.h"
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Represents a detection that can be displayed on screen.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBDisplayableQuadDetection : MBDisplayableDetection
 
 /**

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBParser.h"
 #import "MBRawParserResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  * MBRawParser that simply returns the string version of raw OCR result, without performing
  * any smart parsing operations.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBRawParser : MBParser <NSCopying>
 
 MB_INIT

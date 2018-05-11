@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBParser.h"
 #import "MBRegexParserResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  * and OCR results, this parser does not support some regex features found in java's regex engine,
  * like back references.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBRegexParser : MBParser <NSCopying>
 
 MB_INIT_UNAVAILABLE

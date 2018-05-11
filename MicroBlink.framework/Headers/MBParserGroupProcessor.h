@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "MBProcessor.h"
 #import "MBParserGroupProcessorResult.h"
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBMicroBlinkInitialization.h"
 
 @class MBParser;
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A processor for a group
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBParserGroupProcessor : MBProcessor <NSCopying>
 
 MB_INIT_UNAVAILABLE

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBQuadWithSizeDetectorResult.h"
 #import "MBQuadrangle.h"
 
@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Detector that can perform detection of Machine Readable Travel Documents (MRTD).
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBMrtdDetectorResult : MBQuadWithSizeDetectorResult <NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the location of Machine Readable Zone in coordinate system of image in which detection was performed.

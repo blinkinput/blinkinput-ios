@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBTemplatingRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Result of MBDetectorRecognizer
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBDetectorRecognizerResult : MBTemplatingRecognizerResult<NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

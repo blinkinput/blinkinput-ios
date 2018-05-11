@@ -7,16 +7,22 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBEntity.h"
+#import "MBProcessorResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Base class for all processors
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBProcessor : MBEntity
+
+/**
+ * Base processor result
+ */
+@property (nonatomic, readonly, weak) MBProcessorResult *baseResult;
 
 @end
 

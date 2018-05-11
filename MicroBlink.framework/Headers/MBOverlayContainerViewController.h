@@ -6,7 +6,7 @@
 //  Copyright © 2016 MicroBlink Ltd. All rights reserved.
 //
 
-#import "MBScanningRecognizerRunnerViewController.h"
+#import "MBRecognizerRunnerViewController.h"
 
 @class MBOverlayViewController;
 
