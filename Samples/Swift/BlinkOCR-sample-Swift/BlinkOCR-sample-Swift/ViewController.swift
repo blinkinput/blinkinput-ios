@@ -28,8 +28,8 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         blinkInputRecognizer = MBBlinkInputRecognizer(processors: [parserGroupProcessor!])
         
         /** Create recognizer collection */
-        settings.uiSettings.recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, andDelegate: self)
+        let recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
+        let overlayVC = MBBarcodeOverlayViewController(settings: settings, andRecognizerCollection: recognizerCollection, andDelegate: self)
         
         weak var recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
@@ -41,17 +41,16 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
     // MARK: MBBarcodeOverlayViewControllerDelegate delegate
     
     func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
-        
+
         // check for valid state
         if state == MBRecognizerResultState.valid {
             // first, pause scanning until we process all the results
-            barcodeOverlayViewController.recognizerRunnerViewController.pauseScanning()
+            barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
+            
             DispatchQueue.main.async(execute: {() -> Void in
                 print("OCR results are:")
                 print("Raw ocr: \(self.rawParser!.result.rawText)")
-                let ocrLayout: MBOcrLayout? = self.parserGroupProcessor!.result.ocrLayout
-                print("Dimensions of ocrLayout are \(NSStringFromCGRect((ocrLayout?.box)!))")
-                barcodeOverlayViewController.recognizerRunnerViewController.resumeScanningAndResetState(true)
+                barcodeOverlayViewController.recognizerRunnerViewController?.resumeScanningAndResetState(true)
             })
         }
     }

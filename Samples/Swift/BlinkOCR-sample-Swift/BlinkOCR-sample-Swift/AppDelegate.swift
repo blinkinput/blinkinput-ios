@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Valid until: 2018-04-30
+        // Valid until: 2018-10-06
         MBMicroblinkSDK.sharedInstance().setLicenseResource("blinkocr-swift-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
         return true
     }
