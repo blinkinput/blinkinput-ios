@@ -848,13 +848,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBModernViewfinderSubview.h",
-      "line": 39,
-      "symbol": "MBModernViewfinderSubview.-forceResetPositions",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/juraskrlec/Documents/Workspace/BlinkInput/DeepOCR/deep-ocr-demo/blinkocr-ios-framework/blinkinput-ios/MicroBlink.framework/Headers/MBMrtdDetector.h",
       "line": 23,
       "symbol": "MBMrtdDetector.-init",
