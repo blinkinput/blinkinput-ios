@@ -29,7 +29,7 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         
         /** Create recognizer collection */
         let recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, andRecognizerCollection: recognizerCollection, andDelegate: self)
+        let overlayVC = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
         weak var recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
