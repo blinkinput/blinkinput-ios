@@ -44,11 +44,9 @@ class ViewController: UIViewController {
         let recognizerList : Array = [self.blinkInputRecognizer!]
         let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
         
-        /** Add recognizer collection to barcode settings */
-        settings.uiSettings.recognizerCollection = recognizerCollection
-        
         /** Create your overlay view controller */
-       self.customOverlayVC = CustomOverlay.initFromStoryboardWith(settings: settings, delegate: self)
+        self.customOverlayVC = CustomOverlay.initFromStoryboardWith(self)
+        self.customOverlayVC?.reconfigureRecognizers(recognizerCollection)
         
         /** Create recognizer view controller with wanted overlay view controller */
         let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: self.customOverlayVC!)
@@ -59,17 +57,12 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: MBCustomOverlayViewControllerDelegate {
+extension ViewController: MBCustomOverlayDelegate {
     
-    func customOverlayViewControllerDidTapClose(customOverlay: CustomOverlay) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func customOverlayViewControllerDidFinishScanning(_ customOverlay: CustomOverlay, state: MBRecognizerResultState) {
-        
+    func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBRecognizerResultState) {
         if (state == MBRecognizerResultState.valid) {
             DispatchQueue.main.async {
-                self.customOverlayVC?.resultTextView.text = self.rawOcrParser?.result.rawText
+                self.customOverlayVC?.resultTextView.text = self.rawOcrParser?.result.rawText;
             }
         }
     }
