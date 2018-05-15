@@ -16,10 +16,6 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
     var parserGroupProcessor: MBParserGroupProcessor?
     var blinkInputRecognizer: MBBlinkInputRecognizer?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func didTapScan(_ sender: AnyObject) {
         
         let settings = MBBarcodeOverlaySettings()
@@ -36,7 +32,6 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         present(recognizerRunnerViewController!, animated: true, completion: nil)
     }
-    
     
     // MARK: MBBarcodeOverlayViewControllerDelegate delegate
     
