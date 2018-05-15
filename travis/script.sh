@@ -1,29 +1,15 @@
 #!/bin/sh
 set -e
 
-xcodebuild -project Samples/BlinkOCR-sample/BlinkOCR-sample.xcodeproj \
-	-scheme BlinkOCR-sample \
+xcodebuild -project Samples/BlinkInput-sample/BlinkInput-sample.xcodeproj \
+	-scheme BlinkInput-sample \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/BlinkOCR-sample/BlinkOCR-sample.xcodeproj \
-	-scheme BlinkOCR-sample \
-	-configuration Release \
-	-sdk iphonesimulator \
-	ONLY_ACTIVE_ARCH=NO \
- 	clean build
-
-xcodebuild -project Samples/Receipt-sample/Receipt-sample.xcodeproj \
-	-scheme Receipt-sample \
-	-configuration Debug \
-	-sdk iphonesimulator \
-	ONLY_ACTIVE_ARCH=NO \
- 	clean build
-
-xcodebuild -project Samples/Receipt-sample/Receipt-sample.xcodeproj \
-	-scheme Receipt-sample \
+xcodebuild -project Samples/BlinkInput-sample/BlinkInput-sample.xcodeproj \
+	-scheme BlinkInput-sample \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
