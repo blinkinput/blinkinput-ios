@@ -21,11 +21,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setupRecognizerRunner()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func openImagePicker(_ sender: Any) {
         
         let imagePicker = UIImagePickerController()

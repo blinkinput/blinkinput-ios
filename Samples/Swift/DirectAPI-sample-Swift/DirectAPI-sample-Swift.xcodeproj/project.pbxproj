@@ -103,11 +103,11 @@
 				A207A4CA20A4866D002AEDB0 /* License */,
 				A207A4A220A485DF002AEDB0 /* AppDelegate.swift */,
 				A207A4A420A485DF002AEDB0 /* ViewController.swift */,
+				A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */,
 				A207A4A620A485DF002AEDB0 /* Main.storyboard */,
 				A207A4A920A485E0002AEDB0 /* Assets.xcassets */,
 				A207A4AB20A485E0002AEDB0 /* LaunchScreen.storyboard */,
 				A207A4AE20A485E0002AEDB0 /* Info.plist */,
-				A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */,
 			);
 			path = "DirectAPI-sample-Swift";
 			sourceTree = "<group>";
