@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGE-OW-IZW">
-                                <rect key="frame" x="143.5" y="315.5" width="87" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="132.5" y="312" width="109" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Start scan"/>
                                 <connections>
                                     <action selector="startScanTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eB-5X-2Nx"/>
