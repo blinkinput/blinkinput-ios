@@ -207,11 +207,14 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         parserGroupProcessor = MBParserGroupProcessor(parsers: [rawParser!])
         blinkInputRecognizer = MBBlinkInputRecognizer(processors: [parserGroupProcessor!])
         
-        /** Create recognizer collection */
-        settings.uiSettings.recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, andDelegate: self)
+        let recognizerList = [self.blinkInputRecognizer!]
+        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
         
-        var recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
+        /** Create your overlay view controller */
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        
+        /** Create recognizer view controller with wanted overlay view controller */
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         present(recognizerRunnerViewController!, animated: true, completion: nil)
@@ -245,9 +248,9 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
     self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
 
     /** Create recognizer collection */
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
     
-    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
     UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
     
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -270,7 +273,7 @@ func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewControlle
     if state == MBRecognizerResultState.valid {
 
         // first, pause scanning until we process all the results
-        barcodeOverlayViewController.recognizerRunnerViewController.pauseScanning()
+        barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
 
         DispatchQueue.main.async(execute: {() -> Void in
             // All UI interaction needs to be done on main thread
@@ -329,7 +332,7 @@ Within BlinkInput SDK there are several built-in overlay view controllers and sc
 Swift
 ```swift
 /** Create your overlay view controller */
-let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self)
+let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, recognizerCollection: recognizerCollection, delegate: self)
 
 /** Create recognizer view controller with wanted overlay view controller */
 let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
@@ -340,7 +343,7 @@ self.present(recognizerRunneViewController, animated: true, completion: nil)
 
 Objective-C
 ```objective-c
-MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection: recognizerCollection delegate:self];
 UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
 /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -351,6 +354,8 @@ As you can see, when initializing [`MBBarcodeOverlayViewController`](http://blin
 
 
 ## <a name="recognizerRunnerViewController"></a> Custom overlay view controller
+
+Please check our pdf417-sample-Swift for custom implementation of overlay view controller.
 
 Overlay View Controller is an abstract class for all overlay views.
 
@@ -368,33 +373,24 @@ For example, the scanning technology usually gives results very fast after the u
 
 ### 1. Initialization
  
-To use your custom overlay with MicroBlink's camera view, you must first subclass [`MBOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBOverlayViewController.html) and implement the overlay behaviour conforming wanted protocols.
+To use your custom overlay with MicroBlink's camera view, you must first subclass [`MBCustomOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBCustomOverlayViewController.html) and implement the overlay behaviour conforming wanted protocols.
 
 ### 2. Protocols
 
 There are five [`MBRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBRecognizerRunnerViewController.html) protocols and one overlay protocol [`MBOverlayViewControllerInterface`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBOverlayViewControllerInterface.html).
 
 Five `RecognizerRunnerView` protocols are:
-- [`MBScanningRecognizerRunnerViewDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBScanningRecognizerRunnerViewDelegate.html)
-- [`MBDetectionRecognizerRunnerViewDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDetectionRecognizerRunnerViewDelegate.html)
-- [`MBOcrRecognizerRunnerViewDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBOcrRecognizerRunnerViewDelegate.html)
-- [`MBDebugRecognizerRunnerViewDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDebugRecognizerRunnerViewDelegate.html)
+- [`MBScanningRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBScanningRecognizerRunnerViewControllerDelegate.html)
+- [`MBDetectionRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html)
+- [`MBOcrRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBOcrRecognizerRunnerViewControllerDelegate.html)
+- [`MBDebugRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDebugRecognizerRunnerViewControllerDelegate.html)
 - [`MBRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBRecognizerRunnerViewControllerDelegate.html)
-
-Conforming protocol `MBOverlayViewControllerInterface`[`MBOverlayViewControllerInterface`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBOverlayViewControllerInterface.html) is necessary beacuse user needs to return implementation of [`MBSettings`](http://blinkinput.github.io/blinkinput-ios/Classes/MBSettings.html) and protocol conform needs to be done in custom `init` method of overlay view controller:
-
-Swift and Objective-C
-```swift
-self.overlayViewControllerInterfaceDelegate = self
-```
 
 In `viewDidLoad`, other protocol conformation can be done and it's done on `recognizerRunnerViewController` property of [`MBOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBOverlayViewController.html), for example:
 
 Swift and Objective-C
 ```swift
-self.recognizerRunnerViewController.scanningRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.metadataDelegates.detectionRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.recognizerRunnerViewControllerDelegate = self;
+self.scanningRecognizerRunnerViewControllerDelegate = self;
 ```
 
 ### 3. Overlay subviews
@@ -454,26 +450,28 @@ To initiate the scanning process, first decide where in your app you want to add
 Swift
 ```swift
 func setupRecognizerRunner() {
-    var recognizers = [AnyHashable]() as? [MBRecognizer]
-    blinkInputRecognizer = MBBlinkInputRecognizer()
-    recognizers.append(blinkInputRecognizer)
-    let settings = MBSettings()
-    settings.uiSettings.recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-    recognizerRunner = MBRecognizerRunner(settings: settings as? [String : Any] ?? [String : Any]())
-    recognizerRunner.scanningRecognizerRunnerDelegate = self
+    var recognizers = [MBRecognizer]()
+    pdf417Recognizer = MBPdf417Recognizer()
+    recognizers.append(pdf417Recognizer!)
+    let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
+    recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+    recognizerRunner?.scanningRecognizerRunnerDelegate = self
 }
 
 func processImageRunner(_ originalImage: UIImage) {
-    let image = MBImage(uiImage: originalImage)
-    image.cameraFrame = true
-    image.orientation = PPProcessingOrientationLeft
-    let _serialQueue = DispatchQueue(label: "com.microblink.DirectAPI-sample")
+    var image: MBImage? = nil
+    if let anImage = originalImage {
+        image = MBImage(uiImage: anImage)
+    }
+    image?.cameraFrame = true
+    image?.orientation = MBProcessingOrientation.left
+    let _serialQueue = DispatchQueue(label: "com.microblink.DirectAPI-sample-swift")
     _serialQueue.async(execute: {() -> Void in
-        self.recognizerRunner.processImage(image)
+        self.recognizerRunner?.processImage(image!)
     })
 }
 
-func recognizerRunnerDidFinish(_ recognizerRunner: MBRecognizerRunner, state: MBRecognizerResultState) {
+func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
     if blinkInputRecognizer.result.resultState == MBRecognizerResultStateValid {
         // Handle result
     }
@@ -489,17 +487,16 @@ Objective-C
     
     [recognizers addObject:self.blinkInputRecognizer];
     
-    MBSettings* settings = [[MBSettings alloc] init];
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
     
-    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
+    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithRecognizerCollection:recognizerCollection];
     self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
 }
 
 - (void)processImageRunner:(UIImage *)originalImage {
     MBImage *image = [MBImage imageWithUIImage:originalImage];
     image.cameraFrame = YES;
-    image.orientation = PPProcessingOrientationLeft;
+    image.orientation = MBProcessingOrientationLeft;
     dispatch_queue_t _serialQueue = dispatch_queue_create("com.microblink.DirectAPI-sample", DISPATCH_QUEUE_SERIAL);
     dispatch_async(_serialQueue, ^{
         [self.recognizerRunner processImage:image];
@@ -507,7 +504,7 @@ Objective-C
 }
 
 #pragma mark - MBScanningRecognizerRunnerDelegate
-- (void)recognizerRunnerDidFinish:(MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state {
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state {
     if (self.blinkInputRecognizer.result.resultState == MBRecognizerResultStateValid) {
         // Handle result
     }
@@ -600,7 +597,44 @@ The [`MBDetectorRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/
 
 `Field by field` feature is designed for scanning small text fields in the predefined order by using [`MBFieldByFieldViewController`](#fieldByFieldUiComponent).
 
-// UPDATE NEEDED
+To start with Field by Field feature all you need to do is to initialize MBFieldByFieldOverlayViewController and conform to [`MBFieldByFieldOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBFieldByFieldOverlayViewControllerDelegate.html) (this example follows our FieldByField-sample-Swift project):
+
+```swift
+    // Create MBFieldByFieldOverlaySettings
+    let settings = MBFieldByFieldOverlaySettings(scanElements: MBGenericPreset.getPreset()!)
+    
+    // Create field by field VC
+    let fieldByFieldVC = MBFieldByFieldOverlayViewController(settings: settings, delegate: self)
+    
+    // Create scanning VC
+    let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: fieldByFieldVC)
+    
+    // Present VC
+    self.present(recognizerRunnerViewController!, animated: true, completion: nil)
+
+
+    func field(_ fieldByFieldOverlayViewController: MBFieldByFieldOverlayViewController, didFinishScanningWith scanElements: [MBScanElement]) {
+    	// Whatever you want to do with results
+    }
+```
+
+```objective-c
+	// Create MBFieldByFieldOverlaySettings
+	MBFieldByFieldOverlaySettings *settings = [[MBFieldByFieldOverlaySettings alloc] initWithScanElements: [MBGenericPreset getPreset] initWithSettings: settings, delegate: self];
+
+	// Create field by field VC
+	MBFieldByFieldOverlayViewController *fieldByFieldOverlayViewController =  [[MBFieldByFieldOverlayViewController alloc] initWithSettings:settings delegate: self];
+
+	// Create scanning VC
+	UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:fieldByFieldOverlayViewController];
+
+	/ Present VC
+	[self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
+
+	- (void)fieldByFieldOverlayViewController:(MBFieldByFieldOverlayViewController *)fieldByFieldOverlayViewController didFinishScanningWithElements:(NSArray<MBScanElement *> *)scanElements {
+		// Whatever you want to do with results
+	}
+```
 
 
 # <a name="processorsAndParsers"></a> `MBProcessor` and `MBParser`
