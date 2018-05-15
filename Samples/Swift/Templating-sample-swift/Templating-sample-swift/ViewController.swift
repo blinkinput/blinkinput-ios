@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         recognizers.append((croatianIDFrontTemplateRecognizer?.detectorRecognizer)!)
         /** Create recognizer collection */
         let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, andRecognizerCollection: recognizerCollection, andDelegate: self)
+        let overlayVC = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
         self.present(recognizerRunnerViewController!, animated: true, completion: nil)
