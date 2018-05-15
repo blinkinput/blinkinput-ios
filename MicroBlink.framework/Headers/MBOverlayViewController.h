@@ -38,38 +38,6 @@ MB_INIT_UNAVAILABLE
  */
 @property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> *recognizerRunnerViewController;
 
-
-/**
- * If YES, default camera overlay will display Cancel button.
- * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to NO.
- *
- * Default: YES.
- */
-@property (nonatomic, assign) BOOL showCloseButton;
-
-/**
- * If YES, default camera overlay will display Torch button.
- * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to NO.
- *
- * Default: YES.
- */
-@property (nonatomic, assign) BOOL showTorchButton;
-
-/**
- * If YES, default camera overlay will display Status bar.
- * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to YES.
- *
- * Default: NO.
- */
-@property (nonatomic, assign) BOOL showStatusBar;
-
-/**
- * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
- *
- * Default: NO.
- */
-@property (nonatomic, assign) BOOL autorotateOverlay;
-
 /**
  * Label which is displayed on screen when camera is paused, but still exists on the screen.
  *

@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "MBParser.h"
 #import "MBMicroBlinkInitialization.h"
+#import "MBImage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -92,6 +93,13 @@ MB_INIT_UNAVAILABLE;
  * Height of scanning region used in UI. Values are between 0.0 and 1.0 where 1.0 is whole screen height and 0.5 is half height.
  */
 @property(nonatomic) float scanningRegionHeight;
+
+/**
+ * Image of the scanned element.
+ *
+ * Images will NOT be outputted unless outputSuccessfulImages is enabled on MBFieldByFieldOverlaySettings.
+ */
+@property(nonatomic) MBImage *successfulScanImage;
 
 @end
 

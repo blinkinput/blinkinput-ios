@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/MBBarcodeOverlayViewController.h</key>
 		<data>
-		h4uqCtj0eOHLh2UOzP+wRHx26Ro=
+		VtXw687EeXh7BWEj71wP8dhPxPk=
 		</data>
 		<key>Headers/MBBarcodeOverlayViewControllerDelegate.h</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Headers/MBBaseOverlaySettings.h</key>
 		<data>
-		nPAC+uaw6qYykR594qtKD3VDv/I=
+		E9zGTmK4w0LaGjL3d0zfUY3YxL4=
 		</data>
 		<key>Headers/MBBaseOverlayViewController.h</key>
 		<data>
-		ze9rPVnQUQ3M1P7s1JdKQvDoMFM=
+		oO19CN5viDYBWodk3lia1LVZpx0=
 		</data>
 		<key>Headers/MBBlinkInputRecognizer.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/MBCustomOverlayViewController.h</key>
 		<data>
-		W94Wiq67NY3TTC4K34X/Kf5ZKh0=
+		57ovNFJm2EjMnQWIRcjC2ibjzp0=
 		</data>
 		<key>Headers/MBDPIBasedDewarpPolicy.h</key>
 		<data>
@@ -186,11 +186,11 @@
 		</data>
 		<key>Headers/MBFieldByFieldOverlaySettings.h</key>
 		<data>
-		x3FDcFYeJZnTprkPjqey8Q09WNw=
+		jJoSxR0YzMaKMr7vK02/B+a0qcE=
 		</data>
 		<key>Headers/MBFieldByFieldOverlayViewController.h</key>
 		<data>
-		HUuA8gsLm6AanVcwlFNT3jBwpWY=
+		RAK+GbRb2br0a11j9IGZ09ZxIGE=
 		</data>
 		<key>Headers/MBFixedDewarpPolicy.h</key>
 		<data>
@@ -322,7 +322,7 @@
 		</data>
 		<key>Headers/MBOverlayViewController.h</key>
 		<data>
-		KnOW+b/91L1nu7VOCfYBBqUlRgc=
+		PK4Y1SJDzTMUwh6ksy6lIzPCp9o=
 		</data>
 		<key>Headers/MBParser.h</key>
 		<data>
@@ -442,7 +442,7 @@
 		</data>
 		<key>Headers/MBScanElement.h</key>
 		<data>
-		LeeEpwM+15b0A5qZQyjsku8UXCs=
+		vGf2vNqcAZM2LV72Q30/1F16Jjs=
 		</data>
 		<key>Headers/MBScanningRecognizerRunnerDelegate.h</key>
 		<data>
@@ -534,7 +534,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Wg6+/5neppTrxgIGHGpq0dbb4n4=
+		Tqnzol38Vr+kPjWzm4BJ/AQVQYQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -580,11 +580,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			h4uqCtj0eOHLh2UOzP+wRHx26Ro=
+			VtXw687EeXh7BWEj71wP8dhPxPk=
 			</data>
 			<key>hash2</key>
 			<data>
-			PZmceizHo7atnDMp+8VdpsD/ym7bkdsQ6wrGhBroDDU=
+			vL78V0vfiA7xghnr+Bj0fpJxKo9r8L9CcgF1jT68cXQ=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeOverlayViewControllerDelegate.h</key>
@@ -657,22 +657,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nPAC+uaw6qYykR594qtKD3VDv/I=
+			E9zGTmK4w0LaGjL3d0zfUY3YxL4=
 			</data>
 			<key>hash2</key>
 			<data>
-			AcG5onIcH1v8izPkJ7ElgYTPDRz9HBtN0sgBrrnhM9k=
+			P5PSjS5ANrZDMCkD5OmV7B7LnhYapGoWp5K6L4l7Yds=
 			</data>
 		</dict>
 		<key>Headers/MBBaseOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ze9rPVnQUQ3M1P7s1JdKQvDoMFM=
+			oO19CN5viDYBWodk3lia1LVZpx0=
 			</data>
 			<key>hash2</key>
 			<data>
-			1RvaiFQfq1jo92fD0a6l7IkZjeXzhtJidclJgNInEtM=
+			vwgU3xw+iEpXPSKk3ikG43NIhopSpMTB1OpBWqOMP/g=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkInputRecognizer.h</key>
@@ -712,11 +712,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W94Wiq67NY3TTC4K34X/Kf5ZKh0=
+			57ovNFJm2EjMnQWIRcjC2ibjzp0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5NrI7UI+6clHvmKxb1M2SWgi2d1D3xveDgTNC7PXC40=
+			nTGMFnt2decFRI15sko/M6lycm7JYKUwbz+2TnWkrIE=
 			</data>
 		</dict>
 		<key>Headers/MBDPIBasedDewarpPolicy.h</key>
@@ -1042,22 +1042,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x3FDcFYeJZnTprkPjqey8Q09WNw=
+			jJoSxR0YzMaKMr7vK02/B+a0qcE=
 			</data>
 			<key>hash2</key>
 			<data>
-			vp2UKoqQ5N7vI3iNM9+xw/hmF0kZJJeMeUEn2CTL/S8=
+			cCk/HpcQTGGoKne3wNHJhJPNdhkjv+xAvsB7r6mADSA=
 			</data>
 		</dict>
 		<key>Headers/MBFieldByFieldOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HUuA8gsLm6AanVcwlFNT3jBwpWY=
+			RAK+GbRb2br0a11j9IGZ09ZxIGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			fMc/fp99/f90LN+jOkl15thPRLa7vEB15i84uXy4gTo=
+			Ip5jnrRr2HWz8ay7ywR+idrdIbTQPis6wwMcMbouegs=
 			</data>
 		</dict>
 		<key>Headers/MBFixedDewarpPolicy.h</key>
@@ -1416,11 +1416,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KnOW+b/91L1nu7VOCfYBBqUlRgc=
+			PK4Y1SJDzTMUwh6ksy6lIzPCp9o=
 			</data>
 			<key>hash2</key>
 			<data>
-			AZxYh92y0bEjyFJ8SCCg5c/x8YXGg6XjML1P7Co/LSI=
+			KHKoPeIjk1i5F+LrzxeFJbGlBM/4jG5evhstUAj1Ai4=
 			</data>
 		</dict>
 		<key>Headers/MBParser.h</key>
@@ -1746,11 +1746,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LeeEpwM+15b0A5qZQyjsku8UXCs=
+			vGf2vNqcAZM2LV72Q30/1F16Jjs=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jfl7FLDssUnQ/85ttL7EhJD8pPyK2W1BRh6DjKtNDFI=
+			kur7JYhk8zAkda3/hm7s7v0sVbpe3e0XKs+SD710dXE=
 			</data>
 		</dict>
 		<key>Headers/MBScanningRecognizerRunnerDelegate.h</key>

@@ -20,11 +20,6 @@ MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBBarcodeOverlayViewController : MBBaseOverlayViewController
 
 /**
- * Supported orientations mask
- */
-@property (nonatomic, assign) UIInterfaceOrientationMask hudMask;
-
-/**
  * Common settings
  */
 @property (nonatomic, strong, readonly) MBBarcodeOverlaySettings *settings;
@@ -43,7 +38,7 @@ MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
  *
  *  @return initialized overlayViewController
  */
-- (instancetype)initWithSettings:(MBBarcodeOverlaySettings *)settings andRecognizerCollection:(MBRecognizerCollection *)recognizerCollection andDelegate:(nonnull id<MBBarcodeOverlayViewControllerDelegate>)delegate;
+- (instancetype)initWithSettings:(MBBarcodeOverlaySettings *)settings recognizerCollection:(MBRecognizerCollection *)recognizerCollection delegate:(nonnull id<MBBarcodeOverlayViewControllerDelegate>)delegate;
 
 @end
 

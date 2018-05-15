@@ -26,7 +26,7 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBCustomOverlayViewController : MBOverlayViewController
 
 @property (nonatomic, readonly, strong) MBRecognizerCollection *recognizerCollection;
-@property (nonatomic, readonly, strong) MBBaseOverlaySettings *settings;
+@property (nonatomic, readonly, strong) MBCameraSettings *cameraSettings;
 @property (nonatomic, strong) MBRecognizerRunnerViewControllerMetadataDelegates *metadataDelegates;
 @property (nonatomic, weak) id<MBScanningRecognizerRunnerViewControllerDelegate> scanningRecognizerRunnerViewControllerDelegate;
 @property (nonatomic, weak) id<MBRecognizerRunnerViewControllerDelegate> recognizerRunnerViewControllerDelegate;
@@ -38,11 +38,42 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  */
 - (instancetype)init;
 
-- (instancetype)initWithRecognizerCollection:(MBRecognizerCollection *)recognizerCollection overlaySettings:(MBBaseOverlaySettings *)overlaySettings NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRecognizerCollection:(MBRecognizerCollection *)recognizerCollection cameraSettings:(MBCameraSettings *)cameraSettings NS_DESIGNATED_INITIALIZER;
+
+/**
+ * Scanning region
+ * Defines a portion of the screen in which the scanning will be performed.
+ * Given as a CGRect with unit coordinating system:
+ *
+ * @example CGRectMake(0.2f, 0.5f, 0.4f, 0.3f) defines a portion of the screen which starts at
+ *   20% from the left border
+ *   50% from the top
+ *   covers 40% of screen width
+ *   and 30% of screen heeight
+ */
+@property (nonatomic) CGRect scanningRegion;
+
+/**
+ * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
+ *
+ * Default: NO.
+ */
+@property (nonatomic, assign) BOOL autorotateOverlay;
+
+/**
+ * If YES, default camera overlay will display Status bar.
+ * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to YES.
+ *
+ * Default: NO.
+ */
+@property (nonatomic, assign) BOOL showStatusBar;
+
+/**
+ * Default: UIInterfaceOrientationMaskPortrait
+ */
+@property (nonatomic, assign) NSUInteger supportedOrientations;
 
 - (void)reconfigureRecognizers:(MBRecognizerCollection *)recognizerCollection;
-
-- (void)applySettings:(MBBaseOverlaySettings *)settings;
 
 @end
 

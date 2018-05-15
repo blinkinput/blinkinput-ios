@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Settings class containing UI information
  */
-MB_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBFieldByFieldOverlaySettings : MBOverlaySettings
 
 /**
@@ -40,7 +40,7 @@ MB_INIT_UNAVAILABLE;
  *
  * Default: NO
  */
-@property (nonatomic) BOOL outputSuccesfulImages;
+@property (nonatomic) BOOL outputSuccessfulImages;
 
 /**
  * Number of times same parse result needs to be outputted to be considered valid

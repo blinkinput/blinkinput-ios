@@ -16,17 +16,24 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBBaseOverlaySettings : MBOverlaySettings
 
 /**
- * Scanning region
- * Defines a portion of the screen in which the scanning will be performed.
- * Given as a CGRect with unit coordinating system:
+ * If YES, Overlay View Controller will be autorotated independently of ScanningViewController.
  *
- * @example CGRectMake(0.2f, 0.5f, 0.4f, 0.3f) defines a portion of the screen which starts at
- *   20% from the left border
- *   50% from the top
- *   covers 40% of screen width
- *   and 30% of screen heeight
+ * Default: NO.
  */
-@property (nonatomic) CGRect scanningRegion;
+@property (nonatomic, assign) BOOL autorotateOverlay;
+
+/**
+ * If YES, default camera overlay will display Status bar.
+ * Usually, if camera is displayed inside Navigation View Controler, this is reasonable to set to YES.
+ *
+ * Default: NO.
+ */
+@property (nonatomic, assign) BOOL showStatusBar;
+
+/**
+ * Default: UIInterfaceOrientationMaskPortrait
+ */
+@property (nonatomic, assign) NSUInteger supportedOrientations;
 
 /**
  * Full path to the sound file which is played when the valid result is scanned.
@@ -34,6 +41,16 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  * Default: `[bundle pathForResource:@"PPbeep" ofType:@"wav"];
  */
 @property (nonatomic, strong, nullable) NSString *soundFilePath;
+
+/**
+ * Default: YES.
+ */
+@property (nonatomic, assign) BOOL displayCancelButton;
+
+/**
+ * Default: YES.
+ */
+@property (nonatomic, assign) BOOL displayTorchButton;
 
 @end
 

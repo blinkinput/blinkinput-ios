@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  * View Controller responsible for view hierarchy for Form OCR scannning.
  * This view hierarchy is added as an overlay to Camera preview
  */
-MB_CLASS_AVAILABLE_IOS(8.0)
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @interface MBFieldByFieldOverlayViewController : MBOverlayViewController
 
 /**

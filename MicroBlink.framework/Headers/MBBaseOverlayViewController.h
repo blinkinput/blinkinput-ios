@@ -18,17 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBBaseOverlayViewController : MBOverlayViewController
 
-/**
- * Button to cancel scanning/dismiss view.
- */
-@property (nonatomic, strong) UIButton *cancelButton;
-
-/**
- * Button for displaying flash.
- */
-@property (nonatomic, strong) UIButton *torchButton;
-
-
 @end
 
 NS_ASSUME_NONNULL_END
