@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
         
         /** Create your overlay view controller */
-        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, andRecognizerCollection: recognizerCollection, andDelegate: self)
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
         /** Create recognizer view controller with wanted overlay view controller */
         let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
