@@ -599,6 +599,7 @@ The [`MBDetectorRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/
 
 To start with Field by Field feature all you need to do is to initialize MBFieldByFieldOverlayViewController and conform to [`MBFieldByFieldOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBFieldByFieldOverlayViewControllerDelegate.html) (this example follows our FieldByField-sample-Swift project):
 
+Swift
 ```swift
     // Create MBFieldByFieldOverlaySettings
     let settings = MBFieldByFieldOverlaySettings(scanElements: MBGenericPreset.getPreset()!)
@@ -618,6 +619,7 @@ To start with Field by Field feature all you need to do is to initialize MBField
     }
 ```
 
+Objective-C
 ```objective-c
 	// Create MBFieldByFieldOverlaySettings
 	MBFieldByFieldOverlaySettings *settings = [[MBFieldByFieldOverlaySettings alloc] initWithScanElements: [MBGenericPreset getPreset] initWithSettings: settings, delegate: self];
