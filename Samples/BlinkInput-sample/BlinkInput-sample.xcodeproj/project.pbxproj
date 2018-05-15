@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		186226B61AB1B0A6002D71E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/en.strings; sourceTree = "<group>"; };
-		187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		187392031AA4B1060031D6C9 /* BlinkInput-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkInput-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		187392071AA4B1060031D6C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187392081AA4B1060031D6C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1873920A1AA4B1060031D6C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		187391FA1AA4B1060031D6C9 = {
 			isa = PBXGroup;
 			children = (
-				187392051AA4B1060031D6C9 /* BlinkOCR-sample */,
+				187392051AA4B1060031D6C9 /* BlinkInput-sample */,
 				189EA8DE1AADE7FE005732C3 /* Frameworks */,
 				187392041AA4B1060031D6C9 /* Products */,
 			);
@@ -96,12 +96,12 @@
 		187392041AA4B1060031D6C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */,
+				187392031AA4B1060031D6C9 /* BlinkInput-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		187392051AA4B1060031D6C9 /* BlinkOCR-sample */ = {
+		187392051AA4B1060031D6C9 /* BlinkInput-sample */ = {
 			isa = PBXGroup;
 			children = (
 				A2DA179C2074FC8000A59D11 /* License */,
@@ -114,7 +114,7 @@
 				187392151AA4B1070031D6C9 /* LaunchScreen.xib */,
 				187392061AA4B1060031D6C9 /* Supporting Files */,
 			);
-			path = "BlinkOCR-sample";
+			path = "BlinkInput-sample";
 			sourceTree = "<group>";
 		};
 		187392061AA4B1060031D6C9 /* Supporting Files */ = {
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		187392021AA4B1060031D6C9 /* BlinkOCR-sample */ = {
+		187392021AA4B1060031D6C9 /* BlinkInput-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkOCR-sample" */;
+			buildConfigurationList = 187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkInput-sample" */;
 			buildPhases = (
 				187391FF1AA4B1060031D6C9 /* Sources */,
 				187392001AA4B1060031D6C9 /* Frameworks */,
@@ -159,9 +159,9 @@
 			);
 			dependencies = (
 			);
-			name = "BlinkOCR-sample";
+			name = "BlinkInput-sample";
 			productName = "BlinkOCR-sample";
-			productReference = 187392031AA4B1060031D6C9 /* BlinkOCR-sample.app */;
+			productReference = 187392031AA4B1060031D6C9 /* BlinkInput-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +179,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkOCR-sample" */;
+			buildConfigurationList = 187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkInput-sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -192,7 +192,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				187392021AA4B1060031D6C9 /* BlinkOCR-sample */,
+				187392021AA4B1060031D6C9 /* BlinkInput-sample */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +283,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
@@ -337,7 +338,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
@@ -362,9 +363,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../../;
-				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
+				INFOPLIST_FILE = "BlinkInput-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,9 +376,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../../;
-				INFOPLIST_FILE = "BlinkOCR-sample/Info.plist";
+				INFOPLIST_FILE = "BlinkInput-sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +387,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkOCR-sample" */ = {
+		187391FE1AA4B1060031D6C9 /* Build configuration list for PBXProject "BlinkInput-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				187392241AA4B1070031D6C9 /* Debug */,
@@ -397,7 +396,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkOCR-sample" */ = {
+		187392261AA4B1070031D6C9 /* Build configuration list for PBXNativeTarget "BlinkInput-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				187392271AA4B1070031D6C9 /* Debug */,

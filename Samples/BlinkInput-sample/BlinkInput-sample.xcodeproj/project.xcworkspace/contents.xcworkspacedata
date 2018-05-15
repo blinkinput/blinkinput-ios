@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BlinkOCR-sample.xcodeproj">
+      location = "self:../BlinkInput-sample">
    </FileRef>
 </Workspace>

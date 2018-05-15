@@ -21,7 +21,7 @@
     
     /** First, set license key as soon as possible */
     // Valid until: 2018-10-06
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"blinkocr-license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"blinkinput-license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
     return YES;
 }
 

@@ -20,11 +20,6 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
-
 - (IBAction)didTapScan:(id)sender {
     
     MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
@@ -41,7 +36,6 @@
     
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
-
 }
 
 #pragma mark - MBBarcodeOverlayViewControllerDelegate
@@ -60,6 +54,9 @@
             
             NSLog(@"OCR results are:");
             NSLog(@"Raw ocr: %@", weakSelf.rawParser.result.rawText);
+
+            // Show result on the initial screen
+            self.labelResult.text = weakSelf.rawParser.result.rawText;
             
             MBOcrLayout* ocrLayout = weakSelf.parserGroupProcessor.result.ocrLayout;
             NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box));
