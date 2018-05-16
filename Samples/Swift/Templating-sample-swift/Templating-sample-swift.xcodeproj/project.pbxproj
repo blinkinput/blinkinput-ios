@@ -105,12 +105,12 @@
 				A207A49020A45D8A002AEDB0 /* License */,
 				A207A46820A45C7A002AEDB0 /* AppDelegate.swift */,
 				A207A46A20A45C7A002AEDB0 /* ViewController.swift */,
+				A207A49220A45E16002AEDB0 /* MBCroatianIDTemplateUtils.swift */,
+				A207A49420A47A67002AEDB0 /* MBCroatianIDFrontTemplateRecognizer.swift */,
 				A207A46C20A45C7A002AEDB0 /* Main.storyboard */,
 				A207A46F20A45C7C002AEDB0 /* Assets.xcassets */,
 				A207A47120A45C7C002AEDB0 /* LaunchScreen.storyboard */,
 				A207A47420A45C7C002AEDB0 /* Info.plist */,
-				A207A49220A45E16002AEDB0 /* MBCroatianIDTemplateUtils.swift */,
-				A207A49420A47A67002AEDB0 /* MBCroatianIDFrontTemplateRecognizer.swift */,
 			);
 			path = "Templating-sample-swift";
 			sourceTree = "<group>";
