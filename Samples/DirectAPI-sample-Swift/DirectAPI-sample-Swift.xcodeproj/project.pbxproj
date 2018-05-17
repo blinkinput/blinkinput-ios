@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184958E520AD8F4800F27C8D /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184958E320AD8F4800F27C8D /* MicroBlink.bundle */; };
+		184958E620AD8F4800F27C8D /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184958E420AD8F4800F27C8D /* MicroBlink.framework */; };
+		184958E720AD8F5600F27C8D /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 184958E420AD8F4800F27C8D /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A207A4A320A485DF002AEDB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4A220A485DF002AEDB0 /* AppDelegate.swift */; };
 		A207A4A520A485DF002AEDB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4A420A485DF002AEDB0 /* ViewController.swift */; };
 		A207A4A820A485DF002AEDB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A207A4A620A485DF002AEDB0 /* Main.storyboard */; };
@@ -19,9 +22,6 @@
 		A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BD20A4862D002AEDB0 /* libiconv.tbd */; };
 		A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BF20A48633002AEDB0 /* libc++.tbd */; };
 		A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4C120A4863E002AEDB0 /* libz.tbd */; };
-		A207A4C520A4864A002AEDB0 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A207A4C320A48649002AEDB0 /* MicroBlink.bundle */; };
-		A207A4C720A48650002AEDB0 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4C420A48649002AEDB0 /* MicroBlink.framework */; };
-		A207A4C820A48650002AEDB0 /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4C420A48649002AEDB0 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A207A4CB20A4866D002AEDB0 /* License in Resources */ = {isa = PBXBuildFile; fileRef = A207A4CA20A4866D002AEDB0 /* License */; };
 		A207A4CF20A49237002AEDB0 /* MBCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A207A4C820A48650002AEDB0 /* MicroBlink.framework in Embed Frameworks */,
+				184958E720AD8F5600F27C8D /* MicroBlink.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		184958E320AD8F4800F27C8D /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
+		184958E420AD8F4800F27C8D /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A207A49F20A485DF002AEDB0 /* DirectAPI-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DirectAPI-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A207A4A220A485DF002AEDB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A207A4A420A485DF002AEDB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		A207A4BD20A4862D002AEDB0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A207A4BF20A48633002AEDB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A207A4C120A4863E002AEDB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A207A4C320A48649002AEDB0 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../../MicroBlink.bundle; sourceTree = "<group>"; };
-		A207A4C420A48649002AEDB0 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../../MicroBlink.framework; sourceTree = "<group>"; };
 		A207A4CA20A4866D002AEDB0 /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,14 +66,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */,
-				A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */,
-				A207A4C720A48650002AEDB0 /* MicroBlink.framework in Frameworks */,
-				A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */,
+				184958E620AD8F4800F27C8D /* MicroBlink.framework in Frameworks */,
 				A207A4BC20A4861D002AEDB0 /* CoreMedia.framework in Frameworks */,
 				A207A4BA20A48616002AEDB0 /* AudioToolbox.framework in Frameworks */,
 				A207A4B820A4860F002AEDB0 /* AVFoundation.framework in Frameworks */,
 				A207A4B620A4860A002AEDB0 /* Accelerate.framework in Frameworks */,
+				A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */,
+				A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */,
+				A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,15 +115,15 @@
 		A207A4B420A4860A002AEDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A207A4C120A4863E002AEDB0 /* libz.tbd */,
-				A207A4BF20A48633002AEDB0 /* libc++.tbd */,
-				A207A4BD20A4862D002AEDB0 /* libiconv.tbd */,
-				A207A4C320A48649002AEDB0 /* MicroBlink.bundle */,
-				A207A4C420A48649002AEDB0 /* MicroBlink.framework */,
+				184958E320AD8F4800F27C8D /* MicroBlink.bundle */,
+				184958E420AD8F4800F27C8D /* MicroBlink.framework */,
 				A207A4BB20A4861C002AEDB0 /* CoreMedia.framework */,
 				A207A4B920A48616002AEDB0 /* AudioToolbox.framework */,
 				A207A4B720A4860F002AEDB0 /* AVFoundation.framework */,
 				A207A4B520A4860A002AEDB0 /* Accelerate.framework */,
+				A207A4C120A4863E002AEDB0 /* libz.tbd */,
+				A207A4BF20A48633002AEDB0 /* libc++.tbd */,
+				A207A4BD20A4862D002AEDB0 /* libiconv.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,11 +187,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184958E520AD8F4800F27C8D /* MicroBlink.bundle in Resources */,
 				A207A4AD20A485E0002AEDB0 /* LaunchScreen.storyboard in Resources */,
 				A207A4AA20A485E0002AEDB0 /* Assets.xcassets in Resources */,
 				A207A4A820A485DF002AEDB0 /* Main.storyboard in Resources */,
 				A207A4CB20A4866D002AEDB0 /* License in Resources */,
-				A207A4C520A4864A002AEDB0 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
-				FRAMEWORK_SEARCH_PATHS = ../../../;
+				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "DirectAPI-sample-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,7 +369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
-				FRAMEWORK_SEARCH_PATHS = ../../../;
+				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "DirectAPI-sample-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
