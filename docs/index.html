@@ -80,7 +80,7 @@
                 <a class="nav-group-task-link" href="Classes/MBBaseOverlaySettings.html">MBBaseOverlaySettings</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/MBBaseOverlayViewController.html">MBBaseOverlayViewController</a>
+                <a class="nav-group-task-link" href="Classes.html#/c:objc(cs)MBBaseOverlayViewController">MBBaseOverlayViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBBlinkInputRecognizer.html">MBBlinkInputRecognizer</a>
@@ -814,8 +814,8 @@
 
 <ul>
 <li><p>If you wish to use version v1.2.0 or above, you need to install <a href="https://git-lfs.github.com">Git Large File Storage</a> by running these comamnds:</p>
-<pre class="highlight shell"><code>brew <span class="nb">install </span>git-lfs
-git lfs <span class="nb">install</span>
+<pre class="highlight shell"><code>brew install git-lfs
+git lfs install
 </code></pre></li>
 <li><p><strong>Be sure to restart your console after installing Git LFS</strong></p></li>
 <li><p>Project dependencies to be managed by CocoaPods are specified in a file called <code>Podfile</code>. Create this file in the same directory as your Xcode project (<code>.xcodeproj</code>) file.</p></li>
@@ -828,7 +828,7 @@ git lfs <span class="nb">install</span>
 <ul>
 <li>Install the dependencies in your project:</li>
 </ul>
-<pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
+<pre class="highlight shell"><code><span class="gp">$ </span>pod install
 </code></pre>
 
 <ul>
@@ -846,8 +846,8 @@ git lfs <span class="nb">install</span>
 
 <ul>
 <li><p>If you wish to clone version v1.4.0 or above, you need to install <a href="https://git-lfs.github.com">Git Large File Storage</a> by running these comamnds:</p>
-<pre class="highlight shell"><code>brew <span class="nb">install </span>git-lfs
-git lfs <span class="nb">install</span>
+<pre class="highlight shell"><code>brew install git-lfs
+git lfs install
 </code></pre></li>
 <li><p><strong>Be sure to restart your console after installing Git LFS</strong></p></li>
 <li><p>To clone, run the following shell command:</p></li>
@@ -916,11 +916,14 @@ git lfs <span class="nb">install</span>
         <span class="n">parserGroupProcessor</span> <span class="o">=</span> <span class="kt">MBParserGroupProcessor</span><span class="p">(</span><span class="nv">parsers</span><span class="p">:</span> <span class="p">[</span><span class="n">rawParser</span><span class="o">!</span><span class="p">])</span>
         <span class="n">blinkInputRecognizer</span> <span class="o">=</span> <span class="kt">MBBlinkInputRecognizer</span><span class="p">(</span><span class="nv">processors</span><span class="p">:</span> <span class="p">[</span><span class="n">parserGroupProcessor</span><span class="o">!</span><span class="p">])</span>
 
-        <span class="cm">/** Create recognizer collection */</span>
-        <span class="n">settings</span><span class="o">.</span><span class="n">uiSettings</span><span class="o">.</span><span class="n">recognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="p">[</span><span class="n">blinkInputRecognizer</span><span class="o">!</span><span class="p">])</span>
-        <span class="k">let</span> <span class="nv">overlayVC</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">andDelegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">recognizerList</span> <span class="o">=</span> <span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="n">blinkInputRecognizer</span><span class="o">!</span><span class="p">]</span>
+        <span class="k">let</span> <span class="nv">recognizerCollection</span> <span class="p">:</span> <span class="kt">MBRecognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="n">recognizerList</span><span class="p">)</span>
 
-        <span class="k">var</span> <span class="nv">recognizerRunnerViewController</span><span class="p">:</span> <span class="p">(</span><span class="kt">UIViewController</span> <span class="o">&amp;</span> <span class="kt">MBRecognizerRunnerViewController</span><span class="p">)?</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">overlayVC</span><span class="p">)</span>
+        <span class="cm">/** Create your overlay view controller */</span>
+        <span class="k">let</span> <span class="nv">barcodeOverlayViewController</span> <span class="p">:</span> <span class="kt">MBBarcodeOverlayViewController</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">recognizerCollection</span><span class="p">:</span> <span class="n">recognizerCollection</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+
+        <span class="cm">/** Create recognizer view controller with wanted overlay view controller */</span>
+        <span class="k">let</span> <span class="nv">recognizerRunneViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">barcodeOverlayViewController</span><span class="p">)</span>
 
         <span class="cm">/** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */</span>
         <span class="nf">present</span><span class="p">(</span><span class="n">recognizerRunnerViewController</span><span class="o">!</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
@@ -951,9 +954,9 @@ git lfs <span class="nb">install</span>
     self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
 
     /** Create recognizer collection */
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
 
-    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
     UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -973,7 +976,7 @@ git lfs <span class="nb">install</span>
     <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="kt">MBRecognizerResultState</span><span class="o">.</span><span class="n">valid</span> <span class="p">{</span>
 
         <span class="c1">// first, pause scanning until we process all the results</span>
-        <span class="n">barcodeOverlayViewController</span><span class="o">.</span><span class="n">recognizerRunnerViewController</span><span class="o">.</span><span class="nf">pauseScanning</span><span class="p">()</span>
+        <span class="n">barcodeOverlayViewController</span><span class="o">.</span><span class="n">recognizerRunnerViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">pauseScanning</span><span class="p">()</span>
 
         <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">async</span><span class="p">(</span><span class="nv">execute</span><span class="p">:</span> <span class="p">{()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
             <span class="c1">// All UI interaction needs to be done on main thread</span>
@@ -1027,7 +1030,7 @@ git lfs <span class="nb">install</span>
 
 <p>Swift</p>
 <pre class="highlight swift"><code><span class="cm">/** Create your overlay view controller */</span>
-<span class="k">let</span> <span class="nv">barcodeOverlayViewController</span> <span class="p">:</span> <span class="kt">MBBarcodeOverlayViewController</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">barcodeSettings</span><span class="p">,</span> <span class="nv">andDelegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">barcodeOverlayViewController</span> <span class="p">:</span> <span class="kt">MBBarcodeOverlayViewController</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">barcodeSettings</span><span class="p">,</span> <span class="nv">recognizerCollection</span><span class="p">:</span> <span class="n">recognizerCollection</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 
 <span class="cm">/** Create recognizer view controller with wanted overlay view controller */</span>
 <span class="k">let</span> <span class="nv">recognizerRunneViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">barcodeOverlayViewController</span><span class="p">)</span>
@@ -1037,7 +1040,7 @@ git lfs <span class="nb">install</span>
 </code></pre>
 
 <p>Objective-C</p>
-<pre class="highlight plaintext"><code>MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+<pre class="highlight plaintext"><code>MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection: recognizerCollection delegate:self];
 UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
 /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -1046,6 +1049,8 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 
 <p>As you can see, when initializing <a href="http://blinkinput.github.io/blinkinput-ios/Classes/MBBarcodeOverlayViewController.html"><code><a href="Classes/MBBarcodeOverlayViewController.html">MBBarcodeOverlayViewController</a></code></a>, we are sending delegate property as <code>self</code>. To get results, we need to conform to <a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBBarcodeOverlayViewControllerDelegate.html"><code><a href="Protocols/MBBarcodeOverlayViewControllerDelegate.html">MBBarcodeOverlayViewControllerDelegate</a></code></a> protocol.</p>
 <h2 id='a-name-recognizerrunnerviewcontroller-a-custom-overlay-view-controller' class='heading'><a name="recognizerRunnerViewController"></a> Custom overlay view controller</h2>
+
+<p>Please check our pdf417-sample-Swift for custom implementation of overlay view controller.</p>
 
 <p>Overlay View Controller is an abstract class for all overlay views.</p>
 
@@ -1064,7 +1069,7 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 <p>For example, the scanning technology usually gives results very fast after the user places the device&rsquo;s camera in the expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user. The majority of time the user spends on positioning the device&rsquo;s camera correctly. That&rsquo;s just an example which demonstrates careful decision making behind default camera overlay view.</p>
 <h3 id='1-initialization' class='heading'>1. Initialization</h3>
 
-<p>To use your custom overlay with MicroBlink&rsquo;s camera view, you must first subclass <a href="http://blinkinput.github.io/blinkinput-ios/Classes/MBOverlayViewController.html"><code><a href="Classes/MBOverlayViewController.html">MBOverlayViewController</a></code></a> and implement the overlay behaviour conforming wanted protocols.</p>
+<p>To use your custom overlay with MicroBlink&rsquo;s camera view, you must first subclass <a href="http://blinkinput.github.io/blinkinput-ios/Classes/MBCustomOverlayViewController.html"><code><a href="Classes/MBCustomOverlayViewController.html">MBCustomOverlayViewController</a></code></a> and implement the overlay behaviour conforming wanted protocols.</p>
 <h3 id='2-protocols' class='heading'>2. Protocols</h3>
 
 <p>There are five <a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBRecognizerRunnerViewController.html"><code><a href="Protocols/MBRecognizerRunnerViewController.html">MBRecognizerRunnerViewController</a></code></a> protocols and one overlay protocol <a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBOverlayViewControllerInterface.html"><code>MBOverlayViewControllerInterface</code></a>.</p>
@@ -1072,25 +1077,17 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 <p>Five <code>RecognizerRunnerView</code> protocols are:</p>
 
 <ul>
-<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBScanningRecognizerRunnerViewDelegate.html"><code>MBScanningRecognizerRunnerViewDelegate</code></a></li>
-<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBDetectionRecognizerRunnerViewDelegate.html"><code>MBDetectionRecognizerRunnerViewDelegate</code></a></li>
-<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBOcrRecognizerRunnerViewDelegate.html"><code>MBOcrRecognizerRunnerViewDelegate</code></a></li>
-<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBDebugRecognizerRunnerViewDelegate.html"><code>MBDebugRecognizerRunnerViewDelegate</code></a></li>
+<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBScanningRecognizerRunnerViewControllerDelegate.html"><code><a href="Protocols/MBScanningRecognizerRunnerViewControllerDelegate.html">MBScanningRecognizerRunnerViewControllerDelegate</a></code></a></li>
+<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html"><code><a href="Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html">MBDetectionRecognizerRunnerViewControllerDelegate</a></code></a></li>
+<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBOcrRecognizerRunnerViewControllerDelegate.html"><code><a href="Protocols/MBOcrRecognizerRunnerViewControllerDelegate.html">MBOcrRecognizerRunnerViewControllerDelegate</a></code></a></li>
+<li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBDebugRecognizerRunnerViewControllerDelegate.html"><code><a href="Protocols/MBDebugRecognizerRunnerViewControllerDelegate.html">MBDebugRecognizerRunnerViewControllerDelegate</a></code></a></li>
 <li><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBRecognizerRunnerViewControllerDelegate.html"><code><a href="Protocols/MBRecognizerRunnerViewControllerDelegate.html">MBRecognizerRunnerViewControllerDelegate</a></code></a></li>
 </ul>
-
-<p>Conforming protocol <code>MBOverlayViewControllerInterface</code><a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBOverlayViewControllerInterface.html"><code>MBOverlayViewControllerInterface</code></a> is necessary beacuse user needs to return implementation of <a href="http://blinkinput.github.io/blinkinput-ios/Classes/MBSettings.html"><code>MBSettings</code></a> and protocol conform needs to be done in custom <code>init</code> method of overlay view controller:</p>
-
-<p>Swift and Objective-C</p>
-<pre class="highlight swift"><code><span class="k">self</span><span class="o">.</span><span class="n">overlayViewControllerInterfaceDelegate</span> <span class="o">=</span> <span class="k">self</span>
-</code></pre>
 
 <p>In <code>viewDidLoad</code>, other protocol conformation can be done and it&rsquo;s done on <code>recognizerRunnerViewController</code> property of <a href="http://blinkinput.github.io/blinkinput-ios/Classes/MBOverlayViewController.html"><code><a href="Classes/MBOverlayViewController.html">MBOverlayViewController</a></code></a>, for example:</p>
 
 <p>Swift and Objective-C</p>
-<pre class="highlight swift"><code><span class="k">self</span><span class="o">.</span><span class="n">recognizerRunnerViewController</span><span class="o">.</span><span class="n">scanningRecognizerRunnerViewDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="p">;</span>
-<span class="k">self</span><span class="o">.</span><span class="n">recognizerRunnerViewController</span><span class="o">.</span><span class="n">metadataDelegates</span><span class="o">.</span><span class="n">detectionRecognizerRunnerViewDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="p">;</span>
-<span class="k">self</span><span class="o">.</span><span class="n">recognizerRunnerViewController</span><span class="o">.</span><span class="n">recognizerRunnerViewControllerDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="p">;</span>
+<pre class="highlight swift"><code><span class="k">self</span><span class="o">.</span><span class="n">scanningRecognizerRunnerViewControllerDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="p">;</span>
 </code></pre>
 <h3 id='3-overlay-subviews' class='heading'>3. Overlay subviews</h3>
 
@@ -1146,26 +1143,28 @@ Developer can choose which protocol to conform:</p>
 
 <p>Swift</p>
 <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupRecognizerRunner</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">recognizers</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AnyHashable</span><span class="p">]()</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">MBRecognizer</span><span class="p">]</span>
-    <span class="n">blinkInputRecognizer</span> <span class="o">=</span> <span class="kt">MBBlinkInputRecognizer</span><span class="p">()</span>
-    <span class="n">recognizers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">blinkInputRecognizer</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">MBSettings</span><span class="p">()</span>
-    <span class="n">settings</span><span class="o">.</span><span class="n">uiSettings</span><span class="o">.</span><span class="n">recognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="n">recognizers</span><span class="p">)</span>
-    <span class="n">recognizerRunner</span> <span class="o">=</span> <span class="kt">MBRecognizerRunner</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">??</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]())</span>
-    <span class="n">recognizerRunner</span><span class="o">.</span><span class="n">scanningRecognizerRunnerDelegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="k">var</span> <span class="nv">recognizers</span> <span class="o">=</span> <span class="p">[</span><span class="kt">MBRecognizer</span><span class="p">]()</span>
+    <span class="n">pdf417Recognizer</span> <span class="o">=</span> <span class="kt">MBPdf417Recognizer</span><span class="p">()</span>
+    <span class="n">recognizers</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">pdf417Recognizer</span><span class="o">!</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">recognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="n">recognizers</span><span class="p">)</span>
+    <span class="n">recognizerRunner</span> <span class="o">=</span> <span class="kt">MBRecognizerRunner</span><span class="p">(</span><span class="nv">recognizerCollection</span><span class="p">:</span> <span class="n">recognizerCollection</span><span class="p">)</span>
+    <span class="n">recognizerRunner</span><span class="p">?</span><span class="o">.</span><span class="n">scanningRecognizerRunnerDelegate</span> <span class="o">=</span> <span class="k">self</span>
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">processImageRunner</span><span class="p">(</span><span class="n">_</span> <span class="nv">originalImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">MBImage</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">originalImage</span><span class="p">)</span>
-    <span class="n">image</span><span class="o">.</span><span class="n">cameraFrame</span> <span class="o">=</span> <span class="kc">true</span>
-    <span class="n">image</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="kt">PPProcessingOrientationLeft</span>
-    <span class="k">let</span> <span class="nv">_serialQueue</span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="s">"com.microblink.DirectAPI-sample"</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">MBImage</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">anImage</span> <span class="o">=</span> <span class="n">originalImage</span> <span class="p">{</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="kt">MBImage</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">anImage</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">image</span><span class="p">?</span><span class="o">.</span><span class="n">cameraFrame</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">image</span><span class="p">?</span><span class="o">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="kt">MBProcessingOrientation</span><span class="o">.</span><span class="n">left</span>
+    <span class="k">let</span> <span class="nv">_serialQueue</span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="s">"com.microblink.DirectAPI-sample-swift"</span><span class="p">)</span>
     <span class="n">_serialQueue</span><span class="o">.</span><span class="nf">async</span><span class="p">(</span><span class="nv">execute</span><span class="p">:</span> <span class="p">{()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="k">in</span>
-        <span class="k">self</span><span class="o">.</span><span class="n">recognizerRunner</span><span class="o">.</span><span class="nf">processImage</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">recognizerRunner</span><span class="p">?</span><span class="o">.</span><span class="nf">processImage</span><span class="p">(</span><span class="n">image</span><span class="o">!</span><span class="p">)</span>
     <span class="p">})</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">recognizerRunnerDidFinish</span><span class="p">(</span><span class="n">_</span> <span class="nv">recognizerRunner</span><span class="p">:</span> <span class="kt">MBRecognizerRunner</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MBRecognizerResultState</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">func</span> <span class="nf">recognizerRunner</span><span class="p">(</span><span class="n">_</span> <span class="nv">recognizerRunner</span><span class="p">:</span> <span class="kt">MBRecognizerRunner</span><span class="p">,</span> <span class="n">didFinishScanningWith</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MBRecognizerResultState</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="n">blinkInputRecognizer</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">resultState</span> <span class="o">==</span> <span class="kt">MBRecognizerResultStateValid</span> <span class="p">{</span>
         <span class="c1">// Handle result</span>
     <span class="p">}</span>
@@ -1180,17 +1179,16 @@ Developer can choose which protocol to conform:</p>
 
     [recognizers addObject:self.blinkInputRecognizer];
 
-    MBSettings* settings = [[MBSettings alloc] init];
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
 
-    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
+    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithRecognizerCollection:recognizerCollection];
     self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
 }
 
 - (void)processImageRunner:(UIImage *)originalImage {
     MBImage *image = [MBImage imageWithUIImage:originalImage];
     image.cameraFrame = YES;
-    image.orientation = PPProcessingOrientationLeft;
+    image.orientation = MBProcessingOrientationLeft;
     dispatch_queue_t _serialQueue = dispatch_queue_create("com.microblink.DirectAPI-sample", DISPATCH_QUEUE_SERIAL);
     dispatch_async(_serialQueue, ^{
         [self.recognizerRunner processImage:image];
@@ -1198,7 +1196,7 @@ Developer can choose which protocol to conform:</p>
 }
 
 #pragma mark - MBScanningRecognizerRunnerDelegate
-- (void)recognizerRunnerDidFinish:(MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state {
+- (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state {
     if (self.blinkInputRecognizer.result.resultState == MBRecognizerResultStateValid) {
         // Handle result
     }
@@ -1280,7 +1278,44 @@ Developer can choose which protocol to conform:</p>
 
 <p><code>Field by field</code> feature is designed for scanning small text fields in the predefined order by using <a href="#fieldByFieldUiComponent"><code>MBFieldByFieldViewController</code></a>.</p>
 
-<p>// UPDATE NEEDED</p>
+<p>To start with Field by Field feature all you need to do is to initialize MBFieldByFieldOverlayViewController and conform to <a href="http://blinkinput.github.io/blinkinput-ios/Protocols/MBFieldByFieldOverlayViewControllerDelegate.html"><code><a href="Protocols/MBFieldByFieldOverlayViewControllerDelegate.html">MBFieldByFieldOverlayViewControllerDelegate</a></code></a> (this example follows our FieldByField-sample-Swift project):</p>
+
+<p>Swift</p>
+<pre class="highlight swift"><code>    <span class="c1">// Create MBFieldByFieldOverlaySettings</span>
+    <span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">MBFieldByFieldOverlaySettings</span><span class="p">(</span><span class="nv">scanElements</span><span class="p">:</span> <span class="kt">MBGenericPreset</span><span class="o">.</span><span class="nf">getPreset</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+
+    <span class="c1">// Create field by field VC</span>
+    <span class="k">let</span> <span class="nv">fieldByFieldVC</span> <span class="o">=</span> <span class="kt">MBFieldByFieldOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+
+    <span class="c1">// Create scanning VC</span>
+    <span class="k">let</span> <span class="nv">recognizerRunnerViewController</span><span class="p">:</span> <span class="p">(</span><span class="kt">UIViewController</span> <span class="o">&amp;</span> <span class="kt">MBRecognizerRunnerViewController</span><span class="p">)?</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">fieldByFieldVC</span><span class="p">)</span>
+
+    <span class="c1">// Present VC</span>
+    <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">recognizerRunnerViewController</span><span class="o">!</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+
+
+    <span class="kd">func</span> <span class="nf">field</span><span class="p">(</span><span class="n">_</span> <span class="nv">fieldByFieldOverlayViewController</span><span class="p">:</span> <span class="kt">MBFieldByFieldOverlayViewController</span><span class="p">,</span> <span class="n">didFinishScanningWith</span> <span class="nv">scanElements</span><span class="p">:</span> <span class="p">[</span><span class="kt">MBScanElement</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// Whatever you want to do with results</span>
+    <span class="p">}</span>
+</code></pre>
+
+<p>Objective-C</p>
+<pre class="highlight plaintext"><code>    // Create MBFieldByFieldOverlaySettings
+    MBFieldByFieldOverlaySettings *settings = [[MBFieldByFieldOverlaySettings alloc] initWithScanElements: [MBGenericPreset getPreset] initWithSettings: settings, delegate: self];
+
+    // Create field by field VC
+    MBFieldByFieldOverlayViewController *fieldByFieldOverlayViewController =  [[MBFieldByFieldOverlayViewController alloc] initWithSettings:settings delegate: self];
+
+    // Create scanning VC
+    UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:fieldByFieldOverlayViewController];
+
+    / Present VC
+    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
+
+    - (void)fieldByFieldOverlayViewController:(MBFieldByFieldOverlayViewController *)fieldByFieldOverlayViewController didFinishScanningWithElements:(NSArray&lt;MBScanElement *&gt; *)scanElements {
+        // Whatever you want to do with results
+    }
+</code></pre>
 <h1 id='a-name-processorsandparsers-a-code-mbprocessor-code-and-code-mbparser-code' class='heading'><a name="processorsAndParsers"></a> <code><a href="Classes/MBProcessor.html">MBProcessor</a></code> and <code><a href="Classes/MBParser.html">MBParser</a></code></h1>
 
 <p>The <code>MBProcessors</code> and <code>MBParsers</code> are standard processing units within <em>BlinkInput</em> SDK used for data extraction from the input images. Unlike the <a href="#recognizerConcept"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a>, <code><a href="Classes/MBProcessor.html">MBProcessor</a></code> and <code><a href="Classes/MBParser.html">MBParser</a></code> are not stand-alone processing units. <code><a href="Classes/MBProcessor.html">MBProcessor</a></code> is always used within <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code> and <code><a href="Classes/MBParser.html">MBParser</a></code> is used within appropriate <code><a href="Classes/MBProcessor.html">MBProcessor</a></code> to extract data from the OCR result.</p>
@@ -1540,7 +1575,7 @@ If you are using Cocoapods, please be sure that you&rsquo;ve installed <code>git
 
 <span class="c"># This script loops through the frameworks embedded in the application and</span>
 <span class="c"># removes unused architectures.</span>
-find <span class="s2">"</span><span class="nv">$APP_PATH</span><span class="s2">"</span> <span class="nt">-name</span> <span class="s1">'*.framework'</span> <span class="nt">-type</span> d | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> FRAMEWORK
+find <span class="s2">"</span><span class="nv">$APP_PATH</span><span class="s2">"</span> -name <span class="s1">'*.framework'</span> -type d | <span class="k">while </span><span class="nb">read</span> -r FRAMEWORK
 <span class="k">do
 </span><span class="nv">FRAMEWORK_EXECUTABLE_NAME</span><span class="o">=</span><span class="k">$(</span>defaults <span class="nb">read</span> <span class="s2">"</span><span class="nv">$FRAMEWORK</span><span class="s2">/Info.plist"</span> CFBundleExecutable<span class="k">)</span>
 <span class="nv">FRAMEWORK_EXECUTABLE_PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$FRAMEWORK</span><span class="s2">/</span><span class="nv">$FRAMEWORK_EXECUTABLE_NAME</span><span class="s2">"</span>
@@ -1551,17 +1586,17 @@ find <span class="s2">"</span><span class="nv">$APP_PATH</span><span class="s2">
 <span class="k">for </span>ARCH <span class="k">in</span> <span class="nv">$ARCHS</span>
 <span class="k">do
 </span><span class="nb">echo</span> <span class="s2">"Extracting </span><span class="nv">$ARCH</span><span class="s2"> from </span><span class="nv">$FRAMEWORK_EXECUTABLE_NAME</span><span class="s2">"</span>
-lipo <span class="nt">-extract</span> <span class="s2">"</span><span class="nv">$ARCH</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span> <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-</span><span class="nv">$ARCH</span><span class="s2">"</span>
+lipo -extract <span class="s2">"</span><span class="nv">$ARCH</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span> -o <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-</span><span class="nv">$ARCH</span><span class="s2">"</span>
 EXTRACTED_ARCHS+<span class="o">=(</span><span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-</span><span class="nv">$ARCH</span><span class="s2">"</span><span class="o">)</span>
 <span class="k">done
 
 </span><span class="nb">echo</span> <span class="s2">"Merging extracted architectures: </span><span class="k">${</span><span class="nv">ARCHS</span><span class="k">}</span><span class="s2">"</span>
-lipo <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-merged"</span> <span class="nt">-create</span> <span class="s2">"</span><span class="k">${</span><span class="nv">EXTRACTED_ARCHS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
-<span class="nb">rm</span> <span class="s2">"</span><span class="k">${</span><span class="nv">EXTRACTED_ARCHS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+lipo -o <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-merged"</span> -create <span class="s2">"</span><span class="k">${</span><span class="nv">EXTRACTED_ARCHS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+rm <span class="s2">"</span><span class="k">${</span><span class="nv">EXTRACTED_ARCHS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
 
 <span class="nb">echo</span> <span class="s2">"Replacing original executable with thinned version"</span>
-<span class="nb">rm</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span>
-<span class="nb">mv</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-merged"</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span>
+rm <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span>
+mv <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">-merged"</span> <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><span class="s2">"</span>
 
 <span class="k">done</span>
 </code></pre>
@@ -1578,8 +1613,8 @@ lipo <span class="nt">-o</span> <span class="s2">"</span><span class="nv">$FRAME
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-05-15)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-05-17)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

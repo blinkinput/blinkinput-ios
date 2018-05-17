@@ -81,7 +81,7 @@
                 <a class="nav-group-task-link" href="../Classes/MBBaseOverlaySettings.html">MBBaseOverlaySettings</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/MBBaseOverlayViewController.html">MBBaseOverlayViewController</a>
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MBBaseOverlayViewController">MBBaseOverlayViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBBlinkInputRecognizer.html">MBBlinkInputRecognizer</a>
@@ -689,7 +689,7 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">MBBarcodeOverlayViewController</span> <span class="p">:</span> <span class="nc"><a href="../Classes/MBBaseOverlayViewController.html">MBBaseOverlayViewController</a></span></code></pre>
+<span class="k">@interface</span> <span class="nc">MBBarcodeOverlayViewController</span> <span class="p">:</span> <span class="nc"><a href="../Classes.html#/c:objc(cs)MBBaseOverlayViewController">MBBaseOverlayViewController</a></span></code></pre>
 
                 </div>
               </div>
@@ -702,38 +702,6 @@
           <div class="section-content">
             <div class="task-group">
               <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MBBarcodeOverlayViewController(py)hudMask"></a>
-                    <a name="//apple_ref/objc/Property/hudMask" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBBarcodeOverlayViewController(py)hudMask">hudMask</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Supported orientations mask</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">UIInterfaceOrientationMask</span> <span class="n">hudMask</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hudMask</span><span class="p">:</span> <span class="kt">UIInterfaceOrientationMask</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -798,9 +766,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBBarcodeOverlayViewController(im)initWithSettings:andRecognizerCollection:andDelegate:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithSettings:andRecognizerCollection:andDelegate:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBBarcodeOverlayViewController(im)initWithSettings:andRecognizerCollection:andDelegate:">-initWithSettings:andRecognizerCollection:andDelegate:</a>
+                    <a name="/c:objc(cs)MBBarcodeOverlayViewController(im)initWithSettings:recognizerCollection:delegate:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithSettings:recognizerCollection:delegate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBBarcodeOverlayViewController(im)initWithSettings:recognizerCollection:delegate:">-initWithSettings:recognizerCollection:delegate:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -816,9 +784,9 @@
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span>
-       <span class="nf">initWithSettings</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBBarcodeOverlaySettings.html">MBBarcodeOverlaySettings</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">settings</span>
-<span class="nf">andRecognizerCollection</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">recognizerCollection</span>
-            <span class="nf">andDelegate</span><span class="p">:</span>
+    <span class="nf">initWithSettings</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBBarcodeOverlaySettings.html">MBBarcodeOverlaySettings</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">settings</span>
+<span class="nf">recognizerCollection</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">recognizerCollection</span>
+            <span class="nf">delegate</span><span class="p">:</span>
                 <span class="p">(</span><span class="n">nonnull</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MBBarcodeOverlayViewControllerDelegate.html">MBBarcodeOverlayViewControllerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">delegate</span><span class="p">;</span></code></pre>
 
                         </div>
@@ -869,8 +837,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-05-15)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-05-17)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
