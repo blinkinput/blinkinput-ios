@@ -1,42 +1,42 @@
 #!/bin/sh
 set -e
 
-xcodebuild -project Samples/BlinkInput-sample/BlinkInput-sample.xcodeproj \
+xcodebuild -project Samples/BlinkInput-sample-ObjC/BlinkInput-sample.xcodeproj \
 	-scheme BlinkInput-sample \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/BlinkInput-sample/BlinkInput-sample.xcodeproj \
+xcodebuild -project Samples/BlinkInput-sample-ObjC/BlinkInput-sample.xcodeproj \
 	-scheme BlinkInput-sample \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
- xcodebuild -project Samples/Swift/BlinkOCR-sample-Swift/BlinkOCR-sample-Swift.xcodeproj \
-	-scheme BlinkOCR-sample-Swift \
+ xcodebuild -project Samples/BlinkInput-sample-Swift/BlinkInput-sample-Swift.xcodeproj \
+	-scheme BlinkInput-sample-Swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/BlinkOCR-sample-Swift/BlinkOCR-sample-Swift.xcodeproj \
-	-scheme BlinkOCR-sample-Swift \
+xcodebuild -project Samples/BlinkInput-sample-Swift/BlinkInput-sample-Swift.xcodeproj \
+	-scheme BlinkInput-sample-Swift \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
- xcodebuild -project Samples/Swift/DeepOCR-sample-Swift/DeepOCR-sample-Swift.xcodeproj \
+ xcodebuild -project Samples/DeepOCR-sample-Swift/DeepOCR-sample-Swift.xcodeproj \
 	-scheme DeepOCR-sample-Swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/DeepOCR-sample-Swift/DeepOCR-sample-Swift.xcodeproj \
+xcodebuild -project Samples/DeepOCR-sample-Swift/DeepOCR-sample-Swift.xcodeproj \
 	-scheme DeepOCR-sample-Swift \
 	-configuration Release \
 	-sdk iphonesimulator \
@@ -44,56 +44,56 @@ xcodebuild -project Samples/Swift/DeepOCR-sample-Swift/DeepOCR-sample-Swift.xcod
  	clean build 	
 
 
- xcodebuild -project Samples/Swift/DirectAPI-sample-Swift/DirectAPI-sample-Swift.xcodeproj \
+ xcodebuild -project Samples/DirectAPI-sample-Swift/DirectAPI-sample-Swift.xcodeproj \
 	-scheme DirectAPI-sample-Swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/DirectAPI-sample-Swift/DirectAPI-sample-Swift.xcodeproj \
+xcodebuild -project Samples/DirectAPI-sample-Swift/DirectAPI-sample-Swift.xcodeproj \
 	-scheme DirectAPI-sample-Swift \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build  	
 
- xcodebuild -project Samples/Swift/FieldByField-sample-Swift/FieldByField-sample-Swift.xcodeproj \
+ xcodebuild -project Samples/FieldByField-sample-Swift/FieldByField-sample-Swift.xcodeproj \
 	-scheme FieldByField-sample-Swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/FieldByField-sample-Swift/FieldByField-sample-Swift.xcodeproj \
+xcodebuild -project Samples/FieldByField-sample-Swift/FieldByField-sample-Swift.xcodeproj \
 	-scheme FieldByField-sample-Swift \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build   	
 
- xcodebuild -project Samples/Swift/pdf417-sample-Swift/pdf417-sample-Swift.xcodeproj \
+ xcodebuild -project Samples/pdf417-sample-Swift/pdf417-sample-Swift.xcodeproj \
 	-scheme pdf417-sample-Swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/pdf417-sample-Swift/pdf417-sample-Swift.xcodeproj \
+xcodebuild -project Samples/pdf417-sample-Swift/pdf417-sample-Swift.xcodeproj \
 	-scheme pdf417-sample-Swift \
 	-configuration Release \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build    	
 
- xcodebuild -project Samples/Swift/Templating-sample-swift/Templating-sample-swift.xcodeproj \
+ xcodebuild -project Samples/Templating-sample-swift/Templating-sample-swift.xcodeproj \
 	-scheme Templating-sample-swift \
 	-configuration Debug \
 	-sdk iphonesimulator \
 	ONLY_ACTIVE_ARCH=NO \
  	clean build
 
-xcodebuild -project Samples/Swift/Templating-sample-swift/Templating-sample-swift.xcodeproj \
+xcodebuild -project Samples/Templating-sample-swift/Templating-sample-swift.xcodeproj \
 	-scheme Templating-sample-swift \
 	-configuration Release \
 	-sdk iphonesimulator \
