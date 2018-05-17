@@ -20,4 +20,4 @@ DerivedData
 *.html
 *.zip
 
-
+.DS_Store

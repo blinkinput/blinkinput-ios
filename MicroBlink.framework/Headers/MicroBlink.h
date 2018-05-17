@@ -9,40 +9,54 @@
 #ifndef PhotoPayFramework_MicroBlink_h
 #define PhotoPayFramework_MicroBlink_h
 
-// Common API
-#import "PPViewControllerFactory.h"
-#import "PPApp.h"
+// Include Common API
+#import "MBMicroblinkApp.h"
+#import "MBViewControllerFactory.h"
+#import "MBMicroblinkSDK.h"
+#import "MBException.h"
+
+// Settings
+#import "MBCameraSettings.h"
+
+// Delegates
+#import "MBRecognizerRunnerViewControllerMetadataDelegates.h"
+#import "MBRecognizerRunnerViewControllerDelegate.h"
+#import "MBScanningRecognizerRunnerViewControllerDelegate.h"
+
+// Overlay delegates
+#import "MBBarcodeOverlayViewControllerDelegate.h"
+
+#import "MBRecognizerRunner.h"
+#import "MBRecognizerRunnerMetadataDelegates.h"
+#import "MBScanningRecognizerRunnerDelegate.h"
+
+// Frame Grabbers
+#import "MBFrameGrabberRecognizer.h"
+#import "MBSuccessFrameGrabberRecognizer.h"
+#import "MBSuccessFrameGrabberRecognizerResult.h"
 
 /*  UI  */
 // Overlays
-#import "PPModernBaseOverlayViewController.h"
-#import "PPBarcodeOverlayViewController.h"
-#import "PPBaseBarcodeOverlayViewController.h"
-#import "PPFieldOfViewOverlayViewController.h"
-#import "PPIDCardOverlayViewController.h"
-#import "PPModernOverlayViewController.h"
-#import "PPOcrLineOverlayViewController.h"
-#import "PPSegmentScanOverlayViewController.h"
-#import "PPTemplatingOverlayViewController.h"
-#import "PPTapToFocusOverlaySubview.h"
+#import "MBBarcodeOverlayViewController.h"
+#import "MBBarcodeOverlaySettings.h"
 
-// Permission denied view controller
-#import "PPPermissionDeniedViewController.h"
+#import "MBFieldByFieldOverlayViewController.h"
+
+#import "MBCustomOverlayViewController.h"
+
+#import "MBBaseOcrOverlaySettings.h"
+#import "MBDocumentOverlaySettings.h"
 
 // Overlay subviews
-#import "PPModernOcrResultOverlaySubview.h"
-#import "PPModernViewfinderOverlaySubview.h"
-#import "PPOcrResultOverlaySubview.h"
-#import "PPBlurredFieldOfViewOverlaySubview.h"
-#import "PPDotsOverlaySubview.h"
-#import "PPFieldOfViewOverlaySubview.h"
-#import "PPModernToastOverlaySubview.h"
-#import "PPOcrLineOverlaySubview.h"
-#import "PPToastOverlaySubview.h"
-#import "PPViewfinderOverlaySubview.h"
+#import "MBDotsSubview.h"
+#import "MBDotsResultSubview.h"
+#import "MBModernViewfinderSubview.h"
+#import "MBTapToFocusSubview.h"
+#import "MBOcrResultSubview.h"
+#import "MBResultSubview.h"
+#import "MBOcrLayoutSubview.h"
 
 // Recognizers
 #import "PPBlinkInputRecognizers.h"
-
 
 #endif

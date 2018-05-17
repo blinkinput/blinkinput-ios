@@ -1,6 +1,0 @@
-IndentWidth: 4
-TabWidth: 4
-BreakBeforeBraces: Attach
-PointerBindsToType: false
-ColumnLimit: 160
-MaxEmptyLinesToKeep: 2
