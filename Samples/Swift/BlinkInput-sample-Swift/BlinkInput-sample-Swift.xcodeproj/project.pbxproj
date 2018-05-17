@@ -41,7 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		310E45961C20612300B546BD /* BlinkOCR-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkOCR-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		310E45961C20612300B546BD /* BlinkInput-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlinkInput-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		310E45991C20612300B546BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		310E459E1C20612300B546BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		310E45A01C20612300B546BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		310E458D1C20612300B546BD = {
 			isa = PBXGroup;
 			children = (
-				310E45981C20612300B546BD /* BlinkOCR-sample-Swift */,
+				310E45981C20612300B546BD /* BlinkInput-sample-Swift */,
 				310E45AB1C2063F300B546BD /* Frameworks */,
 				310E45971C20612300B546BD /* Products */,
 			);
@@ -93,12 +93,12 @@
 		310E45971C20612300B546BD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				310E45961C20612300B546BD /* BlinkOCR-sample-Swift.app */,
+				310E45961C20612300B546BD /* BlinkInput-sample-Swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		310E45981C20612300B546BD /* BlinkOCR-sample-Swift */ = {
+		310E45981C20612300B546BD /* BlinkInput-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
 				A2DA179E2074FFB900A59D11 /* License */,
@@ -109,7 +109,7 @@
 				310E45A21C20612300B546BD /* LaunchScreen.storyboard */,
 				310E45A51C20612300B546BD /* Info.plist */,
 			);
-			path = "BlinkOCR-sample-Swift";
+			path = "BlinkInput-sample-Swift";
 			sourceTree = "<group>";
 		};
 		310E45AB1C2063F300B546BD /* Frameworks */ = {
@@ -132,9 +132,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		310E45951C20612300B546BD /* BlinkOCR-sample-Swift */ = {
+		310E45951C20612300B546BD /* BlinkInput-sample-Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 310E45A81C20612300B546BD /* Build configuration list for PBXNativeTarget "BlinkOCR-sample-Swift" */;
+			buildConfigurationList = 310E45A81C20612300B546BD /* Build configuration list for PBXNativeTarget "BlinkInput-sample-Swift" */;
 			buildPhases = (
 				310E45921C20612300B546BD /* Sources */,
 				310E45931C20612300B546BD /* Frameworks */,
@@ -145,9 +145,9 @@
 			);
 			dependencies = (
 			);
-			name = "BlinkOCR-sample-Swift";
+			name = "BlinkInput-sample-Swift";
 			productName = "BlinkOCR-sample-Swift";
-			productReference = 310E45961C20612300B546BD /* BlinkOCR-sample-Swift.app */;
+			productReference = 310E45961C20612300B546BD /* BlinkInput-sample-Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -167,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 310E45911C20612300B546BD /* Build configuration list for PBXProject "BlinkOCR-sample-Swift" */;
+			buildConfigurationList = 310E45911C20612300B546BD /* Build configuration list for PBXProject "BlinkInput-sample-Swift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -180,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				310E45951C20612300B546BD /* BlinkOCR-sample-Swift */,
+				310E45951C20612300B546BD /* BlinkInput-sample-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -345,10 +345,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "BlinkOCR-sample-Swift/Info.plist";
+				INFOPLIST_FILE = "BlinkInput-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.BlinkOCR-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.BlinkInput-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -362,10 +362,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "BlinkOCR-sample-Swift/Info.plist";
+				INFOPLIST_FILE = "BlinkInput-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.BlinkOCR-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.BlinkInput-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -375,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		310E45911C20612300B546BD /* Build configuration list for PBXProject "BlinkOCR-sample-Swift" */ = {
+		310E45911C20612300B546BD /* Build configuration list for PBXProject "BlinkInput-sample-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				310E45A61C20612300B546BD /* Debug */,
@@ -384,7 +384,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		310E45A81C20612300B546BD /* Build configuration list for PBXNativeTarget "BlinkOCR-sample-Swift" */ = {
+		310E45A81C20612300B546BD /* Build configuration list for PBXNativeTarget "BlinkInput-sample-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				310E45A91C20612300B546BD /* Debug */,
