@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Valid until: 2018-10-08
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("pdf417-swift-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
+        MBMicroblinkSDK.sharedInstance().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
     }
     
     @IBAction func didTapCustomUI(_ sender: Any) {

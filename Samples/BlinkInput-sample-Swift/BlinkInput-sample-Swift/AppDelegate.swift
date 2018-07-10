@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Valid until: 2018-10-06
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("blinkinput-swift-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
+        MBMicroblinkSDK.sharedInstance().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
         return true
     }
 
