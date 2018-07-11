@@ -23,8 +23,8 @@
 		A207A44C20A441F9002AEDB0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A44B20A441F9002AEDB0 /* libiconv.tbd */; };
 		A207A44E20A44207002AEDB0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A44D20A44206002AEDB0 /* libc++.tbd */; };
 		A207A45020A44211002AEDB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A44F20A44211002AEDB0 /* libz.tbd */; };
-		A207A45920A442E7002AEDB0 /* License in Resources */ = {isa = PBXBuildFile; fileRef = A207A45820A442E7002AEDB0 /* License */; };
 		A207A45B20A4467B002AEDB0 /* MBGenericPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A45A20A4467B002AEDB0 /* MBGenericPreset.swift */; };
+		B403EE8420F4D38400EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE8320F4D38400EE5235 /* license.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,8 +59,8 @@
 		A207A44B20A441F9002AEDB0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A207A44D20A44206002AEDB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A207A44F20A44211002AEDB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A207A45820A442E7002AEDB0 /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A207A45A20A4467B002AEDB0 /* MBGenericPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBGenericPreset.swift; sourceTree = "<group>"; };
+		B403EE8320F4D38400EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 		A207A42D20A44199002AEDB0 /* FieldByField-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				A207A45820A442E7002AEDB0 /* License */,
+				B403EE8220F4D38400EE5235 /* License */,
 				A207A42E20A44199002AEDB0 /* AppDelegate.swift */,
 				A207A43020A44199002AEDB0 /* ViewController.swift */,
 				A207A43220A44199002AEDB0 /* Main.storyboard */,
@@ -130,6 +130,14 @@
 				A207A44B20A441F9002AEDB0 /* libiconv.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B403EE8220F4D38400EE5235 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				B403EE8320F4D38400EE5235 /* license.txt */,
+			);
+			path = License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +203,7 @@
 				A207A43920A4419A002AEDB0 /* LaunchScreen.storyboard in Resources */,
 				A207A43620A4419A002AEDB0 /* Assets.xcassets in Resources */,
 				A207A43420A44199002AEDB0 /* Main.storyboard in Resources */,
-				A207A45920A442E7002AEDB0 /* License in Resources */,
+				B403EE8420F4D38400EE5235 /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.FieldByField-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,7 +387,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.FieldByField-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -24,7 +24,7 @@
 		A24E0999207B63CC000AF21B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E0998207B63CC000AF21B /* libc++.tbd */; };
 		A24E099B207B63D4000AF21B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A24E099A207B63D4000AF21B /* libiconv.tbd */; };
 		A24E09A4207B662F000AF21B /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24E09A3207B662F000AF21B /* CustomOverlay.swift */; };
-		A268208E207B6D2900F57667 /* License in Resources */ = {isa = PBXBuildFile; fileRef = A268208D207B6D2900F57667 /* License */; };
+		B403EE7E20F4D1DD00EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE7D20F4D1DD00EE5235 /* license.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,7 +60,7 @@
 		A24E0998207B63CC000AF21B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A24E099A207B63D4000AF21B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A24E09A3207B662F000AF21B /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
-		A268208D207B6D2900F57667 /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
+		B403EE7D20F4D1DD00EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 		A24E0978207B6348000AF21B /* DeepOCR-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				A268208D207B6D2900F57667 /* License */,
+				B403EE7C20F4D1DD00EE5235 /* License */,
 				A24E0979207B6348000AF21B /* AppDelegate.swift */,
 				A24E097B207B6348000AF21B /* ViewController.swift */,
 				A24E09A3207B662F000AF21B /* CustomOverlay.swift */,
@@ -130,6 +130,14 @@
 				A24E0996207B63BC000AF21B /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B403EE7C20F4D1DD00EE5235 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				B403EE7D20F4D1DD00EE5235 /* license.txt */,
+			);
+			path = License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,11 +199,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B403EE7E20F4D1DD00EE5235 /* license.txt in Resources */,
 				184958E020AD8EBC00F27C8D /* MicroBlink.bundle in Resources */,
 				A24E0984207B634A000AF21B /* LaunchScreen.storyboard in Resources */,
 				A24E0981207B634A000AF21B /* Assets.xcassets in Resources */,
 				A24E097F207B6348000AF21B /* Main.storyboard in Resources */,
-				A268208E207B6D2900F57667 /* License in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.DeepOCR-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -381,7 +389,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.DeepOCR-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
