@@ -20,8 +20,6 @@ BlinkInput SDK is a state-of-the-art OCR module for mobile devices. It's OCR tec
 
 BlinkInput is a part of family of SDKs developed by [MicroBlink](http://www.microblink.com) for optical text recognition, barcode scanning, ID document scanning and many others. 
 
-BlinkInput powers [PhotoMath app](https://photomath.net/en/) where it's used to [recognize mathematic expressions](https://vimeo.com/109405701) in real time.
-
 # Table of contents
 
 * [Requirements](#user-content-requirements)
