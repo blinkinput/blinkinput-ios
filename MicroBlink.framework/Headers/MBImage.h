@@ -3,12 +3,12 @@
 //  BlinkIdFramework
 //
 //  Created by Dino on 25/02/16.
-//  Copyright © 2016 MicroBlink Ltd. All rights reserved.
+//  Copyright © 2016 Microblink Ltd. All rights reserved.
 //
 
 #import "Foundation/Foundation.h"
 #import "CoreMedia/CoreMedia.h"
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -86,9 +86,14 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 + (instancetype)imageWithUIImage:(UIImage *)image;
 
 /**
- * Creates PPImage around CVImageBufferRef.
+ * Creates MBImage around CVImageBufferRef.
  */
 + (instancetype)imageWithCmSampleBuffer:(CMSampleBufferRef)buffer;
+
+/**
+ * Creates MBImage around CVPixelBufferRef.
+ */
++ (instancetype)imageWithCvPixelBuffer:(CVPixelBufferRef)buffer;
 
 @end
 

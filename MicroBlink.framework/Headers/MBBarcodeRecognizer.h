@@ -1,16 +1,16 @@
 //
 //  MBBarcodeRecognizer.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 28/11/2017.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBBarcodeRecognizerResult.h"
-#import "MBMicroBlinkInitialization.h"
+#import "MBMicroblinkInitialization.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +33,7 @@ MB_INIT
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanAztec;
+@property (nonatomic, assign) BOOL scanAztecCode;
 
 /**
  * Set this to YES to scan Code 128 1D barcodes
@@ -61,42 +61,42 @@ MB_INIT
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanEAN13;
+@property (nonatomic, assign) BOOL scanEan13;
 
 /**
  * Set this to YES to scan EAN8 barcodes
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanEAN8;
+@property (nonatomic, assign) BOOL scanEan8;
 
 /**
  * Set this to YES to scan ITF barcodes
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanITF;
+@property (nonatomic, assign) BOOL scanItf;
 
 /**
  * Set this to YES to scan QR barcodes
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanQR;
+@property (nonatomic, assign) BOOL scanQrCode;
 
 /**
  * Set this to YES to scan UPCA barcodes
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanUPCA;
+@property (nonatomic, assign) BOOL scanUpca;
 
 /**
  * Set this to YES to scan UPCE barcodes
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL scanUPCE;
+@property (nonatomic, assign) BOOL scanUpce;
 
 /**
  * Set this to YES to scan Pdf417 barcodes
@@ -108,10 +108,9 @@ MB_INIT
 /**
  * Set this to YES to allow slower, but better image processing.
  *
- * Defailt: YES
- *
+ * Default: YES
  */
-@property (nonatomic, assign) BOOL useSlowerThoroughScan;
+@property (nonatomic, assign) BOOL slowerThoroughScan;
 
 /**
 * Allow enabling the autodetection of image scale when scanning barcodes.
@@ -120,12 +119,16 @@ MB_INIT
 * resolution images but slows down the recognition process.
 *
 * NOTE: This setting is applied only for Code39 and Code128 barcode scanning.
+*
+ * Default: YES
 */
 @property (nonatomic, assign) BOOL autoScaleDetection;
 
 /**
 * Enable reading code39 barcode contents as extended data. For more information about code39
 * extended data (a.k.a. full ASCII mode), see https://en.wikipedia.org/wiki/Code_39#Full_ASCII_Code_39
+*
+* Default: NO
 */
 @property (nonatomic, assign) BOOL readCode39AsExtendedData;
 
@@ -156,7 +159,7 @@ MB_INIT
  *
  * Default: NO
  */
-@property (nonatomic, assign) BOOL allowNullQuietZone;
+@property (nonatomic, assign) BOOL nullQuietZoneAllowed;
 
 @end
 

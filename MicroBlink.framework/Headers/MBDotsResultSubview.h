@@ -3,12 +3,11 @@
 //  PhotoPayFramework
 //
 //  Created by Marko Mihovilić on 05/09/14.
-//  Copyright (c) 2014 MicroBlink Ltd. All rights reserved.
+//  Copyright (c) 2014 Microblink Ltd. All rights reserved.
 //
 
 #import "MBSubview.h"
 #import "MBPointDetectorSubview.h"
-#import "MBOcrLayoutSubview.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Overlay subview presenting status of OCR detection. Dots are displayed over locations of detected characters.
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
-@interface MBDotsResultSubview : MBSubview <MBPointDetectorSubview, MBOcrLayoutSubview>
+@interface MBDotsResultSubview : MBSubview <MBPointDetectorSubview>
 
 /**
  * Foreground color of dots.

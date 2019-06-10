@@ -1,12 +1,12 @@
 //
 //  MBSuccessFrameGrabberRecognizer.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 22/12/2017.
 //
 
 #import <Foundation/Foundation.h>
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBSuccessFrameGrabberRecognizerResult.h"
 
@@ -26,6 +26,10 @@ MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
  */
 @property (nonatomic, strong, readonly) MBSuccessFrameGrabberRecognizerResult *result;
 
+/**
+ * Slave recognizer that is wrapped with SuccessFrameGrabber
+ */
+@property (nonatomic, strong, readonly) MBRecognizer *slaveRecognizer;
 
 @end
 

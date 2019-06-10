@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,24 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 MB_CLASS_AVAILABLE_IOS(8.0)
 @interface MBBaseOcrEngineOptions : NSObject
-
-/**
- * Minimal height of the line of text given in pixels. All chars smaller than this value will be ignored.
- *
- * Setting the minimal line height can reduce the noise in OCR results.
- *
- * Default: 10
- */
-@property (nonatomic, assign) NSUInteger minimalLineHeight;
-
-/**
- * Maximal height of the line of text given in pixels.
- *
- * Setting the maximal line height can reduce the noise in OCR results.
- *
- * Default: 200
- */
-@property (nonatomic, assign) NSUInteger maximalLineHeight;
 
 /**
  * Maximal chars expected on the image.

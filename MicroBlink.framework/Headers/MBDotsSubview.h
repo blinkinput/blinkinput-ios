@@ -3,7 +3,7 @@
 //  BarcodeFramework
 //
 //  Created by Jura on 06/06/14.
-//  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
+//  Copyright (c) 2015 Microblink Ltd. All rights reserved.
 //
 
 #import "MBSubview.h"
@@ -37,9 +37,11 @@ MB_CLASS_AVAILABLE_IOS(8.0)
 /**
  Initializes the layer
  */
-- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame;
 
-- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(NSCoder *)aDecoder;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

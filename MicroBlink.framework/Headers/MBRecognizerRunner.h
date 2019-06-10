@@ -1,16 +1,17 @@
 //
 //  MBRecognizerRunnerView.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 20/12/2017.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizerRunnerMetadataDelegates.h"
 #import "MBScanningRecognizerRunnerDelegate.h"
 #import "MBImageProcessingRecognizerRunnerDelegate.h"
+#import "MBStringProcessingRecognizerRunnerDelegate.h"
 
 @class MBCoordinator;
 @class MBImage;
@@ -28,6 +29,7 @@ MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
 @property (nonatomic, strong, nonnull, readonly) MBRecognizerRunnerMetadataDelegates *metadataDelegates;
 @property (nonatomic, weak) id<MBScanningRecognizerRunnerDelegate> scanningRecognizerRunnerDelegate;
 @property (nonatomic, weak, nullable) id<MBImageProcessingRecognizerRunnerDelegate> imageProcessingRecognizerRunnerDelegate;
+@property (nonatomic, weak, nullable) id<MBStringProcessingRecognizerRunnerDelegate> stringProcessingRecognizerRunnerDelegate;
 
 @property (nonatomic, nullable) MBCoordinator *coordinator;
 
@@ -50,11 +52,21 @@ MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
  * Processes a MBImage object synchronously using current settings.
  * Since this method is synchronous, calling it from a main thread will switch the call to alternate thread internally and output a warning.
  *
- * Results are passed a delegate object given upon a creation of PPCoordinator.
+ * Results are passed a delegate object given upon a creation of MBCoordinator.
  *
  *  @param image            image for processing
  */
 - (void)processImage:(MBImage *)image;
+
+/**
+ * Processes a NSString object synchronously using current settings.
+ * Since this method is synchronous, calling it from a main thread will switch the call to alternate thread internally and output a warning.
+ *
+ * Results are passed a delegate object given upon a creation of MBCoordinator.
+ *
+ *  @param string            string for processing
+ */
+- (void)processString:(NSString *)string;
 
 /**
  * Method which is used to apply MBSettings object given by currentSettings property

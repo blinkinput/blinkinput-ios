@@ -1,13 +1,12 @@
 //
-//  PPBlinkInputRecognizers.h
-//  BlinkOcrFramework
+//  Microblink.h
+//  MicroblinkFramework
 //
-//  Created by Dino on 27/09/16.
-//  Copyright © 2016 MicroBlink Ltd. All rights reserved.
+//  Created by Dino Gustin on 06/06/18.
+//  Copyright (c) 2012 Microblink Ltd. All rights reserved.
 //
 
-#ifndef PPBlinkInputRecognizers_h
-#define PPBlinkInputRecognizers_h
+#import "MBBarcodeEntities.h"
 
 /** MRTD Detector*/
 #import "MBMrtdDetector.h"
@@ -48,6 +47,10 @@
 // Date
 #import "MBDateParser.h"
 #import "MBDateParserResult.h"
+
+// VIN
+#import "MBVinRecognizer.h"
+#import "MBVinRecognizerResult.h"
 
 // Raw
 #import "MBRawParser.h"
@@ -93,8 +96,3 @@
 // Native result
 #import "MBNativeResult.h"
 #import "MBDateResult.h"
-
-// Use all recognizers from BlinkBarcode
-#import "PPBlinkBarcodeRecognizers.h"
-
-#endif /* PPBlinkInputRecognizers_h */
