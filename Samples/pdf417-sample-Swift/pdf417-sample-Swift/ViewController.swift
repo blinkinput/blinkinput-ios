@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         /** Create barcode recognizer */
         self.barcodeRecognizer = MBBarcodeRecognizer()
-        self.barcodeRecognizer?.scanQR = true
+        self.barcodeRecognizer?.scanQrCode = true
         
         self.pdf417Recognizer = MBPdf417Recognizer()
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
         /** Create barcode recognizer */
         self.barcodeRecognizer = MBBarcodeRecognizer()
-        self.barcodeRecognizer?.scanQR = true
+        self.barcodeRecognizer?.scanQrCode = true
         
         self.pdf417Recognizer = MBPdf417Recognizer()
         
@@ -84,22 +84,22 @@ extension ViewController: MBBarcodeOverlayViewControllerDelegate {
             title = "QR Code"
             
             // Save the string representation of the code
-            message = self.barcodeRecognizer!.result.stringData()
+            message = self.barcodeRecognizer!.result.stringData!
         }
         else if (self.pdf417Recognizer!.result.resultState == MBRecognizerResultState.valid) {
             title = "PDF417"
             
             // Save the string representation of the code
-            message = self.pdf417Recognizer!.result.stringData()
+            message = self.pdf417Recognizer!.result.stringData!
         }
         
         /** Needs to be called on main thread beacuse everything prior is on background thread */
         DispatchQueue.main.async {
             // present the alert view with scanned results
             
-            let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+            let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
             
-            let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+            let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default,
                                                              handler: { (action) -> Void in
                                                                 self.dismiss(animated: true, completion: nil)
             })

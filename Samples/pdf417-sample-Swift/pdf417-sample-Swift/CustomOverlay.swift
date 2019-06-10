@@ -35,19 +35,19 @@ class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerVi
                         if recognizer is MBBarcodeRecognizer {
                             let barcodeRecognizer = recognizer as? MBBarcodeRecognizer
                             title = "QR Code"
-                            message = (barcodeRecognizer?.result.stringData())!
+                            message = (barcodeRecognizer?.result.stringData)!
                         }
                         else if recognizer is MBPdf417Recognizer {
                             let pdf417Recognizer = recognizer as? MBPdf417Recognizer
                             title = "PDF417"
-                            message = (pdf417Recognizer?.result.stringData())!
+                            message = (pdf417Recognizer?.result.stringData)!
                         }
                     }
                 }
                 
-                let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
                 
-                let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default,
                                                                  handler: { (action) -> Void in
                                                                     self.dismiss(animated: true, completion: nil)
                 })
