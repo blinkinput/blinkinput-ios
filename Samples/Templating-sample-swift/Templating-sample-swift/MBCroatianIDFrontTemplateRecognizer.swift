@@ -132,7 +132,6 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         citizenshipParser?.endWithWhitespace = true
         citizenshipParser?.startWithWhitespace = true
         oldDocumentNumberParser = MBRegexParser(regex: "\\d{9}")
-        oldDocumentNumberParser?.ocrEngineOptions.minimalLineHeight = 35
         neDocumentNumberParser = oldDocumentNumberParser?.copy() as? MBRegexParser
         
         dateOfBirthParser = MBDateParser()

@@ -1,3 +1,11 @@
+### Transition to 4.1.0
+
+- renamed MicroBlink.framework to Microblink.framework
+
+- renamed MicroBlink.bundle to Microblink.bundle
+
+- `isScanningUnsupportedForCameraType:` is now class method of `MBMicroblinkSDK`
+
 ### Transition to 2.3.0
 
 - Since Microblink.framework is a dynamic framework, you also need to **add it to embedded binaries section in General settings of your target.**

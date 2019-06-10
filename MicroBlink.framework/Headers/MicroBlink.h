@@ -56,7 +56,7 @@
 #import "MBResultSubview.h"
 #import "MBOcrLayoutSubview.h"
 
-// Recognizers
-#import "PPBlinkInputRecognizers.h"
+#import "MBEntities.h"
+#import "MBUIComponents.h"
 
 #endif

@@ -1,13 +1,13 @@
 //
-//  PPMicroBlinkDefines.h
+//  PPMicroblinkDefines.h
 //  BlinkIdFramework
 //
 //  Created by Jura on 04/01/16.
-//  Copyright © 2016 MicroBlink Ltd. All rights reserved.
+//  Copyright © 2016 Microblink Ltd. All rights reserved.
 //
 
-#ifndef PPMicroBlinkDefines_h
-#define PPMicroBlinkDefines_h
+#ifndef PPMicroblinkDefines_h
+#define PPMicroblinkDefines_h
 
 /**
  * Define your macros for accessing localization tables.
@@ -22,16 +22,26 @@
 #ifndef MB_LOCALIZED
 // note - this might return nil if frameworkBundle is nil!
 #define MB_LOCALIZED(key)                                                                                   \
-    NSLocalizedStringWithDefaultValue(key, [[MBMicroblinkApp instance] language], [[MBMicroblinkApp instance] resourcesBundle], \
-                                      MB_LOCALIZED_DEFAULT_STRING(key), nil)
+NSLocalizedStringWithDefaultValue(key, [[MBMicroblinkApp instance] language], [[MBMicroblinkApp instance] resourcesBundle], \
+MB_LOCALIZED_DEFAULT_STRING(key), nil)
 #endif
 
 #ifndef MB_LOCALIZED_FORMAT
 // note - this might return nil if frameworkBundle is nil!
 #define MB_LOCALIZED_FORMAT(key, ...)                                                                                                  \
-    [NSString stringWithFormat:NSLocalizedStringWithDefaultValue(key, [[MBMicroblinkApp instance] language], [[MBMicroblinkApp instance] resourcesBundle], \
-                                                                 MB_LOCALIZED_DEFAULT_STRING(key), nil),                               \
-                               ##__VA_ARGS__]
+[NSString stringWithFormat:NSLocalizedStringWithDefaultValue(key, [[MBMicroblinkApp instance] language], [[MBMicroblinkApp instance] resourcesBundle], \
+MB_LOCALIZED_DEFAULT_STRING(key), nil),                               \
+##__VA_ARGS__]
+#endif
+
+#ifndef MB_LOCALIZED_PROPERTY_GETTER
+// note - this might return nil if frameworkBundle is nil!
+#define MB_LOCALIZED_PROPERTY_GETTER(propertyName, key) \
+if (propertyName) {                                     \
+return propertyName;                                    \
+} else {                                                \
+return MB_LOCALIZED(key);                               \
+}
 #endif
 
 #ifdef __cplusplus
@@ -46,4 +56,4 @@
 
 #define PP_INIT_UNAVAILABLE - (instancetype)init NS_UNAVAILABLE;
 
-#endif /* PPMicroBlinkDefines_h */
+#endif /* PPMicroblinkDefines_h */

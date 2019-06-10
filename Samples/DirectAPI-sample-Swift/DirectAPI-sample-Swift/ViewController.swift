@@ -42,16 +42,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let mediaType = info[UIImagePickerControllerMediaType] as? String
-        // Handle a still image capture
-        if CFStringCompare(mediaType as CFString?, kUTTypeImage, CFStringCompareFlags(rawValue: 0)) == .compareEqualTo {
-            let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String
+        
+        if CFStringCompare(mediaType as CFString?, kUTTypeImage, CFStringCompareFlags(rawValue: 9)) == .compareEqualTo {
+            let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
             processImageRunner(originalImage)
         }
-        picker.dismiss(animated: true) {() -> Void in }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
-    
+
     func setupRecognizerRunner() {
         var recognizers = [MBRecognizer]()
         pdf417Recognizer = MBPdf417Recognizer()
@@ -78,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         DispatchQueue.main.async(execute: {() -> Void in
             let title = "PDF417"
             // Save the string representation of the code
-            let message = self.pdf417Recognizer?.result.stringData()
+            let message = self.pdf417Recognizer?.result.stringData
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
                 self.dismiss(animated: true) {() -> Void in }
@@ -88,4 +89,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
 }
-

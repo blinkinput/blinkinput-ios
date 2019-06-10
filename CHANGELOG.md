@@ -1,5 +1,34 @@
 # Release notes
 
+## 4.1.0
+
+- Updates and addtitions
+    - updated overlay view controllers with new icons for close and torch buttons
+    - switched to using HTTPS in podspec for Cocoapods
+    - enabled capturing high resolution camera frames:
+    When custom UI integration is performed, use - `(void)captureHighResImage:(MBCaptureHighResImage)highResoulutionImageCaptured on MBRecognizerRunnerViewController`
+    When using provided scan overlay view controllers, high resolution full camera frames taken at the moment of successful scan are returned if this option is enabled through `MBOverlaySettings`.
+    - Added support for checking if scanning is unsupported for camera type on `MBRecognizerRunnerViewController`
+    - Added `reconfigureRecognizers` method to `MBBaseOverlayViewController`, enabling it on all it's subclasses
+
+- Minor API changes
+    - renamed MicroBlink.framework to Microblink.framework
+    - renamed MicroBlink.bundle to Microblink.bundle
+     - `isScanningUnsupportedForCameraType:` is now class method of `MBMicroblinkSDK`
+     
+- Bugfixes
+    - templating recognizers no longer execute callbacks with valid state once they are valid on every frame even if nothing is 'detected'
+    - fixed a crash which happened when scanning region was set before overlay view controller loaded, but after it was initialized
+    - fixed missing init in `MBDotsResultSubview` for Swift
+    - fix memory issue while using current frame grabber
+    - updated overlay view controllers for iPhone X Series
+    - Fixed bug where SDK crashed with exception when the user wanted to use custom resource bundle
+    - Calling `reconfigureRecognizers` before showing camera now correctly applies supplied recognizers
+     - Fixed autorotation of overlays and `MBRecognizerRunnerViewController`
+     - Fixed localization issues with some overlays
+     - Fixed constraint errors on `MBDocumentVerificationOverlayViewController`
+     - Various other bug fixes and improvements
+
 ## 4.0.0
 
 - new API, which is not backward compatible. Please check [README](README.md) and updated demo applications for more information, but the gist of it is:

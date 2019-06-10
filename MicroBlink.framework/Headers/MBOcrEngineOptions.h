@@ -3,13 +3,13 @@
 //  BlinkOcrFramework
 //
 //  Created by Jura on 30/04/15.
-//  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
+//  Copyright (c) 2015 Microblink Ltd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 #import "MBOcrFont.h"
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBBaseOcrEngineOptions.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -98,6 +98,24 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  * Default: PPBlinkOCRDocumentType
  */
 @property (nonatomic, assign) PPDocumentType documentType;
+
+/**
+ * Minimal height of the line of text given in pixels. All chars smaller than this value will be ignored.
+ *
+ * Setting the minimal line height can reduce the noise in OCR results.
+ *
+ * Default: 10
+ */
+@property (nonatomic, assign) NSUInteger minimalLineHeight;
+
+/**
+ * Maximal height of the line of text given in pixels.
+ *
+ * Setting the maximal line height can reduce the noise in OCR results.
+ *
+ * Default: 200
+ */
+@property (nonatomic, assign) NSUInteger maximalLineHeight;
 
 /**
  * Specifies if the image processing is performed on image

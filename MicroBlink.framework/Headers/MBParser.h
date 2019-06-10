@@ -1,11 +1,11 @@
 //
 //  MBParser.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 06/03/2018.
 //
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBEntity.h"
 #import "MBParserResult.h"
 
@@ -21,6 +21,13 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  * Base parser result
  */
 @property (nonatomic, readonly, weak) MBParserResult *baseResult;
+
+/**
+ * Defines/returns whether the parser configured with this parser settings object will be required or optional.
+ *
+ * Default: YES
+ */
+@property (nonatomic, assign) BOOL required;
 
 @end
 

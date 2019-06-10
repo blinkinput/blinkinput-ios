@@ -1,12 +1,13 @@
 //
 //  MBMicroblinkSDK.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 14/11/2017.
 //
 
 #import <Foundation/Foundation.h>
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
+#import "MBCameraSettings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 /**
@@ -30,7 +31,7 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  * is equal to Microblink.bundle located in Main app bundle.
  *
  * i.e, this is by default initialized to:
- *   [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"MicroBlink" ofType:@"bundle"];
+ *   [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"Microblink" ofType:@"bundle"];
  *
  */
 @property (nonatomic, strong) NSBundle *resourcesBundle;
@@ -95,6 +96,18 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  *  @return string that contains the library build version
  */
 + (NSString *)buildVersionString;
+
+/**
+ * This method returns true when scanning is unsupported on a specific device.
+ * Error object contains description of the reason for that.
+ *
+ *  @param type The camera type you want to check for.
+ *  @param error If scanning is not supported, when method this method returns, this parameter contains an NSError object that describes the
+ * problem. If you are not interested in possible errors, pass in NULL.
+ *
+ *  @return YES if scanning is not supported, NO otherwise.
+ */
++ (BOOL)isScanningUnsupportedForCameraType:(MBCameraType)type error:(NSError *_Nullable *_Nullable)error NS_SWIFT_NOTHROW;
 
 @end
 

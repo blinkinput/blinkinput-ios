@@ -81,7 +81,7 @@
                 <a class="nav-group-task-link" href="../Classes/MBBaseOverlaySettings.html">MBBaseOverlaySettings</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MBBaseOverlayViewController">MBBaseOverlayViewController</a>
+                <a class="nav-group-task-link" href="../Classes/MBBaseOverlayViewController.html">MBBaseOverlayViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBBlinkInputRecognizer.html">MBBlinkInputRecognizer</a>
@@ -178,6 +178,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBFrameGrabberRecognizer.html">MBFrameGrabberRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBGlareStatusSubview.html">MBGlareStatusSubview</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBIbanParser.html">MBIbanParser</a>
@@ -409,6 +412,15 @@
                 <a class="nav-group-task-link" href="../Enums/MBBarcodeType.html">MBBarcodeType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBCameraAutofocusRestriction.html">MBCameraAutofocusRestriction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBCameraPreset.html">MBCameraPreset</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBCameraType.html">MBCameraType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/MBDateFormat.html">MBDateFormat</a>
               </li>
               <li class="nav-group-task">
@@ -452,15 +464,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/MBTopUpPreset.html">MBTopUpPreset</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PPCameraAutofocusRestriction.html">PPCameraAutofocusRestriction</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PPCameraPreset.html">PPCameraPreset</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PPCameraType.html">PPCameraType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/PPDocumentType.html">PPDocumentType</a>
@@ -537,6 +540,9 @@
                 <a class="nav-group-task-link" href="../Protocols/MBScanningRecognizerRunnerViewControllerDelegate.html">MBScanningRecognizerRunnerViewControllerDelegate</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBStringProcessingRecognizerRunnerDelegate.html">MBStringProcessingRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MBSubviewDelegate.html">MBSubviewDelegate</a>
               </li>
               <li class="nav-group-task">
@@ -552,6 +558,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type Definitions/CGLine.html">CGLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type Definitions.html#/c:MBDateParser.h@T@MBDateFormatArray">MBDateFormatArray</a>
@@ -786,7 +795,7 @@ optimisation of passing data.</p>
  is equal to Microblink.bundle located in Main app bundle.</p>
 
 <p>i.e, this is by default initialized to:
-   [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@<q>MicroBlink</q> ofType:@<q>bundle</q>];</p>
+   [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@<q>Microblink</q> ofType:@<q>bundle</q>];</p>
 
                       </div>
                       <div class="declaration">
@@ -1273,6 +1282,76 @@ single license within multiple application packages.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBMicroblinkSDK(cm)isScanningUnsupportedForCameraType:error:"></a>
+                    <a name="//apple_ref/objc/Method/+isScanningUnsupportedForCameraType:error:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBMicroblinkSDK(cm)isScanningUnsupportedForCameraType:error:">+isScanningUnsupportedForCameraType:error:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method returns true when scanning is unsupported on a specific device.
+ Error object contains description of the reason for that.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">isScanningUnsupportedForCameraType</span><span class="p">:(</span><span class="n"><a href="../Enums/MBCameraType.html">MBCameraType</a></span><span class="p">)</span><span class="nv">type</span>
+                                     <span class="nf">error</span><span class="p">:(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">error</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">isScanningUnsupported</span><span class="p">(</span><span class="k">for</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/MBCameraType.html">MBCameraType</a></span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSErrorPointer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The camera type you want to check for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If scanning is not supported, when method this method returns, this parameter contains an NSError object that describes the
+problem. If you are not interested in possible errors, pass in NULL.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>YES if scanning is not supported, NO otherwise.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -1281,7 +1360,7 @@ single license within multiple application packages.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-05-17)</p>
+      <p>&copy; 2019 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2019-06-10)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

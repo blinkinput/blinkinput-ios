@@ -1,13 +1,13 @@
 //
 //  MBPdf417RecognizerResult.h
-//  MicroBlinkDev
+//  MicroblinkDev
 //
 //  Created by Jura Skrlec on 27/11/2017.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizerResult.h"
 #import "MBBarcodeResult.h"
 
@@ -24,18 +24,18 @@ MB_INIT_UNAVAILABLE
 /**
  * Byte array with result of the scan
  */
-- (NSData *_Nullable)data;
+@property(nonatomic, strong, readonly, nullable) NSData* rawData;
 
 /**
  * Retrieves string content of scanned data
  */
-- (NSString *)stringData;
+@property(nonatomic, strong, readonly, nullable) NSString* stringData;
 
 /**
  * Flag indicating uncertain scanning data
  * E.g obtained from damaged barcode.
  */
-- (BOOL)isUncertain;
+@property(nonatomic, assign, readonly) BOOL uncertain;
 
 /**
  * Type of the barcode scanned
