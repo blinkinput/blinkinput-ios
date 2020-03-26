@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dino. All rights reserved.
 //
 
-import MicroBlink
+import Microblink
 
 class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerViewControllerDelegate {
     
