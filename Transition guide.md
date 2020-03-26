@@ -1,3 +1,9 @@
+### Transition to 4.2.0
+
+- methods `pauseScanning` and `resumeScanningAndResetState` in `MBRecognizerRunnerViewController` do not return anymore BOOL
+	- use `isScanningPaused` to check if scanning is paused
+- Swift Module has been renamed from `MicroBlink` to `Microblink`
+
 ### Transition to 4.1.0
 
 - renamed MicroBlink.framework to Microblink.framework

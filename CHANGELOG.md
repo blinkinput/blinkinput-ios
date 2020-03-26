@@ -1,5 +1,33 @@
 # Release notes
 
+## 4.2.0
+
+### New features:
+
+- we added the option to disable Microblink logs in the console output. Use `MBLogger` class and conform to `MBLoggerDelegate` in `AppDelegate`. To disable logs, implement delegate method `- (void)log:(MBLogLevel)level format:(const char *)format arguments:(va_list)arguments`. Be careful with this option. We need full log outputs from the application for support purposes. In case of having problems with scanning certain items, undesired behavior on the specific device(s), crashes inside SDK or anything unmentioned, we will need a full log from your side. If you disable Microblink logging, you won't be able to provide us this information. Hence support might be limited.
+- added support for capturing cropped images (without data extraction) of documents of any format:
+	- use `MBDocumentCaptureRecognizer` and `MBDocumentCaptureOverlaySettings`
+   - use `MBDocumentCaptureOverlayViewController`, which is designed for taking **high resolution** document images and guides the user through the image capturing process. It can be used only with `MBDocumentCaptureRecognizer`
+
+### Improvements:
+
+- improved `VinParser`:
+    - added support for Renewal Identification Number (RIN) - DMV California format
+- all 4K iPhones now use 4K resolution as default
+
+### Minor API changes:
+
+- methods `pauseScanning` and `resumeScanningAndResetState` in `MBRecognizerRunnerViewController` do not return anymore BOOL
+	- use `isScanningPaused` to check if scanning is paused
+- Swift Module has been renamed from `MicroBlink` to `Microblink`
+
+### Bug fixes:
+
+- fixed `Torch` activation for all iOS versions
+- fixed OpenGL code which was fragile and sensitive to crashes if used from multiple threads
+- fixed issue where recognizer's result state would not be the same as recognizer's runner state after finished scanning
+- fixed issue when pressing immediately close button on overlay view controllers would freeze for couple of seconds SDK
+
 ## 4.1.0
 
 - Updates and addtitions

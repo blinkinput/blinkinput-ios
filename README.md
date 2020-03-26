@@ -30,6 +30,7 @@ BlinkInput powers [PhotoMath app](https://photomath.net/en/) where it's used to 
 	- [Built-in overlay view controllers and overlay subviews](#ui-customizations)
 		- [Using `MBBarcodeOverlayViewController`](#using-pdf417-overlay-viewcontroller)
 		- [Using `MBFieldByFieldOverlayViewController`](#using-fieldbyfield-overlay-viewcontroller)
+		- [Using `MBDocumentCaptureOverlayViewController`](#using-documentcapture-overlay-viewcontroller)
 		- [Custom overlay view controller](#using-custom-overlay-viewcontroller)
 	- [Direct processing API](#direct-api-processing)
 		- [Using Direct API for `NSString` recognition (parsing)](#direct-api-string-processing)
@@ -41,6 +42,7 @@ BlinkInput powers [PhotoMath app](https://photomath.net/en/) where it's used to 
 	- [Barcode recognizer](#barcode-recognizer)
 	- [BlinkInput recognizer](#blinkinput-recognizer)
 	- [Detector recognizer](#detector-recognizer)
+	- [Document Capture recognizer](#document-capture-recognizer)
 - [`MBProcessor` and `MBParser`](#processors-and-parsers)
 	- [The `MBProcessor` concept](#processor-concept)
 		- [Image Return Processor](#image-processors)
@@ -113,9 +115,9 @@ pod init
 - Copy and paste the following lines into the TextEdit window:  
 
 ```ruby
-platform :ios, '9.0'
+platform :ios, '8.0'
 target 'Your-App-Name' do
-    pod 'PPBlinkOCR', '~> 4.1.0'
+    pod 'PPBlinkOCR', '~> 4.2.0'
 end
 ```
 
@@ -158,7 +160,7 @@ git clone git@github.com:BlinkInput/blinkinput-ios.git
 
 - In your Xcode project, open the Project navigator. Drag the Microblink.framework and Microblink.bundle files to your project, ideally in the Frameworks group, together with other frameworks you're using. When asked, choose "Create groups", instead of the "Create folder references" option.
 
-![Adding Microblink.embedded framework to your project](https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/01%20-%20Add%20Framework.jpg)
+![Adding Microblink.embedded framework to your project](https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/01%20-%20Add%20Framework.png)
 
 - Since Microblink.framework is a dynamic framework, you also need to add it to embedded binaries section in General settings of your target.
 
@@ -173,7 +175,7 @@ git clone git@github.com:BlinkInput/blinkinput-ios.git
     - libiconv.tbd
     - libz.tbd
     
-![Adding Apple frameworks to your project](https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/02%20-%20Add%20Libraries.jpg)
+![Adding Apple frameworks to your project](https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/02%20-%20Add%20Libraries.png)
     
 ### 2. Referencing header file
     
@@ -182,13 +184,13 @@ In files in which you want to use scanning functionality place import directive.
 Swift
 
 ```swift
-import MicroBlink
+import Microblink
 ```
 
 Objective-C
 
 ```objective-c
-#import <MicroBlink/MicroBlink.h>
+#import <Microblink/Microblink.h>
 ```
     
 ### 3. Initiating the scanning process
@@ -363,8 +365,8 @@ Objective-C
 This section covers more advanced details of BlinkInput integration.
 
 1. [First part](#ui-customizations) will cover the possible customizations when using UI provided by the SDK.
-2. [Second part](#custom-overyal-view-controller) will describe how to embed [`MBRecognizerRunnerViewController's delegates`](http://blinkinput.github.io/blinkinput-ios/Protocols.html) into your `UIViewController` with the goal of creating a custom UI for scanning, while still using camera management capabilites of the SDK.
-3. [Third part](#direct-processing-api) will describe how to use the [`MBRecognizerRunner`](http://blinkinput.github.io/blinkinput-ios/Classes/MBRecognizerRunner.html) (Direct API) for recognition directly from `UIImage` without the need of camera or to recognize camera frames that are obtained by custom camera management.
+2. [Second part](#using-document-overlay-viewcontroller) will describe how to embed [`MBRecognizerRunnerViewController's delegates`](http://blinkinput.github.io/blinkinput-ios/Protocols.html) into your `UIViewController` with the goal of creating a custom UI for scanning, while still using camera management capabilites of the SDK.
+3. [Third part](#direct-api-processing) will describe how to use the [`MBRecognizerRunner`](http://blinkinput.github.io/blinkinput-ios/Classes/MBRecognizerRunner.html) (Direct API) for recognition directly from `UIImage` without the need of camera or to recognize camera frames that are obtained by custom camera management.
 4. [Fourth part](#recognizer) will describe recognizer concept and available recognizers.
 
 
@@ -423,9 +425,37 @@ UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewControll
 ```
 
 As you can see, when initializing [`MBFieldByFieldOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBFieldByFieldOverlayViewController.html), we are sending delegate property as `self`. To get results, we need to conform to [`MBFieldByFieldOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBFieldByFieldOverlayViewControllerDelegate.html) protocol.
+
+
+### <a name="using-documentcapture-overlay-viewcontroller"></a> Using `MBDocumentCaptureOverlayViewController`
+
+[`MBDocumentCaptureOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentCaptureOverlayViewController.html) is overlay view controller best suited for performing captureing cropped document images. It has [`MBDocumentCaptureOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDocumentCaptureOverlayViewControllerDelegate.html) delegate which can be used out-of-the-box to perform scanning using the default UI. Here is an example how to use and initialize [`MBDocumentCaptureOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBFieldByFieldOverlayViewController.html):
+
+Swift
+```swift
+/** Create your overlay view controller */
+let documentCaptureOverlayViewController : MBDocumentCaptureOverlayViewController = MBDocumentCaptureOverlayViewController(settings: settings, recognizer: documentCaptureRecognizer, delegate: self)
+
+/** Create recognizer view controller with wanted overlay view controller */
+let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: documentCaptureOverlayViewController)
+
+/** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+self.present(recognizerRunneViewController, animated: true, completion: nil)
+```
+
+Objective-C
+```objective-c
+MBDocumentCaptureOverlayViewController *overlayVC = [[MBDocumentCaptureOverlayViewController alloc] initWithSettings:settings recognizer: documentCaptureRecognizer delegate:self];
+UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+
+/** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+[self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
+```
+
+As you can see, when initializing [`MBDocumentCaptureOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentCaptureOverlayViewController.html), we are sending delegate property as `self`. To get results, we need to conform to [`MBDocumentCaptureOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBDocumentCaptureOverlayViewControllerDelegate.html) protocol.
 ### <a name="using-custom-overlay-viewcontroller"></a> Custom overlay view controller
 
-Please check our pdf417-sample-Swift for custom implementation of overlay view controller.
+Please check our Samples for custom implementation of overlay view controller.
 
 Overlay View Controller is an abstract class for all overlay views.
 
@@ -571,9 +601,9 @@ Objective-C
 - (void)setupRecognizerRunner {
     NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
     
-    self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] init];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
-    [recognizers addObject:self.blinkInputRecognizer];
+    [recognizers addObject: self.pdf417Recognizer];
     
     MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
     
@@ -591,7 +621,6 @@ Objective-C
     });
 }
 
-#pragma mark - MBScanningRecognizerRunnerDelegate
 - (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state {
     if (self.blinkInputRecognizer.result.resultState == MBRecognizerResultStateValid) {
         // Handle result
@@ -679,6 +708,11 @@ This recognizer can be used in any context. It is used internally in the impleme
 ## <a name="detector-recognizer"></a> Detector recognizer
 
 The [`MBDetectorRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDetectorRecognizer.html) is recognizer for scanning generic documents using custom `MBDetector`. You can find more about `Detector` in [The Detector concept](#detector-concept) section. `MBDetectorRecognizer` can be used simply for document detection and obtaining its image. The more interesting use case is data extraction from the custom document type. `MBDetectorRecognizer` performs document detection and can be configured to extract fields of interest from the scanned document by using **Templating API**. You can find more about Templating API in [this](#detector-templating) section.
+
+## <a name="document-capture-recognizer"></a> Document Capture recognizer
+
+The [`MBDocumentCaptureRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentCaptureRecognizer.html) is used for taking cropped document images.
+This recognizer can be used in any context, but it works best with the [`MBDocumentCaptureOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentCaptureOverlayViewController.html) which takes high resolution document images and guides the user through the image capture process.
 # <a name="processors-and-parsers"></a> `MBProcessor` and `MBParser`
 
 The `MBProcessors` and `MBParsers` are standard processing units within *BlinkID* SDK used for data extraction from the input images. Unlike the [`MBRecognizer`](#recognizer-concept), `MBProcessor` and `MBParser` are not stand-alone processing units. `MBProcessor` is always used within `MBRecognizer` and `MBParser` is used within appropriate `MBProcessor` to extract data from the OCR result.

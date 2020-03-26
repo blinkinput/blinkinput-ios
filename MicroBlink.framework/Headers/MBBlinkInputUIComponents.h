@@ -11,6 +11,14 @@
 // Overlays
 #import "MBFieldByFieldOverlayViewController.h"
 #import "MBFieldByFieldOverlaySettings.h"
+#import "MBDocumentCaptureOverlayViewController.h"
+#import "MBDocumentCaptureOverlaySettings.h"
+
+// Subviews
+#import "MBDocumentCaptureSubview.h"
+
+// Delegates
+#import "MBDocumentCaptureOverlayViewControllerDelegate.h"
 
 // Overlay subviews
 #import "MBOcrResultSubview.h"

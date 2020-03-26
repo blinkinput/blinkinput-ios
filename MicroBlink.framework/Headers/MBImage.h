@@ -8,6 +8,7 @@
 
 #import "Foundation/Foundation.h"
 #import "CoreMedia/CoreMedia.h"
+#import <UIKit/UIKit.h>
 #import "MBMicroblinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -36,7 +37,7 @@ MB_CLASS_AVAILABLE_IOS(8.0)
  * UIImage of wrapped image.
  * If this PPImage wasn't created with UIImage, UIImage will be created with first access of this property.
  */
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly, nullable) UIImage *image;
 
 /**
  * Region of the image used for scanning, where the whole image is specified with CGRectMake(0.0, 0.0, 1.0, 1.0).
