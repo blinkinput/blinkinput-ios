@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MicroBlink
+import Microblink
 import MobileCoreServices
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBScanningRecognizerRunnerDelegate {

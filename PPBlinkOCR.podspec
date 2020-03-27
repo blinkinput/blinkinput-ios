@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPBlinkOCR"
-  s.version     = "4.1.0"
+  s.version     = "4.2.0"
   s.summary     = "A state-of-the-art OCR module for mobile devices"
   s.homepage    = "http://microblink.com"
   
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   }
 
   s.source      = { 
-        :http => 'https://github.com/blinkinput/blinkinput-ios/releases/download/v4.1.0/blinkinput-ios_v4.1.0.tar.gz'
+        :http => 'https://github.com/blinkinput/blinkinput-ios/releases/download/v4.2.0/blinkinput-ios_v4.2.0.tar.gz'
   }
 
   s.platform     = :ios

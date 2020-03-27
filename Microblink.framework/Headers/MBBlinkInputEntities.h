@@ -19,6 +19,10 @@
 #import "MBBlinkInputRecognizer.h"
 #import "MBBlinkInputRecognizerResult.h"
 
+/** DocumentCapture */
+#import "MBDocumentCaptureRecognizer.h"
+#import "MBDocumentCaptureRecognizerResult.h"
+
 // Parsers
 // Vin
 #import "MBVinParser.h"

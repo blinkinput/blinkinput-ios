@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MicroBlink
+import Microblink
 
 class MBCroatianIDTemplateUtils: NSObject {
     

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "MBMicroblinkDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN

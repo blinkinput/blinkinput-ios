@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MicroBlink
+import Microblink
 
 class MBGenericPreset {
     

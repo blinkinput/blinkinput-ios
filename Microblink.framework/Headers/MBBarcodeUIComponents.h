@@ -21,3 +21,6 @@
 #import "MBTapToFocusSubview.h"
 #import "MBResultSubview.h"
 #import "MBGlareStatusSubview.h"
+
+// Logger
+#import "MBLogger.h"

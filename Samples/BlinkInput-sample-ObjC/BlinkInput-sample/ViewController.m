@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import <MicroBlink/MicroBlink.h>
+#import <Microblink/Microblink.h>
 
 @interface ViewController () <MBBarcodeOverlayViewControllerDelegate>
 

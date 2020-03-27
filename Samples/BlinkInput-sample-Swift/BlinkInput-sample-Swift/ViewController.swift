@@ -8,7 +8,7 @@
 
 import UIKit
 import MobileCoreServices
-import MicroBlink
+import Microblink
 
 class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  {
     
@@ -27,7 +27,7 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         let recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
         let overlayVC = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
-        weak var recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
+        let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         present(recognizerRunnerViewController!, animated: true, completion: nil)
@@ -45,8 +45,9 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
             DispatchQueue.main.async(execute: {() -> Void in
                 print("OCR results are:")
                 print("Raw ocr: \(self.rawParser!.result.rawText)")
-                barcodeOverlayViewController.recognizerRunnerViewController?.resumeScanningAndResetState(true)
             })
+            
+            barcodeOverlayViewController.recognizerRunnerViewController?.resumeScanningAndResetState(true)
         }
     }
     

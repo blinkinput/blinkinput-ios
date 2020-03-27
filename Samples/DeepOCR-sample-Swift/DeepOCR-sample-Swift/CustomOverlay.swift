@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dino. All rights reserved.
 //
 
-import MicroBlink
+import Microblink
 
 protocol MBCustomOverlayDelegate {
     func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBRecognizerResultState)

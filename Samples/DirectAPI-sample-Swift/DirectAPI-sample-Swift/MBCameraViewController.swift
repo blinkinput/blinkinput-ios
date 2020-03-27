@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import MicroBlink
+import Microblink
 
 class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBScanningRecognizerRunnerDelegate {
     
