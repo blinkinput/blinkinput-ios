@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DocumentCapture_sample_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERe-6h-dgC">
+                                <rect key="frame" x="142" y="433" width="130" height="30"/>
+                                <state key="normal" title="Capture Document"/>
+                                <connections>
+                                    <action selector="didTapScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rk7-Cl-z7Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ERe-6h-dgC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mOd-I9-U67"/>
+                            <constraint firstItem="ERe-6h-dgC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t15-0S-46U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+        <!--Document Capture Table View Controller-->
+        <scene sceneID="OXi-Gf-HOh">
+            <objects>
+                <tableViewController storyboardIdentifier="DocumentCaptureTableViewController" id="EJM-uw-rMo" customClass="DocumentCaptureTableViewController" customModule="DocumentCapture_sample_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r08-7N-pOv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentCaptureTableViewCell" rowHeight="322" id="b9Q-KA-d3h" customClass="DocumentCaptureTableViewCell" customModule="DocumentCapture_sample_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="322"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b9Q-KA-d3h" id="JLP-U5-O1Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="322"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3l-cb-ux6">
+                                            <rect key="frame" x="105" y="13" width="205" height="291"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="E3l-cb-ux6" secondAttribute="trailing" constant="84" id="F9u-iX-Hcc"/>
+                                        <constraint firstItem="E3l-cb-ux6" firstAttribute="top" secondItem="JLP-U5-O1Z" secondAttribute="topMargin" constant="2" id="YWn-A5-Epa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="E3l-cb-ux6" secondAttribute="bottom" constant="7" id="fTw-IS-Tjd"/>
+                                        <constraint firstItem="E3l-cb-ux6" firstAttribute="leading" secondItem="JLP-U5-O1Z" secondAttribute="leadingMargin" constant="85" id="nlr-v4-WQP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="documentImageView" destination="E3l-cb-ux6" id="hz8-8g-tYP"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfirmResultTableViewCell" rowHeight="80" id="xd5-XF-KrP" customClass="ConfirmResultTableViewCell" customModule="DocumentCapture_sample_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="350" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xd5-XF-KrP" id="5Ue-u8-sHS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXr-uQ-mEx">
+                                            <rect key="frame" x="32" y="11" width="350" height="58"/>
+                                            <color key="backgroundColor" red="0.28235294119999998" green="0.69803921570000005" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Ok">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapOkButton:" destination="xd5-XF-KrP" eventType="touchUpInside" id="BmM-iV-L3F"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BXr-uQ-mEx" firstAttribute="bottom" secondItem="5Ue-u8-sHS" secondAttribute="bottomMargin" id="M35-zQ-5oa"/>
+                                        <constraint firstItem="BXr-uQ-mEx" firstAttribute="top" secondItem="5Ue-u8-sHS" secondAttribute="topMargin" id="SIQ-ih-pS1"/>
+                                        <constraint firstItem="BXr-uQ-mEx" firstAttribute="leading" secondItem="5Ue-u8-sHS" secondAttribute="leadingMargin" constant="12" id="ZSb-0Q-rZI"/>
+                                        <constraint firstItem="BXr-uQ-mEx" firstAttribute="centerX" secondItem="5Ue-u8-sHS" secondAttribute="centerX" id="wzD-v3-Izi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EJM-uw-rMo" id="oUL-IF-bQn"/>
+                            <outlet property="delegate" destination="EJM-uw-rMo" id="ZES-8b-5Fu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDq-bL-z2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949.27536231884062" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
