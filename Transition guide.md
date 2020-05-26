@@ -1,3 +1,7 @@
+### Transition to 4.3.0
+
+- no changes
+
 ### Transition to 4.2.0
 
 - methods `pauseScanning` and `resumeScanningAndResetState` in `MBRecognizerRunnerViewController` do not return anymore BOOL

@@ -117,7 +117,7 @@ pod init
 ```ruby
 platform :ios, '8.0'
 target 'Your-App-Name' do
-    pod 'PPBlinkOCR', '~> 4.2.0'
+    pod 'PPBlinkOCR', '~> 4.3.0'
 end
 ```
 
