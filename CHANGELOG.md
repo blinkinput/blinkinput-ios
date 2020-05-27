@@ -1,5 +1,21 @@
 # Release notes
 
+## 4.3.0
+
+### New features:
+
+- Introducing support for new framework format - XCFramework:
+	- it contains all the necessary device and simulator architecture slices
+	- no neeed to remove simulator slices before distributing your app to the App Store as described [here](https://github.com/blinkinput/blinkinput-ios#unsupported-architectures-when-submitting-app-to-app-store)
+	- for now, only available from this repo, **not available on Cocoapods**
+- We improved document detection with `MBDocumentCaptureRecognizer`
+- Added presets for camera - Preset1080p, and 4K; Optimal always chooses the highest quality
+- We are now delivering the complete list of open source dependencies used in the SDK. Please check the `open-source-software-used` directory
+
+### Bug fixes:
+
+- Large memory consumption is due to 4K video session on all 4K eligible iPhones; we introduced new camera presets 1080p and 4K, so to reduce your app memory consumption set camera preset on 1080p or 720p
+
 ## 4.2.0
 
 ### New features:
