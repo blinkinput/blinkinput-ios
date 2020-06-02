@@ -136,7 +136,7 @@ open <YourProjectName>.xcworkspace
 #### Integration without CocoaPods
 
 
--[Download](https://github.com/BlinkInput/blinkinput-ios/releases) latest release (Download .zip or .tar.gz file starting with BlinkID. DO NOT download Source Code as GitHub does not fully support Git LFS)
+-[Download](https://github.com/BlinkInput/blinkinput-ios/releases) latest release (Download .zip or .tar.gz file starting with BlinkInput. DO NOT download Source Code as GitHub does not fully support Git LFS)
 
 OR
 
@@ -467,7 +467,7 @@ Typical actions which need to be allowed to the user are:
 - a way to cancel the scanning, typically with a "cancel" or "back" button
 - a way to power on and off the light (i.e. "torch") button
  
-BlinkID SDK always provides it's own default implementation of the Overlay View Controller for every specific use. Your implementation should closely mimic the default implementation as it's the result of thorough testing with end users. Also, it closely matches the underlying scanning technology. 
+BlinkInput SDK always provides it's own default implementation of the Overlay View Controller for every specific use. Your implementation should closely mimic the default implementation as it's the result of thorough testing with end users. Also, it closely matches the underlying scanning technology. 
 
 For example, the scanning technology usually gives results very fast after the user places the device's camera in the expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user. The majority of time the user spends on positioning the device's camera correctly. That's just an example which demonstrates careful decision making behind default camera overlay view.
 
@@ -715,7 +715,7 @@ The [`MBDocumentCaptureRecognizer`](http://blinkinput.github.io/blinkinput-ios/C
 This recognizer can be used in any context, but it works best with the [`MBDocumentCaptureOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBDocumentCaptureOverlayViewController.html) which takes high resolution document images and guides the user through the image capture process.
 # <a name="processors-and-parsers"></a> `MBProcessor` and `MBParser`
 
-The `MBProcessors` and `MBParsers` are standard processing units within *BlinkID* SDK used for data extraction from the input images. Unlike the [`MBRecognizer`](#recognizer-concept), `MBProcessor` and `MBParser` are not stand-alone processing units. `MBProcessor` is always used within `MBRecognizer` and `MBParser` is used within appropriate `MBProcessor` to extract data from the OCR result.
+The `MBProcessors` and `MBParsers` are standard processing units within *BlinkInput* SDK used for data extraction from the input images. Unlike the [`MBRecognizer`](#recognizer-concept), `MBProcessor` and `MBParser` are not stand-alone processing units. `MBProcessor` is always used within `MBRecognizer` and `MBParser` is used within appropriate `MBProcessor` to extract data from the OCR result.
 
 ## <a name="processor-concept"></a> The `MBProcessor` concept
 
@@ -729,7 +729,7 @@ To support common use cases, there are several different `MBProcessor` implement
 
 ##  <a name="available-processors"></a> List of available processors
 
-This section will give a list of `MBProcessor` types that are available within *BlinkID* SDK and their purpose.
+This section will give a list of `MBProcessor` types that are available within *BlinkInput* SDK and their purpose.
 
 ### <a name="image-processors"></a> Image Return Processor
 
@@ -756,7 +756,7 @@ If we put `MBAmountParser` in one `MBParserGroupProcessor` and `MBEmailParser` i
 
 `MBParserGroupProcessor` is most commonly used `MBProcessor`. It is used whenever the OCR is needed. After the OCR is performed and all parsers are run, parsed results can be obtained through parser objects that are enclosed in the group. `MBParserGroupProcessor` instance also has associated inner `MBParserGroupProcessorResult` whose state is updated during processing and its property [`ocrLayout`](http://blinkinput.github.io/blinkinput-ios/Classes/MBParserGroupProcessor.html) can be used to obtain the raw [`MBOcrLayout`](http://blinkinput.github.io/blinkinput-ios/Classes/MBOcrLayout.html) that was used for parsing data.
 
-Take note that `MBOcrLayout` is available only if it is allowed by the *BlinkID* SDK license key. `MBOcrLayout` structure contains information about all recognized characters and their positions on the image. To prevent someone to abuse that, obtaining of the `MBOcrLayout` structure is allowed only by the premium license keys.
+Take note that `MBOcrLayout` is available only if it is allowed by the *BlinkInput* SDK license key. `MBOcrLayout` structure contains information about all recognized characters and their positions on the image. To prevent someone to abuse that, obtaining of the `MBOcrLayout` structure is allowed only by the premium license keys.
 
 ## <a name="parser-concept"></a> The `MBParser` concept
 
@@ -814,7 +814,7 @@ Templated document is any document which is defined by its template. Template co
 
 ## <a name="defining-document-detection"></a> Defining how document should be detected
 
-Before performing OCR of the document, _BlinkID_ first needs to find its location on a camera scene. In order to perform detection, you need to define [MBDetector](#detector-concept). 
+Before performing OCR of the document, _BlinkInput_ first needs to find its location on a camera scene. In order to perform detection, you need to define [MBDetector](#detector-concept). 
 
 You have to set concrete `MBDetector` when instantiating the `MBDetectorRecognizer` as a parameter to its constructor.
 
@@ -930,84 +930,6 @@ Method `- (void)setMrtdSpecifications:(NSArray<__kindof MBMrtdSpecification *> *
 If `MBMrtdSpecifications` are not set, all supported MRTD formats will be detectable.
 
 For the list of all available configuration methods see [`MBMrtdDetector`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdDetector.html) doc, and for available result content see [`MBMrtdDetectorResult`](http://blinkinput.github.io/blinkinput-ios/Classes/MBMrtdDetectorResult.html) doc.
-
-# Creating customized build of BlinkID SDK
-
-If your final app size is too large, you can create a customised build of _MicroBlink.framework_ and _MicroBlink.bundle_ which will contain only features and resources that you really need.
-
-In order to create customised build of BlinkID SDK, you first need to download the static distribution of BlinkID SDK. A valid production licence key is required in order to gain access to the download link of BlinkID SDK static distribution. Once you have a valid production licence key, please contact our [support team](http://help.microblink.com) and ask them to provide you with the download link. After they give you access to the static distribution of BlinkID SDK, you will be able to download it from you account at [MicroBlink Developer Dashboard](https://www.microblink.com/login).
-
-The static distribution of BlinkID SDK is a large zip file (several hundred megabytes) which contains static libraries of BlinkID SDK's native code, all assets and resources and a script which will create the customised build for you.
-
-### Prerequisites for creating customised build
-
-In order to create customised build of BlinkInput SDK, you will need following tools:
-
-- XCode and latest iOS SDK
-- CMake - you can install it from Homebrew with `brew install cmake`, or you can download it from [official page](https://cmake.org/download/)
-	- please note that command-line version of CMake is required, so if you have downloaded CMake from official page, make sure you install command-line support as well
-
-### Steps for creating customised build
-
-1. Obtain the static distribution of BlinkID SDK by [contacting us](http://help.microblink.com)
-2. Download the zip from link that you will be provided
-3. Unzip the file into an empty folder
-4. Edit the file `enabled-features.cmake`
-	- you should enable only features that you need to use by setting appropriate variables to `ON`. 
-	- the list of all possible feature variables can be found in `features.cmake` 
-		- for each `feature_option` command, first parameter defines the feature variable, and the second is the description of the feature, i.e. what it provides. Other parameters are information for script to work correctly.
-	- you should not edit any file except `enabled-features.cmake` (except if instructed so by our support team) to ensure creation of customised build works well
-5. Open terminal and navigate to folder with zip's contents.
-6. Execute command `./create-custom-build.sh` and select whether you want static or dynamic frameowk.
-	- when asked, enter `s` to build static framework or `d` to build dynamic framework
-7. After several minutes (depedending of CPU speed of your computer), customised build will appear in the `Release` folder. Use that bundle and framework in your app instead of default one.
-
-#### Warning:
-
-Attempt to use feature within your app which was not enabled in customised build will cause a linker error when linking against the customised framework.
-
-### Troubleshooting:
-
-#### Getting `unrecognized selector sent to instance` when using customised static framework, while everything works OK with dynamic framework
-
-This happens when your app has not been linked with `-ObjC` flag against static framework. The problem is related to using Objective C categories within static library which are thrown away by linker. You can see more information in [official Apple documentation](https://developer.apple.com/library/content/qa/qa1490/_index.html).
-
-#### App crashing when scanning starts with log message _Failed to load resource XX. The program will now crash._
-
-This means that a required resource was not packaged into final app. This usually indicates a bug in our script that makes the customised build. Please [contact us](http://help.microblink.com) and send your version of `enabled-features.cmake` and crash log.
-
-#### CMake error while running script.
-
-You probably have a typo in `enabled-features.cmake`. CMake is very sensitive language and will throw an non-understandable error if you have a typo or invoke any of its commands with wrong number of parameters.
-
-#### Linker error while running the script.
-
-This sometimes happens when XCode's link time optimizer runs out of memory. Usually running the script again solves the problem. Please reboot your Mac if this keeps happening.
-
-#### Keeping only `FEATURE_MRTD` creates rather large `MicroBlink.bundle`
-
-`FEATURE_MRTD` marks the _MRTD recognizer_. However, _MRTD recognizer_ can also be used in _Templating API_ mode where non-MRZ data can be scanned. To perform OCR of non-MRZ data, a rather large OCR model must be used, which supports all fonts. If you only plan to scan MRZ part of the document, you can edit the `features.cmake` in following way:
-
-- find the following line:
-
-```
-feature_resources( FEATURE_MRTD model_mrtd model_general_blink_ocr model_micr model_arabic )
-```
-
-- keep only `model_mrtd` in the list, i.e. modify the line so that it will be like this:
-
-```
-feature_resources( FEATURE_MRTD model_mrtd )
-```
-
-This will keep only support for reading MRZ zone in OCR - you will not be able to scan non-MRZ data with such configuration using _MRTD recognizer_, however you will reduce the `MicroBlink.bundle` and then final app size by more than 4MB.
-
-##### More information about OCR models in `FEATURE_MRTD`
-
-- `model_mrtd` is OCR model for performing OCR of MRZ zone
-- `model_arabic` is OCR model for performing OCR of digits used in arabic languages - text scanning is not supported
-- `model_micr` is OCR model for performing OCR of [Magnetic Ink Characters](https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition)
-- `model_general_blink_ocr` is OCR model for performing general-purpose OCR. This model is usually required for performing OCR of non-MRZ text on documents.
 
 # <a name="troubleshooting"></a> Troubleshooting
 
