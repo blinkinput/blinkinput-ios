@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 
-#import <Microblink/Microblink.h>
+#import <BlinkInput/BlinkInput.h>
 
-@interface ViewController () <MBBarcodeOverlayViewControllerDelegate>
+@interface ViewController () <MBINBarcodeOverlayViewControllerDelegate>
 
-@property (nonatomic, strong) MBRawParser *rawParser;
-@property (nonatomic, strong) MBParserGroupProcessor *parserGroupProcessor;
-@property (nonatomic, strong) MBBlinkInputRecognizer *blinkInputRecognizer;
+@property (nonatomic, strong) MBINRawParser *rawParser;
+@property (nonatomic, strong) MBINParserGroupProcessor *parserGroupProcessor;
+@property (nonatomic, strong) MBINBlinkInputRecognizer *blinkInputRecognizer;
 
 @end
 
@@ -22,28 +22,28 @@
 
 - (IBAction)didTapScan:(id)sender {
     
-    MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
+    MBINBarcodeOverlaySettings* settings = [[MBINBarcodeOverlaySettings alloc] init];
 
-    self.rawParser = [[MBRawParser alloc] init];
-    self.parserGroupProcessor = [[MBParserGroupProcessor alloc] initWithParsers:@[self.rawParser]];
-    self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
+    self.rawParser = [[MBINRawParser alloc] init];
+    self.parserGroupProcessor = [[MBINParserGroupProcessor alloc] initWithParsers:@[self.rawParser]];
+    self.blinkInputRecognizer = [[MBINBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
 
     /** Create recognizer collection */
-    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    MBINRecognizerCollection *recognizerCollection = [[MBINRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
     
-    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
-    UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+    MBINBarcodeOverlayViewController *overlayVC = [[MBINBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
+    UIViewController<MBINRecognizerRunnerViewController>* recognizerRunnerViewController = [MBINViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
     
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
 }
 
-#pragma mark - MBBarcodeOverlayViewControllerDelegate
+#pragma mark - MBINBarcodeOverlayViewControllerDelegate
 
-- (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
+- (void)barcodeOverlayViewControllerDidFinishScanning:(MBINBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBINRecognizerResultState)state {
     
     // check for valid state
-    if (state == MBRecognizerResultStateValid) {
+    if (state == MBINRecognizerResultStateValid) {
         
         // first, pause scanning until we process all the results
         [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
@@ -58,7 +58,7 @@
             // Show result on the initial screen
             self.labelResult.text = weakSelf.rawParser.result.rawText;
             
-            MBOcrLayout* ocrLayout = weakSelf.parserGroupProcessor.result.ocrLayout;
+            MBINOcrLayout* ocrLayout = weakSelf.parserGroupProcessor.result.ocrLayout;
             NSLog(@"Dimensions of ocrLayout are %@", NSStringFromCGRect(ocrLayout.box));
             
             [barcodeOverlayViewController.recognizerRunnerViewController resumeScanningAndResetState:YES];
@@ -66,7 +66,7 @@
     }
 }
 
-- (void)barcodeOverlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+- (void)barcodeOverlayViewControllerDidTapClose:(MBINBarcodeOverlayViewController *)barcodeOverlayViewController {
     // As scanning view controller is presented full screen and modally, dismiss it
     [self dismissViewControllerAnimated:YES completion:nil];
 }

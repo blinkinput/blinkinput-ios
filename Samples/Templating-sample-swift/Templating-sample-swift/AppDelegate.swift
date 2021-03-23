@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Valid until: 2020-10-23
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
+        // Valid until: 2021-08-23
+        MBINMicroblinkSDK.shared().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main) { (error) in
+            print("License error: \(error)")
+        }
         
         return true
     }

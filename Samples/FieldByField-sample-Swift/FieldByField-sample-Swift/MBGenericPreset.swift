@@ -7,29 +7,29 @@
 //
 
 import Foundation
-import Microblink
+import BlinkInput
 
 class MBGenericPreset {
     
-    class func getPreset() -> [MBScanElement]? {
-        var scanElements = [MBScanElement]()
+    class func getPreset() -> [MBINScanElement]? {
+        var scanElements = [MBINScanElement]()
         
-        let rawElement = MBScanElement(identifier: "Raw", parser: MBRawParser())
+        let rawElement = MBINScanElement(identifier: "Raw", parser: MBINRawParser())
         rawElement.localizedTitle = "Raw Text"
         rawElement.localizedTooltip = "Scan text"
         scanElements.append(rawElement)
         
-        let ibanElement = MBScanElement(identifier: "IBAN", parser: MBIbanParser())
+        let ibanElement = MBINScanElement(identifier: "IBAN", parser: MBINIbanParser())
         ibanElement.localizedTitle = "IBAN"
         ibanElement.localizedTooltip = "Scan IBAN"
         scanElements.append(ibanElement)
         
-        let priceElement = MBScanElement(identifier: "Price", parser: MBAmountParser())
+        let priceElement = MBINScanElement(identifier: "Price", parser: MBINAmountParser())
         priceElement.localizedTitle = "Amount"
         priceElement.localizedTooltip = "Scan amount to pay"
         scanElements.append(priceElement)
         
-        let dateElement = MBScanElement(identifier: "Date", parser: MBDateParser())
+        let dateElement = MBINScanElement(identifier: "Date", parser: MBINDateParser())
         dateElement.localizedTitle = "Date"
         dateElement.localizedTooltip = "Scan date"
         scanElements.append(dateElement)

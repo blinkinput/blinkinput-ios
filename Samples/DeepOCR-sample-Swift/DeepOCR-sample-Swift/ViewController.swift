@@ -7,39 +7,39 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class ViewController: UIViewController {
     
-    var rawOcrParser : MBRawParser?
-    var parserGroupProcessor : MBParserGroupProcessor?
-    var blinkInputRecognizer : MBBlinkInputRecognizer?
+    var rawOcrParser : MBINRawParser?
+    var parserGroupProcessor : MBINParserGroupProcessor?
+    var blinkInputRecognizer : MBINBlinkInputRecognizer?
     
     var customOverlayVC : CustomOverlay?
 
     @IBAction func didTapScan(_ sender: Any) {
         
         /** Create parsers and groups and recognizer */
-        self.rawOcrParser = MBRawParser()
+        self.rawOcrParser = MBINRawParser()
         
         /** Use DeepOCR engine */
-        let deepOcrEngine : MBDeepOcrEngineOptions = MBDeepOcrEngineOptions()
-        deepOcrEngine.deepOcrModel = MBDeepOcrModel.blinkInput;
+        let deepOcrEngine : MBINDeepOcrEngineOptions = MBINDeepOcrEngineOptions()
+        deepOcrEngine.deepOcrModel = MBINDeepOcrModel.blinkInput;
         self.rawOcrParser?.ocrEngineOptions = deepOcrEngine
         
-        self.parserGroupProcessor = MBParserGroupProcessor(parsers: [self.rawOcrParser!])
-        self.blinkInputRecognizer = MBBlinkInputRecognizer(processors: [self.parserGroupProcessor!])
+        self.parserGroupProcessor = MBINParserGroupProcessor(parsers: [self.rawOcrParser!])
+        self.blinkInputRecognizer = MBINBlinkInputRecognizer(processors: [self.parserGroupProcessor!])
         
         /** Crate recognizer collection */
         let recognizerList : Array = [self.blinkInputRecognizer!]
-        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        let recognizerCollection : MBINRecognizerCollection = MBINRecognizerCollection(recognizers: recognizerList)
         
         /** Create your overlay view controller */
         self.customOverlayVC = CustomOverlay.initFromStoryboardWith(self)
         self.customOverlayVC?.reconfigureRecognizers(recognizerCollection)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: self.customOverlayVC!)
+        let recognizerRunneViewController : UIViewController = MBINViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: self.customOverlayVC!)!
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.present(recognizerRunneViewController, animated: true, completion: nil)
@@ -47,10 +47,10 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: MBCustomOverlayDelegate {
+extension ViewController: MBINCustomOverlayDelegate {
     
-    func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBRecognizerResultState) {
-        if (state == MBRecognizerResultState.valid) {
+    func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBINRecognizerResultState) {
+        if (state == MBINRecognizerResultState.valid) {
             DispatchQueue.main.async {
                 self.customOverlayVC?.resultTextView.text = self.rawOcrParser?.result.rawText;
             }

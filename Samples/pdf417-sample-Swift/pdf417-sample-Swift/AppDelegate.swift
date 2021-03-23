@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

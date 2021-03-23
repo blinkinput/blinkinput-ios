@@ -7,23 +7,23 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class MBCroatianIDTemplateUtils: NSObject {
     
-    class func croatianCharsWhitelist() -> Set<MBOcrCharKey> {
+    class func croatianCharsWhitelist() -> Set<MBINOcrCharKey> {
         // initialize new char whitelist
-        var charWhitelist = Set<MBOcrCharKey>()
+        var charWhitelist = Set<MBINOcrCharKey>()
         // Add chars 'A'-'Z'
         for val in UnicodeScalar("A").value...UnicodeScalar("Z").value {
-            charWhitelist.insert(MBOcrCharKey(code: Int32(val), font: MBOcrFont.OCR_FONT_ANY))
+            charWhitelist.insert(MBINOcrCharKey(code: Int32(val), font: MBINOcrFont.MB_OCR_FONT_ANY))
         }
         
-        charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("Š").value), font:  MBOcrFont.OCR_FONT_ANY))
-        charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("Ž").value), font:  MBOcrFont.OCR_FONT_ANY))
-        charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("Č").value), font:  MBOcrFont.OCR_FONT_ANY))
-        charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("Ć").value), font:  MBOcrFont.OCR_FONT_ANY))
-        charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("Đ").value), font:  MBOcrFont.OCR_FONT_ANY))
+        charWhitelist.insert(MBINOcrCharKey(code: Int32(UnicodeScalar("Š").value), font:  MBINOcrFont.MB_OCR_FONT_ANY))
+        charWhitelist.insert(MBINOcrCharKey(code: Int32(UnicodeScalar("Ž").value), font:  MBINOcrFont.MB_OCR_FONT_ANY))
+        charWhitelist.insert(MBINOcrCharKey(code: Int32(UnicodeScalar("Č").value), font:  MBINOcrFont.MB_OCR_FONT_ANY))
+        charWhitelist.insert(MBINOcrCharKey(code: Int32(UnicodeScalar("Ć").value), font:  MBINOcrFont.MB_OCR_FONT_ANY))
+        charWhitelist.insert(MBINOcrCharKey(code: Int32(UnicodeScalar("Đ").value), font:  MBINOcrFont.MB_OCR_FONT_ANY))
         
         return charWhitelist
     }

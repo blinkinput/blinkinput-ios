@@ -7,34 +7,36 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class ViewController: UIViewController {
     
-    var documentCaptureRecognizer: MBDocumentCaptureRecognizer?
-    var highResolutionImage: MBImage?
+    var documentCaptureRecognizer: MBINDocumentCaptureRecognizer?
+    var highResolutionImage: MBINImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Valid until: 2020-10-23
-        MBMicroblinkSDK.sharedInstance().setLicenseKey("sRwAAAEgY29tLm1pY3JvYmxpbmsuYmxpbmtpbnB1dC5zYW1wbGXNuwRkLIVmR6BuBdHkHccH8zSdhfRxjqp6D6XsKp7QSpQgLZcOyb6QL/Ni0zkXhVvfR52Y0pbhInYUwSzDlCXQ0O41dDb02wykOH3uwtyAXlpeH4LsQxxUVrpWI35yn9ZAcyyYvW+DZBQacHCj64v2uuzWhtAStJ+9hvBzwYvbB70tICKwcZnclRNTp66c")
+        // Valid until: 2021-08-23
+        MBINMicroblinkSDK.shared().setLicenseKey("sRwAAAEgY29tLm1pY3JvYmxpbmsuYmxpbmtpbnB1dC5zYW1wbGXNuwRk7IVmR6BuBdHkZcEDM7VDwRalPqDrnFfevvHOKokY2yLcwi8x/DWj0pylEr87X1WxtZFlWP+0ieo0LgGEPKMtij0IIe45Jf2AybGfbPMc8ryXOFHLvJI55I3c+d/aWMK1C5f/jkn5zj1tO2MnCJGiU//Kp+g76/e0zGM/KjQfEeQtBCC0fcpT8d8X") { (error) in
+            print("License error: \(error)")
+        }
     }
     
     @IBAction func didTapScan(_ sender: AnyObject) {
         
         /** Create document capture recognizer */
-        documentCaptureRecognizer = MBDocumentCaptureRecognizer()
+        documentCaptureRecognizer = MBINDocumentCaptureRecognizer()
         documentCaptureRecognizer?.returnFullDocumentImage = true
         
         /** Create settings */
-        let settings : MBDocumentCaptureOverlaySettings = MBDocumentCaptureOverlaySettings()
+        let settings : MBINDocumentCaptureOverlaySettings = MBINDocumentCaptureOverlaySettings()
         
         /** Create your overlay view controller */
-        let documentCatpureOverlayViewController : MBDocumentCaptureOverlayViewController = MBDocumentCaptureOverlayViewController(settings: settings, recognizer: documentCaptureRecognizer!, delegate: self)
+        let documentCatpureOverlayViewController : MBINDocumentCaptureOverlayViewController = MBINDocumentCaptureOverlayViewController(settings: settings, recognizer: documentCaptureRecognizer!, delegate: self)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: documentCatpureOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBINViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: documentCatpureOverlayViewController)!
         recognizerRunneViewController.modalPresentationStyle = .fullScreen
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -42,9 +44,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: MBDocumentCaptureOverlayViewControllerDelegate {
+extension ViewController: MBINDocumentCaptureOverlayViewControllerDelegate {
     
-    func documentCaptureOverlayViewControllerDidFinishScanning(_ documentCaptureOverlayViewController: MBDocumentCaptureOverlayViewController, state: MBRecognizerResultState) {
+    func documentCaptureOverlayViewControllerDidFinishScanning(_ documentCaptureOverlayViewController: MBINDocumentCaptureOverlayViewController, state: MBINRecognizerResultState) {
         
         if (state == .valid) {
             
@@ -65,11 +67,11 @@ extension ViewController: MBDocumentCaptureOverlayViewControllerDelegate {
         }
     }
     
-    func documentCaptureOverlayViewControllerDidTapClose(_ documentCaptureOverlayViewController: MBDocumentCaptureOverlayViewController) {
+    func documentCaptureOverlayViewControllerDidTapClose(_ documentCaptureOverlayViewController: MBINDocumentCaptureOverlayViewController) {
         documentCaptureOverlayViewController.dismiss(animated: true, completion: nil)
     }
     
-    func documentCaptureOverlayViewControllerDidCaptureHighResolutionImage(_ documentCaptureOverlayViewController: MBDocumentCaptureOverlayViewController, highResImage: MBImage, state: MBRecognizerResultState) {
+    func documentCaptureOverlayViewControllerDidCaptureHighResolutionImage(_ documentCaptureOverlayViewController: MBINDocumentCaptureOverlayViewController, highResImage: MBINImage, state: MBINRecognizerResultState) {
         
         highResolutionImage = highResImage
     }

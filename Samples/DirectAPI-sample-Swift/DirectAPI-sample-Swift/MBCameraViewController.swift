@@ -8,15 +8,15 @@
 
 import UIKit
 import AVFoundation
-import Microblink
+import BlinkInput
 
-class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBScanningRecognizerRunnerDelegate {
+class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBINScanningRecognizerRunnerDelegate {
     
     @IBOutlet var cameraPausedLabel: UILabel!
     
     var captureSession: AVCaptureSession?
-    var recognizerRunner: MBRecognizerRunner?
-    var pdf417Recognizer: MBPdf417Recognizer?
+    var recognizerRunner: MBINRecognizerRunner?
+    var pdf417Recognizer: MBINPdf417Recognizer?
     var isPauseRecognition = false
     
     @IBOutlet weak var myView: UIView!
@@ -144,12 +144,12 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
         
         myView.layer.addSublayer(prevLayer!)
         
-        var recognizers = [MBRecognizer]()
-        pdf417Recognizer = MBPdf417Recognizer()
+        var recognizers = [MBINRecognizer]()
+        pdf417Recognizer = MBINPdf417Recognizer()
         recognizers.append(pdf417Recognizer!)
         
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+        let recognizerCollection = MBINRecognizerCollection(recognizers: recognizers)
+        recognizerRunner = MBINRecognizerRunner(recognizerCollection: recognizerCollection)
         recognizerRunner?.scanningRecognizerRunnerDelegate = self
         
         captureSession?.startRunning()
@@ -175,16 +175,16 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        let image = MBImage(cmSampleBuffer: sampleBuffer)
-        image.orientation = MBProcessingOrientation.left
+        let image = MBINImage(cmSampleBuffer: sampleBuffer)
+        image.orientation = MBINProcessingOrientation.left
         if !isPauseRecognition {
             recognizerRunner?.processImage(image)
         }
     }
     
-    func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunner(_ recognizerRunner: MBINRecognizerRunner, didFinishScanningWith state: MBINRecognizerResultState) {
         isPauseRecognition = true
-        if state == MBRecognizerResultState.valid {
+        if state == MBINRecognizerResultState.valid {
             DispatchQueue.main.async(execute: {() -> Void in
                 let title = "PDF417"
                 // Save the string representation of the code

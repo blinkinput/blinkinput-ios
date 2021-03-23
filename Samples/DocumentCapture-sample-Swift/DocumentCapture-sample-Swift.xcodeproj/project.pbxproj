@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B45ED70260A267B009F9809 /* BlinkInput.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B45ED6E260A2675009F9809 /* BlinkInput.xcframework */; };
+		7B45ED71260A267B009F9809 /* BlinkInput.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7B45ED6E260A2675009F9809 /* BlinkInput.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A29E25DD23E9C675003A6466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25DC23E9C675003A6466 /* AppDelegate.swift */; };
 		A29E25DF23E9C675003A6466 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25DE23E9C675003A6466 /* SceneDelegate.swift */; };
 		A29E25E123E9C675003A6466 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25E023E9C675003A6466 /* ViewController.swift */; };
@@ -19,9 +21,6 @@
 		A29E260523E9D09A003A6466 /* DocumentCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260423E9D09A003A6466 /* DocumentCaptureTableViewCell.swift */; };
 		A29E260723E9D380003A6466 /* DocumentCaptureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260623E9D380003A6466 /* DocumentCaptureTableViewController.swift */; };
 		A29E260923EAFF8B003A6466 /* ConfirmResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260823EAFF8B003A6466 /* ConfirmResultTableViewCell.swift */; };
-		A29E260C23EB077C003A6466 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29E260A23EB077B003A6466 /* Microblink.framework */; };
-		A29E260D23EB077C003A6466 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29E260A23EB077B003A6466 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A2CAD653240E99BA0062A8F4 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A29E260B23EB077B003A6466 /* Microblink.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A29E260D23EB077C003A6466 /* Microblink.framework in Embed Frameworks */,
+				7B45ED71260A267B009F9809 /* BlinkInput.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B45ED6E260A2675009F9809 /* BlinkInput.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlinkInput.xcframework; path = ../../BlinkInput.xcframework; sourceTree = "<group>"; };
 		A29E25D923E9C675003A6466 /* DocumentCapture-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentCapture-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29E25DC23E9C675003A6466 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A29E25DE23E9C675003A6466 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +56,6 @@
 		A29E260423E9D09A003A6466 /* DocumentCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCaptureTableViewCell.swift; sourceTree = "<group>"; };
 		A29E260623E9D380003A6466 /* DocumentCaptureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCaptureTableViewController.swift; sourceTree = "<group>"; };
 		A29E260823EAFF8B003A6466 /* ConfirmResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmResultTableViewCell.swift; sourceTree = "<group>"; };
-		A29E260A23EB077B003A6466 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
-		A29E260B23EB077B003A6466 /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +64,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29E25F623E9C7AD003A6466 /* CoreMedia.framework in Frameworks */,
+				7B45ED70260A267B009F9809 /* BlinkInput.xcframework in Frameworks */,
 				A29E25F423E9C7A7003A6466 /* AVFoundation.framework in Frameworks */,
-				A29E260C23EB077C003A6466 /* Microblink.framework in Frameworks */,
 				A29E25F223E9C7A0003A6466 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,8 +110,7 @@
 		A29E25F023E9C7A0003A6466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A29E260B23EB077B003A6466 /* Microblink.bundle */,
-				A29E260A23EB077B003A6466 /* Microblink.framework */,
+				7B45ED6E260A2675009F9809 /* BlinkInput.xcframework */,
 				A29E25F923E9C7BF003A6466 /* libz.tbd */,
 				A29E25F823E9C7B9003A6466 /* libiconv.tbd */,
 				A29E25F723E9C7B3003A6466 /* libc++.tbd */,
@@ -183,7 +180,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2CAD653240E99BA0062A8F4 /* Microblink.bundle in Resources */,
 				A29E25E923E9C677003A6466 /* LaunchScreen.storyboard in Resources */,
 				A29E25E623E9C677003A6466 /* Assets.xcassets in Resources */,
 				A29E25E423E9C675003A6466 /* Main.storyboard in Resources */,

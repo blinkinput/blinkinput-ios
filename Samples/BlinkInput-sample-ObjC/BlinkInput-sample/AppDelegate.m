@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <Microblink/Microblink.h>
+#import <BlinkInput/BlinkInput.h>
 
 @interface AppDelegate ()
 
@@ -20,8 +20,10 @@
     // Override point for customization after application launch.
     
     /** First, set license key as soon as possible */
-    // Valid until: 2020-10-23
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
+    // Valid until: 2021-08-23
+    [[MBINMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle] errorCallback:^(MBINLicenseError licenseError) {
+        NSLog(@"License error: %ld", (long)licenseError);
+    }];
     return YES;
 }
 

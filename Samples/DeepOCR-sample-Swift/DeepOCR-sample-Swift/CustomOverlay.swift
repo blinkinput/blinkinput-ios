@@ -6,22 +6,22 @@
 //  Copyright © 2018 Dino. All rights reserved.
 //
 
-import Microblink
+import BlinkInput
 
-protocol MBCustomOverlayDelegate {
-    func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBRecognizerResultState)
+protocol MBINCustomOverlayDelegate {
+    func customOverlayViewControllerDidFinishScannig(_ customOverlay: CustomOverlay, state: MBINRecognizerResultState)
 }
 
-class CustomOverlay: MBCustomOverlayViewController {
+class CustomOverlay: MBINCustomOverlayViewController {
     
-    var delegate: MBCustomOverlayDelegate?
+    var delegate: MBINCustomOverlayDelegate?
     
     @IBOutlet var viewFinder: UIView!
     @IBOutlet var resultTextView: UITextView!
     
-    var dotsSubview: MBDotsResultSubview?
+    var dotsSubview: MBINDotsResultSubview?
     
-    static func initFromStoryboardWith(_ delegate: MBCustomOverlayDelegate) -> CustomOverlay {
+    static func initFromStoryboardWith(_ delegate: MBINCustomOverlayDelegate) -> CustomOverlay {
         let customOverlay: CustomOverlay = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomOverlay") as! CustomOverlay
         customOverlay.delegate = delegate
         return customOverlay
@@ -32,7 +32,7 @@ class CustomOverlay: MBCustomOverlayViewController {
 
         self.metadataDelegates.detectionRecognizerRunnerViewControllerDelegate = self;
         
-        self.dotsSubview = MBDotsResultSubview(frame: self.viewFinder.bounds)
+        self.dotsSubview = MBINDotsResultSubview(frame: self.viewFinder.bounds)
         self.dotsSubview?.shouldIgnoreFastResults = true
         self.viewFinder.addSubview(self.dotsSubview!)
     }
@@ -44,14 +44,14 @@ class CustomOverlay: MBCustomOverlayViewController {
     
 }
 
-extension CustomOverlay: MBScanningRecognizerRunnerViewControllerDelegate {
-    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, didFinishScanningWith state: MBRecognizerResultState) {
+extension CustomOverlay: MBINScanningRecognizerRunnerViewControllerDelegate {
+    func recognizerRunnerViewControllerDidFinishScanning(_ recognizerRunnerViewController: UIViewController & MBINRecognizerRunnerViewController, state: MBINRecognizerResultState) {
         self.delegate?.customOverlayViewControllerDidFinishScannig(self, state: state)
     }
 }
 
-extension CustomOverlay: MBDetectionRecognizerRunnerViewControllerDelegate {
-    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, didFinishDetectionWithDisplayablePoints displayablePoints: MBDisplayablePointsDetection) {
+extension CustomOverlay: MBINDetectionRecognizerRunnerViewControllerDelegate {
+    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBINRecognizerRunnerViewController, didFinishDetectionWithDisplayablePoints displayablePoints: MBINDisplayablePointsDetection) {
         
         DispatchQueue.main.async(execute: {() -> Void in
             self.dotsSubview?.detectionFinished(withDisplayablePoints: displayablePoints)
