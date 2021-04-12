@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPBlinkOCR"
-  s.version     = "4.3.0"
+  s.version     = "5.0.0"
   s.summary     = "A state-of-the-art OCR module for mobile devices"
   s.homepage    = "http://microblink.com"
   
@@ -31,17 +31,16 @@ Pod::Spec.new do |s|
   }
 
   s.source      = { 
-        :http => 'https://github.com/blinkinput/blinkinput-ios/releases/download/v4.3.0/blinkinput-ios_v4.3.0.tar.gz'
+        :http => 'https://github.com/blinkinput/blinkinput-ios/releases/download/v5.0.0/blinkinput-ios_v5.0.0.tar.gz'
   }
 
   s.platform     = :ios
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '8.0.0'
-  s.ios.resources = "Microblink.bundle"
+  s.ios.deployment_target = '9.0.0'
   s.ios.requires_arc = false
-  s.ios.vendored_frameworks = 'Microblink.framework'
+  s.ios.vendored_frameworks = 'BlinkInput.xcframework'
   s.ios.frameworks = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'AssetsLibrary', 'CoreMedia'
   s.ios.libraries = 'c++', 'iconv', 'z'
 
