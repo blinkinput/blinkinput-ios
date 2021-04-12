@@ -1,5 +1,5 @@
 //
-//  MBCroatianIDFrontTemplateRecognizer.swift
+//  MBICroatianIDFrontTemplateRecognizer.swift
 //  Templating-sample-swift
 //
 //  Created by Jura Skrlec on 10/05/2018.
@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Microblink
+import BlinkInput
 
-class MBCroIDNewTemplatingClassifier: NSObject, MBTemplatingClassifier {
-    private(set) weak var documentNumberNewRegexParser: MBRegexParser?
+class MBICroIDNewTemplatingClassifier: NSObject, MBITemplatingClassifier {
+    private(set) weak var documentNumberNewRegexParser: MBIRegexParser?
     
-    init(_ parser: MBRegexParser?) {
+    init(_ parser: MBIRegexParser?) {
         super.init()
         
         documentNumberNewRegexParser = parser
@@ -29,10 +29,10 @@ class MBCroIDNewTemplatingClassifier: NSObject, MBTemplatingClassifier {
     }
 }
 
-class MBCroIDOldTemplatingClassifier: NSObject, MBTemplatingClassifier {
-    private(set) weak var documentNumberOldRegexParser: MBRegexParser?
+class MBICroIDOldTemplatingClassifier: NSObject, MBITemplatingClassifier {
+    private(set) weak var documentNumberOldRegexParser: MBIRegexParser?
     
-    init(_ parser: MBRegexParser?) {
+    init(_ parser: MBIRegexParser?) {
         super.init()
         
         documentNumberOldRegexParser = parser
@@ -49,40 +49,40 @@ class MBCroIDOldTemplatingClassifier: NSObject, MBTemplatingClassifier {
     }
 }
 
-class MBCroatianIDFrontTemplateRecognizer : NSObject {
+class MBICroatianIDFrontTemplateRecognizer : NSObject {
     
-    var firstNameParser: MBRegexParser?
-    var lastNameParser: MBRegexParser?
-    var sexParser: MBRegexParser?
-    var citizenshipParser: MBRegexParser?
-    var oldDocumentNumberParser: MBRegexParser?
-    var neDocumentNumberParser: MBRegexParser?
-    var dateOfBirthParser: MBDateParser?
+    var firstNameParser: MBIRegexParser?
+    var lastNameParser: MBIRegexParser?
+    var sexParser: MBIRegexParser?
+    var citizenshipParser: MBIRegexParser?
+    var oldDocumentNumberParser: MBIRegexParser?
+    var neDocumentNumberParser: MBIRegexParser?
+    var dateOfBirthParser: MBIDateParser?
     
-    var firstNameParseGroupProcessor: MBParserGroupProcessor?
-    var lastNameParseGroupProcessor: MBParserGroupProcessor?
-    var sexCitizenshipDOBGroup: MBParserGroupProcessor?
-    var oldDocumentNumberGroup: MBParserGroupProcessor?
-    var neDocumentNumberGroup: MBParserGroupProcessor?
-    var fullDocumentImage: MBImageReturnProcessor?
-    var faceImage: MBImageReturnProcessor?
+    var firstNameParseGroupProcessor: MBIParserGroupProcessor?
+    var lastNameParseGroupProcessor: MBIParserGroupProcessor?
+    var sexCitizenshipDOBGroup: MBIParserGroupProcessor?
+    var oldDocumentNumberGroup: MBIParserGroupProcessor?
+    var neDocumentNumberGroup: MBIParserGroupProcessor?
+    var fullDocumentImage: MBIImageReturnProcessor?
+    var faceImage: MBIImageReturnProcessor?
     
-    var firstNameOldID: MBProcessorGroup?
-    var firstNameNewID: MBProcessorGroup?
-    var lastNameOldID: MBProcessorGroup?
-    var lastNameNewID: MBProcessorGroup?
-    var sexCitizenshipDOBOldID: MBProcessorGroup?
-    var sexCitizenshipDOBNewID: MBProcessorGroup?
-    var documentNumberOldID: MBProcessorGroup?
-    var documentNumberNewID: MBProcessorGroup?
-    var faceOldID: MBProcessorGroup?
-    var faceNewID: MBProcessorGroup?
-    var fullDocument: MBProcessorGroup?
+    var firstNameOldID: MBIProcessorGroup?
+    var firstNameNewID: MBIProcessorGroup?
+    var lastNameOldID: MBIProcessorGroup?
+    var lastNameNewID: MBIProcessorGroup?
+    var sexCitizenshipDOBOldID: MBIProcessorGroup?
+    var sexCitizenshipDOBNewID: MBIProcessorGroup?
+    var documentNumberOldID: MBIProcessorGroup?
+    var documentNumberNewID: MBIProcessorGroup?
+    var faceOldID: MBIProcessorGroup?
+    var faceNewID: MBIProcessorGroup?
+    var fullDocument: MBIProcessorGroup?
     
-    var oldID: MBTemplatingClass?
-    var neID: MBTemplatingClass?
-    var documentDetector: MBDocumentDetector?
-    var detectorRecognizer: MBDetectorRecognizer?
+    var oldID: MBITemplatingClass?
+    var neID: MBITemplatingClass?
+    var documentDetector: MBIDocumentDetector?
+    var detectorRecognizer: MBIDetectorRecognizer?
     
     override init() {
         super.init()
@@ -96,19 +96,19 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
     }
     
     func configureParsers() {
-        firstNameParser = MBRegexParser(regex: "([A-ZŠĐŽČĆ]+ ?)+")
-        let ocrEngineOptions = MBOcrEngineOptions()
+        firstNameParser = MBIRegexParser(regex: "([A-ZŠĐŽČĆ]+ ?)+")
+        let ocrEngineOptions = MBIOcrEngineOptions()
         ocrEngineOptions.charWhitelist = MBCroatianIDTemplateUtils.croatianCharsWhitelist()
         firstNameParser?.ocrEngineOptions = ocrEngineOptions
-        lastNameParser = firstNameParser?.copy() as? MBRegexParser
-        sexParser = MBRegexParser(regex: "[MŽ]/[MF]")
+        lastNameParser = firstNameParser?.copy() as? MBIRegexParser
+        sexParser = MBIRegexParser(regex: "[MŽ]/[MF]")
         do {
-            let sexOptions = MBOcrEngineOptions()
-            var charWhitelist = Set<MBOcrCharKey>()
-            charWhitelist.insert(MBOcrCharKey(code:  Int32(UnicodeScalar("M").value), font: MBOcrFont.OCR_FONT_ANY))
-            charWhitelist.insert(MBOcrCharKey(code:  Int32(UnicodeScalar("F").value), font: MBOcrFont.OCR_FONT_ANY))
-            charWhitelist.insert(MBOcrCharKey(code:  Int32(UnicodeScalar("/").value), font: MBOcrFont.OCR_FONT_ANY))
-            charWhitelist.insert(MBOcrCharKey(code:  Int32(UnicodeScalar("Ž").value), font: MBOcrFont.OCR_FONT_ANY))
+            let sexOptions = MBIOcrEngineOptions()
+            var charWhitelist = Set<MBIOcrCharKey>()
+            charWhitelist.insert(MBIOcrCharKey(code:  Int32(UnicodeScalar("M").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
+            charWhitelist.insert(MBIOcrCharKey(code:  Int32(UnicodeScalar("F").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
+            charWhitelist.insert(MBIOcrCharKey(code:  Int32(UnicodeScalar("/").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
+            charWhitelist.insert(MBIOcrCharKey(code:  Int32(UnicodeScalar("Ž").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
             
             sexOptions.charWhitelist = charWhitelist
             sexParser?.ocrEngineOptions = sexOptions
@@ -117,13 +117,13 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         sexParser?.endWithWhitespace = true
         sexParser?.startWithWhitespace = true
         
-        citizenshipParser = MBRegexParser(regex: "[A-Z]{3}")
+        citizenshipParser = MBIRegexParser(regex: "[A-Z]{3}")
         do {
-            let citizenshipOptions = MBOcrEngineOptions()
-            var charWhitelist = Set<MBOcrCharKey>()
-            charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("H").value), font: MBOcrFont.OCR_FONT_ANY))
-            charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("R").value), font: MBOcrFont.OCR_FONT_ANY))
-            charWhitelist.insert(MBOcrCharKey(code: Int32(UnicodeScalar("V").value), font: MBOcrFont.OCR_FONT_ANY))
+            let citizenshipOptions = MBIOcrEngineOptions()
+            var charWhitelist = Set<MBIOcrCharKey>()
+            charWhitelist.insert(MBIOcrCharKey(code: Int32(UnicodeScalar("H").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
+            charWhitelist.insert(MBIOcrCharKey(code: Int32(UnicodeScalar("R").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
+            charWhitelist.insert(MBIOcrCharKey(code: Int32(UnicodeScalar("V").value), font: MBIOcrFont.MB_OCR_FONT_ANY))
             citizenshipOptions.charWhitelist = charWhitelist
             
             citizenshipParser?.ocrEngineOptions = citizenshipOptions
@@ -131,10 +131,10 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         
         citizenshipParser?.endWithWhitespace = true
         citizenshipParser?.startWithWhitespace = true
-        oldDocumentNumberParser = MBRegexParser(regex: "\\d{9}")
-        neDocumentNumberParser = oldDocumentNumberParser?.copy() as? MBRegexParser
+        oldDocumentNumberParser = MBIRegexParser(regex: "\\d{9}")
+        neDocumentNumberParser = oldDocumentNumberParser?.copy() as? MBIRegexParser
         
-        dateOfBirthParser = MBDateParser()
+        dateOfBirthParser = MBIDateParser()
     }
     
     /**
@@ -142,17 +142,17 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
      */
     func configureProcessors() {
         // put first name parser in its own parser group
-        firstNameParseGroupProcessor = MBParserGroupProcessor(parsers: [firstNameParser!])
+        firstNameParseGroupProcessor = MBIParserGroupProcessor(parsers: [firstNameParser!])
         // also do the same for last name parser
-        lastNameParseGroupProcessor = MBParserGroupProcessor(parsers: [lastNameParser!])
+        lastNameParseGroupProcessor = MBIParserGroupProcessor(parsers: [lastNameParser!])
         // sex, citizenship and date of birth can be in same group
-        sexCitizenshipDOBGroup = MBParserGroupProcessor(parsers: [sexParser!, citizenshipParser!, dateOfBirthParser!])
+        sexCitizenshipDOBGroup = MBIParserGroupProcessor(parsers: [sexParser!, citizenshipParser!, dateOfBirthParser!])
         // document number group for old and new IDs
-        oldDocumentNumberGroup = MBParserGroupProcessor(parsers: [oldDocumentNumberParser!])
-        neDocumentNumberGroup = MBParserGroupProcessor(parsers: [neDocumentNumberParser!])
+        oldDocumentNumberGroup = MBIParserGroupProcessor(parsers: [oldDocumentNumberParser!])
+        neDocumentNumberGroup = MBIParserGroupProcessor(parsers: [neDocumentNumberParser!])
         
-        fullDocumentImage = MBImageReturnProcessor()
-        faceImage = MBImageReturnProcessor()
+        fullDocumentImage = MBIImageReturnProcessor()
+        faceImage = MBIImageReturnProcessor()
     }
     
     func configureProcessorGroup() {
@@ -203,10 +203,10 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         // The width of the image will be automatically determined to keep the original aspect ratio.
         //------------------------------------------------------------------------------------------
         
-        firstNameOldID = MBProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.333, width: 0.306, height: 0.167), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [firstNameParseGroupProcessor!])
-        firstNameNewID = MBProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.389, width: 0.353, height: 0.167), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [firstNameParseGroupProcessor!])
-        lastNameOldID = MBProcessorGroup(processingLocation: CGRect(x: 0.271, y: 0.204, width: 0.318, height: 0.111), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 100), andProcessors: [lastNameParseGroupProcessor!])
-        lastNameNewID = MBProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.204, width: 0.353, height: 0.167), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 100), andProcessors: [lastNameParseGroupProcessor!])
+        firstNameOldID = MBIProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.333, width: 0.306, height: 0.167), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [firstNameParseGroupProcessor!])
+        firstNameNewID = MBIProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.389, width: 0.353, height: 0.167), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [firstNameParseGroupProcessor!])
+        lastNameOldID = MBIProcessorGroup(processingLocation: CGRect(x: 0.271, y: 0.204, width: 0.318, height: 0.111), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 100), andProcessors: [lastNameParseGroupProcessor!])
+        lastNameNewID = MBIProcessorGroup(processingLocation: CGRect(x: 0.282, y: 0.204, width: 0.353, height: 0.167), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 100), andProcessors: [lastNameParseGroupProcessor!])
         
         //------------------------------------------------------------------------------------------
         // Sex, citizenship and date of birth
@@ -252,8 +252,8 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         // dewarped image to 300 pixels.
         // The width of the image will be automatically determined to keep the original aspect ratio.
         //------------------------------------------------------------------------------------------
-        sexCitizenshipDOBOldID = MBProcessorGroup(processingLocation: CGRect(x: 0.412, y: 0.500, width: 0.259, height: 0.296), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 300), andProcessors: [sexCitizenshipDOBGroup!])
-        sexCitizenshipDOBNewID = MBProcessorGroup(processingLocation: CGRect(x: 0.388, y: 0.500, width: 0.282, height: 0.296), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 300), andProcessors: [sexCitizenshipDOBGroup!])
+        sexCitizenshipDOBOldID = MBIProcessorGroup(processingLocation: CGRect(x: 0.412, y: 0.500, width: 0.259, height: 0.296), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 300), andProcessors: [sexCitizenshipDOBGroup!])
+        sexCitizenshipDOBNewID = MBIProcessorGroup(processingLocation: CGRect(x: 0.388, y: 0.500, width: 0.282, height: 0.296), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 300), andProcessors: [sexCitizenshipDOBGroup!])
         
         //------------------------------------------------------------------------------------------
         // Document number
@@ -261,23 +261,23 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
         // In same way as above, we create ProcessorGroup for old and new versions of document number
         // parsers.
         //------------------------------------------------------------------------------------------
-        documentNumberOldID = MBProcessorGroup(processingLocation: CGRect(x: 0.047, y: 0.519, width: 0.224, height: 0.111), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [oldDocumentNumberGroup!])
-        documentNumberNewID = MBProcessorGroup(processingLocation: CGRect(x: 0.047, y: 0.685, width: 0.224, height: 0.111), dewarpPolicy: MBFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [neDocumentNumberGroup!])
+        documentNumberOldID = MBIProcessorGroup(processingLocation: CGRect(x: 0.047, y: 0.519, width: 0.224, height: 0.111), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [oldDocumentNumberGroup!])
+        documentNumberNewID = MBIProcessorGroup(processingLocation: CGRect(x: 0.047, y: 0.685, width: 0.224, height: 0.111), dewarpPolicy: MBIFixedDewarpPolicy(dewarpHeight: 150), andProcessors: [neDocumentNumberGroup!])
         
         //------------------------------------------------------------------------------------------
         // Face image
         //------------------------------------------------------------------------------------------
         // In same way as above, we create ProcessorGroup for image of the face on document.
         //------------------------------------------------------------------------------------------
-        faceOldID = MBProcessorGroup(processingLocation: CGRect(x: 0.650, y: 0.277, width: 0.270, height: 0.630), dewarpPolicy: MBDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [faceImage!])
-        faceNewID = MBProcessorGroup(processingLocation: CGRect(x: 0.659, y: 0.407, width: 0.294, height: 0.574), dewarpPolicy: MBDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [faceImage!])
+        faceOldID = MBIProcessorGroup(processingLocation: CGRect(x: 0.650, y: 0.277, width: 0.270, height: 0.630), dewarpPolicy: MBIDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [faceImage!])
+        faceNewID = MBIProcessorGroup(processingLocation: CGRect(x: 0.659, y: 0.407, width: 0.294, height: 0.574), dewarpPolicy: MBIDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [faceImage!])
         
         //------------------------------------------------------------------------------------------
         // Full document image
         //------------------------------------------------------------------------------------------
         // location of full document is same regardless of document version
         //------------------------------------------------------------------------------------------
-        fullDocument = MBProcessorGroup(processingLocation: CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0), dewarpPolicy: MBDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [fullDocumentImage!])
+        fullDocument = MBIProcessorGroup(processingLocation: CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0), dewarpPolicy: MBIDPIBasedDewarpPolicy(desiredDPI: 200), andProcessors: [fullDocumentImage!])
     }
     
     /**
@@ -287,17 +287,17 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
     func configureClasses() {
         // configure old version class
         do {
-            oldID = MBTemplatingClass()
+            oldID = MBITemplatingClass()
             oldID?.setClassificationProcessorGroups([documentNumberOldID!])
             oldID?.setNonClassificationProcessorGroups([firstNameOldID!, lastNameOldID!, sexCitizenshipDOBOldID!, faceOldID!, fullDocument!])
-            oldID?.setTemplatingClassifier(MBCroIDOldTemplatingClassifier(oldDocumentNumberParser))
+            oldID?.setTemplatingClassifier(MBICroIDOldTemplatingClassifier(oldDocumentNumberParser))
         }
         // configure new version class
         do {
-            neID = MBTemplatingClass()
+            neID = MBITemplatingClass()
             neID?.setClassificationProcessorGroups([documentNumberNewID!])
             neID?.setNonClassificationProcessorGroups([firstNameNewID!, lastNameNewID!, sexCitizenshipDOBNewID!, faceNewID!, fullDocument!])
-            neID?.setTemplatingClassifier(MBCroIDNewTemplatingClassifier(neDocumentNumberParser))
+            neID?.setTemplatingClassifier(MBICroIDNewTemplatingClassifier(neDocumentNumberParser))
         }
     }
     
@@ -307,8 +307,8 @@ class MBCroatianIDFrontTemplateRecognizer : NSObject {
      */
     
     func configureDetectorRecognizer() {
-        documentDetector = MBDocumentDetector(documentSpecifications: [MBDocumentSpecification.create(from: MBDocumentSpecificationPreset.id1Card)])
-        detectorRecognizer = MBDetectorRecognizer(quadWithSizeDetector: documentDetector!)
+        documentDetector = MBIDocumentDetector(documentSpecifications: [MBIDocumentSpecification.create(from: MBIDocumentSpecificationPreset.id1Card)])
+        detectorRecognizer = MBIDetectorRecognizer(quadWithSizeDetector: documentDetector!)
         detectorRecognizer?.setTemplatingClasses([oldID!, neID!])
         
         /*

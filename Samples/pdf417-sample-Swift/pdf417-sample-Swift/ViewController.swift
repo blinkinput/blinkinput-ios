@@ -7,31 +7,29 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class ViewController: UIViewController {
     
-    var pdf417Recognizer : MBPdf417Recognizer?
-    var barcodeRecognizer : MBBarcodeRecognizer?
+    var barcodeRecognizer : MBIBarcodeRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Valid until: 2020-10-23
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
+        // Valid until:2022-02-06
+        MBIMicroblinkSDK.shared().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: .main) { (_) in
+        }
     }
     
     @IBAction func didTapCustomUI(_ sender: Any) {
         
         /** Create barcode recognizer */
-        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer = MBIBarcodeRecognizer()
         self.barcodeRecognizer?.scanQrCode = true
-        
-        self.pdf417Recognizer = MBPdf417Recognizer()
-        
+                
         /** Crate recognizer collection */
-        let recognizerList = [self.barcodeRecognizer!, self.pdf417Recognizer!]
-        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        let recognizerList = [self.barcodeRecognizer!]
+        let recognizerCollection : MBIRecognizerCollection = MBIRecognizerCollection(recognizers: recognizerList)
         
         /** Create your overlay view controller */
         let customOverlayViewController : CustomOverlay = CustomOverlay.initFromStoryboardWith()
@@ -40,7 +38,7 @@ class ViewController: UIViewController {
         customOverlayViewController.reconfigureRecognizers(recognizerCollection)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: customOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: customOverlayViewController)!
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.present(recognizerRunneViewController, animated: true, completion: nil)
@@ -48,49 +46,41 @@ class ViewController: UIViewController {
     @IBAction func didTapScan(_ sender: AnyObject) {
         
         /** Create barcode recognizer */
-        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer = MBIBarcodeRecognizer()
         self.barcodeRecognizer?.scanQrCode = true
-        
-        self.pdf417Recognizer = MBPdf417Recognizer()
-        
+                
         /** Create barcode settings */
-        let settings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+        let settings : MBIBarcodeOverlaySettings = MBIBarcodeOverlaySettings()
         
         /** Crate recognizer collection */
-        let recognizerList = [self.barcodeRecognizer!, self.pdf417Recognizer!]
-        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+        let recognizerList = [self.barcodeRecognizer!]
+        let recognizerCollection : MBIRecognizerCollection = MBIRecognizerCollection(recognizers: recognizerList)
         
         /** Create your overlay view controller */
-        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        let barcodeOverlayViewController : MBIBarcodeOverlayViewController = MBIBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)!
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.present(recognizerRunneViewController, animated: true, completion: nil)
     }
 }
 
-extension ViewController: MBBarcodeOverlayViewControllerDelegate {
+extension ViewController: MBIBarcodeOverlayViewControllerDelegate {
     
-    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController, state: MBIRecognizerResultState) {
         /** This is done on background thread */
         barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
         
         var message: String = ""
         var title: String = ""
         
-        if (self.barcodeRecognizer!.result.resultState == MBRecognizerResultState.valid) {
+        if (self.barcodeRecognizer!.result.resultState == MBIRecognizerResultState.valid) {
             title = "QR Code"
             
             // Save the string representation of the code
             message = self.barcodeRecognizer!.result.stringData!
-        }
-        else if (self.pdf417Recognizer!.result.resultState == MBRecognizerResultState.valid) {
-            title = "PDF417"
-            
-            // Save the string representation of the code
-            message = self.pdf417Recognizer!.result.stringData!
         }
         
         /** Needs to be called on main thread beacuse everything prior is on background thread */
@@ -108,7 +98,7 @@ extension ViewController: MBBarcodeOverlayViewControllerDelegate {
         }
     }
     
-    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
 }

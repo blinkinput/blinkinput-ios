@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,10 +21,9 @@
 		A207A44E20A44207002AEDB0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A44D20A44206002AEDB0 /* libc++.tbd */; };
 		A207A45020A44211002AEDB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A44F20A44211002AEDB0 /* libz.tbd */; };
 		A207A45B20A4467B002AEDB0 /* MBGenericPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A45A20A4467B002AEDB0 /* MBGenericPreset.swift */; };
+		A261AEB226246C9100B6BF9F /* BlinkInput.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A261AEB026246C8A00B6BF9F /* BlinkInput.xcframework */; };
+		A261AEB326246C9100B6BF9F /* BlinkInput.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A261AEB026246C8A00B6BF9F /* BlinkInput.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B403EE8420F4D38400EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE8320F4D38400EE5235 /* license.txt */; };
-		B4CCA04A22AE4EA700C76715 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4CCA04822AE4EA700C76715 /* Microblink.bundle */; };
-		B4CCA04C22AE4EAD00C76715 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCA04922AE4EA700C76715 /* Microblink.framework */; };
-		B4CCA04D22AE4EAD00C76715 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCA04922AE4EA700C76715 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4CCA04D22AE4EAD00C76715 /* Microblink.framework in Embed Frameworks */,
+				A261AEB326246C9100B6BF9F /* BlinkInput.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,9 +57,8 @@
 		A207A44D20A44206002AEDB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A207A44F20A44211002AEDB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A207A45A20A4467B002AEDB0 /* MBGenericPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBGenericPreset.swift; sourceTree = "<group>"; };
+		A261AEB026246C8A00B6BF9F /* BlinkInput.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlinkInput.xcframework; path = ../../BlinkInput.xcframework; sourceTree = "<group>"; };
 		B403EE8320F4D38400EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		B4CCA04822AE4EA700C76715 /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
-		B4CCA04922AE4EA700C76715 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A261AEB226246C9100B6BF9F /* BlinkInput.xcframework in Frameworks */,
 				A207A45020A44211002AEDB0 /* libz.tbd in Frameworks */,
 				A207A44E20A44207002AEDB0 /* libc++.tbd in Frameworks */,
 				A207A44C20A441F9002AEDB0 /* libiconv.tbd in Frameworks */,
-				B4CCA04C22AE4EAD00C76715 /* Microblink.framework in Frameworks */,
 				A207A44A20A441E5002AEDB0 /* MobileCoreServices.framework in Frameworks */,
 				A207A44820A441D7002AEDB0 /* CoreMedia.framework in Frameworks */,
 				A207A44620A441D1002AEDB0 /* AudioToolbox.framework in Frameworks */,
@@ -118,8 +116,7 @@
 		A207A44020A441BE002AEDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4CCA04822AE4EA700C76715 /* Microblink.bundle */,
-				B4CCA04922AE4EA700C76715 /* Microblink.framework */,
+				A261AEB026246C8A00B6BF9F /* BlinkInput.xcframework */,
 				A207A44920A441E5002AEDB0 /* MobileCoreServices.framework */,
 				A207A44720A441D7002AEDB0 /* CoreMedia.framework */,
 				A207A44520A441D1002AEDB0 /* AudioToolbox.framework */,
@@ -137,7 +134,8 @@
 			children = (
 				B403EE8320F4D38400EE5235 /* license.txt */,
 			);
-			path = License;
+			name = License;
+			path = ../../License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +166,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Jura Skrlec";
 				TargetAttributes = {
 					A207A42A20A44199002AEDB0 = {
@@ -203,7 +201,6 @@
 				A207A43920A4419A002AEDB0 /* LaunchScreen.storyboard in Resources */,
 				A207A43620A4419A002AEDB0 /* Assets.xcassets in Resources */,
 				A207A43420A44199002AEDB0 /* Main.storyboard in Resources */,
-				B4CCA04A22AE4EA700C76715 /* Microblink.bundle in Resources */,
 				B403EE8420F4D38400EE5235 /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +266,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -294,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,6 +327,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -348,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
