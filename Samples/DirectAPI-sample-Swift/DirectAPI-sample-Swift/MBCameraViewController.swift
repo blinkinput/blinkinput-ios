@@ -1,5 +1,5 @@
 //
-//  MBCameraViewController.swift
+//  MBICameraViewController.swift
 //  DirectAPI-sample-Swift
 //
 //  Created by Jura Skrlec on 10/05/2018.
@@ -8,15 +8,15 @@
 
 import UIKit
 import AVFoundation
-import Microblink
+import BlinkInput
 
-class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBScanningRecognizerRunnerDelegate {
+class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBIScanningRecognizerRunnerDelegate {
     
     @IBOutlet var cameraPausedLabel: UILabel!
     
     var captureSession: AVCaptureSession?
-    var recognizerRunner: MBRecognizerRunner?
-    var pdf417Recognizer: MBPdf417Recognizer?
+    var recognizerRunner: MBIRecognizerRunner?
+    var pdf417Recognizer: MBIBarcodeRecognizer?
     var isPauseRecognition = false
     
     @IBOutlet weak var myView: UIView!
@@ -144,12 +144,12 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
         
         myView.layer.addSublayer(prevLayer!)
         
-        var recognizers = [MBRecognizer]()
-        pdf417Recognizer = MBPdf417Recognizer()
+        var recognizers = [MBIRecognizer]()
+        pdf417Recognizer = MBIBarcodeRecognizer()
         recognizers.append(pdf417Recognizer!)
         
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+        let recognizerCollection = MBIRecognizerCollection(recognizers: recognizers)
+        recognizerRunner = MBIRecognizerRunner(recognizerCollection: recognizerCollection)
         recognizerRunner?.scanningRecognizerRunnerDelegate = self
         
         captureSession?.startRunning()
@@ -175,16 +175,16 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        let image = MBImage(cmSampleBuffer: sampleBuffer)
-        image.orientation = MBProcessingOrientation.left
+        let image = MBIImage(cmSampleBuffer: sampleBuffer)
+        image.orientation = MBIProcessingOrientation.left
         if !isPauseRecognition {
             recognizerRunner?.processImage(image)
         }
     }
     
-    func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunner(_ recognizerRunner: MBIRecognizerRunner, didFinishScanningWith state: MBIRecognizerResultState) {
         isPauseRecognition = true
-        if state == MBRecognizerResultState.valid {
+        if state == MBIRecognizerResultState.valid {
             DispatchQueue.main.async(execute: {() -> Void in
                 let title = "PDF417"
                 // Save the string representation of the code

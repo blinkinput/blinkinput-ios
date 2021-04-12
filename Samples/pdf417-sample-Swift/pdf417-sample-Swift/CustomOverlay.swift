@@ -6,9 +6,9 @@
 //  Copyright © 2018 Dino. All rights reserved.
 //
 
-import Microblink
+import BlinkInput
 
-class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerViewControllerDelegate {
+class CustomOverlay: MBICustomOverlayViewController, MBIScanningRecognizerRunnerViewControllerDelegate {
     
     static func initFromStoryboardWith() -> CustomOverlay {
         let customOverlay: CustomOverlay = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomOverlay") as! CustomOverlay
@@ -20,9 +20,9 @@ class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerVi
         super.scanningRecognizerRunnerViewControllerDelegate = self;
     }
     
-    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunnerViewControllerDidFinishScanning(_ recognizerRunnerViewController: UIViewController & MBIRecognizerRunnerViewController, state: MBIRecognizerResultState) {
         /** This is done on background thread */
-        if state == MBRecognizerResultState.valid {
+        if state == MBIRecognizerResultState.valid {
             recognizerRunnerViewController.pauseScanning();
             
             DispatchQueue.main.async {
@@ -31,16 +31,11 @@ class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerVi
                 var title: String = ""
                 
                 for recognizer in self.recognizerCollection.recognizerList {
-                    if ( recognizer.baseResult?.resultState == MBRecognizerResultState.valid ) {
-                        if recognizer is MBBarcodeRecognizer {
-                            let barcodeRecognizer = recognizer as? MBBarcodeRecognizer
+                    if ( recognizer.baseResult?.resultState == MBIRecognizerResultState.valid ) {
+                        if recognizer is MBIBarcodeRecognizer {
+                            let barcodeRecognizer = recognizer as? MBIBarcodeRecognizer
                             title = "QR Code"
                             message = (barcodeRecognizer?.result.stringData)!
-                        }
-                        else if recognizer is MBPdf417Recognizer {
-                            let pdf417Recognizer = recognizer as? MBPdf417Recognizer
-                            title = "PDF417"
-                            message = (pdf417Recognizer?.result.stringData)!
                         }
                     }
                 }

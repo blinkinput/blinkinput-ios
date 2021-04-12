@@ -7,38 +7,37 @@
 //
 
 import UIKit
-import MobileCoreServices
-import Microblink
+import BlinkInput
 
-class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  {
+class ViewController: UIViewController, MBIBarcodeOverlayViewControllerDelegate  {
     
-    var rawParser: MBRawParser?
-    var parserGroupProcessor: MBParserGroupProcessor?
-    var blinkInputRecognizer: MBBlinkInputRecognizer?
+    var rawParser: MBIRawParser?
+    var parserGroupProcessor: MBIParserGroupProcessor?
+    var blinkInputRecognizer: MBIBlinkInputRecognizer?
 
     @IBAction func didTapScan(_ sender: AnyObject) {
         
-        let settings = MBBarcodeOverlaySettings()
-        rawParser = MBRawParser()
-        parserGroupProcessor = MBParserGroupProcessor(parsers: [rawParser!])
-        blinkInputRecognizer = MBBlinkInputRecognizer(processors: [parserGroupProcessor!])
+        let settings = MBIBarcodeOverlaySettings()
+        rawParser = MBIRawParser()
+        parserGroupProcessor = MBIParserGroupProcessor(parsers: [rawParser!])
+        blinkInputRecognizer = MBIBlinkInputRecognizer(processors: [parserGroupProcessor!])
         
         /** Create recognizer collection */
-        let recognizerCollection = MBRecognizerCollection(recognizers: [blinkInputRecognizer!])
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        let recognizerCollection = MBIRecognizerCollection(recognizers: [blinkInputRecognizer!])
+        let overlayVC = MBIBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
-        let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
+        let recognizerRunnerViewController: (UIViewController & MBIRecognizerRunnerViewController)? = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         present(recognizerRunnerViewController!, animated: true, completion: nil)
     }
     
-    // MARK: MBBarcodeOverlayViewControllerDelegate delegate
+    // MARK: MBIBarcodeOverlayViewControllerDelegate delegate
     
-    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController, state: MBIRecognizerResultState) {
 
         // check for valid state
-        if state == MBRecognizerResultState.valid {
+        if state == MBIRecognizerResultState.valid {
             // first, pause scanning until we process all the results
             barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
             
@@ -51,7 +50,7 @@ class ViewController: UIViewController, MBBarcodeOverlayViewControllerDelegate  
         }
     }
     
-    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
 }
