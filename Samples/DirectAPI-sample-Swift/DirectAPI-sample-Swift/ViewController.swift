@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 import MobileCoreServices
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBScanningRecognizerRunnerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBIScanningRecognizerRunnerDelegate {
     
-    var recognizerRunner: MBRecognizerRunner?
-    var pdf417Recognizer: MBPdf417Recognizer?
+    var recognizerRunner: MBIRecognizerRunner?
+    var pdf417Recognizer: MBIBarcodeRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,28 +54,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     func setupRecognizerRunner() {
-        var recognizers = [MBRecognizer]()
-        pdf417Recognizer = MBPdf417Recognizer()
+        var recognizers = [MBIRecognizer]()
+        pdf417Recognizer = MBIBarcodeRecognizer()
         recognizers.append(pdf417Recognizer!)
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+        let recognizerCollection = MBIRecognizerCollection(recognizers: recognizers)
+        recognizerRunner = MBIRecognizerRunner(recognizerCollection: recognizerCollection)
         recognizerRunner?.scanningRecognizerRunnerDelegate = self
     }
     
     func processImageRunner(_ originalImage: UIImage?) {
-        var image: MBImage? = nil
+        var image: MBIImage? = nil
         if let anImage = originalImage {
-            image = MBImage(uiImage: anImage)
+            image = MBIImage(uiImage: anImage)
         }
         image?.cameraFrame = true
-        image?.orientation = MBProcessingOrientation.left
+        image?.orientation = MBIProcessingOrientation.left
         let _serialQueue = DispatchQueue(label: "com.microblink.DirectAPI-sample-swift")
         _serialQueue.async(execute: {() -> Void in
             self.recognizerRunner?.processImage(image!)
         })
     }
     
-    func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunner(_ recognizerRunner: MBIRecognizerRunner, didFinishScanningWith state: MBIRecognizerResultState) {
         DispatchQueue.main.async(execute: {() -> Void in
             let title = "PDF417"
             // Save the string representation of the code

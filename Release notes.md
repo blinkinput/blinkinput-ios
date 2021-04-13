@@ -1,5 +1,42 @@
 # Release notes
 
+## 5.0.0
+
+### **BlinkInput v5 Release Announcement**
+
+As of this version, BlinkInput SDK is fully compatible with other Microblink SDKs, which means that you can use it with other Microblink SDKs in the same application.
+
+### New features:
+
+- We have full support for Apple Silicon!
+
+### Cocapods support change:
+
+- We are updating our Cocoapods with `.xcframework` format from now on. Please download [Cocoapods 1.10.0](https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0) or newer to use our SDK.
+
+### Major API changes:
+
+- To ensure compatibilty with other Microblink SDKs, we have reprefixed all classes. All classes have `MBI` prefix instead of `MB`
+- We have renamed framework from `Microblink` to `BlinkInput`
+- We added error callback when setting license keys on `MBIMicroblinkSDK`
+	- You will be getting error callback and reason why you could not unlock SDK - see `MBILicenseError`
+- We moved all resources inside framework, we are not shipping bundle anymore.
+
+### Minor API changes:
+
+- We renamed `MBRecogitionMode` to `MBIRecognitionDebugMode` in `MBIRecognizerCollection`.
+- Swift:
+	- We renamed all `sharedInstance` to `shared`
+	- All enums are now `Int`
+	- All `unsigned integers` are now `Int`
+- We've replaced `Using time-limited license!` warning with `Using trial license!` warning. The warning message is displayed when using a trial license key.
+- We've deprecated `MBDetectorRecognizer` — use `MBIDocumentCaptureRecognizer` instead.
+- We've deprecated `MBPdf417Recognizer` — use `MBIBarcodeRecognizer` instead.
+
+### Bug fixes:
+
+- We've fixed a bug in IBAN parsing which occasionally read the reference number as part of the IBAN.
+
 ## 4.3.0
 
 ### New features:

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,11 +20,10 @@
 		3159A5C11CF4A5E900641A11 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3159A5C01CF4A5E900641A11 /* libc++.tbd */; };
 		3159A5C31CF4A5F100641A11 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3159A5C21CF4A5F100641A11 /* libiconv.tbd */; };
 		3159A5C51CF4A5F400641A11 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3159A5C41CF4A5F400641A11 /* Accelerate.framework */; };
+		A261AE9B2624677E00B6BF9F /* BlinkInput.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A261AE992624677700B6BF9F /* BlinkInput.xcframework */; };
+		A261AE9C2624677E00B6BF9F /* BlinkInput.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A261AE992624677700B6BF9F /* BlinkInput.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE13611F7503C200C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE13601F7503C200C6F1EA /* libz.tbd */; };
 		B403EE7820F4D0EC00EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE7720F4D0EC00EE5235 /* license.txt */; };
-		B4CCA03322AE4BCD00C76715 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4CCA03122AE4BCD00C76715 /* Microblink.bundle */; };
-		B4CCA03422AE4BD500C76715 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCA03022AE4BCD00C76715 /* Microblink.framework */; };
-		B4CCA03522AE4BD500C76715 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4CCA03022AE4BCD00C76715 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B4CCA03522AE4BD500C76715 /* Microblink.framework in Embed Frameworks */,
+				A261AE9C2624677E00B6BF9F /* BlinkInput.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,10 +58,9 @@
 		3159A5C01CF4A5E900641A11 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3159A5C21CF4A5F100641A11 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		3159A5C41CF4A5F400641A11 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		A261AE992624677700B6BF9F /* BlinkInput.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlinkInput.xcframework; path = ../../BlinkInput.xcframework; sourceTree = "<group>"; };
 		A2FE13601F7503C200C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B403EE7720F4D0EC00EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		B4CCA03022AE4BCD00C76715 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
-		B4CCA03122AE4BCD00C76715 /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +70,10 @@
 			files = (
 				A2FE13611F7503C200C6F1EA /* libz.tbd in Frameworks */,
 				3159A5C31CF4A5F100641A11 /* libiconv.tbd in Frameworks */,
-				B4CCA03422AE4BD500C76715 /* Microblink.framework in Frameworks */,
 				3159A5C11CF4A5E900641A11 /* libc++.tbd in Frameworks */,
 				3159A5C51CF4A5F400641A11 /* Accelerate.framework in Frameworks */,
 				18CC81FD1B697133000F6DA5 /* AudioToolbox.framework in Frameworks */,
+				A261AE9B2624677E00B6BF9F /* BlinkInput.xcframework in Frameworks */,
 				18CC81F91B697106000F6DA5 /* AVFoundation.framework in Frameworks */,
 				18CC81F71B697101000F6DA5 /* CoreMedia.framework in Frameworks */,
 			);
@@ -130,11 +128,10 @@
 		189EA8DE1AADE7FE005732C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A261AE992624677700B6BF9F /* BlinkInput.xcframework */,
 				A2FE13601F7503C200C6F1EA /* libz.tbd */,
 				3159A5C21CF4A5F100641A11 /* libiconv.tbd */,
 				3159A5C01CF4A5E900641A11 /* libc++.tbd */,
-				B4CCA03122AE4BCD00C76715 /* Microblink.bundle */,
-				B4CCA03022AE4BCD00C76715 /* Microblink.framework */,
 				3159A5C41CF4A5F400641A11 /* Accelerate.framework */,
 				18CC81FC1B697133000F6DA5 /* AudioToolbox.framework */,
 				18CC81F81B697106000F6DA5 /* AVFoundation.framework */,
@@ -148,7 +145,8 @@
 			children = (
 				B403EE7720F4D0EC00EE5235 /* license.txt */,
 			);
-			path = License;
+			name = License;
+			path = ../../License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +176,7 @@
 		187391FB1AA4B1060031D6C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					187392021AA4B1060031D6C9 = {
@@ -215,7 +213,6 @@
 				187392171AA4B1070031D6C9 /* LaunchScreen.xib in Resources */,
 				186226B71AB1B0A6002D71E5 /* en.strings in Resources */,
 				187392141AA4B1070031D6C9 /* Images.xcassets in Resources */,
-				B4CCA03322AE4BCD00C76715 /* Microblink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +282,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -311,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -342,6 +340,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -360,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,10 +371,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "BlinkInput-sample/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -385,10 +389,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "BlinkInput-sample/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.blinkinput.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -1,0 +1,6 @@
+framework module BlinkInput {
+    umbrella header "BlinkInput.h"
+
+    export *
+    module * { export * }
+}

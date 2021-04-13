@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class ViewController: UIViewController {
 
@@ -23,28 +23,28 @@ class ViewController: UIViewController {
 
     @IBAction func startScanTapped(_ sender: Any) {
         
-        // Create MBFieldByFieldOverlaySettings
-        let settings = MBFieldByFieldOverlaySettings(scanElements: MBGenericPreset.getPreset()!)
+        // Create MBIFieldByFieldOverlaySettings
+        let settings = MBIFieldByFieldOverlaySettings(scanElements: MBGenericPreset.getPreset()!)
         
         // Create field by field VC
-        let fieldByFieldVC = MBFieldByFieldOverlayViewController(settings: settings, delegate: self)
+        let fieldByFieldVC = MBIFieldByFieldOverlayViewController(settings: settings, delegate: self)
         
         // Create scanning VC
-        let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: fieldByFieldVC)
+        let recognizerRunnerViewController: (UIViewController & MBIRecognizerRunnerViewController)? = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: fieldByFieldVC)
         
         // Present VC
         self.present(recognizerRunnerViewController!, animated: true, completion: nil)
     }
 }
 
-extension ViewController : MBFieldByFieldOverlayViewControllerDelegate {
+extension ViewController : MBIFieldByFieldOverlayViewControllerDelegate {
     
-    func field(_ fieldByFieldOverlayViewController: MBFieldByFieldOverlayViewController, didFinishScanningWith scanElements: [MBScanElement]) {
+    func field(_ fieldByFieldOverlayViewController: MBIFieldByFieldOverlayViewController, didFinishScanningWith scanElements: [MBIScanElement]) {
         
         fieldByFieldOverlayViewController.recognizerRunnerViewController?.pauseScanning()
         
         var dict = [String: String]()
-        for element: MBScanElement in scanElements {
+        for element: MBIScanElement in scanElements {
             if (element.scanned) {
                 dict[element.identifier] = element.value
             }
@@ -63,7 +63,7 @@ extension ViewController : MBFieldByFieldOverlayViewControllerDelegate {
         fieldByFieldOverlayViewController.present(alert, animated: true, completion: nil)
     }
     
-    func field(byFieldOverlayViewControllerWillClose fieldByFieldOverlayViewController: MBFieldByFieldOverlayViewController) {
+    func field(byFieldOverlayViewControllerWillClose fieldByFieldOverlayViewController: MBIFieldByFieldOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
 }

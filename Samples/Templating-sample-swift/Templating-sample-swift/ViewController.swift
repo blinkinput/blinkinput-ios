@@ -7,32 +7,32 @@
 //
 
 import UIKit
-import Microblink
+import BlinkInput
 
 class ViewController: UIViewController {
     
-    var croatianIDFrontTemplateRecognizer: MBCroatianIDFrontTemplateRecognizer?
+    var croatianIDFrontTemplateRecognizer: MBICroatianIDFrontTemplateRecognizer?
 
     @IBAction func scanButtonTapped(_ sender: Any) {
         
-        croatianIDFrontTemplateRecognizer = MBCroatianIDFrontTemplateRecognizer()
-        let settings = MBBarcodeOverlaySettings()
-        var recognizers = [MBRecognizer]()
+        croatianIDFrontTemplateRecognizer = MBICroatianIDFrontTemplateRecognizer()
+        let settings = MBIBarcodeOverlaySettings()
+        var recognizers = [MBIRecognizer]()
         recognizers.append((croatianIDFrontTemplateRecognizer?.detectorRecognizer)!)
         /** Create recognizer collection */
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        let overlayVC = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
-        let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
+        let recognizerCollection = MBIRecognizerCollection(recognizers: recognizers)
+        let overlayVC = MBIBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        let recognizerRunnerViewController: (UIViewController & MBIRecognizerRunnerViewController)? = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: overlayVC)
         
         self.present(recognizerRunnerViewController!, animated: true, completion: nil)
     }
 }
 
-extension ViewController: MBBarcodeOverlayViewControllerDelegate {
+extension ViewController: MBIBarcodeOverlayViewControllerDelegate {
     
-    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController, state: MBIRecognizerResultState) {
         
-        if state == MBRecognizerResultState.valid {
+        if state == MBIRecognizerResultState.valid {
             barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
             
             DispatchQueue.main.async(execute: {() -> Void in
@@ -46,7 +46,7 @@ extension ViewController: MBBarcodeOverlayViewControllerDelegate {
         }
     }
     
-    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
 }

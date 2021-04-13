@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A261AEAB26246BDF00B6BF9F /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A261AEAA26246BDF00B6BF9F /* license.txt */; };
+		A261AEAE26246BF400B6BF9F /* BlinkInput.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A261AEAC26246BEF00B6BF9F /* BlinkInput.xcframework */; };
+		A261AEAF26246BF400B6BF9F /* BlinkInput.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A261AEAC26246BEF00B6BF9F /* BlinkInput.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A29E25DD23E9C675003A6466 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25DC23E9C675003A6466 /* AppDelegate.swift */; };
 		A29E25DF23E9C675003A6466 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25DE23E9C675003A6466 /* SceneDelegate.swift */; };
 		A29E25E123E9C675003A6466 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E25E023E9C675003A6466 /* ViewController.swift */; };
@@ -19,9 +22,6 @@
 		A29E260523E9D09A003A6466 /* DocumentCaptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260423E9D09A003A6466 /* DocumentCaptureTableViewCell.swift */; };
 		A29E260723E9D380003A6466 /* DocumentCaptureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260623E9D380003A6466 /* DocumentCaptureTableViewController.swift */; };
 		A29E260923EAFF8B003A6466 /* ConfirmResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29E260823EAFF8B003A6466 /* ConfirmResultTableViewCell.swift */; };
-		A29E260C23EB077C003A6466 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29E260A23EB077B003A6466 /* Microblink.framework */; };
-		A29E260D23EB077C003A6466 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A29E260A23EB077B003A6466 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A2CAD653240E99BA0062A8F4 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A29E260B23EB077B003A6466 /* Microblink.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,7 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A29E260D23EB077C003A6466 /* Microblink.framework in Embed Frameworks */,
+				A261AEAF26246BF400B6BF9F /* BlinkInput.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A261AEAA26246BDF00B6BF9F /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		A261AEAC26246BEF00B6BF9F /* BlinkInput.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BlinkInput.xcframework; path = ../../BlinkInput.xcframework; sourceTree = "<group>"; };
 		A29E25D923E9C675003A6466 /* DocumentCapture-sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentCapture-sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29E25DC23E9C675003A6466 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A29E25DE23E9C675003A6466 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		A29E260423E9D09A003A6466 /* DocumentCaptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCaptureTableViewCell.swift; sourceTree = "<group>"; };
 		A29E260623E9D380003A6466 /* DocumentCaptureTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCaptureTableViewController.swift; sourceTree = "<group>"; };
 		A29E260823EAFF8B003A6466 /* ConfirmResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmResultTableViewCell.swift; sourceTree = "<group>"; };
-		A29E260A23EB077B003A6466 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
-		A29E260B23EB077B003A6466 /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +66,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29E25F623E9C7AD003A6466 /* CoreMedia.framework in Frameworks */,
+				A261AEAE26246BF400B6BF9F /* BlinkInput.xcframework in Frameworks */,
 				A29E25F423E9C7A7003A6466 /* AVFoundation.framework in Frameworks */,
-				A29E260C23EB077C003A6466 /* Microblink.framework in Frameworks */,
 				A29E25F223E9C7A0003A6466 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A261AEA926246BDF00B6BF9F /* License */ = {
+			isa = PBXGroup;
+			children = (
+				A261AEAA26246BDF00B6BF9F /* license.txt */,
+			);
+			name = License;
+			path = ../../License;
+			sourceTree = "<group>";
+		};
 		A29E25D023E9C675003A6466 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +104,7 @@
 		A29E25DB23E9C675003A6466 /* DocumentCapture-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				A261AEA926246BDF00B6BF9F /* License */,
 				A29E25DC23E9C675003A6466 /* AppDelegate.swift */,
 				A29E25DE23E9C675003A6466 /* SceneDelegate.swift */,
 				A29E25E023E9C675003A6466 /* ViewController.swift */,
@@ -112,8 +122,7 @@
 		A29E25F023E9C7A0003A6466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A29E260B23EB077B003A6466 /* Microblink.bundle */,
-				A29E260A23EB077B003A6466 /* Microblink.framework */,
+				A261AEAC26246BEF00B6BF9F /* BlinkInput.xcframework */,
 				A29E25F923E9C7BF003A6466 /* libz.tbd */,
 				A29E25F823E9C7B9003A6466 /* libiconv.tbd */,
 				A29E25F723E9C7B3003A6466 /* libc++.tbd */,
@@ -152,7 +161,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Jura Skrlec";
 				TargetAttributes = {
 					A29E25D823E9C675003A6466 = {
@@ -183,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2CAD653240E99BA0062A8F4 /* Microblink.bundle in Resources */,
+				A261AEAB26246BDF00B6BF9F /* license.txt in Resources */,
 				A29E25E923E9C677003A6466 /* LaunchScreen.storyboard in Resources */,
 				A29E25E623E9C677003A6466 /* Assets.xcassets in Resources */,
 				A29E25E423E9C675003A6466 /* Main.storyboard in Resources */,
@@ -254,6 +263,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -314,6 +324,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
