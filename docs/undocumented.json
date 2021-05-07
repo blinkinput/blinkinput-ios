@@ -1,1636 +1,1636 @@
 {
   "warnings": [
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBAmountParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBAmountParser.h",
       "line": 22,
       "symbol": "MBIAmountParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBAmountParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBAmountParserResult.h",
       "line": 21,
       "symbol": "MBIAmountParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeOverlayViewController.h",
       "line": 20,
       "symbol": "MBIBarcodeOverlayViewController",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeRecognizer.h",
       "line": 24,
       "symbol": "MBIBarcodeRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeRecognizerResult.h",
       "line": 23,
       "symbol": "MBIBarcodeRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeType.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBarcodeType.h",
       "line": 12,
       "symbol": "MBIBarcodeType.MBIBarcodeNone",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBlinkInputRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBlinkInputRecognizer.h",
       "line": 24,
       "symbol": "MBIBlinkInputRecognizer.-initWithProcessors:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBlinkInputRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBBlinkInputRecognizerResult.h",
       "line": 23,
       "symbol": "MBIBlinkInputRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 28,
       "symbol": "MBICustomOverlayViewController.recognizerCollection",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 29,
       "symbol": "MBICustomOverlayViewController.cameraSettings",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 30,
       "symbol": "MBICustomOverlayViewController.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 31,
       "symbol": "MBICustomOverlayViewController.scanningRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 32,
       "symbol": "MBICustomOverlayViewController.recognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBCustomOverlayViewController.h",
       "line": 41,
       "symbol": "MBICustomOverlayViewController.-initWithRecognizerCollection:cameraSettings:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 20,
       "symbol": "MBIDateFormat.MBIDateFormatDDMMYYYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 21,
       "symbol": "MBIDateFormat.MBIDateFormatDDMMYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 22,
       "symbol": "MBIDateFormat.MBIDateFormatMMDDYYYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 23,
       "symbol": "MBIDateFormat.MBIDateFormatMMDDYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 24,
       "symbol": "MBIDateFormat.MBIDateFormatYYYYMMDD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 25,
       "symbol": "MBIDateFormat.MBIDateFormatYYMMDD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 26,
       "symbol": "MBIDateFormat.MBIDateFormatDDMONTHYYYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 27,
       "symbol": "MBIDateFormat.MBIDateFormatDDMONTHYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 28,
       "symbol": "MBIDateFormat.MBIDateFormatMONTHDDYYYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 29,
       "symbol": "MBIDateFormat.MBIDateFormatMONTHDDYY",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 30,
       "symbol": "MBIDateFormat.MBIDateFormatYYYYMONTHDD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 31,
       "symbol": "MBIDateFormat.MBIDateFormatYYMONTHDD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 34,
       "symbol": "MBIDateFormatArray",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 35,
       "symbol": "MBIDateSeparatorCharsArray",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParser.h",
       "line": 45,
       "symbol": "MBIDateParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateParserResult.h",
       "line": 22,
       "symbol": "MBIDateParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDateResult.h",
       "line": 23,
       "symbol": "MBIDateResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizer.h",
       "line": 25,
       "symbol": "MBIDetectorRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizer.h",
       "line": 27,
       "symbol": "MBIDetectorRecognizer.-initWithQuadWithSizeDetector:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorRecognizerResult.h",
       "line": 20,
       "symbol": "MBIDetectorRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorResult.h",
       "line": 40,
       "symbol": "MBIDetectorResult.detectionCode",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDetectorResult.h",
       "line": 41,
       "symbol": "MBIDetectorResult.detectionStatus",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDewarpPolicy.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDewarpPolicy.h",
       "line": 19,
       "symbol": "MBIDewarpPolicy.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentCaptureRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentCaptureRecognizer.h",
       "line": 23,
       "symbol": "MBIDocumentCaptureRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentCaptureRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentCaptureRecognizerResult.h",
       "line": 22,
       "symbol": "MBIDocumentCaptureRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentDetector.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentDetector.h",
       "line": 24,
       "symbol": "MBIDocumentDetector.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentDetectorResult.h",
       "line": 22,
       "symbol": "MBIDocumentDetectorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 19,
       "symbol": "MBIRange.MBIRange.start",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 19,
       "symbol": "MBIRange.start",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 20,
       "symbol": "MBIRange.MBIRange.stop",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 20,
       "symbol": "MBIRange.stop",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 37,
       "symbol": "MBIScale.MBIScale.scale",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 37,
       "symbol": "MBIScale.scale",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 38,
       "symbol": "MBIScale.MBIScale.tolerance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 38,
       "symbol": "MBIScale.tolerance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDocumentSpecification.h",
       "line": 109,
       "symbol": "MBIDocumentSpecification.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
       "line": 23,
       "symbol": "MBIDotsSubview.dotsLayer",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
       "line": 42,
       "symbol": "MBIDotsSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBDotsSubview.h",
       "line": 44,
       "symbol": "MBIDotsSubview.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEmailParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEmailParserResult.h",
       "line": 20,
       "symbol": "MBIEmailParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEncodeFullDocumentImage.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEncodeFullDocumentImage.h",
       "line": 11,
       "symbol": "MBIEncodeFullDocumentImage",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEncodedFullDocumentImageResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBEncodedFullDocumentImageResult.h",
       "line": 11,
       "symbol": "MBIEncodedFullDocumentImageResult",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 11,
       "symbol": "MBIExceptionName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 13,
       "symbol": "MBIIllegalModificationException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 14,
       "symbol": "MBIInvalidLicenseKeyException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 15,
       "symbol": "MBIInvalidLicenseeKeyException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 16,
       "symbol": "MBIInvalidLicenseResourceException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 17,
       "symbol": "MBIInvalidBundleException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 18,
       "symbol": "MBIMissingSettingsException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBException.h",
       "line": 19,
       "symbol": "MBIInvalidArgumentException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlaySettings.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlaySettings.h",
       "line": 24,
       "symbol": "MBIFieldByFieldOverlaySettings.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
       "line": 30,
       "symbol": "MBIFieldByFieldOverlayViewController.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
       "line": 32,
       "symbol": "MBIFieldByFieldOverlayViewController.-initWithNibName:bundle:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFieldByFieldOverlayViewController.h",
       "line": 34,
       "symbol": "MBIFieldByFieldOverlayViewController.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 24,
       "symbol": "MBIFrameGrabberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 25,
       "symbol": "MBIFrameGrabberRecognizer.-initWithFrameGrabberDelegate:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 43,
       "symbol": "MBIFrameGrabberRecognizerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImage.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImage.h",
       "line": 11,
       "symbol": "MBIFullDocumentImage",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImageExtensionFactors.h",
       "line": 10,
       "symbol": "MBIFullDocumentImageExtensionFactors",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImageResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBFullDocumentImageResult.h",
       "line": 13,
       "symbol": "MBIFullDocumentImageResult",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 27,
       "symbol": "CGDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 30,
       "symbol": "",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 30,
       "symbol": "CGLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 30,
       "symbol": "CGLine.",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 31,
       "symbol": ".point1",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 31,
       "symbol": "CGLine..point1",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 32,
       "symbol": ".point2",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 32,
       "symbol": "CGLine..point2",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 38,
       "symbol": "CGDeltaMake",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 41,
       "symbol": "CGPointWithDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 44,
       "symbol": "CGPointDistance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 47,
       "symbol": "CGPointAlongLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 50,
       "symbol": "CGPointRotatedAroundPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 55,
       "symbol": "CGLineMake",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 58,
       "symbol": "CGLineEqualToLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 61,
       "symbol": "CGLineMidPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 64,
       "symbol": "CGLineDirection",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 67,
       "symbol": "CGLinesAngle",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 70,
       "symbol": "CGLinesIntersectAtPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 73,
       "symbol": "CGLineLength",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 76,
       "symbol": "CGLineScale",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 79,
       "symbol": "CGLineTranslate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 82,
       "symbol": "CGLineScaleOnMidPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 85,
       "symbol": "CGLineDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 88,
       "symbol": "CGLinesAreParallel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 93,
       "symbol": "CGRectTopLeftPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 94,
       "symbol": "CGRectTopRightPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 95,
       "symbol": "CGRectBottomLeftPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 96,
       "symbol": "CGRectBottomRightPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 99,
       "symbol": "CGRectResize",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 102,
       "symbol": "CGRectInsetEdge",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 113,
       "symbol": "CGRectCenterPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 116,
       "symbol": "CGRectClosestTwoCornerPoints",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 120,
       "symbol": "CGLineIntersectsRectAtPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 129,
       "symbol": "CGControlPointsForArcBetweenPointsWithRadius",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGeometry.h",
       "line": 135,
       "symbol": "MBIscanningRegionForFrameInBounds",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareRecognizerRunnerDelegate.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareRecognizerRunnerDelegate.h",
       "line": 13,
       "symbol": "MBIGlareRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareRecognizerRunnerViewControllerDelegate.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareRecognizerRunnerViewControllerDelegate.h",
       "line": 15,
       "symbol": "MBIGlareRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
       "line": 20,
       "symbol": "MBIGlareStatusSubview.label",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
       "line": 22,
       "symbol": "MBIGlareStatusSubview.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
       "line": 24,
       "symbol": "MBIGlareStatusSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
       "line": 26,
       "symbol": "MBIGlareStatusSubview.-initWithFrame:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBGlareStatusSubview.h",
       "line": 28,
       "symbol": "MBIGlareStatusSubview.-glareDetectionFinishedWithResult:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBIbanParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBIbanParser.h",
       "line": 22,
       "symbol": "MBIIbanParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBIbanParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBIbanParserResult.h",
       "line": 21,
       "symbol": "MBIIbanParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 16,
       "symbol": "MBIImageExtensionFactors.MBIImageExtensionFactors.top",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 16,
       "symbol": "MBIImageExtensionFactors.top",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 17,
       "symbol": "MBIImageExtensionFactors.MBIImageExtensionFactors.right",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 17,
       "symbol": "MBIImageExtensionFactors.right",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 18,
       "symbol": "MBIImageExtensionFactors.MBIImageExtensionFactors.bottom",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 18,
       "symbol": "MBIImageExtensionFactors.bottom",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 19,
       "symbol": "MBIImageExtensionFactors.MBIImageExtensionFactors.left",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageExtensionFactors.h",
       "line": 19,
       "symbol": "MBIImageExtensionFactors.left",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageProcessingRecognizerRunnerDelegate.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageProcessingRecognizerRunnerDelegate.h",
       "line": 11,
       "symbol": "MBIImageProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageReturnProcessor.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageReturnProcessor.h",
       "line": 22,
       "symbol": "MBIImageReturnProcessor.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageReturnProcessorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBImageReturnProcessorResult.h",
       "line": 22,
       "symbol": "MBIImageReturnProcessorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 13,
       "symbol": "MBILicenseErrorNotification",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 15,
       "symbol": "MBILicenseError",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 15,
       "symbol": "MBILicenseError",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 16,
       "symbol": "MBILicenseError.MBILicenseErrorNetworkRequired",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 17,
       "symbol": "MBILicenseError.MBILicenseErrorUnableToDoRemoteLicenceCheck",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 18,
       "symbol": "MBILicenseError.MBILicenseErrorLicenseIsLocked",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 19,
       "symbol": "MBILicenseError.MBILicenseErrorLicenseCheckFailed",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 20,
       "symbol": "MBILicenseError.MBILicenseErrorInvalidLicense",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicenseError.h",
       "line": 23,
       "symbol": "MBILicenseErrorBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicensePlatesParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicensePlatesParser.h",
       "line": 22,
       "symbol": "MBILicensePlatesParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicensePlatesParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLicensePlatesParserResult.h",
       "line": 20,
       "symbol": "MBILicensePlatesParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 13,
       "symbol": "MBILogLevel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 13,
       "symbol": "MBILogLevel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 14,
       "symbol": "MBILogLevel.MBILogLevelError",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 15,
       "symbol": "MBILogLevel.MBILogLevelWarning",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 16,
       "symbol": "MBILogLevel.MBILogLevelInfo",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 17,
       "symbol": "MBILogLevel.MBILogLevelDebug",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 18,
       "symbol": "MBILogLevel.MBILogLevelVerbose",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 21,
       "symbol": "MBILoggerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 25,
       "symbol": "MBILoggerDelegate.-log:message:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 26,
       "symbol": "MBILoggerDelegate.-log:format:arguments:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 30,
       "symbol": "MBILogger",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 32,
       "symbol": "MBILogger.delegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 34,
       "symbol": "MBILogger.+sharedInstance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBLogger.h",
       "line": 36,
       "symbol": "MBILogger.-disableMicroblinkLogging",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
       "line": 37,
       "symbol": "MBIMicroblinkApp",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
       "line": 39,
       "symbol": "MBIMicroblinkApp.language",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
       "line": 87,
       "symbol": "MBI_LOCALIZED_DEFAULT_STRING",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
       "line": 91,
       "symbol": "MBI_LOCALIZED_FOR_LANGUAGE",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkApp.h",
       "line": 109,
       "symbol": "MBI_LOCALIZED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkDefines.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkDefines.h",
       "line": 34,
       "symbol": "MBBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkSDK.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMicroblinkSDK.h",
       "line": 21,
       "symbol": "MBIMicroblinkSDK.+sharedInstance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdDetector.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdDetector.h",
       "line": 23,
       "symbol": "MBIMrtdDetector.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdDetectorResult.h",
       "line": 21,
       "symbol": "MBIMrtdDetectorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdSpecification.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBMrtdSpecification.h",
       "line": 34,
       "symbol": "MBIMrtdSpecification.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBNativeResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBNativeResult.h",
       "line": 14,
       "symbol": "MBINativeResult",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
       "line": 74,
       "symbol": "MBIOcrLayout.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
       "line": 192,
       "symbol": "MBICharWithVariants",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
       "line": 211,
       "symbol": "MBICharWithVariants.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
       "line": 260,
       "symbol": "MBIOcrChar.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOcrLayout.h",
       "line": 302,
       "symbol": "MBIPosition.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOverlayViewController.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBOverlayViewController.h",
       "line": 33,
       "symbol": "MBIOverlayViewController.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessor.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessor.h",
       "line": 24,
       "symbol": "MBIParserGroupProcessor.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessor.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessor.h",
       "line": 26,
       "symbol": "MBIParserGroupProcessor.-initWithParsers:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessorResult.h",
       "line": 21,
       "symbol": "MBIParserGroupProcessorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserGroupProcessorResult.h",
       "line": 23,
       "symbol": "MBIParserGroupProcessorResult.ocrLayout",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserResult.h",
       "line": 41,
       "symbol": "MBIParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBParserResult.h",
       "line": 43,
       "symbol": "MBIParserResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBPdf417Recognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBPdf417Recognizer.h",
       "line": 23,
       "symbol": "MBIPdf417Recognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBPdf417RecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBPdf417RecognizerResult.h",
       "line": 22,
       "symbol": "MBIPdf417RecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorGroup.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorGroup.h",
       "line": 24,
       "symbol": "MBIProcessorGroup.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorResult.h",
       "line": 41,
       "symbol": "MBIProcessorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBProcessorResult.h",
       "line": 43,
       "symbol": "MBIProcessorResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadDetector.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadDetector.h",
       "line": 22,
       "symbol": "MBIQuadDetector.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadDetectorResult.h",
       "line": 21,
       "symbol": "MBIQuadDetectorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadWithSizeDetector.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadWithSizeDetector.h",
       "line": 24,
       "symbol": "MBIQuadWithSizeDetector.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadWithSizeDetectorResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBQuadWithSizeDetectorResult.h",
       "line": 24,
       "symbol": "MBIQuadWithSizeDetectorResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRawParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRawParser.h",
       "line": 24,
       "symbol": "MBIRawParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRawParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRawParserResult.h",
       "line": 21,
       "symbol": "MBIRawParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizer.h",
       "line": 27,
       "symbol": "MBIRecognizer.-getOptimalHudOrientation",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerCollection.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerCollection.h",
       "line": 51,
       "symbol": "MBIRecognizerCollection.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerCollection.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerCollection.h",
       "line": 53,
       "symbol": "MBIRecognizerCollection.-initWithRecognizers:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
       "line": 46,
       "symbol": "MBIRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
       "line": 48,
       "symbol": "MBIRecognizerResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerResult.h",
       "line": 49,
       "symbol": "MBIRecognizerResult.resultStateString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 29,
       "symbol": "MBIRecognizerRunner.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 30,
       "symbol": "MBIRecognizerRunner.scanningRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 31,
       "symbol": "MBIRecognizerRunner.imageProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 32,
       "symbol": "MBIRecognizerRunner.stringProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 34,
       "symbol": "MBIRecognizerRunner.coordinator",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 36,
       "symbol": "MBIRecognizerRunner.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 41,
       "symbol": "MBIRecognizerRunner.-resetState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunner.h",
       "line": 43,
       "symbol": "MBIRecognizerRunner.-resetState:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 21,
       "symbol": "MBIRecognizerRunnerMetadataDelegates.debugRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 22,
       "symbol": "MBIRecognizerRunnerMetadataDelegates.detectionRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 23,
       "symbol": "MBIRecognizerRunnerMetadataDelegates.ocrRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 24,
       "symbol": "MBIRecognizerRunnerMetadataDelegates.glareRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 21,
       "symbol": "MBIRecognizerRunnerViewControllerMetadataDelegates.debugRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 22,
       "symbol": "MBIRecognizerRunnerViewControllerMetadataDelegates.detectionRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 23,
       "symbol": "MBIRecognizerRunnerViewControllerMetadataDelegates.ocrRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 24,
       "symbol": "MBIRecognizerRunnerViewControllerMetadataDelegates.glareRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRegexParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRegexParser.h",
       "line": 29,
       "symbol": "MBIRegexParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRegexParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBRegexParserResult.h",
       "line": 21,
       "symbol": "MBIRegexParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBScanElement.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBScanElement.h",
       "line": 38,
       "symbol": "MBIScanElement.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSimNumberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSimNumberRecognizer.h",
       "line": 22,
       "symbol": "MBISimNumberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSimNumberRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSimNumberRecognizerResult.h",
       "line": 20,
       "symbol": "MBISimNumberRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBStringProcessingRecognizerRunnerDelegate.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBStringProcessingRecognizerRunnerDelegate.h",
       "line": 10,
       "symbol": "MBIStringProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
       "line": 21,
       "symbol": "MBISuccessFrameGrabberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
       "line": 22,
       "symbol": "MBISuccessFrameGrabberRecognizer.-initWithRecognizer:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBSuccessFrameGrabberRecognizerResult.h",
       "line": 23,
       "symbol": "MBISuccessFrameGrabberRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTapToFocusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTapToFocusSubview.h",
       "line": 25,
       "symbol": "MBITapToFocusSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTapToFocusSubview.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTapToFocusSubview.h",
       "line": 27,
       "symbol": "MBITapToFocusSubview.-willFocusAtPoint:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
       "line": 24,
       "symbol": "MBITemplatingClass.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
       "line": 60,
       "symbol": "MBITemplatingClassifier",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingClass.h",
       "line": 63,
       "symbol": "MBITemplatingClassifier.-classify",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingRecognizer.h",
       "line": 24,
       "symbol": "MBITemplatingRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTemplatingRecognizerResult.h",
       "line": 23,
       "symbol": "MBITemplatingRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTopUpParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTopUpParser.h",
       "line": 41,
       "symbol": "MBITopUpParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTopUpParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBTopUpParserResult.h",
       "line": 20,
       "symbol": "MBITopUpParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinParser.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinParser.h",
       "line": 22,
       "symbol": "MBIVinParser.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinParserResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinParserResult.h",
       "line": 20,
       "symbol": "MBIVinParserResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinRecognizer.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinRecognizer.h",
       "line": 22,
       "symbol": "MBIVinRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinRecognizerResult.h",
+      "file": "/Users/mijogracanin/Dev/core-ios/SDKs/BlinkInput/blinkinput-ios/BlinkInput.xcframework/ios-arm64_i386_x86_64-simulator/BlinkInput.framework/Headers/MBVinRecognizerResult.h",
       "line": 20,
       "symbol": "MBIVinRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/opt/jenkins-ios-macpro/E0/core-ios/SDKs/BlinkInput"
+  "source_directory": "/Users/mijogracanin/Dev/core-ios/SDKs/documentation/scripts"
 }
