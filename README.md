@@ -1,6 +1,6 @@
 <p align="center" >
   <a href="http://www.microblink.com">
-    <img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/logo-microblink.png" alt="MicroBlink" title="MicroBlink" />
+    <img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/logo-microblink.png" alt="Microblink" title="Microblink" />
   </a>
 </p>
 
@@ -18,7 +18,7 @@ BlinkInput SDK is a state-of-the-art OCR module for mobile devices. It's OCR tec
 - enteprise-level security standards
 - support for barcode scanning
 
-BlinkInput is a part of family of SDKs developed by [MicroBlink](http://www.microblink.com) for optical text recognition, barcode scanning, ID document scanning and many others. 
+BlinkInput is a part of family of SDKs developed by [Microblink](http://www.microblink.com) for optical text recognition, barcode scanning, ID document scanning and many others. 
 
 BlinkInput powers [PhotoMath app](https://photomath.net/en/) where it's used to [recognize mathematic expressions](https://vimeo.com/109405701) in real time.
 
@@ -81,7 +81,7 @@ BlinkInput powers [PhotoMath app](https://photomath.net/en/) where it's used to 
 
 # <a name="requirements"></a> Requirements
 
-SDK package contains BlinkInput framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in **iOS 9.0 or later**.
+SDK package contains BlinkInput framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in **iOS 11.0 or later**.
 
 SDK performs significantly better when the images obtained from the camera are focused. Because of that, the SDK can have lower performance on iPad 2 and iPod Touch 4th gen devices, which [don't have camera with autofocus](http://www.adweek.com/socialtimes/ipad-2-rear-camera-has-tap-for-auto-exposure-not-auto-focus/12536). 
 # <a name="quick-start"></a> Quick Start
@@ -116,7 +116,7 @@ pod init
 - Copy and paste the following lines into the TextEdit window:
 
 ```ruby
-platform :ios, '9.0'
+platform :ios, '11.0'
 target 'Your-App-Name' do
     pod 'PPBlinkOCR', '~> 5.0.0'
 end
@@ -200,7 +200,7 @@ Also, for initialization purposes, the ViewController which initiates the scan h
 Swift
 
 ```swift
-class ViewController: UIViewController, MBIDocumentOverlayViewControllerDelegate  {
+class ViewController: UIViewController, MBIBarcodeOverlayViewControllerDelegate  {
 
     var rawParser: MBIRawParser?
     var parserGroupProcessor: MBIParserGroupProcessor?
@@ -212,7 +212,7 @@ class ViewController: UIViewController, MBIDocumentOverlayViewControllerDelegate
 
     @IBAction func didTapScan(_ sender: AnyObject) {
 
-        let settings = MBIDocumentOverlaySettings()
+        let settings = MBIBarcodeOverlaySettings()
         rawParser = MBIRawParser()
         parserGroupProcessor = MBIParserGroupProcessor(parsers: [rawParser!])
         blinkInputRecognizer = MBIBlinkInputRecognizer(processors: [parserGroupProcessor!])
@@ -221,10 +221,10 @@ class ViewController: UIViewController, MBIDocumentOverlayViewControllerDelegate
         let recognizerCollection = MBIRecognizerCollection(recognizers: recognizerList)
 
         /** Create your overlay view controller */
-        let documentOverlayViewController = MBIDocumentOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        let barcodeOverlayViewController = MBIBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
 
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunnerViewController: UIViewController = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: documentOverlayViewController)
+        let recognizerRunnerViewController: UIViewController = MBIViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
 
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         present(recognizerRunnerViewController!, animated: true, completion: nil)
@@ -235,7 +235,7 @@ class ViewController: UIViewController, MBIDocumentOverlayViewControllerDelegate
 Objective-C
 
 ```objective-c
-@interface ViewController () <MBIDocumentOverlayViewControllerDelegate>
+@interface ViewController () <MBIBarcodeOverlayViewControllerDelegate>
 
 @property (nonatomic, strong) MBIRawParser *rawParser;
 @property (nonatomic, strong) MBIParserGroupProcessor *parserGroupProcessor;
@@ -252,7 +252,7 @@ Objective-C
 
 - (IBAction)didTapScan:(id)sender {
 
-    MBIDocumentOverlaySettings* settings = [[MBIDocumentOverlaySettings alloc] init];
+    MBIBarcodeOverlaySettings* settings = [[MBIBarcodeOverlaySettings alloc] init];
 
     self.rawParser = [[MBIRawParser alloc] init];
     self.parserGroupProcessor = [[MBIParserGroupProcessor alloc] initWithParsers:@[self.rawParser]];
@@ -261,7 +261,7 @@ Objective-C
     /** Create recognizer collection */
     MBIRecognizerCollection *recognizerCollection = [[MBIRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
 
-    MBIDocumentOverlayViewController *overlayVC = [[MBIDocumentOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
+    MBIBarcodeOverlayViewController *overlayVC = [[MBIBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
     UIViewController<MBIRecognizerRunnerViewController>* recognizerRunnerViewController = [MBIViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -285,13 +285,13 @@ You can pass the license key as a string, the following way:
 Swift
 
 ```swift
-MBIMicroblinkSDK.shared().setLicenseKey("LICENSE-KEY")
+MBIMicroblinkSDK.shared().setLicenseKey("LICENSE-KEY", errorCallback: block)
 ```
 
 Objective-C
 
 ```objective-c
-[[MBIMicroblinkSDK sharedInstance] setLicenseKey:@"LICENSE-KEY"];
+[[MBIMicroblinkSDK sharedInstance] setLicenseKey:@"LICENSE-KEY" errorCallback:block];
 ```
 
 #### License key as file
@@ -300,32 +300,32 @@ Or you can include the license key, with the code below. Please make sure that t
 Swift
 
 ```swift
-MBIMicroblinkSDK.shared().setLicenseResource("license-key-file", withExtension: "txt", inSubdirectory: "directory-to-license-key", for: Bundle.main)
+MBIMicroblinkSDK.shared().setLicenseResource("license-key-file", withExtension: "txt", inSubdirectory: "directory-to-license-key", for: Bundle.main, errorCallback: block)
 ```
 
 Objective-C
 
 ```objective-c
-[[MBIMicroblinkSDK sharedInstance] setLicenseResource:@"license-key-file" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
+[[MBIMicroblinkSDK sharedInstance] setLicenseResource:@"license-key-file" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle] errorCallback:block];
 ```
 
 If the licence is invalid or expired then the methods above will throw an **exception**.
 
 ### 5. Registering for scanning events
 
-In the previous step, you instantiated [`MBIDocumentOverlayViewController`](http://blinkinput.github.io/blinkinput-ios//Classes/MBIDocumentOverlayViewController.html) object with a delegate object. This object gets notified on certain events in scanning lifecycle. In this example we set it to `self`. The protocol which the delegate has to implement is [`MBIDocumentOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios//Protocols/MBIDocumentOverlayViewControllerDelegate.html) protocol. It is necessary to conform to that protocol. We will discuss more about protocols in [Advanced integration section](#advanced-integration). You can use the following default implementation of the protocol to get you started.
+In the previous step, you instantiated [`MBIBarcodeOverlayViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIBarcodeOverlayViewController.html) object with a delegate object. This object gets notified on certain events in scanning lifecycle. In this example we set it to `self`. The protocol which the delegate has to implement is [`MBIBarcodeOverlayViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios//Protocols/MBIBarcodeOverlayViewControllerDelegate.html) protocol. It is necessary to conform to that protocol. We will discuss more about protocols in [Advanced integration section](#advanced-integration). You can use the following default implementation of the protocol to get you started.
 
 Swift
 
 ```swift
-func documentOverlayViewControllerDidFinishScanning(_ documentOverlayViewController: MBIDocumentOverlayViewController, state: MBIRecognizerResultState) {
+func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController, state: MBIRecognizerResultState) {
 
     // this is done on background thread
     // check for valid state
     if state == .valid {
 
         // first, pause scanning until we process all the results
-        documentOverlayViewController.recognizerRunnerViewController?.pauseScanning()
+        barcodeOverlayViewController.recognizerRunnerViewController?.pauseScanning()
 
         DispatchQueue.main.async(execute: {() -> Void in
             // All UI interaction needs to be done on main thread
@@ -333,7 +333,7 @@ func documentOverlayViewControllerDidFinishScanning(_ documentOverlayViewControl
     }
 }
 
-func documentOverlayViewControllerDidTapClose(_ documentOverlayViewController: MBIDocumentOverlayViewController) {
+func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBIBarcodeOverlayViewController) {
     // Your action on cancel
 }
 ```
@@ -341,14 +341,14 @@ func documentOverlayViewControllerDidTapClose(_ documentOverlayViewController: M
 Objective-C
 
 ```objective-c
-- (void)documentOverlayViewControllerDidFinishScanning:(MBIDocumentOverlayViewController *)documentOverlayViewController state:(MBIRecognizerResultState)state {
+- (void)barcodeOverlayViewControllerDidFinishScanning:(MBIBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBIRecognizerResultState)state {
 
     // this is done on background thread
     // check for valid state
     if (state == MBIRecognizerResultStateValid) {
 
         // first, pause scanning until we process all the results
-        [documentOverlayViewController.recognizerRunnerViewController pauseScanning];
+        [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             // All UI interaction needs to be done on main thread
@@ -356,7 +356,7 @@ Objective-C
     }
 }
 
-- (void)documentOverlayViewControllerDidTapClose:(MBIDocumentOverlayViewController *)documentOverlayViewController {
+- (void)barcodeOverlayViewControllerDidTapClose:(MBIBarcodeOverlayViewController *)barcodeOverlayViewController {
     // Your action on cancel
 }
 ```
@@ -477,12 +477,13 @@ To use your custom overlay with Microblink's camera view, you must first subclas
 
 ### 2. Protocols
 
-There are five [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewController.html) protocols and one overlay protocol [`MBIOverlayViewControllerInterface`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIOverlayViewControllerInterface.html).
+There are six [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewController.html) protocols.
 
-Five `RecognizerRunnerView` protocols are:
+Six `RecognizerRunnerViewController` protocols are:
 - [`MBIScanningRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIScanningRecognizerRunnerViewControllerDelegate.html)
 - [`MBIDetectionRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIDetectionRecognizerRunnerViewControllerDelegate.html)
 - [`MBIOcrRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIOcrRecognizerRunnerViewControllerDelegate.html)
+- [`MBIGlareRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIGlareRecognizerRunnerViewControllerDelegate.html)
 - [`MBIDebugRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIDebugRecognizerRunnerViewControllerDelegate.html)
 - [`MBIRecognizerRunnerViewControllerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewControllerDelegate.html)
 
@@ -517,7 +518,7 @@ With this feature you can solve various use cases like:
 
 DirectAPI-sample demo app here will present UIImagePickerController for taking full resolution photos, and then process it with BlinkInput SDK to get scanning results using Direct processing API.
 
-Direct processing API is handled with [`MBIRecognizerRunner`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIRecognizerRunnerViewController.html).
+Direct processing API is handled with [`MBIRecognizerRunner`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewController.html).
 Developer can choose which protocol to conform:
 
 - [`MBIScanningRecognizerRunnerDelegate`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIScanningRecognizerRunnerDelegate.html)
@@ -914,9 +915,9 @@ For example, let's say that we want to change text "Scan the front side of a doc
 
 ## <a name="troubleshooting-integration-problems"></a> Integration problems
 
-In case of problems with integration of the SDK, first make sure that you have tried integrating it into XCode by following [integration instructions](#quick-start).
+In case of problems with integration of the SDK, first make sure that you have tried integrating it into Xcode by following [integration instructions](#quick-start).
 
-If you have followed [XCode integration instructions](#quick-start) and are still having integration problems, please contact us at [help.microblink.com](http://help.microblink.com).
+If you have followed [Xcode integration instructions](#quick-start) and are still having integration problems, please contact us at [help.microblink.com](http://help.microblink.com).
 
 ## <a name="troubleshooting-sdk-problems"></a> SDK problems
 
@@ -946,18 +947,13 @@ If you are having problems with scanning certain items, undesired behaviour on s
 ## <a name="troubleshooting-faq"></a> Frequently asked questions and known problems
 Here is a list of frequently asked questions and solutions for them and also a list of known problems in the SDK and how to work around them.
 
-#### Note on ARM Macs
-
-We are supporting `ARM64 Device` slice through our `.xcframework` format.
-We are still in development supporting `ARM64 Simulator` slice for newly released ARM Macs and we will update our SDK with `ARM64 Simulator` support as soon as development is done.
-
-#### In demo everything worked, but after switching to production license I get `NSError` with `MBIMicroblinkSDKRecognizerErrorDomain` and `MBIRecognizerFailedToInitalize` code as soon as I construct specific [`MBIRecognizer`](http://blinkinput.github.io/blinkinput-ios/docs/Classes/MBIRecognizer.html) object
+#### In demo everything worked, but after switching to production license I get `NSError` with `MBIMicroblinkSDKRecognizerErrorDomain` and `MBIRecognizerFailedToInitalize` code as soon as I construct specific [`MBIRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIRecognizer.html) object
 
 Each license key contains information about which features are allowed to use and which are not. This `NSError` indicates that your production license does not allow using of specific `MBIRecognizer` object. You should contact [support](http://help.microblink.com) to check if provided licence is OK and that it really contains all features that you have purchased.
 
 #### I get `NSError` with `MBIMicroblinkSDKRecognizerErrorDomain` and `MBIRecognizerFailedToInitalize` code with trial license key
 
-Whenever you construct any [`MBIRecognizer`](http://blinkinput.github.io/blinkinput-ios/docs/Classes/MBIRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBIMicroblinkSDKRecognizerErrorDomain` and `MBIRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
+Whenever you construct any [`MBIRecognizer`](http://blinkinput.github.io/blinkinput-ios/Classes/MBIRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBIMicroblinkSDKRecognizerErrorDomain` and `MBIRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
 
 #### Undefined Symbols on Architecture armv7
 
@@ -970,7 +966,7 @@ SDK crashes on armv7 devices if bitcode is enabled. We are working on it.
 
 #### In my `didFinish` callback I have the result inside my `MBIRecognizer`, but when scanning activity finishes, the result is gone
 
-This usually happens when using [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/docs/Classes/MBIRecognizerRunnerViewController.html) and forgetting to pause the [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/docs/Classes/MBIRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBIRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBIRecognizer` objects, check [this section](#recognizer-concept).
+This usually happens when using [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewController.html) and forgetting to pause the [`MBIRecognizerRunnerViewController`](http://blinkinput.github.io/blinkinput-ios/Protocols/MBIRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBIRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBIRecognizer` objects, check [this section](#recognizer-concept).
 
 #### Unsupported architectures when submitting app to App Store
 
@@ -1013,7 +1009,7 @@ done
 
 ### Disable logging
 
-Logging can be disabled by calling `disableMicroblinkLogging` method on [`MBILogger`](http://blinkinput.github.io/blinkinput-ios/docs/Classes/MBILogger.html) instance.
+Logging can be disabled by calling `disableMicroblinkLogging` method on [`MBILogger`](http://blinkinput.github.io/blinkinput-ios/Classes/MBILogger.html) instance.
 # <a name="size-report"></a> Size Report
 
 We are delivering complete size report of our BlinkInput SDK based on our BlinkInput-sample-Swift sample project. You can check that [here](https://github.com/BlinkInput/blinkinput-ios/tree/master/size-report).

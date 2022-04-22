@@ -4,14 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/BlinkOCR_DocumentDetector_general_6.3.0.strop</key>
-		<data>
-		2bXgyDUiqALiUYcPHIAS/71F9PQ=
-		</data>
-		<key>Resources/BlinkOCR_Ocr_general_6.1.0.strop</key>
-		<data>
-		uEqw1TZlacliNewfjMru8BqISHs=
-		</data>
 		<key>Resources/Close.png</key>
 		<data>
 		4N47SidUySTyfka8FcEs9boO7as=
@@ -26,7 +18,15 @@
 		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		0pAwNzvWMkLW4zXezunH3eF15SU=
+		co/RkH8Bqj4mXBdWhVkH+apCnk8=
+		</data>
+		<key>Resources/Model_67100bc24967ea3e516430d3fccf4dea0000eac479bf1d77a908c00d1a2b63a9.strop</key>
+		<data>
+		fy0kzXrP2O7ESpS7IFTUPDxMWH4=
+		</data>
+		<key>Resources/Model_dac6fc7b40d6510f2b05716c9e63847e67e79e6664192eed937aed343c61403e.strop</key>
+		<data>
+		2KtuVE5QzR8iWqflidEzcfPCCFE=
 		</data>
 		<key>Resources/No Camera-100.png</key>
 		<data>
@@ -58,19 +58,19 @@
 		</data>
 		<key>Resources/cs.strings</key>
 		<data>
-		KhSeSC7LEJzpnG5VsDP+ftZoc9g=
+		V0AHzsDVRe4cMmALoRurF/lOF6k=
 		</data>
 		<key>Resources/de.strings</key>
 		<data>
-		Slq1ssC3KZatVFkfSpn5upgsYMI=
+		P3cvWA9SZY+FAJu87t1bJJ6ooXw=
 		</data>
 		<key>Resources/en.strings</key>
 		<data>
-		xWY7juYGs7MhI1gnUoQCcshFbV8=
+		/hqA7qScscURihtdTR4ujwIxXsw=
 		</data>
 		<key>Resources/es.strings</key>
 		<data>
-		IDEbfIiZZQOxGILoUOgN9r9Tm/g=
+		Iw3QIvaxIgjtm66iLnnmkBUOwc8=
 		</data>
 		<key>Resources/face_detector_model.zzip</key>
 		<data>
@@ -78,23 +78,23 @@
 		</data>
 		<key>Resources/fil.strings</key>
 		<data>
-		lu8wM4FYsDaVNbqiivRHlCeyR+U=
+		L4p96TdLdbaqqS30nNwNZFmeSEY=
 		</data>
 		<key>Resources/fr.strings</key>
 		<data>
-		wEl//KJN6S5v3Kt/xQf0mHIONec=
+		4pNJwIfsaA/kvZue2Pe2Vyu3yMQ=
 		</data>
 		<key>Resources/he.strings</key>
 		<data>
-		7qghAf/Ty1Byb0uxSR7GlYK85NM=
+		U/wlDsfsXV6NtUdTKN8NdEiffWI=
 		</data>
 		<key>Resources/hr.strings</key>
 		<data>
-		5WVKFuIEoHOGnxMSuaCQ8Exlo3I=
+		z72F0rJ7QGehz8UPyTNn3C9//u8=
 		</data>
 		<key>Resources/hu.strings</key>
 		<data>
-		desfYulyty7PCEm94W8X8IhPMHU=
+		iSGBMbV7t1NFIpi+O+78ViQ/BcM=
 		</data>
 		<key>Resources/ic_flash_off.png</key>
 		<data>
@@ -186,43 +186,43 @@
 		</data>
 		<key>Resources/id.strings</key>
 		<data>
-		h0nNeYnaUqrzR8oy0vZ7G83koYY=
+		+W48lLKJCSOirV2rtVZch7bJXIA=
 		</data>
 		<key>Resources/it.strings</key>
 		<data>
-		/2kz32ua6pXcBzDSAEXSP6Khtc8=
+		7wSvFtWZMGmYgnw6Kd7hAsrFnj4=
 		</data>
 		<key>Resources/model_arabic.zzip</key>
 		<data>
-		c/tMTHa35dQ5fn9MXJkOmGsEW64=
+		brwEDzKUQ+9DLxE8FFYmNL/q8Xs=
 		</data>
 		<key>Resources/model_general_blink_ocr.zzip</key>
 		<data>
-		QJKChudRuYiyflEfFlj5Tw71IDE=
+		hL0RHyStajdyY8mH34iHGt+18LQ=
 		</data>
 		<key>Resources/model_micr.zzip</key>
 		<data>
-		6/FT+hcUbYvMpxqCzO/BfepbvYA=
+		EFKju/4qS0Sj8/m3oPfEyK/TSD0=
 		</data>
 		<key>Resources/model_mrtd.zzip</key>
 		<data>
-		TLYT0oVfoHn4rU46c/NQtbmZlqA=
+		tL16uoEbRsrInVsIm3HkWFsHFx0=
 		</data>
 		<key>Resources/ms.strings</key>
 		<data>
-		DfSN3xsFv4249EShrxYm1cAlXYE=
+		qAU77hOsklwfCsb+5ShYH6HPwAI=
 		</data>
 		<key>Resources/nl.strings</key>
 		<data>
-		JLiE/mF5Hlssv1QF3ZmWDrrUzVU=
+		af4l/GIxlL9YUDwkoZ6/6xW92wY=
 		</data>
 		<key>Resources/pt.strings</key>
 		<data>
-		T/yf6w2Cs1yLXuKk1S3q51EhlsM=
+		N+OidlMEkAGcwHGMmtp1ZcP4wKY=
 		</data>
 		<key>Resources/ro.strings</key>
 		<data>
-		+mpGcJqfHRryrZaQPp2tQgjh1sU=
+		H/OmcwJV+atYeHJ/rdN6sEO05GQ=
 		</data>
 		<key>Resources/scan-corner-ll.png</key>
 		<data>
@@ -258,11 +258,11 @@
 		</data>
 		<key>Resources/sk.strings</key>
 		<data>
-		vzNf1sJMbNAp9u9ewPCCcuByGOI=
+		ENGHecv/RTrEZCuP3iESODLL1G8=
 		</data>
 		<key>Resources/sl.strings</key>
 		<data>
-		589FNWpNrgPKfkZXsPLBgm/2NUY=
+		njk0atvpYbRzkKxYVchKBKNoQAQ=
 		</data>
 		<key>Resources/take_picture_button.png</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>Resources/th.strings</key>
 		<data>
-		GO3IgtBQWumBPDQGbqz5dtR4rqM=
+		dD0YCX5Xg/ekkShw/jLALN5nOKo=
 		</data>
 		<key>Resources/torchoff.png</key>
 		<data>
@@ -314,24 +314,31 @@
 		</data>
 		<key>Resources/vi.strings</key>
 		<data>
-		J8DBmz/9mTJn9F7CT4JvJSoajk4=
+		9HLt5XmqiCO9oCsr2r8o89WfnMo=
 		</data>
 		<key>Resources/zh-Hans.strings</key>
 		<data>
-		97gA5CEUwUO1y3OP8/enkHZ780s=
+		mLdHiYWH+CAzM+0142j3lcu9/8Q=
 		</data>
 		<key>Resources/zh-Hant.strings</key>
 		<data>
-		51zM34iNR69g8dYbgIINoHiMPEw=
+		WjE4x57c3knpap2zfaWQCgt3e2o=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/BlinkInput-Swift.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ECJA4PvZuf48Z4ZT90ZXaAiUgiaRXhtfEjW2LVwXzRc=
+			</data>
+		</dict>
 		<key>Headers/BlinkInput.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XUOPYXzjnAQ2FmhlIDERnAWE9mqXfs+gBjy45P5NObc=
+			aThqU5L5KCHVxu0Pz+aYUHCcBjzfVAumgFRSKDQiWwI=
 			</data>
 		</dict>
 		<key>Headers/MBAmountParser.h</key>
@@ -380,14 +387,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DMGC/NPm65eWZ71ZLUqtSVICm3B/MqLBgu6IKNgrrbU=
+			sP1EBaSsXIGQDzzRgWpD2O5KssQg8axP8uqESJg9DEE=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeRecognizerResult.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VKpPuDnbgWolWO5yBClbbxwHmUVATcPU9tXyKpELpp0=
+			0SWCyoDTeKgXFS6m8bYBNEx1tIGmwZ0BpBjwEwwzDO8=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeType.h</key>
@@ -436,7 +443,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b+44WkbC2AS9QT8uAbcwRhExKF+BUdWLrytiNn5jIts=
+			KgDAD0LutpJmHtZKumv/kGXNwCmz+IWzM36ZOmOSNDs=
 			</data>
 		</dict>
 		<key>Headers/MBBlinkInputRecognizer.h</key>
@@ -457,14 +464,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			br88GG+LCf27RxA/pnElnHk/buztqOeQMyQ7Cs+oDoE=
+			NJTfn4VblFCc5caE7mhQ3YClFCmhIzCET2CiEtvjo1Y=
 			</data>
 		</dict>
 		<key>Headers/MBCameraSettings.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OBjruMYNbPmj2Fgaiin2QgBYLjSwhsMhSrpn5jQNAMw=
+			EEKVR0ZjK4U6A1LaoypGB/1XjHKDzk/GSpYj/mbvG0Q=
 			</data>
 		</dict>
 		<key>Headers/MBCustomOverlayViewController.h</key>
@@ -632,7 +639,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			upHQn+vf+vB7EtVV6VCd+Dhif2UgumwEpX/yFpvQOWw=
+			CrOvzSdbBr+X8+7cEVHvd2tDGGcLD16TeugEl2WzB9E=
 			</data>
 		</dict>
 		<key>Headers/MBDocumentCaptureRecognizerResult.h</key>
@@ -807,7 +814,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wzDcKxPM2beAoXqEoizQenfd/6octI4SI6bflb18SOE=
+			KFbF1XBfS9BkkdkT6TXmHgizamlxKTN//++033xTr24=
 			</data>
 		</dict>
 		<key>Headers/MBGlareRecognizerRunnerDelegate.h</key>
@@ -849,7 +856,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3WMySmtvRtu5fT9p2BE2F2CoxPAk84B0MGdEdAe4Dco=
+			cMf/X1pMHoodJvWbGqg7o1sVuCm3H8+x07rKooezI2k=
 			</data>
 		</dict>
 		<key>Headers/MBImageExtensionFactors.h</key>
@@ -884,7 +891,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iXBXdTVjaERupsNmuBcn9UyiacD5OFieB9M53SazhpY=
+			cI477ktqZIU02LHZzJyy2YFRqsDqEVavwNTlsbZrrLc=
 			</data>
 		</dict>
 		<key>Headers/MBLicensePlatesParser.h</key>
@@ -912,14 +919,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wIftgEfaKmmEXDFkrNOuZCLDPpGNMyk04gt1tCkgIGY=
+			vGqQx5FaOsjOBplK7kS3Cgg474QhuvfoZi9qXB3L/EA=
 			</data>
 		</dict>
 		<key>Headers/MBMicroblinkDefines.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			55xxOJAcidYZyPh2FJVmBnX3FKfb9Nzd04y6T5JdKd4=
+			oAcXbTF6sDWTu5OQPXSdqniIqG1eEFx8tiq3FjP0hwI=
 			</data>
 		</dict>
 		<key>Headers/MBMicroblinkInitialization.h</key>
@@ -1094,7 +1101,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oarRQ3RERzbvmY2ZzlaOKgCFp0LsQjiBayJ1kdSFAB4=
+			AfwV4GPTPnqiQphj3bE5EV/tCNAgkvx3COA5FyXzyt0=
 			</data>
 		</dict>
 		<key>Headers/MBProcessor.h</key>
@@ -1118,6 +1125,13 @@
 			0B7Yein432RpJSC68MqJaAbonZLsosz0koyp8NLJKS4=
 			</data>
 		</dict>
+		<key>Headers/MBProductIntegrationInfo.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vp18C6GfOr9OaaLGYrN/Q9xFNtoOTqny/GgWryQl7+Q=
+			</data>
+		</dict>
 		<key>Headers/MBQuadDetector.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1136,7 +1150,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HCnlOdjc/Ba4z0DO+p/e61dGnq8Ga0atRzwVPGzC6h0=
+			q6iASoCSV5kYnXD8FmUxdsjDx53lS37FqDavgmKqNBw=
 			</data>
 		</dict>
 		<key>Headers/MBQuadWithSizeDetector.h</key>
@@ -1213,7 +1227,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AWMwR9hPPqOaiYZE8+VECnXZQzQdLtHNSSoRJqK9I4I=
+			q8aynRQqrylAcrnPLnvs9y6YVooZnptWVrn/ICZD8HA=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerViewControllerDelegate.h</key>
@@ -1270,6 +1284,13 @@
 			<key>hash2</key>
 			<data>
 			X5l2DDePqUkLf4BXMLko9vbfOxra8TTrk3B9XLgYAQ0=
+			</data>
+		</dict>
+		<key>Headers/MBSignedPayload.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sfzKYUVFl+tLdserp9AV1reGwPI/1iNuvhlGp/sojC4=
 			</data>
 		</dict>
 		<key>Headers/MBSimNumberRecognizer.h</key>
@@ -1398,25 +1419,67 @@
 			RqVkZCPLg0LQ7BZoXJGkIs4ed0/HVnIYBcKds2El3Ys=
 			</data>
 		</dict>
+		<key>Modules/BlinkInput.swiftmodule/Project/arm64-apple-ios-macabi.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kRC74pqdLA2TIuCwqQcnEHFcfEhpeQ5UqAOuPK6djTM=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/Project/x86_64-apple-ios-macabi.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NxOu4z7vANACKjl/MnQ8dyLXsgrDJR2r+mJnKSf/yW4=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6xCGW/XHKjkgPbBaskpjUO+U04HAMH3rYTMDuFcmcDY=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BkoHbNki5Lao8wVaNQccicmMDKeUgtwbnDkvjDhYbOQ=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fDNWtLBRj6R3qdmTWhuePaiNM4vmo23g8grC0VfhnTU=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tonFK6z6U43p3y+pDGwayXn35iPTCBkFxaPHrYv20FM=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OQ5X4olKke27VcyTd3PBLPGaVb0nZsxqfIpzRxKlZkc=
+			</data>
+		</dict>
+		<key>Modules/BlinkInput.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8jOGzbNbgICcFeFgWnjA03ai2zLrxl04dLqAyD4lcUw=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			56LS7sdUayAIu+8r/2+WPT1t/B2J/MLcEYFqyt9miF8=
-			</data>
-		</dict>
-		<key>Resources/BlinkOCR_DocumentDetector_general_6.3.0.strop</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			N/l8TLMR5QUGfceNtWFJVuvSMANemi5cyOem78/3e6k=
-			</data>
-		</dict>
-		<key>Resources/BlinkOCR_Ocr_general_6.1.0.strop</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			D8qc9GJTpuE6hTs5pTuCW7qRtMnb/uRNb5HYyUVC4rA=
+			n2kGtRdqGKmmJWkN/W9oZDN6+18soLAiRhFX2kJ19lc=
 			</data>
 		</dict>
 		<key>Resources/Close.png</key>
@@ -1444,7 +1507,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GHlBUgE+uMyIBwAGaxyjaUdGkAWNabWLmTwlQZh8RA0=
+			UO/2ppkTGXl4kbSm1unsn2l6NYmyUBBS1es69ab9YkY=
+			</data>
+		</dict>
+		<key>Resources/Model_67100bc24967ea3e516430d3fccf4dea0000eac479bf1d77a908c00d1a2b63a9.strop</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rr/Oh75jTmefRvSMuwu9GjaXbl8SPZk9/aj5APMo2cU=
+			</data>
+		</dict>
+		<key>Resources/Model_dac6fc7b40d6510f2b05716c9e63847e67e79e6664192eed937aed343c61403e.strop</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1TvCd4+achZ87xyA6m1Z+b8PpDGgVkbo8jBu/lbBQJI=
 			</data>
 		</dict>
 		<key>Resources/No Camera-100.png</key>
@@ -1500,28 +1577,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EcVRqhnekD0ra2LgbR+6Jk1KX/VL0EMT12Nrlvs0EPE=
+			/rpPurWnTLBEeuu2XFHRQ9NcZvMd9tMSd6zMK92wbZ4=
 			</data>
 		</dict>
 		<key>Resources/de.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ck3DjvxO1ZXDtu3EwFkdlvcG4jr98Gd1+2N8s6/EJlc=
+			PbDF0d4/fmZptkPTjslIusq4UJHGeEBtSqh5YASh3Vs=
 			</data>
 		</dict>
 		<key>Resources/en.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			l7U03iKmroq4lvaZLf2bNaqdbjneW1OjsZnQ7BkmC4o=
+			mu+194Bpa/qbWhnJy2euSdwAQrtWYATV5pbv8nS3Ki0=
 			</data>
 		</dict>
 		<key>Resources/es.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AgUJ/BLYvDf1XYVIiZj7g6GiPwmXmfDI+DDSNfk03UY=
+			Karj9RxAZWXSEoSpHxm7hrXx9WtFjj+aQ3gLNTLs8Zg=
 			</data>
 		</dict>
 		<key>Resources/face_detector_model.zzip</key>
@@ -1535,35 +1612,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xqvfO+WwccqeCGoei+jKNoG8t3UvublGYvst6nq6l8w=
+			IBOpCn4qQ1o1YDwOTLVbnRkVaIVmeXUbUl23FkkwbJg=
 			</data>
 		</dict>
 		<key>Resources/fr.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pAt+8u1vMASc+WIeLSpyu/8NGx1wHJtUWftCAOao1TM=
+			saD2yxt6AHaHNk+uQsjpiYGttpHdMU7CP1ES9JWwTyo=
 			</data>
 		</dict>
 		<key>Resources/he.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OkBECSWcyLkDesgj/0scHAZsXMpXPA2tW2BkkTNdv+I=
+			9xyYeqLSs1ER/xKJUHx0X6elJLsHlDfQhdn9kwLvQIs=
 			</data>
 		</dict>
 		<key>Resources/hr.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I7PD0AZhnMylGxCo89S8L/rWpiQj8aHiN3u11OKIsLI=
+			NGol6UNZ4ZDGZ7724aYickmhLQTaVee4f93hTxkFiDs=
 			</data>
 		</dict>
 		<key>Resources/hu.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KmrsjYRmLTVD63fHi7sSAwz//C8tLGLWX011IC0jeGc=
+			/AGf8bRWg4WcjsKCgSRlN8PzRqd/Dd5DH72pSJgJmr0=
 			</data>
 		</dict>
 		<key>Resources/ic_flash_off.png</key>
@@ -1724,70 +1801,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ELPe14BMro0kKgE92YdzIbXVXF/XcGvmIvaQY5T2zzA=
+			pUa3gm0PLkUEFtxwIjdOtG638ErhGY1MOTPyxWoZx7o=
 			</data>
 		</dict>
 		<key>Resources/it.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hWslQepsF7jSKq5XzyDKROMU1itgc5+x7MNZwZdoQ0c=
+			POlOTNj2kI21vnEp/ZixlTVnEbsalLK7y+NUdMB/WkQ=
 			</data>
 		</dict>
 		<key>Resources/model_arabic.zzip</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8PttD2z8UbiwoZ3kF5ptzRnL++xBZG1/tYeIRmqnQc4=
+			+QInXs9Cra6Oel1D9Awp+NFNQTt1Y3UtrjThhuy2p9o=
 			</data>
 		</dict>
 		<key>Resources/model_general_blink_ocr.zzip</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HOH/Mo9iGB8ZnX0xjhVTsT157783/DXhC+LlpRbGy/U=
+			HkzzbsWqK8kVpy+u7jRh13aQIUXjtDRoVKfFvyZXF2A=
 			</data>
 		</dict>
 		<key>Resources/model_micr.zzip</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wCs1McQ/Ac6YfIBNfA4JtDU9nMt8Y4RtRWgJx8y8Dqs=
+			B1Zh9tSu1FgyAviPfCO8vZt9t0YObxu1PbNYxmTRDsE=
 			</data>
 		</dict>
 		<key>Resources/model_mrtd.zzip</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LRBvDozC2YzR+/EJKyvHlsXUOPnQ5G40Ru49QRSx0cg=
+			OThkbpfdPsFJJMtq4g1v4ThmRxLR51i0Ck/D1Va3WAM=
 			</data>
 		</dict>
 		<key>Resources/ms.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iQ2BXQ/GHmjuXnn7k3v+Xm2w7klC94tXrzpVntJCbnI=
+			lZ4zhuKhMmapjBtdvsriLqDCzimWczhNF+az37lteko=
 			</data>
 		</dict>
 		<key>Resources/nl.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M480kIMXYyeO54MVTGLza9gDxNoEvIaqhF+gu19Ax9k=
+			icTIHWBsvuCw0V7d09hcSYYePBG7HMdkmBxqR9KXDgA=
 			</data>
 		</dict>
 		<key>Resources/pt.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JFvda8kIorvEK+ozvy921H7fsDJp9HwY2/zxj96qIMs=
+			LcLblWts2q9+ebSxRKHXsTrfNdBHQWWdeMIg1+yLjsw=
 			</data>
 		</dict>
 		<key>Resources/ro.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EoZbLbtukdUKp+I24YAhoXlCZnaY4aydfybbaypyEP0=
+			CSJYJFwZ/PwV+n22YYvQVdENCfZTqnoS2fxfcRDuo1w=
 			</data>
 		</dict>
 		<key>Resources/scan-corner-ll.png</key>
@@ -1850,14 +1927,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			E3jmunxWZGlHTT+YoBZZj4nJoHQ4yPBgQC34eacg5kE=
+			3hPmChk+cnLMVtbw6qsyHoGg2Cbw/EKWWUGhZNI+Dp0=
 			</data>
 		</dict>
 		<key>Resources/sl.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			csy6TXIQ3UM0bHChHlkNLfAwqWm4+z2wpHq7DRhKbuQ=
+			lTxdwc0sar8tXEn3rIB4JuiX8iA0BQXmyJun07cqyvU=
 			</data>
 		</dict>
 		<key>Resources/take_picture_button.png</key>
@@ -1885,7 +1962,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vuz/6WzhKB5fIKNCmo4CkyngEV76r3YReQa1EYDyWp4=
+			jDslNCI5l1KhrnfINqOdUxdybEVeDRwotIreolvepR4=
 			</data>
 		</dict>
 		<key>Resources/torchoff.png</key>
@@ -1948,21 +2025,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LWjMHJnuID7XeJkWXaoo+mIioAV0iKZYEZOCGMp9pZw=
+			BGwaH3R1zJB+MgukQ6Z2Lw+0ylB0kCZ0ibUHdp2JL4k=
 			</data>
 		</dict>
 		<key>Resources/zh-Hans.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NHbqkNDTaQZHTeqkC0oFgF01zD3x+MzBKkCZQv3JW3I=
+			aLIjp71Ph/jlkSYT2qccnb23YjTIIT1WZwdNP/vMWec=
 			</data>
 		</dict>
 		<key>Resources/zh-Hant.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UVPBouLwxuYKDdcsgaBQDBQMO8b+QjMoc/rriChtSJ0=
+			sZ54JaeTNmMjY0kvPQNAa7Iaemuaue3Ei8+LAv7CjrE=
 			</data>
 		</dict>
 	</dict>
